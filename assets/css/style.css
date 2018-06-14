@@ -69,4 +69,24 @@ footer.site-footer .site-footer-content .copyright {
     font-size: 0.8em;
     font-weight: lighter;
     margin: 30px;
-  }
+}
+
+@media screen and (max-width: 800px) {
+    footer.site-footer .site-footer-content nav.items {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    footer.site-footer .site-footer-content nav.items {
+        flex-direction: column-reverse;
+    }
+
+    footer.site-footer .site-footer-content nav.items .item {
+        text-align: center;
+    }
+
+    footer.site-footer .site-footer-content nav.items .item .coin-address {
+        display: block;
+    }
+}
