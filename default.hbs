@@ -12,6 +12,20 @@
 </head>
 <body class="{{body_class}}">
     <div class="site-wrapper">
+        <header>
+            <div class="content">
+                <div class="title">
+                    <a href="https://nathanaelcherrier.com">
+                        <img src="{{ @blog.logo }}" alt="MindsersIT logo">
+                        {{ @blog.title }}
+                    </a>
+                </div>
+                <div class="menu">
+                    {{ navigation }}
+                </div>
+            </div>
+        </header>
+
         {{{body}}}
 
         <footer class="site-footer outer">
