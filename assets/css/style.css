@@ -1,11 +1,15 @@
 :root {
     --primaryColor: #1B9CFC;
     --secondaryColor: #34495e;
+    --defaultGradientBackground: linear-gradient(70deg,#1b9cfc,#25ccf7);
+    --primaryFont: 'Inconsolata', monospace;
+    --secondaryFont: 'Source Code Pro', monospace;
 }
 
 /*
     1 - Footer
     2 - Header
+    3 - Article's list
 */
 
 body {
@@ -17,7 +21,7 @@ body {
 
 footer.site-footer {
     background-color: var(--secondaryColor);
-    font-family: 'Inconsolata', monospace;
+    font-family: var(--primaryFont);
     padding: 50px;
 }
 
@@ -110,7 +114,7 @@ header.site-header div.site-header-content {
 header.site-header, header.site-header a {
     color: var(--secondaryColor);
     text-decoration: none;
-    font-family: Inconsolata, monospace;
+    font-family: var(--primaryFont);
 }
 
 header.site-header .title {
@@ -153,4 +157,31 @@ header.site-header .menu li {
     header.site-header .title, header.site-header .menu {
         margin: 20px 0;
     }
+}
+
+/* 3 - Article's list */
+
+section.list-header {
+    background: var(--defaultGradientBackground);
+    padding: 20px;
+    color: white;
+    padding: 150px 10px 50px;
+    font-weight: bolder;
+}
+
+section.list-header .list-header-content {
+    max-width: 1024px;
+    margin: auto;
+}
+
+section.list-header h2 {
+    font-family: var(--secondaryFont);
+    text-align: center;
+    font-size: 4em;
+}
+
+section.list-header p {
+    font-family: var(--primaryFont);
+    font-size: 2em;
+    text-align: right;
 }
