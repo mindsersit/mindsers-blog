@@ -1,5 +1,5 @@
 :root {
-    --primaryColor: #1B9CFC;
+    --primaryColor: #0076df;
     --secondaryColor: #34495e;
     --defaultGradientBackground: linear-gradient(70deg,#1b9cfc,#25ccf7);
     --primaryFont: 'Inconsolata', monospace;
@@ -11,6 +11,8 @@
     2 - Header
     3 - Article's list
     4 - Article card
+    5 - Pagination
+    6 - Global
 */
 
 body {
@@ -65,7 +67,7 @@ footer.site-footer .site-footer-content a {
 }
 
 footer.site-footer .site-footer-content nav.items li .coin-address {
-    color: var(--primaryColor);
+    color: #1B9CFC;;
 }
 
 
@@ -191,6 +193,12 @@ section.list-header p {
     background-color: white;
 }
 
+#site-main .post-feed-pagination {
+    text-align: center;
+    margin: 40px;
+    font-family: var(--primaryFont);
+}
+
 /* 4 - Article card */
 
 article.post-card, article.post-card a {
@@ -237,4 +245,22 @@ article.post-card .post-card-header .sponsored-tag {
     padding: 2px 5px;
     font-size: 0.85em;
     display: inline-block;
+}
+
+/* 5 - Pagination */
+
+
+nav.pagination a {
+    color: var(--primaryColor);
+    text-decoration: none;
+}
+
+/* 6 - Global */
+
+a.html-tag::before {
+    content: '</'
+}
+
+a.html-tag::after {
+    content: '>'
 }
