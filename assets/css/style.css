@@ -162,7 +162,7 @@ header.site-header .menu li {
     cursor: pointer;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     header.site-header div.site-header-content {
         flex-direction: column;
         justify-content: space-around;
@@ -353,15 +353,15 @@ article .post-full-header .infos a:hover {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-article .post-full-header .infos .tags {
+article .post-full-header .infos .post-full-meta-tags {
     max-width: 400px;
 }
 
-article .post-full-header .share-buttons {
+article .post-full-header .post-full-meta-share {
     text-align: center;
 }
 
-article .post-full-header .share-buttons a {
+article .post-full-header .post-full-meta-share a {
     text-decoration: none;
     background-color: transparent;
     display: inline-block;
@@ -382,4 +382,22 @@ article .post-full-header .sponsored-tag {
     font-family: var(--primaryFont);
     color: black;
     margin: auto;
+}
+
+@media screen and (max-width: 500px) {
+    article .post-full-header .post-full-meta-date,
+    article .post-full-header .post-full-meta-author,
+    article .post-full-header .post-full-meta-tags,
+    article .post-full-header .post-full-meta-share {
+        display: none;
+    }
+
+    article .post-full-header h1 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    article .post-full-header {
+        padding: 40px 10px 20px;
+    }
 }

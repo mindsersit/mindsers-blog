@@ -11,7 +11,7 @@
                         {{#has tag="sponsored" author="value"}}
                             <div class="sponsored-tag">sponsored</div>
                         {{/has}}
-                        <p class="author">
+                        <p class="post-full-meta-author">
                             {{#has author="count:>1"}}
                                 This post was a collaboration between {{authors}}
                             {{else}}
@@ -21,11 +21,11 @@
                     </div>
                     <h1 class="post-full-title">{{title}}</h1>
                     <div class="infos lower">
-                        <div class="tags">
+                        <div class="post-full-meta-tags">
                             <p>Published in {{tags}}</p>
                             <p></p>
                         </div>
-                        <div class="share-buttons">
+                        <div class="post-full-meta-share">
                             <p>
                                 Share this
                             </p>
