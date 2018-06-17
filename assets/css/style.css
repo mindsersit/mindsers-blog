@@ -293,9 +293,9 @@ nav.pagination a {
 /* 6 - Global */
 
 a.html-tag::before {
-    content: '</'
+    content: '<'
 }
 
 a.html-tag::after {
-    content: '>'
+    content: '/>'
 }
