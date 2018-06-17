@@ -183,10 +183,45 @@ section.list-header h2 {
     font-size: 4em;
 }
 
-section.list-header p {
+section.list-header .infos {
     font-family: var(--primaryFont);
-    font-size: 2em;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section.list-header .infos h3 {
+    margin: 10px 0;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+section.list-header .infos ul {
+    padding: 0;
+}
+
+section.list-header .infos li {
+    font-weight: lighter;
+    list-style: none;
+}
+
+section.list-header .infos .featured-links li::before {
+    content: '\203A ';
+}
+
+section.list-header .infos a {
+    color: white
+}
+
+section.list-header .infos li img {
+    height: 30px;
+    filter: grayscale(100%) brightness(0) invert(1);
+    margin: 5px;
+}
+
+section.list-header .infos .social-networks ul {
+    padding: 0;
+    display: flex;
 }
 
 #site-main {
