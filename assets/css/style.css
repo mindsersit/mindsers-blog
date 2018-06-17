@@ -12,6 +12,7 @@
     3 - Article's list
     4 - Article card
     5 - Pagination
+    6 - Article
 */
 
 body {
@@ -291,7 +292,7 @@ article.post-card .post-card-header .reading-time {
 article.post-card .post-card-header .sponsored-tag {
     margin: 0 20px;
     background-color: #fdcb6e;
-    color: block;
+    color: black;
     border-radius: 2px;
     padding: 2px 5px;
     font-size: 0.85em;
@@ -311,7 +312,7 @@ nav.pagination a {
 article .post-full-header {
     background: var(--defaultGradientBackground);
     color: white;
-    padding: 150px 10px 50px;
+    padding: 50px 10px 50px;
 }
 
 article .post-full-header-content, article .post-full-content {
@@ -334,4 +335,51 @@ article .post-full-content a {
     background-color: rgba(0, 118, 223, 0.2);
     color: #0076df;
     text-decoration: none;
+}
+
+article .post-full-header .infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--primaryFont);
+}
+
+article .post-full-header .infos a {
+    color: white;
+}
+
+article .post-full-header .infos a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+article .post-full-header .infos .tags {
+    max-width: 400px;
+}
+
+article .post-full-header .share-buttons {
+    text-align: center;
+}
+
+article .post-full-header .share-buttons a {
+    text-decoration: none;
+    background-color: transparent;
+    display: inline-block;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 15px;
+    width: 80px; height: 15px;
+    line-height: 15px;
+    margin: 5px 0;
+}
+
+article .post-full-header .sponsored-tag {
+    background-color: #fdcb6e;
+    border-radius: 2px;
+    padding: 2px 5px;
+    font-size: 0.85em;
+    display: inline-block;
+    font-family: var(--primaryFont);
+    color: black;
+    margin: auto;
 }

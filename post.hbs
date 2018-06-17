@@ -6,7 +6,41 @@
         <article  class="post-full {{post_class}}">
             <header  class="post-full-header">
                 <div class="post-full-header-content">
+                    <div class="infos upper">
+                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                        {{#has tag="sponsored" author="value"}}
+                            <div class="sponsored-tag">sponsored</div>
+                        {{/has}}
+                        <p class="author">
+                            {{#has author="count:>1"}}
+                                This post was a collaboration between {{authors}}
+                            {{else}}
+                                Written by {{authors}}
+                            {{/has}}
+                        </p>
+                    </div>
                     <h1 class="post-full-title">{{title}}</h1>
+                    <div class="infos lower">
+                        <div class="tags">
+                            <p>Published in {{tags}}</p>
+                            <p></p>
+                        </div>
+                        <div class="share-buttons">
+                            <p>
+                                Share this
+                            </p>
+                            <p>
+                                <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+                                    twitter
+                                </a>
+                                <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                                    onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+                                    facebook
+                                </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </header>
 
