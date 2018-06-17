@@ -224,6 +224,11 @@ section.list-header .infos .social-networks ul {
     display: flex;
 }
 
+section.list-header .infos .description {
+    font-weight: lighter;
+    max-width: 700px;
+}
+
 #site-main {
     background-color: white;
 }

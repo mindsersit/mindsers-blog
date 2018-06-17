@@ -1,0 +1,36 @@
+{{!< default}}
+
+<section class="list-header">
+    <div class="list-header-content">
+        {{#tag }}
+            <h2>#{{ name }}</h2>
+            <div class="infos">
+                <p class="description">
+                    {{#if description}}
+                        {{description}}
+                    {{else}}
+                        A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                    {{/if}}
+                </p>
+                <div class="social-networks">
+                    <h3>Social networks</h3>
+                    <ul>
+                        {{#if @blog.twitter}}<li><a href="{{twitter_url}}"><img src="/assets/images/twitter.svg" title="twitter"></a></li>{{/if}}
+                        {{#if @blog.facebook}}<li><a href="{{facebook_url}}"><img src="/assets/images/facebook.svg" title="facebook"></a></li>{{/if}}
+                    </ul>
+                </div>
+            </div>
+        {{/tag}}
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="post-feed inner">
+        {{#foreach posts}}
+            {{> post-card}}
+        {{/foreach}}
+    </div>
+    <div class="post-feed-pagination">
+        {{pagination}}
+    </div>
+</main>
