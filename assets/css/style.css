@@ -1,5 +1,6 @@
 :root {
     --primaryColor: #0076df;
+    --primaryFadedColor: #66b8ff;
     --secondaryColor: #34495e;
     --defaultGradientBackground: linear-gradient(70deg, #1b9cfc, #25ccf7);
     --primaryFont: 'Inconsolata', monospace;
@@ -327,16 +328,6 @@ article .post-full-header h1 {
     font-size: 4em;
 }
 
-article .post-full-content {
-    font-family: var(--primaryFont);
-}
-
-article .post-full-content a {
-    background-color: rgba(0, 118, 223, 0.2);
-    color: #0076df;
-    text-decoration: none;
-}
-
 article .post-full-header .infos {
     display: flex;
     justify-content: space-between;
@@ -382,6 +373,75 @@ article .post-full-header .sponsored-tag {
     font-family: var(--primaryFont);
     color: black;
     margin: auto;
+}
+
+article .post-full-content {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    margin: 50px auto;
+    color: var(--secondaryColor);
+}
+
+article .post-full-content h1,
+article .post-full-content h2,
+article .post-full-content h3,
+article .post-full-content h4,
+article .post-full-content h5,
+article .post-full-content h6  {
+    font-family: var(--secondaryFont);
+    color: black;
+    font-weight: bolder;
+}
+
+article .post-full-content p {
+    line-height: 1.5;
+}
+
+article .post-full-content p:first-child {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+article .post-full-content p,
+article .post-full-content h1,
+article .post-full-content h2,
+article .post-full-content h3,
+article .post-full-content h4,
+article .post-full-content h5,
+article .post-full-content h6  {
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+article .post-full-content a, article .post-full-content a:visited:hover {
+    color: var(--primaryColor);
+}
+
+article .post-full-content a:visited {
+    color: var(--primaryFadedColor);
+}
+
+article .post-full-content mark {
+    background-color: #fdffb6;
+}
+
+article .post-full-content code {
+    background-color: rgba(0, 118, 223, 0.2);
+    border-radius: 3px;
+    padding: 0 3px;
+}
+
+article .post-full-content pre {
+    background-color: var(--secondaryColor);
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    line-height: 1.5;
+}
+
+article .post-full-content pre code {
+    background-color: transparent;
+    color: inherit;
 }
 
 @media screen and (max-width: 500px) {
