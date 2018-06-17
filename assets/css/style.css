@@ -20,7 +20,7 @@ body {
 }
 
 main {
-    padding: 40px 0;
+    padding: 0.1px 0;
 }
 
 a.html-tag::before {
@@ -306,3 +306,32 @@ nav.pagination a {
     text-decoration: none;
 }
 
+/* 6 - Article */
+
+article .post-full-header {
+    background: var(--defaultGradientBackground);
+    color: white;
+    padding: 150px 10px 50px;
+}
+
+article .post-full-header-content, article .post-full-content {
+    max-width: 1024px;
+    margin: auto;
+}
+
+article .post-full-header h1 {
+    font-weight: bolder;
+    font-family: var(--secondaryFont);
+    text-align: right;
+    font-size: 4em;
+}
+
+article .post-full-content {
+    font-family: var(--primaryFont);
+}
+
+article .post-full-content a {
+    background-color: rgba(0, 118, 223, 0.2);
+    color: #0076df;
+    text-decoration: none;
+}
