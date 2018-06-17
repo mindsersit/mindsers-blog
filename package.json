@@ -12,6 +12,6 @@
     "ghost": ">=1.0.0"
   },
   "config": {
-    "posts_per_page": 10
+    "posts_per_page": 5
   }
 }
