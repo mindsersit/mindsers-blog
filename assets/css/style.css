@@ -1,7 +1,7 @@
 :root {
     --primaryColor: #0076df;
     --secondaryColor: #34495e;
-    --defaultGradientBackground: linear-gradient(70deg,#1b9cfc,#25ccf7);
+    --defaultGradientBackground: linear-gradient(70deg, #1b9cfc, #25ccf7);
     --primaryFont: 'Inconsolata', monospace;
     --secondaryFont: 'Source Code Pro', monospace;
 }
@@ -12,12 +12,23 @@
     3 - Article's list
     4 - Article card
     5 - Pagination
-    6 - Global
 */
 
 body {
     margin: 0; padding: 0;
-    background-color: white;
+    background-color: var(--secondaryColor);
+}
+
+main {
+    padding: 40px 0;
+}
+
+a.html-tag::before {
+    content: '<'
+}
+
+a.html-tag::after {
+    content: '/>'
 }
 
 /* 1 - Footer */
@@ -295,12 +306,3 @@ nav.pagination a {
     text-decoration: none;
 }
 
-/* 6 - Global */
-
-a.html-tag::before {
-    content: '<'
-}
-
-a.html-tag::after {
-    content: '/>'
-}
