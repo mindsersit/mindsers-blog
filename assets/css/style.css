@@ -397,7 +397,7 @@ article .post-full-content p {
     line-height: 1.5;
 }
 
-article .post-full-content p:first-child {
+article .post-full-content > div > p:first-child {
     font-size: 1.2em;
     font-style: italic;
 }
