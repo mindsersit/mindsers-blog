@@ -429,11 +429,26 @@ article .post-full-content hr {
     background-color: #EEE;
 }
 
-article .post-full-content img {
-    width: 1024px;
+article .post-full-content img,
+article .post-full-content .post-full-video-fluid {
+    width: 1024px; height: auto;
     margin: 1.5em auto;
     position: relative;
     left: calc(50% - 512px);
+}
+
+article .post-full-content .post-full-video-fluid {
+    padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+article .post-full-content .post-full-video-fluid iframe {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 article .post-full-content p,
@@ -459,8 +474,14 @@ article .post-full-content a, article .post-full-content a:visited:hover {
     color: var(--primaryColor);
 }
 
-article .post-full-content a:visited {
+article .post-full-content :not(.footnotes) a:visited,
+article .post-full-content :not(.footnote-ref) a:visited {
     color: var(--primaryFadedColor);
+}
+
+article .post-full-content .footnotes a,
+article .post-full-content .footnote-ref a {
+    text-decoration: none;
 }
 
 article .post-full-content mark {

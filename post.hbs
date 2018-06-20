@@ -62,11 +62,9 @@
 
 {{#contentFor "scripts"}}
     <script src="/assets/js/prism.js"></script>
-{{/contentFor}}
 
-{{#contentFor "styles"}}
-    <link rel="stylesheet" href="/assets/css/prism.css">
     <script>
+        // Logic for share button
         document
             .querySelector('.floating-header-share-fb')
             .addEventListener('click', ({ target }) => {
@@ -79,4 +77,29 @@
                 window.open(target.href, 'share-twitter', 'width=550,height=235')
             })
     </script>
+
+    <script>
+        // youtube video wrapping
+
+        document
+            .querySelectorAll(`iframe[src*='player.vimeo.com'], iframe[src*='youtube.com'], iframe[src*='youtube-nocookie.com'], iframe[src*='kickstarter.com'][src*='video.html'], object, embed`)
+            .forEach(videoTag => {
+                const parent = videoTag.parentElement
+                const container = document.createElement('div')
+
+                videoTag.removeAttribute('height')
+                videoTag.removeAttribute('width')
+
+                container.classList.add('post-full-video-fluid')
+
+                parent.insertBefore(container, videoTag)
+                parent.removeChild(videoTag)
+
+                container.appendChild(videoTag)
+            })
+    </script>
+{{/contentFor}}
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" href="/assets/css/prism.css">
 {{/contentFor}}
