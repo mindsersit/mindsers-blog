@@ -393,16 +393,53 @@ article .post-full-content h6  {
     font-weight: bolder;
 }
 
-article .post-full-content p {
-    line-height: 1.5;
+article .post-full-content h2 {
+    font-size: 1.9em;
 }
 
-article .post-full-content > div > p:first-child {
-    font-size: 1.2em;
-    font-style: italic;
+article .post-full-content h3 {
+    font-size: 1.5em;
 }
 
 article .post-full-content p,
+article .post-full-content ul,
+article .post-full-content ol {
+    line-height: 1.6;
+    letter-spacing: 0.025rem;
+}
+
+article .post-full-content > div > p:first-child {
+    font-size: 1.3em;
+}
+
+article .post-full-content blockquote {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+article .post-full-content blockquote p {
+    max-width: initial;
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+article .post-full-content hr {
+    border-width: 0;
+    height: 1px;
+    background-color: #EEE;
+}
+
+article .post-full-content img {
+    width: 1024px;
+    margin: 1.5em auto;
+    position: relative;
+    left: calc(50% - 512px);
+}
+
+article .post-full-content p,
+article .post-full-content ul,
+article .post-full-content ol,
+article .post-full-content hr,
 article .post-full-content h1,
 article .post-full-content h2,
 article .post-full-content h3,
@@ -411,6 +448,11 @@ article .post-full-content h5,
 article .post-full-content h6  {
     max-width: 900px;
     margin: 25px auto;
+}
+
+article .post-full-content ul,
+article .post-full-content ol {
+    padding-left: 60px;
 }
 
 article .post-full-content a, article .post-full-content a:visited:hover {
@@ -442,6 +484,11 @@ article .post-full-content pre {
 article .post-full-content pre code {
     background-color: transparent;
     color: inherit;
+}
+
+article .post-full-content p em {
+    color: black;
+    font-style: italic;
 }
 
 @media screen and (max-width: 500px) {
