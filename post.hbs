@@ -1,8 +1,8 @@
 {{!< default}}
 
+{{#post}}
 <main id="site-main" class="site-main outer">
     <div class="inner">
-        {{#post}}
         <article  class="post-full {{post_class}}">
             <header  class="post-full-header">
                 <div class="post-full-header-content">
@@ -56,9 +56,64 @@
 
             <footer class="post-full-footer"></footer>
         </article>
-        {{/post}}
     </div>
 </main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            {{#if primary_tag}}
+            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                {{#if related_posts}}
+                <div class="read-next-tag-related">
+                        <header class="read-next-card-header">
+                            {{#../primary_tag}}
+                            <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
+                            {{/../primary_tag}}
+                        </header>
+                        <div class="read-next-card-content">
+                            <ul>
+                                {{#foreach related_posts}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                                {{/foreach}}
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        </footer>
+                </div>
+                {{/if}}
+            {{/get}}
+            {{/if}}
+            <div class="read-next-time-related">
+                {{#next_post}}
+                <div>
+                    <span class="direction">Next post</span>
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <p>
+                        {{#foreach tags}}
+                        <a href="{{url}}" class="post-card-tags">#{{name}}</a>
+                        {{/foreach}}
+                    </p>
+                </div>
+                {{/next_post}}
+
+                {{#prev_post}}
+                <div>
+                    <span class="direction">Previous post</span>
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <p>
+                        {{#foreach tags}}
+                        <a href="{{url}}" class="post-card-tags">#{{name}}</a>
+                        {{/foreach}}
+                    </p>
+                </div>
+                {{/prev_post}}
+            </div>
+        </div>
+    </div>
+</aside>
+{{/post}}
 
 {{#contentFor "scripts"}}
     <script src="/assets/js/prism.js"></script>
