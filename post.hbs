@@ -22,8 +22,9 @@
                     <h1 class="post-full-title">{{title}}</h1>
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
-                            <p>Published in {{tags}}</p>
-                            <p></p>
+                            <p>
+                                Published in {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                            </p>
                         </div>
                         <div class="post-full-meta-share">
                             <p>
@@ -55,7 +56,7 @@
             {{/if}}
 
             <footer class="post-full-footer">
-                {{^if @labs.subscribers}}<hr>{{/if}}
+                {{#unless @labs.subscribers}}<hr>{{/unless}}
                 <p>
                     If your have any questions or advices, <a href="https://twitter.com/MindsersIT">send me a tweet</a>! Also if you like this post,
                     don't forget to share it to your friends.
@@ -98,7 +99,7 @@
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p>
                         {{#foreach tags}}
-                        <a href="{{url}}" class="post-card-tags">#{{name}}</a>
+                            {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
                         {{/foreach}}
                     </p>
                 </div>
@@ -110,7 +111,7 @@
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p>
                         {{#foreach tags}}
-                        <a href="{{url}}" class="post-card-tags">#{{name}}</a>
+                            {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
                         {{/foreach}}
                     </p>
                 </div>
