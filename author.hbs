@@ -1,0 +1,37 @@
+{{!< default}}
+
+<section class="list-header">
+    <div class="list-header-content">
+        {{#author }}
+            <h2>{{ name }}</h2>
+            <h3>
+                {{ bio }}
+            </h3>
+            <div class="infos">
+                {{#if location}}
+                    <p class="location">{{location}}</p>
+                {{/if}}
+                <p class="posts">
+                    {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                </p>
+                <div class="social-networks">
+                    <ul>
+                        {{#if twitter}}<li><a href="{{twitter_url twitter}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
+                        {{#if facebook}}<li><a href="{{facebook_url facebook}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
+                    </ul>
+                </div>
+            </div>
+        {{/author}}
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="post-feed inner">
+        {{#foreach posts}}
+            {{> post-card}}
+        {{/foreach}}
+    </div>
+    <div class="post-feed-pagination">
+        {{pagination}}
+    </div>
+</main>
