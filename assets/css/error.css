@@ -1,0 +1,20 @@
+#site-main .inner {
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--primaryFont);
+}
+
+#site-main .inner h1 {
+    font-size: 20em;
+    margin: 50px;
+    text-align: center;
+    color: var(--primaryColor);
+}
+
+#site-main .inner p {
+    text-align: center;
+    margin: 20px;
+}
