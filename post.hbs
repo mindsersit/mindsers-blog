@@ -1,0 +1,167 @@
+{{!< default}}
+
+{{#post}}
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+        <article  class="post-full {{post_class}}">
+            <header  class="post-full-header">
+                <div class="post-full-header-content">
+                    <div class="infos upper">
+                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                        {{#has tag="sponsored" author="value"}}
+                            <div class="sponsored-tag">sponsored</div>
+                        {{/has}}
+                        <p class="post-full-meta-author">
+                            {{#has author="count:>1"}}
+                                This post was a collaboration between {{authors}}
+                            {{else}}
+                                Written by {{authors}}
+                            {{/has}}
+                        </p>
+                    </div>
+                    <h1 class="post-full-title">{{title}}</h1>
+                    <div class="infos lower">
+                        <div class="post-full-meta-tags">
+                            <p>
+                                Published in {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                            </p>
+                        </div>
+                        <div class="post-full-meta-share">
+                            <p>
+                                Share this
+                            </p>
+                            <p>
+                                <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
+                                    twitter
+                                </a>
+                                <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}">
+                                    facebook
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="post-full-content">
+                {{content}}
+            </section>
+
+            {{#if @labs.subscribers}}
+            <section class="subscribe-form">
+                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+                <p>Get the latest posts delivered right to your inbox</p>
+                {{subscribe_form placeholder="youremail@example.com"}}
+            </section>
+            {{/if}}
+
+            <footer class="post-full-footer">
+                {{#unless @labs.subscribers}}<hr>{{/unless}}
+                <p>
+                    If your have any questions or advices, <a href="https://twitter.com/MindsersIT">send me a tweet</a>! Also if you like this post,
+                    don't forget to share it to your friends.
+                </p>
+            </footer>
+        </article>
+    </div>
+</main>
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            {{#if primary_tag}}
+            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+                {{#if related_posts}}
+                <div class="read-next-tag-related">
+                        <header class="read-next-card-header">
+                            {{#../primary_tag}}
+                            <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
+                            {{/../primary_tag}}
+                        </header>
+                        <div class="read-next-card-content">
+                            <ul>
+                                {{#foreach related_posts}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                                {{/foreach}}
+                            </ul>
+                        </div>
+                        <footer class="read-next-card-footer">
+                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                        </footer>
+                </div>
+                {{/if}}
+            {{/get}}
+            {{/if}}
+            <div class="read-next-time-related">
+                {{#next_post}}
+                <div>
+                    <span class="direction">Next post</span>
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <p>
+                        {{#foreach tags}}
+                            {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
+                        {{/foreach}}
+                    </p>
+                </div>
+                {{/next_post}}
+
+                {{#prev_post}}
+                <div>
+                    <span class="direction">Previous post</span>
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <p>
+                        {{#foreach tags}}
+                            {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
+                        {{/foreach}}
+                    </p>
+                </div>
+                {{/prev_post}}
+            </div>
+        </div>
+    </div>
+</aside>
+{{/post}}
+
+{{#contentFor "scripts"}}
+    <script src="/assets/js/prism.js"></script>
+
+    <script>
+        // Logic for share button
+        document
+            .querySelector('.floating-header-share-fb')
+            .addEventListener('click', ({ target }) => {
+                window.open(target.href, 'share-facebook', 'width=580,height=296')
+            })
+
+        document
+            .querySelector('.floating-header-share-tw')
+            .addEventListener('click', ({ target }) => {
+                window.open(target.href, 'share-twitter', 'width=550,height=235')
+            })
+    </script>
+
+    <script>
+        // youtube video wrapping
+
+        document
+            .querySelectorAll(`iframe[src*='player.vimeo.com'], iframe[src*='youtube.com'], iframe[src*='youtube-nocookie.com'], iframe[src*='kickstarter.com'][src*='video.html'], object, embed`)
+            .forEach(videoTag => {
+                const parent = videoTag.parentElement
+                const container = document.createElement('div')
+
+                videoTag.removeAttribute('height')
+                videoTag.removeAttribute('width')
+
+                container.classList.add('post-full-video-fluid')
+
+                parent.insertBefore(container, videoTag)
+                parent.removeChild(videoTag)
+
+                container.appendChild(videoTag)
+            })
+    </script>
+{{/contentFor}}
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" href="/assets/css/prism.css">
+{{/contentFor}}
