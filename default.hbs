@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{lang}}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ meta_title }}</title>
+    <title>{{meta_title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Code+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset "css/style.css" }}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
-    {{{ block "styles" }}}
+    {{{block "styles"}}}
 
-    {{ ghost_head }}
+    {{ghost_head}}
 </head>
 <body class="{{body_class}}">
     <div class="site-wrapper">
@@ -18,17 +18,17 @@
             <div class="site-header-content inner">
                 <div class="title">
                     <a href="https://nathanaelcherrier.com">
-                        <img src="{{ @blog.logo }}" class="logo" alt="MindsersIT logo">
-                        {{ @blog.title }}
+                        <img src="{{@blog.logo}}" class="logo" alt="MindsersIT logo">
+                        {{@blog.title}}
                     </a>
                 </div>
                 <div class="menu">
-                    {{ navigation }}
+                    {{navigation}}
                 </div>
             </div>
         </header>
 
-        {{{ body }}}
+        {{{body}}}
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
@@ -71,8 +71,8 @@
         </footer>
     </div>
 
-    {{{ block "scripts" }}}
+    {{{block "scripts"}}}
 
-    {{ ghost_foot }}
+    {{ghost_foot}}
 </body>
 </html>
