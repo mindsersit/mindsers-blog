@@ -15,9 +15,7 @@
                 {{bio}}
             </h3>
             <div class="infos">
-                {{#if location}}
-                    <p class="location">{{location}}</p>
-                {{/if}}
+                <p class="location">{{location}}</p>
                 <p class="posts">
                     {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
                 </p>
