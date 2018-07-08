@@ -1,11 +1,15 @@
 {{!< default}}
 
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/author.css"}}">
+{{/contentFor}}
+
 <section class="list-header">
     <div class="list-header-content">
-        {{#author }}
-            <h2>{{ name }}</h2>
+        {{#author}}
+            <h2>{{name}}</h2>
             <h3>
-                {{ bio }}
+                {{bio}}
             </h3>
             <div class="infos">
                 {{#if location}}
