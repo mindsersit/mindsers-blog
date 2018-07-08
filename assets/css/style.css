@@ -526,7 +526,7 @@ article .subscribe-form {
     font-family: var(--primaryFont);
     padding: 40px 0;
     text-align: center;
-    background-color: var(--primaryFadedColor);
+    background: var(--defaultGradientBackground);
     border-radius: 3px;
     color: white;
 }
@@ -563,7 +563,8 @@ article .subscribe-form input {
     outline: none;
 }
 
-article .subscribe-form:hover input {
+article .subscribe-form:hover input,
+article .subscribe-form input:focus {
     border-left-width: 1px;
     border-right-width: 1px;
 }
