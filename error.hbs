@@ -1,7 +1,7 @@
 {{!< default}}
 
 {{#contentFor "styles"}}
-    <link rel="stylesheet" href="{{asset "css/error.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/error.css"}}">
 {{/contentFor}}
 
 <main id="site-main" class="site-main outer">
@@ -11,7 +11,7 @@
         </header>
         <section>
             <p>
-                Oups! It seems like we didn't find what you want.
+                {{message}}
             </p>
         </section>
     </div>
