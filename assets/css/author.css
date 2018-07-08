@@ -1,5 +1,15 @@
-section.list-header h3{
+section.list-header h3 {
     font-family: var(--primaryFont);
     font-size: 1.5em;
     text-align: center;
+}
+
+section.list-header .profil-pic {
+    text-align: center;
+}
+
+section.list-header .profil-pic img {
+    height: 150px; width: 150px;
+    border-radius: 150px;
+    border: 5px solid white;
 }

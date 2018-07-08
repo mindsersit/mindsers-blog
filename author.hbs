@@ -7,6 +7,9 @@
 <section class="list-header">
     <div class="list-header-content">
         {{#author}}
+            {{#if profile_image}}
+                <p class="profil-pic"><img src="{{profile_image}}" alt="{{name}}'s Picture" /></p>
+            {{/if}}
             <h2>{{name}}</h2>
             <h3>
                 {{bio}}
