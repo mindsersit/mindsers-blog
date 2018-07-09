@@ -18,3 +18,14 @@
     text-align: center;
     margin: 20px;
 }
+
+@media screen and (max-width: 500px) {
+    #site-main .inner {
+        height: 400px;
+        min-height: 400px;
+    }
+
+    #site-main .inner h1 {
+        font-size: 10em;
+    }
+}
