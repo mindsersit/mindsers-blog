@@ -9,13 +9,13 @@
                     <div class="infos upper">
                         <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
                         {{#has tag="sponsored" author="value"}}
-                            <div class="sponsored-tag">sponsored</div>
+                            <div class="sponsored-tag">{{t "sponsored"}}</div>
                         {{/has}}
                         <p class="post-full-meta-author">
                             {{#has author="count:>1"}}
-                                This post was a collaboration between {{authors}}
+                                {{t "This post was a collaboration between {authors}" authors=authors}}
                             {{else}}
-                                Written by {{authors}}
+                                {{t "Written by {authors}" authors=authors}}
                             {{/has}}
                         </p>
                     </div>
@@ -23,12 +23,12 @@
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
                             <p>
-                                Published in {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                                {{t "Published in"}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
                             </p>
                         </div>
                         <div class="post-full-meta-share">
                             <p>
-                                Share this
+                                {{t "Share this"}}
                             </p>
                             <p>
                                 <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
@@ -49,17 +49,16 @@
 
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
+                <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
+                <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
+                {{subscribe_form placeholder=(t "youremail@example.com")}}
             </section>
             {{/if}}
 
             <footer class="post-full-footer">
                 {{#unless @labs.subscribers}}<hr>{{/unless}}
                 <p>
-                    If your have any questions or advices, <a href="https://twitter.com/MindsersIT" rel="nofollow">send me a tweet</a>! Also if you like this post,
-                    don't forget to share it to your friends.
+                    {{t "If your have any questions or advices, <a href='https://twitter.com/MindsersIT' rel='nofollow'>send me a tweet</a>! Also if you like this post, don't forget to share it to your friends."}}
                 </p>
             </footer>
         </article>
@@ -86,7 +85,7 @@
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}} →</a>
+                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "See all % posts")}} →</a>
                         </footer>
                 </div>
                 {{/if}}
@@ -95,7 +94,7 @@
             <div class="read-next-time-related">
                 {{#next_post}}
                 <div>
-                    <span class="direction">Next post</span>
+                    <span class="direction">{{t "Next post"}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p>
                         {{#foreach tags}}
@@ -107,7 +106,7 @@
 
                 {{#prev_post}}
                 <div>
-                    <span class="direction">Previous post</span>
+                    <span class="direction">{{t "Previous post"}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p>
                         {{#foreach tags}}

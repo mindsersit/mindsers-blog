@@ -17,7 +17,7 @@
             <div class="infos">
                 <p class="location">{{location}}</p>
                 <p class="posts">
-                    {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                    {{plural ../pagination.total empty=(t 'posts') singular=(t '1 post') plural=(t '% posts')}}
                 </p>
                 <div class="social-networks">
                     <ul>

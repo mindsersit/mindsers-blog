@@ -5,19 +5,19 @@
         <h1>{{@blog.description}}</h1>
         <div class="infos">
             <div class="featured-links">
-                <h3>Featured</h3>
+                <h3>{{t "Featured"}}</h3>
                 <ul>
                     {{#get "posts" filter="featured:true"}}
                         {{#foreach posts limit="3"}}
                             <li><a href="{{url}}">{{title}}</a></li>
                         {{else}}
-                            <li>No featured content</li>
+                            <li>{{t "No featured content"}}</li>
                         {{/foreach}}
                     {{/get}}
                 </ul>
             </div>
             <div class="social-networks">
-                <h3>Social networks</h3>
+                <h3>{{t "Social networks"}}</h3>
                 <ul>
                     {{#if @blog.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
                     {{#if @blog.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
