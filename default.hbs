@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{lang}}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ meta_title }}</title>
+    <title>{{meta_title}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Code+Pro" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset "css/style.css" }}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
-    {{{ block "styles" }}}
+    {{{block "styles"}}}
 
-    {{ ghost_head }}
+    {{ghost_head}}
 </head>
 <body class="{{body_class}}">
     <div class="site-wrapper">
@@ -18,17 +18,17 @@
             <div class="site-header-content inner">
                 <div class="title">
                     <a href="https://nathanaelcherrier.com">
-                        <img src="{{ @blog.logo }}" class="logo" alt="MindsersIT logo">
-                        {{ @blog.title }}
+                        <img src="{{@blog.logo}}" class="logo" alt="MindsersIT logo">
+                        {{@blog.title}}
                     </a>
                 </div>
                 <div class="menu">
-                    {{ navigation }}
+                    {{navigation}}
                 </div>
             </div>
         </header>
 
-        {{{ body }}}
+        {{{body}}}
 
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
@@ -36,25 +36,25 @@
                     <div class="item">
                         <h2>Itunes Store</h2>
                         <ul>
-                            <li><a href="https://itunes.apple.com/us/app/european-converter/id824107489?mt=8">European Converter</a></li>
-                            <li><a href="https://itunes.apple.com/us/app/checkyourvat/id862501089?mt=8">CheckyourVAT</a></li>
-                            <li><a href="https://itunes.apple.com/us/app/flight-companion/id890826910?mt=8">Flight Companion</a></li>
+                            <li><a href="https://itunes.apple.com/us/app/european-converter/id824107489?mt=8" rel="nofollow">European Converter</a></li>
+                            <li><a href="https://itunes.apple.com/us/app/checkyourvat/id862501089?mt=8" rel="nofollow">CheckyourVAT</a></li>
+                            <li><a href="https://itunes.apple.com/us/app/flight-companion/id890826910?mt=8" rel="nofollow">Flight Companion</a></li>
                         </ul>
                     </div>
                     <div class="item">
                         <h2>Open Sources</h2>
                         <ul>
-                            <li><a href="https://github.com/Mindsers/configfile">Configfile</a></li>
-                            <li><a href="https://github.com/Mindsers/nativetable">Nativetable</a></li>
+                            <li><a href="https://github.com/Mindsers/configfile" rel="nofollow">Configfile</a></li>
+                            <li><a href="https://github.com/Mindsers/nativetable" rel="nofollow">Nativetable</a></li>
                         </ul>
                     </div>
                     <div class="item">
                         <h2>Social</h2>
                         <ul>
-                            <li><a href="https://twitter.com/MindsersIT">Twitter</a></li>
-                            <li><a href="https://www.facebook.com/MindsersIT">Facebook</a></li>
-                            <li><a href="https://plus.google.com/u/0/b/117748851621697236514/+NathanaelcherrierMindsersIT/posts">Google +</a></li>
-                            <li><a href="https://github.com/Mindsers">Github</a></li>
+                            <li><a href="https://twitter.com/MindsersIT" rel="nofollow">Twitter</a></li>
+                            <li><a href="https://www.facebook.com/MindsersIT" rel="nofollow">Facebook</a></li>
+                            <li><a href="https://plus.google.com/u/0/b/117748851621697236514/+NathanaelcherrierMindsersIT/posts" rel="nofollow">Google +</a></li>
+                            <li><a href="https://github.com/Mindsers" rel="nofollow">Github</a></li>
                         </ul>
                     </div>
                     <div class="item">
@@ -71,8 +71,8 @@
         </footer>
     </div>
 
-    {{{ block "scripts" }}}
+    {{{block "scripts"}}}
 
-    {{ ghost_foot }}
+    {{ghost_foot}}
 </body>
 </html>

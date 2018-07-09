@@ -2,7 +2,7 @@
 
 <section class="list-header">
     <div class="list-header-content">
-        <h2>{{ @blog.description }}</h2>
+        <h1>{{@blog.description}}</h1>
         <div class="infos">
             <div class="featured-links">
                 <h3>Featured</h3>
@@ -19,8 +19,8 @@
             <div class="social-networks">
                 <h3>Social networks</h3>
                 <ul>
-                    {{#if @blog.twitter}}<li><a href="{{twitter_url}}"><img src="/assets/images/twitter.svg" title="twitter"></a></li>{{/if}}
-                    {{#if @blog.facebook}}<li><a href="{{facebook_url}}"><img src="/assets/images/facebook.svg" title="facebook"></a></li>{{/if}}
+                    {{#if @blog.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
+                    {{#if @blog.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-section.list-header h3 {
+section.list-header h2 {
     font-family: var(--primaryFont);
     font-size: 1.5em;
     text-align: center;
@@ -12,4 +12,14 @@ section.list-header .profil-pic img {
     height: 150px; width: 150px;
     border-radius: 150px;
     border: 5px solid white;
+}
+
+section.list-header .infos {
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 500px) {
+   section.list-header .infos {
+       display: none;
+   }
 }
