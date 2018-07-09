@@ -13,3 +13,13 @@ section.list-header .profil-pic img {
     border-radius: 150px;
     border: 5px solid white;
 }
+
+section.list-header .infos {
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 500px) {
+   section.list-header .infos {
+       display: none;
+   }
+}
