@@ -190,7 +190,7 @@ section.list-header .list-header-content {
     margin: auto;
 }
 
-section.list-header h2 {
+section.list-header h1 {
     font-family: var(--secondaryFont);
     text-align: center;
     font-size: 4em;
@@ -250,6 +250,30 @@ section.list-header .infos .description {
     text-align: center;
     margin: 40px;
     font-family: var(--primaryFont);
+}
+
+@media screen and (max-width: 1024px) {
+    section.list-header {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 700px) {}
+
+@media screen and (max-width: 500px) {
+    section.list-header h1 {
+        font-size: 2.5em;
+    }
+
+    section.list-header  .infos {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section.list-header  .infos .social-networks {
+        display: none;
+    }
 }
 
 /* 4 - Article card */
