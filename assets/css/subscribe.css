@@ -36,3 +36,7 @@ section.subscribe button {
     margin: 20px;
     border-radius: 3px;
 }
+
+@media screen and (max-width: 700px) {}
+
+@media screen and (max-width: 500px) {}
