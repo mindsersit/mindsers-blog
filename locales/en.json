@@ -36,5 +36,7 @@
   "next": "next",
   "1 min read": "1 min read",
   "% min read": "% min read",
-  "{page} of {pages}": "{page} of {pages}"
+  "{page} of {pages}": "{page} of {pages}",
+  "An unknown error occured. Sorry for trouble.": "An unknown error occured. Sorry for trouble.",
+  "Oups! It seems like we didn't find what you want.": "Oups! It seems like we didn't find what you want."
 }
