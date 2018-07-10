@@ -4,6 +4,7 @@
   "A collection of 1 post": "A collection of 1 post",
   "A collection of % posts": "A collection of % posts",
   "Subscribed!": "Subscribed!",
+  "Subscribe": "Subscribe",
   "You've successfully subscribed to <em>{blogtitle}</em> with the email address <em>{email}</em>": "You've successfully subscribed to <em>{blogtitle}</em> with the email address <em>{email}</em>",
   "Subscribe to {blogtitle}": "Subscribe to {blogtitle}",
   "Your email address": "Your email address",
@@ -29,10 +30,11 @@
   "Social": "Social",
   "Support": "Support",
   "All right reserved.": "All right reserved.",
-  "Posted": "Posted",
-  "in": "in",
-  "on": "on",
+  "Posted on": "Posted on",
+  "Posted in <a href='{url}' class='post-card-tags'>{name}</a> on": "Posted in <a href='{url}' class='post-card-tags'>{name}</a> on",
   "prev": "prev",
   "next": "next",
+  "1 min read": "1 min read",
+  "% min read": "% min read",
   "{page} of {pages}": "{page} of {pages}"
 }
