@@ -14,7 +14,7 @@
     <footer class="post-card-meta">
         {{#if primary_tag}}
             {{#primary_tag}}
-                {{{t "Posted in <a href='{url}' class='post-card-tags'>{name}</a> on" url=url name=name}}}
+                {{{t "Posted in <a href='{url}' class='post-card-tags'>{name}</a> on" url=(url) name=name}}}
             {{/primary_tag}}
         {{else}}
             {{t "Posted on"}}
