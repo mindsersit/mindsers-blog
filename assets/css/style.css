@@ -196,6 +196,10 @@ section.list-header h1 {
     font-size: 4em;
 }
 
+section.list-header .list-header-title {
+    margin-top: 0;
+}
+
 section.list-header .infos {
     font-family: var(--primaryFont);
     display: flex;
@@ -460,20 +464,23 @@ article .post-full-footer hr {
 }
 
 article .post-full-content img,
-article .post-full-content .post-full-video-fluid {
+article .post-full-content .post-full-video-fluid,
+article .post-full-content .post-full-map-fluid {
     width: 1024px; height: auto;
     margin: 1.5em auto;
     position: relative;
     left: calc(50% - 512px);
 }
 
-article .post-full-content .post-full-video-fluid {
+article .post-full-content .post-full-video-fluid,
+article .post-full-content .post-full-map-fluid {
     padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
 }
 
-article .post-full-content .post-full-video-fluid iframe {
+article .post-full-content .post-full-video-fluid iframe,
+article .post-full-content .post-full-map-fluid iframe {
     position: absolute;
 	top: 0;
 	left: 0;
@@ -684,7 +691,8 @@ aside.read-next .read-next-time-related p a {
     }
 
     article .post-full-content img,
-    article .post-full-content .post-full-video-fluid {
+    article .post-full-content .post-full-video-fluid,
+    article .post-full-content .post-full-map-fluid {
         width: 100%; height: auto;
         margin: 1.5em auto;
         position: relative;
