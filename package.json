@@ -1,0 +1,17 @@
+{
+  "name": "mindsersit",
+  "version": "1.0.0",
+  "description": "Theme for MindsersIT blog",
+  "scripts": {},
+  "author": {
+    "name": "Nathanaël CHERRIER",
+    "email": "dev@nathanaelcherrier.com"
+  },
+  "private": true,
+  "engines": {
+    "ghost": ">=1.0.0"
+  },
+  "config": {
+    "posts_per_page": 5
+  }
+}

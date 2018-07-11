@@ -1,0 +1,42 @@
+{{!< default}}
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/author.css"}}">
+{{/contentFor}}
+
+<section class="list-header">
+    <div class="list-header-content">
+        {{#author}}
+            {{#if profile_image}}
+                <p class="profil-pic"><img src="{{profile_image}}" alt="{{name}}'s Picture" /></p>
+            {{/if}}
+            <h1>{{name}}</h1>
+            <h2>
+                {{bio}}
+            </h2>
+            <div class="infos">
+                <p class="location">{{location}}</p>
+                <p class="posts">
+                    {{plural ../pagination.total empty=(t 'posts') singular=(t '1 post') plural=(t '% posts')}}
+                </p>
+                <div class="social-networks">
+                    <ul>
+                        {{#if twitter}}<li><a href="{{twitter_url twitter}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
+                        {{#if facebook}}<li><a href="{{facebook_url facebook}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
+                    </ul>
+                </div>
+            </div>
+        {{/author}}
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="post-feed inner">
+        {{#foreach posts}}
+            {{> post-card}}
+        {{/foreach}}
+    </div>
+    <div class="post-feed-pagination">
+        {{pagination}}
+    </div>
+</main>

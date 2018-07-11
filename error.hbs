@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/error.css"}}">
+{{/contentFor}}
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+        <header>
+            <h1>{{code}}'</h1>
+        </header>
+        <section>
+            <p>
+                {{message}}
+            </p>
+        </section>
+    </div>
+</main>
