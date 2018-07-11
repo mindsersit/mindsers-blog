@@ -541,6 +541,10 @@ article .post-full-content pre code {
     color: inherit;
 }
 
+article .post-full-content pre[class*="language"] {
+    font-size: 0.75em;
+}
+
 article .post-full-content p em {
     color: black;
     font-style: italic;
