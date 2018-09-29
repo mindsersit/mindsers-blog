@@ -132,7 +132,19 @@ article .post-full-footer hr {
     background-color: #EEE;
 }
 
-article .post-full-content img,
+article .post-full-content .kg-image-card {
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+article .post-full-content .kg-image-card.kg-width-wide {
+    max-width: 1024px;
+}
+
+article .post-full-content .kg-image {
+    width: 100%; height: auto;
+}
+
 article .post-full-content .post-full-video-fluid,
 article .post-full-content .post-full-map-fluid {
     width: 1024px; height: auto;
