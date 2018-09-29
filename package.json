@@ -2,6 +2,9 @@
   "name": "mindsersit",
   "version": "1.0.1",
   "description": "Theme for MindsersIT blog",
+  "keywords": [
+    "ghost-theme"
+  ],
   "scripts": {},
   "author": {
     "name": "Nathanaël CHERRIER",
