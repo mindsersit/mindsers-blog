@@ -117,12 +117,12 @@ article .post-full-content > p:first-child {
 article .post-full-content blockquote {
     margin-left: 20px;
     margin-right: 20px;
+    font-size: 1.3em;
+    font-style: italic;
 }
 
 article .post-full-content blockquote p {
     max-width: initial;
-    font-size: 1.3em;
-    font-style: italic;
 }
 
 article .post-full-content hr,
