@@ -110,7 +110,7 @@ article .post-full-content ol {
     letter-spacing: 0.025rem;
 }
 
-article .post-full-content > div > p:first-child {
+article .post-full-content > p:first-child {
     font-size: 1.3em;
 }
 
