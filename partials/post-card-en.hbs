@@ -1,0 +1,24 @@
+<article class="post-card {{post_class}}">
+    <a class="post-card-content-link" href="{{url}}">
+        <header class="post-card-header">
+            <h2 class="post-card-title">$> {{title}}</h2>
+            <span class="reading-time">{{reading_time minute="1 min read" minutes="% min read"}}</span>
+            {{#has tag="sponsored" author="value"}}
+                <span class="sponsored-tag">sponsored</span>
+            {{/has}}
+        </header>
+        <section class="post-card-excerpt">
+            <p>{{excerpt words="50"}}</p>
+        </section>
+    </a>
+    <footer class="post-card-meta">
+        {{#if primary_tag}}
+            {{#primary_tag}}
+                Posted in <a href='{{url}}' class='post-card-tags'>{{name}}</a> on
+            {{/primary_tag}}
+        {{else}}
+            Posted on
+        {{/if}}
+        <time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">{{date}}</time>
+    </footer>
+</article>
