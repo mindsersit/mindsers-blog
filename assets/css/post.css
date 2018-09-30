@@ -266,6 +266,45 @@ article .post-full-content p em {
     font-style: italic;
 }
 
+article .post-full-content .kg-gallery-card {
+    max-width: 1024px;
+    margin: 1.5em auto;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+article .post-full-content .kg-gallery-card figcaption {
+    margin: -1.0em 0 1.5em;
+}
+
+article .post-full-content .kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+    width: 100vw;
+}
+
+article .post-full-content .kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+article .post-full-content .kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+article .post-full-content .kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+article .post-full-content .kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}
+
 article .subscribe-form {
     font-family: var(--primaryFont);
     padding: 40px 0;
