@@ -378,7 +378,13 @@ aside.read-next .read-next-time-related p a {
         padding: 15px;
     }
 
-    article .post-full-content img,
+    article .post-full-content .kg-image-card,
+    article .post-full-content .kg-image-card.kg-width-wide,
+    article .post-full-content .kg-image-card.kg-width-full {
+        margin-left: unset;
+        margin-right: unset;
+    }
+
     article .post-full-content .post-full-video-fluid,
     article .post-full-content .post-full-map-fluid {
         width: 100%; height: auto;
