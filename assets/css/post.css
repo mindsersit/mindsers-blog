@@ -141,6 +141,13 @@ article .post-full-content .kg-image-card.kg-width-wide {
     max-width: 1024px;
 }
 
+article .post-full-content .kg-image-card.kg-width-full {
+    margin-left: calc(-100vw / 2 + 1024px / 2);
+    margin-right: calc(-100vw / 2 + 1024px / 2);
+    width: auto;
+    max-width: unset;
+}
+
 article .post-full-content .kg-image {
     width: 100%; height: auto;
 }
