@@ -120,6 +120,7 @@ article .post-full-content blockquote {
     font-size: 1.3em;
     font-style: italic;
     quotes: '\201C\00A0' '\00A0\201D' '\00AB\00A0' '\00A0\00BB';
+    text-align: justify;
 }
 
 article .post-full-content blockquote::before {
