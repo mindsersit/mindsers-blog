@@ -157,15 +157,23 @@
         }
 
         document
-            .querySelectorAll(`iframe[src*='player.vimeo.com'], iframe[src*='youtube.com'], iframe[src*='youtube-nocookie.com'], iframe[src*='kickstarter.com'][src*='video.html'], object, embed`)
-            .forEach(wrapper('post-full-video-fluid'))
-
-        document
-            .querySelectorAll(`iframe[src*='google.com/map']`)
-            .forEach(wrapper('post-full-map-fluid'))
+            .querySelectorAll(`.kg-embed-card iframe, .kg-embed-card object, .kg-embed-card embed`)
+            .forEach(wrapper('kg-embeded-card-fluid'))
     </script>
+
+    <script>
+         var images = document.querySelectorAll('.kg-gallery-image img');
+         images.forEach(function (image) {
+             var container = image.closest('.kg-gallery-image');
+             var width = image.attributes.width.value;
+             var height = image.attributes.height.value;
+             var ratio = width / height;
+             container.style.flex = ratio + ' 1 0%';
+         })
+     </script>
 {{/contentFor}}
 
 {{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}">
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}">
 {{/contentFor}}
