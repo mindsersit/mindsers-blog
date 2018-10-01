@@ -31,6 +31,8 @@
     <div class="post-feed inner">
         {{#foreach posts}}
             {{> post-card}}
+        {{else}}
+            <p class="no-post">{{t "No post here"}}</p>
         {{/foreach}}
     </div>
     <div class="post-feed-pagination">
