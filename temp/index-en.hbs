@@ -7,7 +7,7 @@
             <div class="featured-links">
                 <h3>{{t "Featured"}}</h3>
                 <ul>
-                    {{#get "posts" filter="featured:true"}}
+                    {{#get "posts" filter="featured:true+tag:hash-en"}}
                         {{#foreach posts limit="3"}}
                             <li><a href="{{url}}">{{title}}</a></li>
                         {{else}}
