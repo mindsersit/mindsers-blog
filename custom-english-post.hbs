@@ -1,4 +1,4 @@
-{{!< default}}
+{{!< temp/default-en}}
 
 {{#post}}
 <main id="site-main" class="site-main outer">
@@ -126,7 +126,7 @@
     <script src="/assets/js/prism.js"></script>
 
     <script>
-        // Logic for share button
+        // logic for share button
         document
             .querySelector('.floating-header-share-fb')
             .addEventListener('click', ({ target }) => {
@@ -141,6 +141,7 @@
     </script>
 
     <script>
+        // force subscription button to english
         document
             .querySelector('.btn-subscribe')
             .innerHTML = 'Subscribe'
@@ -169,6 +170,7 @@
     </script>
 
     <script>
+        // logic for image gallery
         var images = document.querySelectorAll('.kg-gallery-image img');
         images.forEach(function (image) {
             var container = image.closest('.kg-gallery-image');
@@ -177,18 +179,6 @@
             var ratio = width / height;
             container.style.flex = ratio + ' 1 0%';
         })
-    </script>
-
-    <script>
-        const reg = new RegExp(window.location.hostname)
-
-        document
-            .querySelectorAll('.site-header .menu .nav a')
-            .forEach(anchor => {
-                if (reg.test(anchor.href)) {
-                    anchor.href = anchor.href.replace('/fr/', '/en/')
-                }
-            })
     </script>
 {{/contentFor}}
 
