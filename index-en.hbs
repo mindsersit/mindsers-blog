@@ -109,6 +109,18 @@
 
     {{{block "scripts"}}}
 
+    <script>
+        const reg = new RegExp(window.location.hostname)
+
+        document
+            .querySelectorAll('.site-header .menu .nav a')
+            .forEach(anchor => {
+                if (reg.test(anchor.href)) {
+                    anchor.href = anchor.href.replace('/fr/', '/en/')
+                }
+            })
+    </script>
+
     {{ghost_foot}}
 </body>
 </html>
