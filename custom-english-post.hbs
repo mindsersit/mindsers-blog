@@ -180,6 +180,36 @@
             container.style.flex = ratio + ' 1 0%';
         })
     </script>
+
+    <script>
+        // alternative versions
+        const alternativeLinks = document.querySelectorAll('link[rel="alternate"][hreflang]')
+        const firsParagraph = document.querySelector('section.post-full-content p:first-child')
+
+        const exist = lang => link => !(new RegExp(`^\/${lang}`)).test(window.location.pathname) && (new RegExp(`^${lang}`)).test(link)
+        const insert = box => firsParagraph.parentNode.insertBefore(box, firsParagraph.nextSibling)
+
+        for (const link of alternativeLinks) {
+            const info = document.createElement('p')
+            info.classList.add('language-info')
+            info.classList.add('message-box-info')
+            info.classList.add('message-box')
+
+            if (exist('en')(link.hreflang)) {
+                info.innerHTML = `Hey! English speaking friends! <a href="${link.href}">This post also exist in english</a>.`
+                info.lang = 'en'
+
+                insert(info)
+            }
+
+            if (exist('fr')(link.hreflang)) {
+                info.innerHTML = `Oh! Amis francophone! <a href="${link.href}">Cet article existe aussi en français</a>.`
+                info.lang = 'fr'
+
+                insert(info)
+            }
+        }
+    </script>
 {{/contentFor}}
 
 {{#contentFor "styles"}}
