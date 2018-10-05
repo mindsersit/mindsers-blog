@@ -142,6 +142,10 @@ article .post-full-footer hr {
     background-color: #EEE;
 }
 
+article .post-full-content .kg-embed-card .twitter-tweet-rendered {
+    margin: auto;
+}
+
 article .post-full-content figure.kg-card figcaption {
     text-align: center;
     font-size: 0.8em;
