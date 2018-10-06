@@ -405,6 +405,7 @@ aside.read-next .read-next-tag-related li a {
 
 aside.read-next .read-next-time-related > div {
     margin: 25px 0;
+    max-width: 600px;
 }
 
 aside.read-next .read-next-time-related .direction {
@@ -421,11 +422,12 @@ aside.read-next .read-next-time-related h3 a {
     text-decoration: none;
 }
 
-aside.read-next .read-next-time-related p {
+aside.read-next .read-next-time-related p.tag-list {
     margin: 0;
+    line-height: 1.5em;
 }
 
-aside.read-next .read-next-time-related p a {
+aside.read-next .read-next-time-related p.tag-list a {
     background-color: rgba(0, 118, 223, 0.2);
     color: #0076df;
     text-decoration: none;
