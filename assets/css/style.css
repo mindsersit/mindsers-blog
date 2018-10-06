@@ -249,6 +249,12 @@ section.list-header .infos .description {
     background-color: white;
 }
 
+#site-main .post-feed .no-post {
+    text-align: center;
+    font-family: var(--primaryFont);
+    padding: 20px;
+}
+
 #site-main .post-feed-pagination {
     text-align: center;
     margin: 40px;
