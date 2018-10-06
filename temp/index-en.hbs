@@ -1,4 +1,4 @@
-{{!< default}}
+{{!< default-en}}
 
 <section class="list-header">
     <div class="list-header-content">
@@ -7,7 +7,7 @@
             <div class="featured-links">
                 <h3>{{t "Featured"}}</h3>
                 <ul>
-                    {{#get "posts" filter="featured:true"}}
+                    {{#get "posts" filter="featured:true+tag:hash-en"}}
                         {{#foreach posts limit="3"}}
                             <li><a href="{{url}}">{{title}}</a></li>
                         {{else}}
@@ -28,9 +28,9 @@
 </section>
 
 <main id="site-main" class="site-main outer">
-    <div class="post-feed inner">
+    <div class="post-feed inner" lang="en">
         {{#foreach posts}}
-            {{> post-card}}
+            {{> post-card-en}}
         {{else}}
             <p class="no-post">{{t "No post here"}}</p>
         {{/foreach}}
