@@ -142,6 +142,22 @@
     </script>
 
     <script>
+        // title links
+        ((document) => {
+            const titles = document.querySelectorAll('.post-full-content h1[id], .post-full-content h2[id], .post-full-content h3[id], .post-full-content h4[id]')
+
+            for (const title of titles) {
+                const anchor = document.createElement('a')
+
+                anchor.href = `${window.location.href}#${title.id}`
+                anchor.innerHTML = '<img class="title-link" src="/assets/images/link-solid.svg">'
+
+                title.appendChild(anchor)
+            }
+        })(document)
+    </script>
+
+    <script>
         // youtube video & map embeded wrapping
         ((document) => {
             const wrapper = cssClass => videoTag => {
