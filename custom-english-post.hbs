@@ -97,7 +97,7 @@
                 <div>
                     <span class="direction">Next post</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
-                    <p>
+                    <p class="tag-list">
                         {{#foreach tags}}
                             {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
                         {{/foreach}}
@@ -109,7 +109,7 @@
                 <div>
                     <span class="direction">Previous post</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
-                    <p>
+                    <p class="tag-list">
                         {{#foreach tags}}
                             {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
                         {{/foreach}}
