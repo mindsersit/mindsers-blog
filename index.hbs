@@ -1,4 +1,4 @@
-{{!< default}}
+{{!< partials/layouts/default}}
 
 <section class="list-header">
     <div class="list-header-content">
@@ -30,7 +30,7 @@
 <main id="site-main" class="site-main outer">
     <div class="post-feed inner">
         {{#foreach posts}}
-            {{> post-card}}
+            {{> includes/post-card}}
         {{else}}
             <p class="no-post">{{t "No post here"}}</p>
         {{/foreach}}
