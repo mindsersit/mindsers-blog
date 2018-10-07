@@ -1,4 +1,4 @@
-{{!< default-en}}
+{{!< partials/layouts/default-en}}
 
 <section class="list-header">
     <div class="list-header-content">
@@ -30,7 +30,7 @@
 <main id="site-main" class="site-main outer">
     <div class="post-feed inner" lang="en">
         {{#foreach posts}}
-            {{> post-card-en}}
+            {{> includes/post-card-en}}
         {{else}}
             <p class="no-post">{{t "No post here"}}</p>
         {{/foreach}}
