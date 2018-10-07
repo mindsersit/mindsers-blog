@@ -149,7 +149,7 @@
             for (const title of titles) {
                 const anchor = document.createElement('a')
 
-                anchor.href = `${window.location.href}#${title.id}`
+                anchor.href = `#${title.id}`
                 anchor.innerHTML = '<img class="title-link" src="/assets/images/link-solid.svg">'
 
                 title.appendChild(anchor)
