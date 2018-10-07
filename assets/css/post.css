@@ -102,6 +102,26 @@ article .post-full-content h3 {
     font-size: 1.5em;
 }
 
+article .post-full-content .title-link {
+    color: var(--secondaryColor);
+    font-size: 0.8em;
+    padding: 0 5px;
+    height: 20px;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+article .post-full-content h1:hover .title-link,
+article .post-full-content h2:hover .title-link,
+article .post-full-content h3:hover .title-link,
+article .post-full-content h4:hover .title-link,
+article .post-full-content h5:hover .title-link,
+article .post-full-content h6:hover .title-link {
+    opacity: 0.9;
+}
+
 article .post-full-content p,
 article .post-full-footer p,
 article .post-full-content ul,
