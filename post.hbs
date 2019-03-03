@@ -69,7 +69,7 @@
     <div class="inner">
         <div class="read-next-feed">
             {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
+            {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                 <div class="read-next-tag-related">
                         <header class="read-next-card-header">
