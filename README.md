@@ -9,3 +9,4 @@ Theme Ghost du blog de Nathanael CHERRIER. Respecte la charte de [nathanaelcherr
 
 - Télécharger le thème dans le dossier `/content/theme` de l'installation Ghost
 - Dans l'interface de Ghost (`SETTINGS > Design`), activer le thème `mindsersit`
+- Vérifier que le numéro de version soit le bon
