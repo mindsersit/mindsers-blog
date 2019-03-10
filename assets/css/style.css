@@ -364,4 +364,9 @@ section.support .actions .button {
     padding: 11px;
     margin: 12px 0 0;
     border-radius: 2px;
+    transition: box-shadow .5s ease-out;
+}
+
+section.support .actions .button:hover {
+    box-shadow: 5px 5px 5px #BBB;
 }
