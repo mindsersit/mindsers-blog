@@ -84,6 +84,8 @@ article .post-full-footer {
     letter-spacing: optimizeLegibility;
     text-size-adjust: 100%;
     letter-spacing: 0.2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 article .post-full-content h1,
