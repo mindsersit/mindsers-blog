@@ -135,6 +135,7 @@ article .post-full-content h6::before {
     font-weight: lighter;
     padding: 3px;
     margin-right: 10px;
+    line-height: initial;
 }
 
 article .post-full-content h1::before { content: "h1"; }
