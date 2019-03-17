@@ -92,14 +92,33 @@ article .post-full-content h6  {
     font-family: var(--secondaryFont);
     color: black;
     font-weight: bolder;
+    text-transform: capitalize;
 }
 
-article .post-full-content h2 {
+article .post-full-content h1 {
     font-size: 1.9em;
 }
 
-article .post-full-content h3 {
+article .post-full-content h2 {
     font-size: 1.5em;
+}
+
+article .post-full-content h3 {
+    font-size: 1.2em;
+}
+
+article .post-full-content h4 {
+    font-size: 1.2em;
+    text-decoration: underline;
+}
+
+article .post-full-content h5 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+article .post-full-content h6 {
+    font-weight: bold;
 }
 
 article .post-full-content h1::before,
