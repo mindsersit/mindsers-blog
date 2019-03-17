@@ -102,6 +102,29 @@ article .post-full-content h3 {
     font-size: 1.5em;
 }
 
+article .post-full-content h1::before,
+article .post-full-content h2::before,
+article .post-full-content h3::before,
+article .post-full-content h4::before,
+article .post-full-content h5::before,
+article .post-full-content h6::before {
+    display: inline-block;
+    vertical-align: sub;
+    background-color: black;
+    color: white;
+    font-size: 0.6em;
+    font-weight: lighter;
+    padding: 3px;
+    margin-right: 10px;
+}
+
+article .post-full-content h1::before { content: "h1"; }
+article .post-full-content h2::before { content: "h2"; }
+article .post-full-content h3::before { content: "h3"; }
+article .post-full-content h4::before { content: "h4"; }
+article .post-full-content h5::before { content: "h5"; }
+article .post-full-content h6::before { content: "h6"; }
+
 article .post-full-content .title-link {
     color: var(--secondaryColor);
     font-size: 0.8em;
