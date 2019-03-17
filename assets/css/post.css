@@ -323,10 +323,6 @@ article .post-full-content .kg-gallery-card {
     overflow: hidden;
 }
 
-article .post-full-content .kg-gallery-card figcaption {
-    margin: -1.0em 0 1.5em;
-}
-
 article .post-full-content .kg-gallery-container {
     display: flex;
     flex-direction: column;
