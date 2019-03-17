@@ -164,6 +164,26 @@ article .post-full-content h6:hover .title-link {
     opacity: 0.9;
 }
 
+article .post-full-content h2:hover .title-link {
+    height: 18px;
+}
+
+article .post-full-content h3:hover .title-link {
+    height: 15px;
+}
+
+article .post-full-content h4:hover .title-link {
+    height: 15px;
+}
+
+article .post-full-content h5:hover .title-link {
+    height: 14px;
+}
+
+article .post-full-content h6:hover .title-link {
+    height: 13px;
+}
+
 article .post-full-content p,
 article .post-full-footer p,
 article .post-full-content ul,
