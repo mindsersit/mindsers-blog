@@ -77,10 +77,15 @@ article .post-full-header .sponsored-tag {
 
 article .post-full-content,
 article .post-full-footer {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.2em;
+    font-family: georgia, 'Times New Roman', times, serif;
+    font-size: 20px;
     margin: 50px auto;
     color: var(--secondaryColor);
+    letter-spacing: optimizeLegibility;
+    text-size-adjust: 100%;
+    letter-spacing: 0.2px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
 }
 
 article .post-full-content h1,
@@ -190,11 +195,11 @@ article .post-full-footer p,
 article .post-full-content ul,
 article .post-full-content ol {
     line-height: 1.6;
-    letter-spacing: 0.025rem;
 }
 
 article .post-full-content > p:first-child {
-    font-size: 1.3em;
+    font-size: 1.25em;
+    line-height: 1.5em;
 }
 
 article .post-full-content > p.message-box {
