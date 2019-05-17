@@ -176,6 +176,10 @@ header.site-header .menu li {
     header.site-header .title, header.site-header .menu {
         margin: 20px 0;
     }
+
+    header.site-header .menu li {
+        margin: 5px 10px;
+    }
 }
 
 /* 3 - Article's list */
