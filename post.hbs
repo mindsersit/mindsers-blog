@@ -116,7 +116,14 @@
                 </div>
                 {{/prev_post}}
             </div>
+
         </div>
+    </div>
+</aside>
+
+<aside class="comments outer">
+    <div class="inner">
+        <div id='discourse-comments'></div>
     </div>
 </aside>
 {{/post}}
@@ -227,6 +234,17 @@
                 }
             }
         })(document, window)
+    </script>
+
+    <script type="text/javascript">
+        DiscourseEmbed = { discourseUrl: 'https://community.nathanaelcherrier.com/',
+                            discourseEmbedUrl: '{{url absolute="true"}}' };
+
+        (function() {
+            var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+            d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+        })();
     </script>
 {{/contentFor}}
 
