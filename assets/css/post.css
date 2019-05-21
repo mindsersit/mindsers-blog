@@ -466,18 +466,22 @@ article .subscribe-form input:focus {
     border-right-width: 1px;
 }
 
-aside.read-next {
+aside.read-next, aside.comments {
     background-color: #f5f5f5;
     padding: 50px 10px 50px;
     font-family: var(--primaryFont);
 }
 
-aside.read-next .inner {
+aside.comments {
+    background-color: white;
+}
+
+aside.read-next .inner, aside.comments .inner {
     max-width: 1024px;
     margin: 0 auto;
 }
 
-aside.read-next h2, aside.read-next h3 {
+aside.read-next h2, aside.read-next h3, aside.comments h2, aside.comments h3 {
     font-family: var(--secondaryFont);
 }
 
@@ -582,11 +586,15 @@ aside.read-next .read-next-time-related p.tag-list a {
 }
 
 @media screen and (max-width: 500px) {
-    article .post-full-header .post-full-meta-date,
     article .post-full-header .post-full-meta-author,
     article .post-full-header .post-full-meta-tags,
     article .post-full-header .post-full-meta-share {
         display: none;
+    }
+
+    article .post-full-header .post-full-meta-date {
+        display: inline-block;
+        margin: auto;
     }
 
     article .post-full-header h1 {

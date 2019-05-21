@@ -98,6 +98,10 @@ footer.site-footer .site-footer-content .copyright {
 }
 
 @media screen and (max-width: 450px) {
+    footer.site-footer {
+        padding: 50px 0;
+    }
+
     footer.site-footer .site-footer-content nav.items {
         flex-direction: column-reverse;
     }
@@ -171,6 +175,10 @@ header.site-header .menu li {
 
     header.site-header .title, header.site-header .menu {
         margin: 20px 0;
+    }
+
+    header.site-header .menu li {
+        margin: 5px 10px;
     }
 }
 

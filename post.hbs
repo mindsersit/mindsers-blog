@@ -58,7 +58,7 @@
             <footer class="post-full-footer">
                 {{#unless @labs.subscribers}}<hr>{{/unless}}
                 <p>
-                    {{{t "If your have any questions or advices, <a href='https://twitter.com/MindsersIT' rel='nofollow'>send me a tweet</a>! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
+                    {{{t "If your have any questions or advices, create a comment below! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
                 </p>
             </footer>
         </article>
@@ -116,7 +116,14 @@
                 </div>
                 {{/prev_post}}
             </div>
+
         </div>
+    </div>
+</aside>
+
+<aside class="comments outer">
+    <div class="inner">
+        <div id='discourse-comments'></div>
     </div>
 </aside>
 {{/post}}
@@ -213,7 +220,7 @@
                 info.classList.add('message-box')
 
                 if (exist('en')(link.hreflang)) {
-                    info.innerHTML = `Hey! English speaking friends! <a href="${link.href}">This post also exist in english</a>.`
+                    info.innerHTML = `Hey! English speaking friends! <a href="${link.href}">This post also exists in english</a>.`
                     info.lang = 'en'
 
                     insert(info)
@@ -227,6 +234,17 @@
                 }
             }
         })(document, window)
+    </script>
+
+    <script type="text/javascript">
+        DiscourseEmbed = { discourseUrl: 'https://community.nathanaelcherrier.com/',
+                            discourseEmbedUrl: '{{url absolute="true"}}' };
+
+        (function() {
+            var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+            d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+        })();
     </script>
 {{/contentFor}}
 
