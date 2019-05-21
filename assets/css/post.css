@@ -586,11 +586,15 @@ aside.read-next .read-next-time-related p.tag-list a {
 }
 
 @media screen and (max-width: 500px) {
-    article .post-full-header .post-full-meta-date,
     article .post-full-header .post-full-meta-author,
     article .post-full-header .post-full-meta-tags,
     article .post-full-header .post-full-meta-share {
         display: none;
+    }
+
+    article .post-full-header .post-full-meta-date {
+        display: inline-block;
+        margin: auto;
     }
 
     article .post-full-header h1 {
