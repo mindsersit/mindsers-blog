@@ -1,4 +1,4 @@
-# @mindsersit/theme
+# @mindsersit/blog
 
 [![pipeline status](https://git.nathanaelcherrier.com/nath-com/blog-theme/badges/develop/pipeline.svg)](https://git.nathanaelcherrier.com/nath-com/blog-theme/commits/develop)
 [![coverage report](https://git.nathanaelcherrier.com/nath-com/blog-theme/badges/develop/coverage.svg)](https://git.nathanaelcherrier.com/nath-com/blog-theme/commits/develop)

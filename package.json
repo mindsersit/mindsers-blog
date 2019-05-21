@@ -1,7 +1,7 @@
 {
-  "name": "@mindsersit/theme",
+  "name": "@mindsersit/blog",
   "version": "1.3.0",
-  "description": "Theme for MindsersIT blog",
+  "description": "Theme for MindsersIT Blog",
   "keywords": [
     "ghost-theme"
   ],
