@@ -83,32 +83,6 @@
 
     {{{block "scripts"}}}
 
-    <script>
-        // force navigation links to english targets
-        ((document, window) => {
-            const domain = window.location.hostname
-                .replace(/\:[0-9]{4}$/, '')
-                .split('.')
-                .filter((_el, i, a) => [a.length - 2, a.length - 1].includes(i))
-                .join('.')
-
-            const containDomain = new RegExp(domain)
-            const containOnlyDomain = new RegExp(`${domain}/$`)
-
-            document
-                .querySelectorAll('.site-header .menu .nav a')
-                .forEach(anchor => {
-                    if (containDomain.test(anchor.href)) {
-                        anchor.href = anchor.href.replace('/fr/', '/en/')
-                    }
-
-                    if (containOnlyDomain.test(anchor.href)) {
-                        anchor.href = `${anchor.href}en/`
-                    }
-                })
-        })(document, window)
-    </script>
-
     {{ghost_foot}}
 </body>
 </html>
