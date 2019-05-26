@@ -256,7 +256,8 @@ article .post-full-footer hr {
     background-color: #EEE;
 }
 
-article .post-full-content .kg-embed-card .twitter-tweet-rendered {
+article .post-full-content .kg-embed-card .twitter-tweet-rendered,
+article .post-full-content .kg-embed-card .instagram-media-rendered {
     margin: auto;
 }
 
@@ -495,6 +496,7 @@ aside.read-next .read-next-feed {
 
 aside.read-next .read-next-tag-related {
     padding: 20px 0;
+    max-width: 460px;
 }
 
 aside.read-next .read-next-tag-related a {
