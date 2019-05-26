@@ -256,7 +256,8 @@ article .post-full-footer hr {
     background-color: #EEE;
 }
 
-article .post-full-content .kg-embed-card .twitter-tweet-rendered {
+article .post-full-content .kg-embed-card .twitter-tweet-rendered,
+article .post-full-content .kg-embed-card .instagram-media-rendered {
     margin: auto;
 }
 
