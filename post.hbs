@@ -121,11 +121,13 @@
     </div>
 </aside>
 
+{{^is "page"}}
 <aside class="comments outer">
     <div class="inner">
         <div id='discourse-comments'></div>
     </div>
 </aside>
+{{/is}}
 {{/post}}
 
 {{#contentFor "scripts"}}
@@ -236,6 +238,7 @@
         })(document, window)
     </script>
 
+    {{^is "page"}}
     <script type="text/javascript">
         DiscourseEmbed = { discourseUrl: 'https://community.nathanaelcherrier.com/',
                             discourseEmbedUrl: '{{url absolute="true"}}' };
@@ -246,6 +249,7 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
         })();
     </script>
+    {{/is}}
 {{/contentFor}}
 
 {{#contentFor "styles"}}
