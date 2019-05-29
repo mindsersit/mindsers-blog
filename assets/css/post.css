@@ -258,7 +258,7 @@ article .post-full-footer hr {
 
 article .post-full-content .kg-embed-card .twitter-tweet-rendered,
 article .post-full-content .kg-embed-card .instagram-media-rendered {
-    margin: auto;
+    margin: auto !important;
 }
 
 article .post-full-content figure.kg-card figcaption {
