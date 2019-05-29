@@ -23,7 +23,12 @@
                     </a>
                 </div>
                 <div class="menu">
-                    {{navigation}}
+                    <ul class="nav" role="menu">
+                        <li role="menuitem"><a href="https://blog.nathanaelcherrier.com/en/">Blog</a></li>
+                        <li role="menuitem"><a href="https://nathanaelcherrier.com/en/resume">Resume</a></li>
+                        <li role="menuitem"><a href="https://community.nathanaelcherrier.com/">Forum</a></li>
+                        <li role="menuitem"><a href="https://nathanaelcherrier.com/en/contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
@@ -77,32 +82,6 @@
     </div>
 
     {{{block "scripts"}}}
-
-    <script>
-        // force navigation links to english targets
-        ((document, window) => {
-            const domain = window.location.hostname
-                .replace(/\:[0-9]{4}$/, '')
-                .split('.')
-                .filter((_el, i, a) => [a.length - 2, a.length - 1].includes(i))
-                .join('.')
-
-            const containDomain = new RegExp(domain)
-            const containOnlyDomain = new RegExp(`${domain}/$`)
-
-            document
-                .querySelectorAll('.site-header .menu .nav a')
-                .forEach(anchor => {
-                    if (containDomain.test(anchor.href)) {
-                        anchor.href = anchor.href.replace('/fr/', '/en/')
-                    }
-
-                    if (containOnlyDomain.test(anchor.href)) {
-                        anchor.href = `${anchor.href}en/`
-                    }
-                })
-        })(document, window)
-    </script>
 
     {{ghost_foot}}
 </body>

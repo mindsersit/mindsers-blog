@@ -39,5 +39,9 @@
   "% min read": "% minutes de lecture",
   "{page} of {pages}": "{page} sur {pages}",
   "An unknown error occured. Sorry for trouble.": "Une erreur inconnue s'est produite. Excusez-nous pour le dérangement.",
-  "Oups! It seems like we didn't find what you want.": "Oups! On dirait bien que nous n'arrivons pas à trouver ce que vous voulez voir."
+  "Oups! It seems like we didn't find what you want.": "Oups! On dirait bien que nous n'arrivons pas à trouver ce que vous voulez voir.",
+  "Blog": "Blog",
+  "Resume": "CV",
+  "Contact": "Me contacter",
+  "Forum": "Forum"
 }
