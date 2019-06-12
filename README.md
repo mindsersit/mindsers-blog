@@ -1,3 +1,5 @@
+![Repo header image](https://repository-images.githubusercontent.com/189204408/ea286180-8cf2-11e9-9c88-ad7a2517c8f8)
+
 # @mindsersit/blog
 
 "MindsersIT Blog" is a blog for nathanaelcherrier.com. This part of the site is based on [Ghost][ghost-blog].
