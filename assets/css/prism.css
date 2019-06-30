@@ -1,5 +1,5 @@
-/* PrismJS 1.15.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+asciidoc+csharp+bash+basic+cpp+coffeescript+ruby+diff+docker+git+graphql+http+java+json+kotlin+latex+less+markdown+nginx+objectivec+sql+pug+puppet+python+jsx+rust+sass+scss+scala+stylus+swift+yaml+twig+vbnet+vim+wasm */
+/* PrismJS 1.16.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+bash+basic+batch+cpp+arduino+diff+markup-templating+docker+ejs+git+go+graphql+groovy+handlebars+haskell+http+java+scala+php+javadoclike+json+jsonp+json5+latex+markdown+makefile+typescript+nginx+objectivec+jsdoc+phpdoc+php-extras+sql+properties+protobuf+scss+python+js-extras+jsx+reason+rust+twig+swift+yaml+toml+pug+tsx+regex+vbnet+vim&plugins=line-numbers+show-invisibles */
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -11,6 +11,7 @@ pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -122,3 +123,79 @@ pre[class*="language-"] {
 	color: green;
 }
 
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+
+.token.tab:not(:empty),
+.token.cr,
+.token.lf,
+.token.space {
+	position: relative;
+}
+
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before,
+.token.space:before {
+	color: #808080;
+	opacity: 0.6;
+	position: absolute;
+}
+
+.token.tab:not(:empty):before {
+	content: '\21E5';
+}
+
+.token.cr:before {
+	content: '\240D';
+}
+
+.token.crlf:before {
+	content: '\240D\240A';
+}
+.token.lf:before {
+	content: '\240A';
+}
+
+.token.space:before {
+	content: '\00B7';
+}
