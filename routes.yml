@@ -1,0 +1,17 @@
+routes:
+  /:
+    controller: channel
+    filter: "tag:hash-fr"
+
+collections:
+  /en/:
+    permalink: /en/{slug}/
+    filter: "tag:hash-en"
+    template: index-en
+  /fr/:
+    permalink: /fr/{slug}/
+    filter: "tag:hash-fr"
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
