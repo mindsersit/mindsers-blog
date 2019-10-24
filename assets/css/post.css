@@ -316,6 +316,54 @@ article .post-full-content .post-full-map-fluid iframe {
 	height: 100%;
 }
 
+article .post-full-content .kg-bookmark-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    text-decoration: none;
+    border: 2px solid blue;
+}
+
+article .post-full-content .kg-bookmark-content {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 50%;
+    padding: 20px;
+}
+
+article .post-full-content .kg-bookmark-title {
+    font-weight: 600;
+}
+
+article .post-full-content .kg-bookmark-description,
+article .post-full-content .kg-bookmark-metadata {
+    margin-top: 12px;
+}
+
+article .post-full-content .kg-bookmark-thumbnail {
+    flex-basis: 15rem;
+    flex-grow: 1;
+}
+
+
+article .post-full-content .kg-bookmark-thumbnail img {
+    vertical-align: bottom;
+    object-fit: cover;
+    width: 100%;
+}
+
+article .post-full-content .kg-bookmark-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    vertical-align: bottom;
+}
+
+article .post-full-content .kg-bookmark-author:after {
+    content: "•";
+    margin: 0 6px;
+}
+
 article .post-full-content p,
 article .post-full-footer p,
 article .post-full-content ul,
