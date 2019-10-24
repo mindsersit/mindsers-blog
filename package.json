@@ -1,6 +1,6 @@
 {
   "name": "@mindsersit/blog",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Theme for MindsersIT Blog",
   "keywords": [
     "ghost-theme"
@@ -13,7 +13,7 @@
   "private": true,
   "engines": {
     "ghost": ">=1.0.0",
-    "ghost-api": "v2"
+    "ghost-api": "v3"
   },
   "config": {
     "posts_per_page": 5
