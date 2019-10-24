@@ -1,8 +1,7 @@
-name: Deploy Theme
+name: CI Theme
 on:
-  push:	
-    branches:	
-      - master
+  release:	
+    types: [published]
 jobs:
   deploy:
     runs-on: ubuntu-18.04
