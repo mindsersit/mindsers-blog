@@ -47,6 +47,7 @@
                 {{content}}
             </section>
 
+            {{^is "page"}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
                 <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
@@ -61,10 +62,12 @@
                     {{{t "If your have any questions or advices, create a comment below! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
                 </p>
             </footer>
+            {{/is}}
         </article>
     </div>
 </main>
 
+{{^is "page"}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
@@ -121,7 +124,6 @@
     </div>
 </aside>
 
-{{^is "page"}}
 <aside class="comments outer">
     <div class="inner">
         <div id='discourse-comments'></div>
