@@ -185,6 +185,22 @@
     </script>
 
     <script>
+        // logic for title links
+        ((document) => {
+            const titles = document.querySelectorAll('.post-full-content h1[id], .post-full-content h2[id], .post-full-content h3[id], .post-full-content h4[id], .post-full-content h5[id], .post-full-content h6[id]')
+
+            for (const title of titles) {
+                const anchor = document.createElement('a')
+
+                anchor.href = `#${title.id}`
+                anchor.innerHTML = '<img class="title-link" src="/assets/images/link-solid.svg">'
+
+                title.appendChild(anchor)
+            }
+        })(document)
+    </script>
+
+    <script>
         // logic for image gallery
         ((document) => {
             const images = document.querySelectorAll('.kg-gallery-image img')
