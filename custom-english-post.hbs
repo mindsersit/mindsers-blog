@@ -47,11 +47,12 @@
                 {{content}}
             </section>
 
+            {{^is "page"}}
             {{#if @labs.subscribers}}
             <section class="subscribe-form">
                 <h3 class="subscribe-form-title">Subscribe to {{@site.title}}</h3>
                 <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com" button_class="btn-subscribe"}}
+                <a href="http://eepurl.com/gCK3Vz">I wanna subscribe!</a>
             </section>
             {{/if}}
 
@@ -63,10 +64,12 @@
                     You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.
                 </p>
             </footer>
+            {{/is}}
         </article>
     </div>
 </main>
 
+{{^is "page"}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
@@ -122,7 +125,6 @@
     </div>
 </aside>
 
-{{^is "page"}}
 <aside class="comments outer">
     <div class="inner">
         <div id='discourse-comments'></div>
