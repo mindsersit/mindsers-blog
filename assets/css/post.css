@@ -467,6 +467,21 @@ article .post-full-content .kg-gallery-image:not(:first-of-type) {
     margin: 0 0 0 0.75em;
 }
 
+article .subscribe-form .link-to-mailchimp {
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 3px;
+    color: var(--primaryColor);
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0 0;
+    transition: box-shadow .5s ease-out;
+}
+
+article .subscribe-form .link-to-mailchimp:hover {
+    box-shadow: 5px 5px 5px #BBB;
+}
+
 article .subscribe-form {
     font-family: var(--primaryFont);
     padding: 40px 0;
