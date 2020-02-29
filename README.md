@@ -7,6 +7,12 @@
 This repo host the ghost theme that powers blog.nathanaelcherrier.com.
 **Be aware that some parts of the theme are hardcoded for the needs of "MindsersIT Blog". This theme is NOT production ready.**
 
+All the repositories part of the MindsersIT project:
+
+- [@mindsersit/website](https://github.com/mindsers/mindsersit-website)
+- [@mindsersit/blog](https://github.com/mindsers/mindsersit-blog)
+- [@mindsersit/community](https://github.com/mindsers/mindsersit-community)
+
 ## Getting started
 
 - Download this repo into `/content/theme` on the Ghost installation.
