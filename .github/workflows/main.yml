@@ -1,4 +1,4 @@
-name: CI Theme
+name: CD Theme
 on:
   release:	
     types: [published]
