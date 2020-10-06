@@ -316,19 +316,31 @@ article .post-full-content .post-full-map-fluid iframe {
 	height: 100%;
 }
 
+article .post-full-content .kg-bookmark-card {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
 article .post-full-content .kg-bookmark-container {
     display: flex;
     flex-wrap: wrap;
-    color: black;
+    flex-direction: row-reverse;
+    color: var(--secondaryColor);
+    font-family: var(--primaryFont);
     text-decoration: none;
-    border: 2px solid blue;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+article .post-full-content .kg-bookmark-container:hover {
+    text-decoration: none;
 }
 
 article .post-full-content .kg-bookmark-content {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: 50%;
     padding: 20px;
+    order: 1;
 }
 
 article .post-full-content .kg-bookmark-title {
@@ -337,31 +349,57 @@ article .post-full-content .kg-bookmark-title {
 
 article .post-full-content .kg-bookmark-description,
 article .post-full-content .kg-bookmark-metadata {
-    margin-top: 12px;
+    margin-top: .5em;
+}
+
+article .post-full-content .kg-bookmark-metadata {
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+article .post-full-content .kg-bookmark-description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color: var(--secondaryColor);
+}
+
+article .post-full-content .kg-bookmark-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: text-bottom;
+    margin-right: .5em;
+    margin-bottom: .05em;
 }
 
 article .post-full-content .kg-bookmark-thumbnail {
-    flex-basis: 15rem;
+    display: flex;
+    flex-basis: 18rem;
     flex-grow: 1;
 }
 
 
 article .post-full-content .kg-bookmark-thumbnail img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
     vertical-align: bottom;
     object-fit: cover;
-    width: 100%;
 }
 
-article .post-full-content .kg-bookmark-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-    vertical-align: bottom;
+article .post-full-content .kg-bookmark-author {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
-article .post-full-content .kg-bookmark-author:after {
+article .post-full-content .kg-bookmark-publisher::before {
     content: "•";
-    margin: 0 6px;
+    margin: 0 .5em;
 }
 
 article .post-full-content p,
