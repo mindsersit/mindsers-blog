@@ -25,6 +25,7 @@
                 </div>
                 <div class="menu">
                     <ul class="nav" role="menu">
+                        <li><form id="searchbar"><input type="text" name="term" placeholder="Search something" /></form></li>
                         <li role="menuitem"><a href="https://blog.nathanaelcherrier.com/fr/">{{t "Blog"}}</a></li>
                         <li role="menuitem"><a href="https://nathanaelcherrier.com/fr/resume">{{t "CV" }}</a></li>
                         <li role="menuitem"><a href="https://community.nathanaelcherrier.com/">{{t "Forum" }}</a></li>
@@ -75,6 +76,27 @@
     </div>
 
     {{{block "scripts"}}}
+
+    <script>
+        document
+            .querySelector('#searchbar')
+            .addEventListener('submit', (event) => {
+                event.preventDefault()
+
+                const data = new FormData(event.target)
+                if (data.get('term') == null || data.get('term').length < 1) {
+                    return
+                }
+
+                const term = data
+                    .get('term')
+                    .trim()
+                    .split(' ')
+                    .join('+')
+
+                document.location.href = `https://www.google.com/search?q=site:blog.nathanaelcherrier.com+${term}`
+            })
+    </script>
 
     {{ghost_foot}}
 </body>
