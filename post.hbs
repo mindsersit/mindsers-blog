@@ -48,11 +48,16 @@
             </section>
 
             {{^is "page"}}
+            {{#if @labs.members}}
             <section class="subscribe-form">
                 <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
                 <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
-                <a class="link-to-mailchimp" href="http://eepurl.com/gCK3Vz">{{t "I wanna subscribe!"}}</a>
+                <form data-members-form>
+                    <input data-members-email type="email" required="true" placeholder="{{t "your@email.com"}}" />
+                    <button class="button" type="submit">{{t "Subscribe"}}</button>
+                </form>
             </section>
+            {{/if}}
 
             <footer class="post-full-footer">
                 <hr>
