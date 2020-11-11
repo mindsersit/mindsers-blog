@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Code+Pro:400,600" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.css"}}" />
 
     {{{block "styles"}}}
 
@@ -25,7 +26,14 @@
                 </div>
                 <div class="menu">
                     <ul class="nav" role="menu">
-                        <li><form id="searchbar"><input type="text" name="term" placeholder="Search something" /></form></li>
+                        <li role="menuitem" class="search">
+                            <span class="label"><i class="fa fa-search"></i></span>
+                            <div class="search-popup">
+                                <form id="searchbar">
+                                    <input type="text" name="term" placeholder="Search something" />
+                                </form>
+                            </div>
+                        </li>
                         <li role="menuitem"><a href="https://blog.nathanaelcherrier.com/fr/">{{t "Blog"}}</a></li>
                         <li role="menuitem"><a href="https://nathanaelcherrier.com/fr/resume">{{t "CV" }}</a></li>
                         <li role="menuitem"><a href="https://community.nathanaelcherrier.com/">{{t "Forum" }}</a></li>
