@@ -14,7 +14,7 @@
   "Share this": "Partagez l'article",
   "Get the latest posts delivered right to your inbox": "Recevez les derniers articles directement dans votre boite de reception",
   "your@email.com": "votre@email.fr",
-  "If your have any questions or advices, create a comment below! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.": "Si vous avez des questions ou des remarques/conseils, n'hésitez pas à en discuter avec les autres membres du forum (zone de commentaires plus bas)! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. Vous pouvez aussi soutenir le blog sur <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.",
+  "If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.": "Si vous avez des questions ou des remarques/conseils, n'hésitez pas à en discuter avec les autres membres du forum (zone de commentaires plus bas)! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. Vous pouvez aussi soutenir le blog sur <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.",
   "No posts": "Aucun article",
   "No post here": "Aucun article ici",
   "posts": "articles",
@@ -44,5 +44,6 @@
   "Blog": "Blog",
   "Resume": "CV",
   "Contact": "Me contacter",
-  "Forum": "Forum"
+  "Forum": "Forum",
+  "There was an error sending the email, please try again": "Nous avons rencontré une erreur en vous envoyant un e-mail. Merci de réessayer."
 }

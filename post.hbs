@@ -49,20 +49,22 @@
 
             {{^is "page"}}
             {{#if @labs.members}}
-            <section class="subscribe-form">
+            <form data-members-form="subscribe">
+              <section class="subscribe-form">
                 <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
                 <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
-                <form data-members-form>
                     <input data-members-email type="email" required="true" placeholder="{{t "your@email.com"}}" />
                     <button class="button" type="submit">{{t "Subscribe"}}</button>
-                </form>
-            </section>
+              </section>
+              <p class="loader">...LOADING...</p>
+              <p class="error">{{t "There was an error sending the email, please try again"}}</p>
+            </form>
             {{/if}}
 
             <footer class="post-full-footer">
                 <hr>
                 <p>
-                    {{{t "If your have any questions or advices, create a comment below! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
+                    {{{t "If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
                 </p>
             </footer>
             {{/is}}
