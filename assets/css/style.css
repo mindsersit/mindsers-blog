@@ -170,6 +170,15 @@ header.site-header .menu li.search {
     position: relative;
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 header.site-header .menu li.search .search-popup {
     position: absolute;
     display: none;
@@ -188,6 +197,7 @@ header.site-header .menu li.search .search-popup input {
 header.site-header .menu li.search:hover .search-popup,
 header.site-header .menu li.search .search-popup:focus-within {
     display: inline-block;
+    animation: appear 0.5s;
 }
 
 @media screen and (max-width: 500px) {
