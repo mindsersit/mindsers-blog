@@ -214,6 +214,11 @@ header.site-header .menu li.search .search-popup:focus-within {
     header.site-header .menu li {
         margin: 5px 10px;
     }
+
+    header.site-header .menu li.search .search-popup input {
+        max-width: calc(100% - 40px);
+        padding: 10px 5px;
+    }
 }
 
 /* 3 - Article's list */
