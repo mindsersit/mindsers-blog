@@ -538,6 +538,22 @@ article .subscribe-form p {
     font-size: 1.5em;
 }
 
+article form[data-members-form] p.error {
+    color: red;
+}
+
+article form[data-members-form] p.loader,
+article form[data-members-form] p.error {
+    display: none;
+}
+
+article form[data-members-form].loading p.loader,
+article form[data-members-form].error p.error  {
+    display: block;
+    text-align: center;
+    font-family: var(--primaryFont);
+}
+
 article .subscribe-form button {
     font-size: 1.5em;
     border-width: 0;

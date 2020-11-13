@@ -13,8 +13,8 @@
   "Written by {authors}": "Written by {authors}",
   "Share this": "Share this",
   "Get the latest posts delivered right to your inbox": "Get the latest posts delivered right to your inbox",
-  "youremail@example.com": "youremail@example.com",
-  "If your have any questions or advices, create a comment below! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.": "If your have any questions or advices, create a comment below! Also if you like this post, don't forget to share it to your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.",
+  "your@email.com": "your@email.com",
+  "If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.": "If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>.",
   "No posts": "No posts",
   "No post here": "No post here",
   "posts": "posts",
@@ -44,5 +44,7 @@
   "Resume": "Resume",
   "Contact": "Contact",
   "Forum": "Forum",
-  "Oups! It seems like we didn't find what you want.": "Oups! It seems like we didn't find what you want."
+  "Oups! It seems like we didn't find what you want.": "Oups! It seems like we didn't find what you want.",
+  "There was an error sending the email, please try again": "There was an error sending the email, please try again",
+  "Type something and hit enter": "Type something and hit enter"
 }

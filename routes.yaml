@@ -1,16 +1,18 @@
 routes:
-  /:
+  /fr/:
     controller: channel
-    filter: "tag:hash-fr"
+    template: index
+    filter: "tag:-hash-en"
 
 collections:
+  /:
+    permalink: /fr/{slug}/
+    template: index
+    filter: "tag:-hash-en"
   /en/:
     permalink: /en/{slug}/
-    filter: "tag:hash-en"
     template: index-en
-  /fr/:
-    permalink: /fr/{slug}/
-    filter: "tag:hash-fr"
+    filter: "tag:hash-en"
 
 taxonomies:
   tag: /tag/{slug}/
