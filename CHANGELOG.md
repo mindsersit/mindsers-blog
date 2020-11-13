@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2020-11-13
+### Added
+- New search bar on the header
+
+### Changed
+- The subscibe block register people in ghost (not mailchimp anymore)
+
+### Fixed
+- Make the subscribe block looks better
+- Fix Google Analytics
+
 ## [1.5.1] - 2020-10-06
 ### Fixed
 - Prefer the asset tag over using relative path (even in the js code)
@@ -119,7 +130,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First version of the website
 
-[Unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.5.1...HEAD
+[Unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/mindsers/mindsersit-blog/compare/v1.5.1...v1.6.0
 [1.5.1]: https://github.com/mindsers/mindsersit-blog/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/mindsers/mindsersit-blog/compare/v1.4.3...v1.5.0
 [1.4.3]: https://github.com/mindsers/mindsersit-blog/compare/v1.4.2...v1.4.3
