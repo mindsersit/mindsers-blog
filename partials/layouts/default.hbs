@@ -19,7 +19,7 @@
         <header class="site-header outer">
             <div class="site-header-content inner">
                 <div class="title">
-                    <a href="https://nathanaelcherrier.com/fr/">
+                    <a href="/{{@site.lang}}/">
                         <img src="{{@site.logo}}" class="logo" alt="MindsersIT logo">
                         Nathanaël Cherrier
                     </a>
@@ -34,10 +34,14 @@
                                 </form>
                             </div>
                         </li>
-                        <li role="menuitem"><a href="https://blog.nathanaelcherrier.com/fr/">{{t "Blog"}}</a></li>
-                        <li role="menuitem"><a href="https://nathanaelcherrier.com/fr/resume">{{t "CV" }}</a></li>
-                        <li role="menuitem"><a href="https://community.nathanaelcherrier.com/">{{t "Forum" }}</a></li>
-                        <li role="menuitem"><a href="https://nathanaelcherrier.com/fr/contact">{{t "Me contacter" }}</a></li>
+                        <li role="menuitem">
+                            {{t "Pages"}}
+                            <ul class="sub-menu">
+                                <li role="menuitem"><a href="">To be read</a></li>
+                            </ul>
+                        </li>
+                        <li role="menuitem"><a href="https://nathanaelcherrier.com/fr/resume">{{t "Newsletter" }}</a></li>
+                        <li role="menuitem"><a href="https://community.nathanaelcherrier.com/">{{t "Subscribe" }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -48,6 +52,15 @@
         <footer class="site-footer outer">
             <div class="site-footer-content inner">
                 <nav class="items">
+                    <div class="item">
+                        <h2>More links</h2>
+                        <ul>
+                            <li><a href="https://community.nathanaelcherrier.com/">{{t "Forum" }}</a></li>
+                            <li><a href="https://discord.gg/WrHUfSC">Discord</a></li>
+                            <li><a href="https://nathanaelcherrier.com/fr/resume">{{t "CV" }}</a></li>
+                            <li><a href="https://nathanaelcherrier.com/fr/contact">{{t "Me contacter" }}</a></li>
+                        </ul>
+                    </div>
                     <div class="item">
                         <h2>{{t "Open Sources"}}</h2>
                         <ul>
