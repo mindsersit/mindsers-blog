@@ -435,33 +435,3 @@ nav.pagination a {
     color: var(--primaryColor);
     text-decoration: none;
 }
-
-/* 6 - Support */
-section.support {
-    color: black;
-    overflow: hidden;
-    transition: all 1s ease;
-    background-color: #f5f5f5;
-    text-align: center;
-    padding: 5px 20px;
-    font-family: var(--secondaryFont);
-}
-
-section.support:hover {
-    padding: 20px 20px 15px;
-}
-
-section.support .actions .button {
-    display: inline-block;
-    background-color: rgb(232, 91, 70);
-    color: white;
-    text-decoration: none;
-    padding: 11px;
-    margin: 12px 0 0;
-    border-radius: 2px;
-    transition: box-shadow .5s ease-out;
-}
-
-section.support .actions .button:hover {
-    box-shadow: 5px 5px 5px #BBB;
-}
