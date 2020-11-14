@@ -34,14 +34,14 @@
                                 </form>
                             </div>
                         </li>
+                        {{#if @site.navigation}}
                         <li role="menuitem">
                             {{t "Pages"}}
-                            <ul class="sub-menu">
-                                <li role="menuitem"><a href="">To be read</a></li>
-                            </ul>
+                            {{navigation}}
                         </li>
-                        <li role="menuitem"><a href="https://nathanaelcherrier.com/fr/resume">{{t "Newsletter" }}</a></li>
-                        <li role="menuitem"><a href="https://community.nathanaelcherrier.com/">{{t "Subscribe" }}</a></li>
+                        {{/if}}
+                        <li role="menuitem"><a href="/{{@site.lang}}/newsletter">{{t "Newsletter" }}</a></li>
+                        <li role="menuitem" class="highlighted"><a href="#/portal/signup">{{t "Subscribe" }}</a></li>
                     </ul>
                 </div>
             </div>

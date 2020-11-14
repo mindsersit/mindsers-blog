@@ -169,6 +169,31 @@ header.site-header .menu li {
     padding: 10px;
 }
 
+header.site-header .menu li.highlighted {
+    border: 1px solid #2980b9;
+    border-radius: 3px;
+    margin-left: 15px; padding: 8px 15px;
+}
+
+header.site-header .menu li.highlighted a {
+    color: #2980b9;
+    font-size: 0.95em;
+    text-decoration: none;
+}
+
+header.site-header .menu li.highlighted:active {
+    box-shadow: 0;
+}
+
+header.site-header .menu li.highlighted:hover {
+    background: #1B9CFC;
+    border-color: transparent;
+}
+
+header.site-header .menu li.highlighted:hover a {
+    color: white;
+}
+
 @keyframes appear {
     from {
         opacity: 0;
@@ -182,8 +207,10 @@ header.site-header .menu li.search .search-popup {
     position: absolute;
     display: none;
     left: 0;
-    top: 6px;
+    top: 0;
     z-index: 2;
+    padding: 6px 10px;
+    background-color: white;
 }
 
 header.site-header .menu li.search .search-popup input {
@@ -200,11 +227,11 @@ header.site-header .menu li.search .search-popup:focus-within {
     animation: appear 0.5s;
 }
 
-header.site-header .menu li > .sub-menu {
+header.site-header .menu li > ul{
     display: none;
 }
 
-header.site-header .menu li:hover > .sub-menu {
+header.site-header .menu li:hover > ul {
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -216,7 +243,7 @@ header.site-header .menu li:hover > .sub-menu {
     animation: appear 0.5s;
 }
 
-header.site-header .menu li:hover > .sub-menu li {
+header.site-header .menu li:hover > ul li {
     width: max-content;
     padding: 10px;
 }
