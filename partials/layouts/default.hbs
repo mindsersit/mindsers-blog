@@ -40,8 +40,10 @@
                             {{navigation}}
                         </li>
                         {{/if}}
-                        <li role="menuitem"><a href="/{{@site.lang}}/newsletter">{{t "Newsletter" }}</a></li>
-                        <li role="menuitem" class="highlighted"><a href="#/portal/signup">{{t "Subscribe" }}</a></li>
+                        <li role="menuitem"><a href="/{{@site.lang}}/newsletters">{{t "Newsletter" }}</a></li>
+                        {{#unless @member.paid}}
+                        <li role="menuitem" class="highlighted"><a href="/{{@site.lang}}/pricing">{{t "Get more" }}</a></li>
+                        {{/unless}}
                     </ul>
                 </div>
             </div>
@@ -53,7 +55,7 @@
             <div class="site-footer-content inner">
                 <nav class="items">
                     <div class="item">
-                        <h2>More links</h2>
+                        <h2>{{t "More links"}}</h2>
                         <ul>
                             <li><a href="https://community.nathanaelcherrier.com/">{{t "Forum" }}</a></li>
                             <li><a href="https://discord.gg/WrHUfSC">Discord</a></li>
