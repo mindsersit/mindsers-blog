@@ -23,12 +23,12 @@
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
                             <p>
-                                {{t "Published in"}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                                {{> helpers/trans text="Published in"}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
                             </p>
                         </div>
                         <div class="post-full-meta-share">
                             <p>
-                                {{t "Share this"}}
+                                {{> helpers/trans text="Share this"}}
                             </p>
                             <p>
                                 <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
@@ -52,19 +52,19 @@
             <form data-members-form="subscribe">
               <section class="subscribe-form">
                 <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
-                <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
-                    <input data-members-email type="email" required="true" placeholder="{{t "your@email.com"}}" />
-                    <button class="button" type="submit">{{t "Subscribe"}}</button>
+                <p>{{> helpers/trans text="Get the latest posts delivered right to your inbox"}}</p>
+                    <input data-members-email type="email" required="true" placeholder="{{> helpers/trans text="your@email.com"}}" />
+                    <button class="button" type="submit">{{> helpers/trans text="Subscribe"}}</button>
               </section>
               <p class="loader">...LOADING...</p>
-              <p class="error">{{t "There was an error sending the email, please try again"}}</p>
+              <p class="error">{{> helpers/trans text="There was an error sending the email, please try again"}}</p>
             </form>
             {{/if}}
 
             <footer class="post-full-footer">
                 <hr>
                 <p>
-                    {{{t "If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
+                    {{> helpers/trans text="If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}
                 </p>
             </footer>
             {{/is}}
@@ -102,7 +102,7 @@
             <div class="read-next-time-related">
                 {{#next_post}}
                 <div>
-                    <span class="direction">{{t "Next post"}}</span>
+                    <span class="direction">{{> helpers/trans text="Next post"}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p class="tag-list">
                         {{#foreach tags}}
@@ -114,7 +114,7 @@
 
                 {{#prev_post}}
                 <div>
-                    <span class="direction">{{t "Previous post"}}</span>
+                    <span class="direction">{{> helpers/trans text="Previous post"}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p class="tag-list">
                         {{#foreach tags}}
