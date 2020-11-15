@@ -1,4 +1,3 @@
-{{log this}}
 <header class="site-header outer">
     <div class="site-header-content inner">
         <div class="title">
@@ -20,11 +19,16 @@
                 {{#if @site.navigation}}
                 <li role="menuitem">
                     Pages
-                    {{#has tag="#en"}}
-                        {{navigation type="secondary"}}
-                    {{else}}
+                    {{#post}}
+                        {{#has tag="#en"}}
+                            {{navigation type="secondary"}}
+                        {{else}}
+                            {{navigation}}
+                        {{/has}}
+                    {{/post}}
+                    {{^is "post, page"}}
                         {{navigation}}
-                    {{/has}}
+                    {{/is}}
                 </li>
                 {{/if}}
                 <li role="menuitem">
