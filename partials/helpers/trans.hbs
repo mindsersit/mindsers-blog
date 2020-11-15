@@ -1,7 +1,9 @@
-{{#if text}}
-    {{#has tag="#en"}}
-        {{text}}
-    {{else}}
-        {{t text}}
-    {{/has}}
-{{/if}}
+{{~#is "post"~}}
+    {{~> helpers/trans-without-context post text=text~}}
+{{~/is~}}
+{{~#is "page"~}}
+    {{~> helpers/trans-without-context page text=text~}}
+{{~/is~}}
+{{~^is "post, page"~}}
+    {{~> helpers/trans-without-context text=text~}}
+{{~/is~}}

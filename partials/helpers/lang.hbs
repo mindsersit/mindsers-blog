@@ -1,1 +1,9 @@
-{{#has tag="#en"}}en{{else has tag="#fr"}}fr{{else has tag="#de"}}de{{else has tag="#es"}}es{{else}}{{@site.lang}}{{/has}}
+{{~#is "post"~}}
+    {{~> helpers/lang-without-context post~}}
+{{~/is~}}
+{{~#is "page"~}}
+    {{~> helpers/lang-without-context page~}}
+{{~/is~}}
+{{~^is "post, page"~}}
+    {{~> helpers/lang-without-context~}}
+{{~/is~}}
