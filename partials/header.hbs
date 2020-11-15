@@ -1,7 +1,7 @@
 <header class="site-header outer">
     <div class="site-header-content inner">
         <div class="title">
-            <a href="https://nathanaelcherrier.com/{{> "helpers/lang"}}/">
+            <a href="https://nathanaelcherrier.com/{{> helpers/lang}}/">
                 <img src="{{@site.logo}}" class="logo" alt="MindsersIT logo">
                 Nathanaël Cherrier
             </a>
@@ -12,7 +12,7 @@
                     <span class="label"><i class="fa fa-search"></i></span>
                     <div class="search-popup">
                         <form id="searchbar">
-                            <input type="text" name="term" placeholder="{{> "helpers/trans" text="Type something and hit enter"}}" />
+                            <input type="text" name="term" placeholder="{{> helpers/trans text="Type something and hit enter"}}" />
                         </form>
                     </div>
                 </li>
@@ -32,11 +32,11 @@
                 </li>
                 {{/if}}
                 <li role="menuitem">
-                    <a href="/{{> "helpers/lang"}}/newsletters">{{> "helpers/trans" text="Newsletter"}}</a>
+                    <a href="/{{> helpers/lang}}/newsletters">{{> helpers/trans text="Newsletter"}}</a>
                 </li>
                 {{#unless @member.paid}}
                 <li role="menuitem" class="highlighted">
-                    <a href="/{{> "helpers/lang"}}/pricing">{{> "helpers/trans" text="Get more"}}</a>
+                    <a href="/{{> helpers/lang}}/pricing">{{> helpers/trans text="Get more"}}</a>
                 </li>
                 {{/unless}}
             </ul>

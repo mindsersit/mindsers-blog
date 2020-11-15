@@ -1,4 +1,4 @@
-{{!< partials/layouts/default}}
+{{!< default}}
 
 {{#post}}
 <main id="site-main" class="site-main outer">
@@ -9,7 +9,7 @@
                     <div class="infos upper">
                         <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
                         {{#has tag="sponsored" author="value"}}
-                            <div class="sponsored-tag">{{t "sponsored"}}</div>
+                            <div class="sponsored-tag">{{> helpers/trans text="sponsored"}}</div>
                         {{/has}}
                         <p class="post-full-meta-author">
                             {{#has author="count:>1"}}
