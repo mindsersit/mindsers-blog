@@ -19,13 +19,11 @@
                 {{#if @site.navigation}}
                 <li role="menuitem">
                     Pages
-                    {{#post}}
-                        {{#has tag="#en"}}
-                            {{navigation type="secondary"}}
-                        {{else}}
-                            {{navigation}}
-                        {{/has}}
-                    {{/post}}
+                    {{#has tag="#en"}}
+                        {{navigation type="secondary"}}
+                    {{else}}
+                        {{navigation}}
+                    {{/has}}
                     {{^is "post, page"}}
                         {{navigation}}
                     {{/is}}

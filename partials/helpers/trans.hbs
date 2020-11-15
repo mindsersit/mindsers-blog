@@ -1,11 +1,9 @@
 {{#if text}}
-    {{#post}}
-        {{#has tag="#en"}}
-            {{text}}
-        {{else}}
-            {{t text}}
-        {{/has}}
-    {{/post}}
+    {{#has tag="#en"}}
+        {{text}}
+    {{else}}
+        {{t text}}
+    {{/has}}
     {{^is "post, page"}}
         {{t text}}
     {{/is}}
