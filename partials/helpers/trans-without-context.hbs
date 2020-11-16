@@ -1,7 +1,11 @@
 {{~#has tag="#en"~}}
     {{{text}}}
 {{~else~}}
-    {{~#if text~}}
-        {{{t text}}}
-    {{~/if~}}
+    {{~#is "en"~}}
+        {{{text}}}
+    {{~else~}}
+        {{~#if text~}}
+            {{{t text}}}
+        {{~/if~}}
+    {{~/is~}}
 {{~/has~}}
