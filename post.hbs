@@ -13,9 +13,9 @@
                         {{/has}}
                         <p class="post-full-meta-author">
                             {{#has author="count:>1"}}
-                                {{{t "This post was a collaboration between {authors}" authors=(authors)}}}
+                                {{> helpers/trans text="This post was a collaboration between"}} {{authors}}
                             {{else}}
-                                {{{t "Written by {authors}" authors=(authors)}}}
+                                {{> helpers/trans text="Written by"}} {{authors}}
                             {{/has}}
                         </p>
                     </div>
@@ -51,7 +51,7 @@
             {{#if @labs.members}}
             <form data-members-form="subscribe">
               <section class="subscribe-form">
-                <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
+                <h3 class="subscribe-form-title">{{> helpers/trans text="Subscribe to"}} {{@site.title}}</h3>
                 <p>{{> helpers/trans text="Get the latest posts delivered right to your inbox"}}</p>
                     <input data-members-email type="email" required="true" placeholder="{{> helpers/trans text="your@email.com"}}" />
                     <button class="button" type="submit">{{> helpers/trans text="Subscribe"}}</button>
