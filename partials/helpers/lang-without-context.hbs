@@ -7,5 +7,15 @@
 {{~else has tag="#es"~}}
     es
 {{~else~}}
-    {{~@site.lang~}}
+    {{~#is "fr"~}}
+        fr
+    {{~else is "en"~}}
+        en
+    {{~else is "es"~}}
+        es
+    {{~else is "de"~}}
+        de
+    {{~else~}}
+        {{~@site.lang~}}
+    {{~/is~}}
 {{~/has~}}
