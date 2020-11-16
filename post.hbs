@@ -77,29 +77,19 @@
     <div class="inner">
         <div class="read-next-feed">
             {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
-                {{#if related_posts}}
-                <div class="read-next-tag-related">
-                        <header class="read-next-card-header">
-                            {{#../primary_tag}}
-                            <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                            {{/../primary_tag}}
-                        </header>
-                        <div class="read-next-card-content">
-                            <ul>
-                                {{#foreach related_posts}}
-                                <li><a href="{{url}}">{{title}}</a></li>
-                                {{/foreach}}
-                            </ul>
-                        </div>
-                        <footer class="read-next-card-footer">
-                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">
-                            {{#../../post}}{{> helpers/trans text="See all posts"}}{{/../../post}}<sup>({{meta.pagination.total}})</sup> →
-                            </a>
-                        </footer>
-                </div>
-                {{/if}}
-            {{/get}}
+                {{#has tag="#en"}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-fr+id:-{{id}}" limit="3" as |related_posts|}}
+                        {{#if related_posts}}
+                        {{> related_posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
+                        {{/if}}
+                    {{/get}}
+                {{else}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
+                        {{#if related_posts}}
+                        {{> related_posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
+                        {{/if}}
+                    {{/get}}
+                {{/has}}
             {{/if}}
             <div class="read-next-time-related">
                 {{#next_post}}
