@@ -1,9 +1,7 @@
-{{~#is "post"~}}
+{{~#if post~}}
     {{~> helpers/trans-without-context post text=text~}}
-{{~/is~}}
-{{~#is "page"~}}
+{{~else if page~}}
     {{~> helpers/trans-without-context page text=text~}}
-{{~/is~}}
-{{~^is "post, page"~}}
+{{~else~}}
     {{~> helpers/trans-without-context text=text~}}
-{{~/is~}}
+{{~/if~}}
