@@ -93,7 +93,9 @@
                             </ul>
                         </div>
                         <footer class="read-next-card-footer">
-                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "See all % posts")}} →</a>
+                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">
+                            {{#../../post}}{{> helpers/trans text="See all posts"}}{{/../../post}}<sup>({{meta.pagination.total}})</sup> →
+                            </a>
                         </footer>
                 </div>
                 {{/if}}
