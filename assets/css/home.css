@@ -39,7 +39,7 @@ section.list-header .social-networks {
 
 .site-main .feed .post-card {
     margin: 0 10px;
-    background-color: #f5f5f5;
+    background-color: var(--bgSecondaryColor);
     max-width: 236px;
     box-sizing: border-box;
 }
