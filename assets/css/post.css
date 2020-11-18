@@ -1,16 +1,16 @@
 :root {
-    --primaryColor: #0076df;
-    --primaryFadedColor: #66b8ff;
+    --primaryColor: #1b9cfc;
+    --primaryFadedColor: #25ccf7;
     --secondaryColor: #34495e;
-    --defaultGradientBackground: linear-gradient(70deg, #1b9cfc, #25ccf7);
+    --bgColor: white;
+    --bgSecondaryColor: #f5f5f5;
+    --defaultGradientBackground: linear-gradient(70deg, var(--primaryColor), var(--primaryFadedColor)); /* var(--primaryColor), var(--primaryFadedColor) */
     --primaryFont: 'Inconsolata', monospace;
     --secondaryFont: 'Source Code Pro', monospace;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --primaryColor: #0076df;
-        --primaryFadedColor: #66b8ff;
         --secondaryColor: white;
         --bgColor: #2f3542;
         --bgSecondaryColor: #34495e;
@@ -648,7 +648,7 @@ aside.read-next .read-next-tag-related li {
 
 aside.read-next .read-next-tag-related li a {
     background-color: rgba(0, 118, 223, 0.2);
-    color: #0076df;
+    color: var(--primaryColor);
 }
 
 aside.read-next .read-next-time-related > div {

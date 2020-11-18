@@ -1,5 +1,5 @@
 section.subscribe {
-    background-color: white;
+    background-color: var(--bgColor);
     padding: 100px 0;
     text-align: center;
     font-family: var(--primaryFont);
@@ -8,7 +8,7 @@ section.subscribe {
 section.subscribe .subscribe-content {
     max-width: 1024px;
     margin: auto;
-    background-color: #f5f5f5;
+    background-color: var(--bgSecondaryColor);
     padding: 70px 0;
 }
 
