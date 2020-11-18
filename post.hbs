@@ -80,13 +80,13 @@
                 {{#has tag="#en"}}
                     {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-fr+id:-{{id}}" limit="3" as |related_posts|}}
                         {{#if related_posts}}
-                        {{> related_posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
+                        {{> related-posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
                         {{/if}}
                     {{/get}}
                 {{else}}
                     {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
                         {{#if related_posts}}
-                        {{> related_posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
+                        {{> related-posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
                         {{/if}}
                     {{/get}}
                 {{/has}}
