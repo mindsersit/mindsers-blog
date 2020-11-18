@@ -5,20 +5,7 @@
         <h1 class="list-header-title">{{@site.title}}</h1>
         <h2>{{@site.description}}</h2>
         <div class="infos">
-            <div class="featured-links">
-                <h3>{{> helpers/trans text="Featured"}}</h3>
-                <ul>
-                    {{#get "posts" filter="featured:true+tag:hash-fr"}}
-                        {{#foreach posts limit="3"}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                        {{else}}
-                            <li>{{> helpers/trans text="No featured content"}}</li>
-                        {{/foreach}}
-                    {{/get}}
-                </ul>
-            </div>
             <div class="social-networks">
-                <h3>{{> helpers/trans text="Social networks"}}</h3>
                 <ul>
                     {{#if @site.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
                     {{#if @site.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
@@ -29,5 +16,34 @@
 </section>
 
 <main id="site-main" class="site-main outer">
-    
+    <div class="inner">
+        <section class="post-feeds">
+            <h3>French stories</h3>
+            {{#get "posts" filter="tags:-hash-en" limit="3"}}
+                <div class="feed">
+                    {{#foreach posts}}
+                        {{> post-card-small}}
+                    {{else}}
+                        <p class="no-post">{{> helpers/trans text="No post here"}}</p>
+                    {{/foreach}}
+                </div>
+            {{/get}}
+        </section>
+        <section class="post-feeds">
+            <h3>English stories</h3>
+            {{#get "posts" filter="tags:hash-en" limit="3"}}
+                <div class="feed">
+                    {{#foreach posts}}
+                        {{> post-card-small}}
+                    {{else}}
+                        <p class="no-post">{{> helpers/trans text="No post here"}}</p>
+                    {{/foreach}}
+                </div>
+            {{/get}}
+        </section>
+    </div>
 </main>
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}">
+{{/contentFor}}

@@ -388,6 +388,7 @@ article.post-card, article.post-card a {
     text-decoration: none;
     max-width: 1024px;
     margin: 30px auto;
+    border-radius: 3px;
 }
 
 article.post-card {

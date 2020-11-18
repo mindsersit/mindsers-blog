@@ -1,0 +1,53 @@
+section.list-header {
+    padding: 80px 10px 50px;
+}
+
+section.list-header h1 {
+    font-family: var(--primaryFont);
+    text-align: center;
+    font-size: 2.5em;
+}
+
+section.list-header h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 500;
+    margin: 40px;
+}
+
+section.list-header .social-networks {
+    margin: auto;
+}
+
+.site-main .inner {
+    width: 1024px;
+    margin: auto;
+}
+
+.site-main h3 {
+    color: #cfcfcf;
+    font-family: var(--primaryFont);
+}
+
+.site-main section.post-feeds {
+    margin: 40px 0;
+}
+.site-main .feed {
+    display: flex;
+}
+
+.site-main .feed .post-card {
+    margin: 0 10px;
+    background-color: #f5f5f5;
+    max-width: 236px;
+    box-sizing: border-box;
+}
+
+.site-main .feed .post-card:first-of-type {
+    margin-left: 0;
+}
+
+.site-main .feed .post-card:last-of-type {
+    margin-right: 0;
+}
