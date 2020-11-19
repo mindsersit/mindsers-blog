@@ -35,13 +35,15 @@ section.list-header .social-networks {
 }
 .site-main .feed {
     display: flex;
+    justify-content: space-between;
 }
 
 .site-main .feed .post-card {
     margin: 0 10px;
     background-color: var(--bgSecondaryColor);
-    max-width: 236px;
+    width: 240px;
     box-sizing: border-box;
+    padding: 0 20px 20px;
 }
 
 .site-main .feed .post-card:first-of-type {
@@ -50,4 +52,15 @@ section.list-header .social-networks {
 
 .site-main .feed .post-card:last-of-type {
     margin-right: 0;
+}
+
+.site-main .feed .post-card.more-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.site-main .feed .post-card.more-link a {
+    background-color: transparent;
 }

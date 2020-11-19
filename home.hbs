@@ -20,24 +20,30 @@
         <section class="post-feeds">
             <h3>French stories</h3>
             {{#get "posts" filter="tags:-hash-en" limit="3"}}
-                <div class="feed">
+                <div class="feed" lang="fr">
                     {{#foreach posts}}
                         {{> post-card-small}}
-                    {{else}}
-                        <p class="no-post">{{> helpers/trans text="No post here"}}</p>
                     {{/foreach}}
+                    <article class="post-card more-link">
+                        <a class="post-card-more-link" href="/fr/">
+                            Découvrir les autres articles en Français.
+                        </a>
+                    </article>
                 </div>
             {{/get}}
         </section>
         <section class="post-feeds">
             <h3>English stories</h3>
             {{#get "posts" filter="tags:hash-en" limit="3"}}
-                <div class="feed">
+                <div class="feed" lang="en">
                     {{#foreach posts}}
                         {{> post-card-small}}
-                    {{else}}
-                        <p class="no-post">{{> helpers/trans text="No post here"}}</p>
                     {{/foreach}}
+                    <article class="post-card more-link">
+                        <a class="post-card-more-link" href="/en/">
+                            See the other English articles.
+                        </a>
+                    </article>
                 </div>
             {{/get}}
         </section>
