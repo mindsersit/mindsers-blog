@@ -39,11 +39,18 @@ section.list-header .social-networks {
 }
 
 .site-main .feed .post-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0 10px;
     background-color: var(--bgSecondaryColor);
     width: 240px;
     box-sizing: border-box;
     padding: 0 20px 20px;
+}
+
+.site-main .feed .post-card .post-card-content-link {
+    margin-top: 0;
 }
 
 .site-main .feed .post-card:first-of-type {
