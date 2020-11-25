@@ -71,3 +71,7 @@ section.list-header .social-networks {
 .site-main .feed .post-card.more-link a {
     background-color: transparent;
 }
+
+.site-main .description {
+    font-family: var(--primaryFont);
+}

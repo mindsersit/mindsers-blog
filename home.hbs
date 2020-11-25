@@ -17,8 +17,17 @@
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
+        <section class="description">
+            <p>In this is publication I write about my developer, my entreupreuner, my father journey</p>
+            <ul>
+                <li>Exclusive content</li>
+                <li>Discussion space</li>
+                <li>Weekly nesletter</li>
+            </ul>
+            <p>Expect to see one new free content published each week. For more content and features you'll have to subcribe.</p>
+        </section>
         <section class="post-feeds">
-            <h3>French stories</h3>
+            <h3>Last French stories</h3>
             {{#get "posts" filter="tags:-hash-en" limit="3"}}
                 <div class="feed" lang="fr">
                     {{#foreach posts visibility="public"}}
@@ -33,7 +42,7 @@
             {{/get}}
         </section>
         <section class="post-feeds">
-            <h3>English stories</h3>
+            <h3>Last English stories</h3>
             {{#get "posts" filter="tags:hash-en" limit="3"}}
                 <div class="feed" lang="en">
                     {{#foreach posts visibility="public"}}
