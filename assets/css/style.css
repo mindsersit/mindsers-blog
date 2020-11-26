@@ -7,13 +7,15 @@
     --defaultGradientBackground: linear-gradient(70deg, var(--primaryColor), var(--primaryFadedColor)); /* var(--primaryColor), var(--primaryFadedColor) */
     --primaryFont: 'Inconsolata', monospace;
     --secondaryFont: 'Source Code Pro', monospace;
+    --lightColor: #e5eff5;
+    --darkColor: #333f44;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --secondaryColor: white;
-        --bgColor: #2f3542;
-        --bgSecondaryColor: #34495e;
+        --secondaryColor: #e5eff5;
+        --bgColor: #212a2e;
+        --bgSecondaryColor: #333f44;
     }
 }
 
@@ -46,8 +48,8 @@ a.html-tag::after {
 /* 1 - Footer */
 
 footer.site-footer {
-    background-color: #34495e;
-    border-top: 1px solid #2f3542;
+    background-color: var(--darkColor);
+    border-top: 1px solid #212a2e;
     font-family: var(--primaryFont);
     padding: 50px;
 }
@@ -71,7 +73,7 @@ footer.site-footer .site-footer-content nav.items h2 {
 
 
 footer.site-footer .site-footer-content nav.items .item {
-    color: white;
+    color: var(--lightColor);
     font-weight: 300;
 }
 
@@ -86,7 +88,7 @@ footer.site-footer .site-footer-content nav.items li {
 }
 
 footer.site-footer .site-footer-content a {
-    color: white;
+    color: var(--lightColor);
     text-decoration: none;
 }
 
@@ -97,7 +99,7 @@ footer.site-footer .site-footer-content nav.items li .coin-address {
 
 footer.site-footer .site-footer-content .copyright {
     text-align: center;
-    color: white;
+    color: var(--lightColor);
     font-size: 0.8em;
     font-weight: lighter;
     margin: 30px;

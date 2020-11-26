@@ -7,13 +7,15 @@
     --defaultGradientBackground: linear-gradient(70deg, var(--primaryColor), var(--primaryFadedColor)); /* var(--primaryColor), var(--primaryFadedColor) */
     --primaryFont: 'Inconsolata', monospace;
     --secondaryFont: 'Source Code Pro', monospace;
+    --lightColor: #e5eff5;
+    --darkColor: #333f44;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --secondaryColor: white;
-        --bgColor: #2f3542;
-        --bgSecondaryColor: #34495e;
+        --secondaryColor: #e5eff5;
+        --bgColor: #212a2e;
+        --bgSecondaryColor: #333f44;
     }
 }
 
