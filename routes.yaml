@@ -2,6 +2,14 @@ routes:
   /: home
   /fr/pricing/: plans
   /en/pricing/: plans-en
+  /fr/coffeeshops/:
+    controller: channel
+    filter: tag:coffeeshop+tag:-hash-en
+    template: index
+  /en/coffeeshops/:
+    controller: channel
+    filter: tag:coffeeshop+tag:hash-en
+    template: index-en
 
 collections:
   /fr/:

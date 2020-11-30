@@ -7,7 +7,6 @@
             </a>
         </div>
         <div class="menu">
-            {{!-- Must reads / Best rated / Pages / Search bar --}}
             <ul class="nav" role="menu">
                 <li role="menuitem" class="search">
                     <i class="fa fa-search"></i>
@@ -27,17 +26,17 @@
                             <p>
                                 <a>
                                     <span class="title">
-                                        Tech posts<br>
+                                        {{> helpers/trans text="Tech posts"}}<br>
                                     </span>
-                                    All my code/tech related posts
+                                    {{> helpers/trans text="All my code/tech related posts"}}
                                 </a>
                             </p>
                             <p>
-                                <a href="/tag/coffeeshop/">
+                                <a href="/{{> helpers/lang}}/coffeeshops/">
                                     <span class="title">
-                                        Coffee Shops<br>
+                                        {{> helpers/trans text="Coffee Shops"}}<br>
                                     </span>
-                                    I test coffee shops around the world for you
+                                    {{> helpers/trans text="I test coffee shops around the world for you"}}
                                 </a>
                             </p>
                             {{#unless @member.paid}}
@@ -60,22 +59,13 @@
                             {{/is}}
                         </div>
                         {{/if}}
-                        {{!-- <div class="menu-section">
-                            <div class="best-reads"></div>
-                            <div class="must-reads"></div>
-                        </div> --}}
                         <div class="menu-section language">
                             <p>
-                                <a href="/fr/">French</a> • <a href="/en/">English</a>
+                                <a href="/fr/">{{> helpers/trans text="French"}}</a> • <a href="/en/">{{> helpers/trans text="English"}}</a>
                             </p>
                         </div>
                     </div>
                 </li>
-                {{!-- {{#unless @member.paid}}
-                <li role="menuitem" class="highlighted">
-                    <a href="/{{> helpers/lang}}/pricing">{{> helpers/trans text="Get more"}}</a>
-                </li>
-                {{/unless}} --}}
             </ul>
         </div>
     </div>
