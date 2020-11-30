@@ -7,38 +7,75 @@
             </a>
         </div>
         <div class="menu">
+            {{!-- Must reads / Best rated / Pages / Search bar --}}
             <ul class="nav" role="menu">
                 <li role="menuitem" class="search">
-                    <span class="label"><i class="fa fa-search"></i></span>
-                    <div class="search-popup">
-                        <form id="searchbar">
-                            <input type="text" name="term" placeholder="{{> helpers/trans text="Type something and hit enter"}}" />
-                        </form>
+                    <i class="fa fa-search"></i>
+                </li>
+                <li role="menuitem">
+                    <a href="/{{> helpers/lang}}/newsletters">{{> helpers/trans text="Membership"}}</a>
+                </li>
+                <li class="menuitem">
+                    <i class="fa fa-bars"></i>
+                    <div class="sub-menu">
+                        <div class="search-bar">
+                            <form id="searchbar">
+                                <input type="text" name="term" placeholder="{{> helpers/trans text="Type something and hit enter"}}" />
+                            </form>
+                        </div>
+                        <div class="menu-section collections">
+                            <p>
+                                <a>
+                                    <span class="title">
+                                        Tech posts<br>
+                                    </span>
+                                    All my code/tech related posts
+                                </a>
+                            </p>
+                            <p>
+                                <a>
+                                    <span class="title">
+                                        Coffee Shops<br>
+                                    </span>
+                                    I test coffee shops around the world for you
+                                </a>
+                            </p>
+                            {{#unless @member.paid}}
+                            <p>
+                                <a class="btn" href="/{{> helpers/lang}}/pricing">{{> helpers/trans text="Get more content"}}</a>
+                            </p>
+                            {{/unless}}
+                        </div>
+                        {{#if @site.navigation}}
+                        <div class="menu-section ghost">
+                            {{#post}}
+                                {{#has tag="#en"}}
+                                    {{navigation type="secondary"}}
+                                {{else}}
+                                    {{navigation}}
+                                {{/has}}
+                            {{/post}}
+                            {{^is "post, page"}}
+                                {{navigation}}
+                            {{/is}}
+                        </div>
+                        {{/if}}
+                        {{!-- <div class="menu-section">
+                            <div class="best-reads"></div>
+                            <div class="must-reads"></div>
+                        </div> --}}
+                        <div class="menu-section language">
+                            <p>
+                                <a href="/fr/">French</a> • <a href="/en/">English</a>
+                            </p>
+                        </div>
                     </div>
                 </li>
-                {{#if @site.navigation}}
-                <li role="menuitem">
-                    Pages
-                    {{#post}}
-                        {{#has tag="#en"}}
-                            {{navigation type="secondary"}}
-                        {{else}}
-                            {{navigation}}
-                        {{/has}}
-                    {{/post}}
-                    {{^is "post, page"}}
-                        {{navigation}}
-                    {{/is}}
-                </li>
-                {{/if}}
-                <li role="menuitem">
-                    <a href="/{{> helpers/lang}}/newsletters">{{> helpers/trans text="Newsletter"}}</a>
-                </li>
-                {{#unless @member.paid}}
+                {{!-- {{#unless @member.paid}}
                 <li role="menuitem" class="highlighted">
                     <a href="/{{> helpers/lang}}/pricing">{{> helpers/trans text="Get more"}}</a>
                 </li>
-                {{/unless}}
+                {{/unless}} --}}
             </ul>
         </div>
     </div>
