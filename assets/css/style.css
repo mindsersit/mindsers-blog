@@ -250,15 +250,14 @@ header.site-header .menu li > .sub-menu.open {
 }
 
 header.site-header .menu li > .sub-menu .menu-section {
-    display: none;
     border-top: 1px solid var(--bgSecondaryColor);
     border-bottom: 1px solid var(--bgSecondaryColor);
     padding: 10px 0;
     margin: 15px 40px;
 }
 
-header.site-header .menu li > .sub-menu .menu-section.open {
-    display: inline-block;
+header.site-header .menu li > .sub-menu .menu-section.hide {
+    display: none;
 }
 
 header.site-header .menu li > .sub-menu .menu-section + .menu-section {

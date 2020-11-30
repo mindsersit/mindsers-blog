@@ -14,7 +14,7 @@
 
             subMenu
                 .querySelectorAll('.menu-section')
-                .forEach(section => section.classList.add('open'))
+                .forEach(section => section.classList.remove('hide'))
         })
 
         searchBtn.addEventListener('click', () => {
@@ -27,7 +27,7 @@
 
             subMenu
                 .querySelectorAll('.menu-section')
-                .forEach(section => section.classList.remove('open'))
+                .forEach(section => section.classList.add('hide'))
         })
     }
 

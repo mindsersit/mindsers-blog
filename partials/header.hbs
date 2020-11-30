@@ -23,7 +23,7 @@
                                 <input type="text" name="term" placeholder="{{> helpers/trans text="Type something and hit enter"}}" />
                             </form>
                         </div>
-                        <div class="menu-section collections open">
+                        <div class="menu-section collections">
                             <p>
                                 <a>
                                     <span class="title">
@@ -47,7 +47,7 @@
                             {{/unless}}
                         </div>
                         {{#if @site.navigation}}
-                        <div class="menu-section ghost open">
+                        <div class="menu-section ghost">
                             {{#post}}
                                 {{#has tag="#en"}}
                                     {{navigation type="secondary"}}
@@ -64,7 +64,7 @@
                             <div class="best-reads"></div>
                             <div class="must-reads"></div>
                         </div> --}}
-                        <div class="menu-section language open">
+                        <div class="menu-section language">
                             <p>
                                 <a href="/fr/">French</a> • <a href="/en/">English</a>
                             </p>
