@@ -253,7 +253,7 @@ header.site-header .menu li > .sub-menu .menu-section {
     border-top: 1px solid var(--bgSecondaryColor);
     border-bottom: 1px solid var(--bgSecondaryColor);
     padding: 10px 0;
-    margin: 15px 40px;
+    margin: 15px 20px;
 }
 
 header.site-header .menu li > .sub-menu .menu-section.hide {
