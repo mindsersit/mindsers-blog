@@ -1,8 +1,8 @@
 (function () {
     function menu() {
-        const moreBtn = document.querySelector('.menu li.more')
-        const searchBtn = document.querySelector('.menu li.search')
-        const subMenu = moreBtn.querySelector('.sub-menu')
+        const moreBtn = document.querySelector('.menu li.more i')
+        const searchBtn = document.querySelector('.menu li.search i')
+        const subMenu = document.querySelector('.sub-menu')
 
         moreBtn.addEventListener('click', () => {
             if(!searchBtn.classList.contains('active')) {
