@@ -74,4 +74,9 @@ section.list-header .social-networks {
 
 .site-main .description {
     font-family: var(--primaryFont);
+    font-size: 1.2em;
+}
+
+.site-main .description p {
+    margin: 30px 0;
 }
