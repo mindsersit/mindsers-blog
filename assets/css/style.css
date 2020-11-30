@@ -301,6 +301,7 @@ header.site-header .menu li > .sub-menu .menu-section.collections .title {
 
 header.site-header .menu li > .sub-menu .menu-section.collections .btn {
     background-color: var(--primaryColor);
+    color: var(--lightColor);
     display: inline-block;
     border-radius: 3px;
     width: 100%;
