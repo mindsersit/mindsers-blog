@@ -247,6 +247,7 @@ header.site-header .menu li > .sub-menu.open {
     box-sizing: border-box;
     margin-top: 10px;
     animation: appear 0.5s;
+    z-index: 1;
 }
 
 header.site-header .menu li > .sub-menu .menu-section {
