@@ -183,6 +183,10 @@ header.site-header .menu li {
     padding: 10px;
 }
 
+header.site-header .menu li.active {
+    color: var(--primaryColor);
+}
+
 header.site-header .menu li.highlighted {
     border: 1px solid var(--primaryColor);
     border-radius: 3px;
@@ -246,10 +250,15 @@ header.site-header .menu li > .sub-menu.open {
 }
 
 header.site-header .menu li > .sub-menu .menu-section {
+    display: none;
     border-top: 1px solid var(--bgSecondaryColor);
     border-bottom: 1px solid var(--bgSecondaryColor);
     padding: 10px 0;
     margin: 15px 40px;
+}
+
+header.site-header .menu li > .sub-menu .menu-section.open {
+    display: inline-block;
 }
 
 header.site-header .menu li > .sub-menu .menu-section + .menu-section {
