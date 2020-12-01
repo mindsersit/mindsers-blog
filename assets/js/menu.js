@@ -1,29 +1,31 @@
 (function () {
     function menu() {
-        const moreBtn = document.querySelector('.menu li.more i')
-        const searchBtn = document.querySelector('.menu li.search i')
-        const subMenu = document.querySelector('.sub-menu')
+        const moreItem = document.querySelector('.menu li.more')
+        const searchItem = document.querySelector('.menu li.search')
+        const moreIcon = moreItem.querySelector('i')
+        const searchIcon = searchItem.querySelector('i')
+        const subMenu = moreItem.querySelector('.sub-menu')
 
-        moreBtn.addEventListener('click', () => {
-            if(!searchBtn.classList.contains('active')) {
+        moreIcon.addEventListener('click', () => {
+            if(!searchItem.classList.contains('active')) {
                 subMenu.classList.toggle('open')
             }
 
-            moreBtn.classList.toggle('active')
-            searchBtn.classList.remove('active')
+            moreItem.classList.toggle('active')
+            searchItem.classList.remove('active')
 
             subMenu
                 .querySelectorAll('.menu-section')
                 .forEach(section => section.classList.remove('hide'))
         })
 
-        searchBtn.addEventListener('click', () => {
-            if(!moreBtn.classList.contains('active')) {
+        searchIcon.addEventListener('click', () => {
+            if(!moreItem.classList.contains('active')) {
                 subMenu.classList.toggle('open')
             }
             
-            moreBtn.classList.remove('active')
-            searchBtn.classList.toggle('active')
+            moreItem.classList.remove('active')
+            searchItem.classList.toggle('active')
 
             subMenu
                 .querySelectorAll('.menu-section')
