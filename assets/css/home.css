@@ -49,6 +49,10 @@ section.list-header .social-networks {
     padding: 0 20px 20px;
 }
 
+.site-main .feed article.post-card .post-card-header .post-card-title {
+    max-width: unset;
+}
+
 .site-main .feed .post-card .post-card-content-link {
     margin-top: 0;
 }
