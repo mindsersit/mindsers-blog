@@ -16,20 +16,14 @@
                     {{/get}}
                 </ul>
             </div>
-            <div class="social-networks">
-                <h3>Social networks</h3>
-                <ul>
-                    {{#if @site.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
-                    {{#if @site.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
-                </ul>
-            </div>
+            {{> list_header_socials}}
         </div>
     </div>
 </section>
 
 <main id="site-main" class="site-main outer">
     <div class="post-feed inner" lang="en">
-        {{#foreach posts}}
+        {{#foreach posts visibility="all"}}
             {{> post-card-en}}
         {{else}}
             <p class="no-post">No post here</p>
