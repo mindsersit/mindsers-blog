@@ -31,7 +31,7 @@
             {{#get "posts" filter="tags:-hash-en" limit="3"}}
                 <div class="feed" lang="fr">
                     {{#foreach posts visibility="public"}}
-                        {{> post-card-small}}
+                        {{> post-card/small}}
                     {{/foreach}}
                     <article class="post-card more-link">
                         <a class="post-card-more-link" href="/fr/">
@@ -46,7 +46,7 @@
             {{#get "posts" filter="tags:hash-en" limit="3"}}
                 <div class="feed" lang="en">
                     {{#foreach posts visibility="public"}}
-                        {{> post-card-small}}
+                        {{> post-card/small-en}}
                     {{/foreach}}
                     <article class="post-card more-link">
                         <a class="post-card-more-link" href="/en/">

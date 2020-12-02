@@ -1,0 +1,13 @@
+<article class="post-card {{post_class}}">
+    <a class="post-card-content-link" href="{{url}}">
+        <header class="post-card-header">
+            <h2 class="post-card-title">$> {{title}}</h2>
+        </header>
+        <section class="post-card-excerpt">
+            <p>{{excerpt words="30"}}...</p>
+        </section>
+    </a>
+    <footer class="post-card-meta">
+        Posted on <time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">{{date format="MMM D, YYYY"}}</time>
+    </footer>
+</article>

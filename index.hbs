@@ -24,7 +24,7 @@
 <main id="site-main" class="site-main outer">
     <div class="post-feed inner">
         {{#foreach posts visibility="all"}}
-            {{> post-card}}
+            {{> post-card/main}}
         {{else}}
             <p class="no-post">{{> helpers/trans text="No post here"}}</p>
         {{/foreach}}
