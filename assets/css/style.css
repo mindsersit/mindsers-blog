@@ -365,7 +365,15 @@ section.list-header {
     font-weight: bolder;
 }
 
-section.list-header .list-header-content {
+section.title-header {
+    padding: 20px;
+    color: white;
+    padding: 50px 10px 0;
+    font-weight: bolder;
+    background: unset;
+}
+
+section.list-header .list-header-content, section.title-header .title-header-content {
     max-width: 1024px;
     margin: auto;
 }
@@ -374,6 +382,21 @@ section.list-header h1 {
     font-family: var(--secondaryFont);
     text-align: center;
     font-size: 4em;
+}
+
+section.title-header h1 {
+    display: inline-block;
+    font-family: var(--secondaryFont);
+    text-align: left;
+    font-size: 3.5em;
+    margin: 0;
+
+    background-image: var(--defaultGradientBackground);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 }
 
 section.list-header .list-header-title {
@@ -499,6 +522,7 @@ article.post-card .post-card-header {
 
 article.post-card .post-card-header .post-card-title {
     font-family: var(--secondaryFont);
+    max-width: 81%;
 }
 
 article.post-card .post-card-header .reading-time {
