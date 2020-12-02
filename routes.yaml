@@ -4,11 +4,35 @@ routes:
   /en/pricing/: plans-en
   /fr/coffeeshops/:
     controller: channel
-    filter: tag:coffeeshop+tag:-hash-en
+    filter: tag:hash-coffeeshop-review+tag:-hash-en
     template: index
   /en/coffeeshops/:
     controller: channel
-    filter: tag:coffeeshop+tag:hash-en
+    filter: tag:hash-coffeeshop-review+tag:hash-en
+    template: index-en
+  /fr/business/:
+    controller: channel
+    filter: tag:hash-business-post+tag:-hash-en
+    template: index
+  /en/business/:
+    controller: channel
+    filter: tag:hash-business-post+tag:hash-en
+    template: index-en
+  /fr/tech/:
+    controller: channel
+    filter: tag:hash-tech-post+tag:-hash-en
+    template: index
+  /en/tech/:
+    controller: channel
+    filter: tag:hash-tech-post+tag:hash-en
+    template: index-en
+  /fr/edito/:
+    controller: channel
+    filter: tag:hash-edito+tag:-hash-en
+    template: index
+  /en/edito/:
+    controller: channel
+    filter: tag:hash-edito+tag:hash-en
     template: index-en
 
 collections:

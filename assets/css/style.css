@@ -298,6 +298,23 @@ header.site-header .menu li > .sub-menu .menu-section.collections .title {
     font-weight: 600;
     font-variant: small-caps;
     color: var(--primaryColor);
+    display: block;
+}
+
+header.site-header .menu li > .sub-menu .menu-section.collections .premium {
+    background-color: #fdcb6e;
+    border-radius: 2px;
+    padding: 3px 5px;
+    font-size: 0.65em;
+    display: inline-block;
+    font-family: var(--primaryFont);
+    color: black;
+    margin: auto;
+    font-variant: normal;
+    font-weight: 100;
+    box-sizing: border-box;
+    line-height: 12px;
+    vertical-align: top;
 }
 
 header.site-header .menu li > .sub-menu .menu-section.collections .btn {
