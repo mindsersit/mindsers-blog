@@ -46,7 +46,7 @@
   "Forum": "Forum",
   "There was an error sending the email, please try again": "Nous avons rencontré une erreur en vous envoyant un e-mail. Merci de réessayer.",
   "Type something and hit enter": "Tapez quelque chose et appuyez sur Entrée",
-  "Newsletter": "Newsletter",
+  "Newsletter issues": "Newsletter",
   "Pages": "Pages",
   "Get access to my premium content": "Accéder au contenu Premium",
   "Legal notices": "Mention légales",
@@ -57,5 +57,7 @@
   "Coffee Shops": "Les cafés",
   "French": "Français",
   "English": "Anglais",
-  "Business posts": "Les articles Business"
+  "Business posts": "Les articles Business",
+  "Lifestyle posts": "Les articles lifestyle",
+  "Posts": "Articles"
 }

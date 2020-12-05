@@ -26,13 +26,13 @@ routes:
     controller: channel
     filter: tag:hash-tech-post+tag:hash-en
     template: index-en
-  /fr/edito/:
+  /fr/lifestyle/:
     controller: channel
-    filter: tag:hash-edito+tag:-hash-en
+    filter: tag:hash-lifestyle-post+tag:-hash-en
     template: index
-  /en/edito/:
+  /en/lifestyle/:
     controller: channel
-    filter: tag:hash-edito+tag:hash-en
+    filter: tag:hash-lifestyle-post+tag:hash-en
     template: index-en
 
 collections:

@@ -46,7 +46,7 @@
   "Oups! It seems like we didn't find what you want.": "Oups! It seems like we didn't find what you want.",
   "There was an error sending the email, please try again": "There was an error sending the email, please try again",
   "Type something and hit enter": "Type something and hit enter",
-  "Newsletter": "Newsletter",
+  "Newsletter issues": "Newsletter issues",
   "Pages": "Pages",
   "Get access to my premium content": "Get access to my premium content",
   "Legal notices": "Legal notices",
@@ -57,5 +57,7 @@
   "Coffee Shops": "Coffee Shops",
   "French": "French",
   "English": "English",
-  "Business posts": "Business posts"
+  "Business posts": "Business posts",
+  "Lifestyle posts": "Lifestyle posts",
+  "Posts": "Posts"
 }
