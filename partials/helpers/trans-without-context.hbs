@@ -1,7 +1,7 @@
 {{~#has tag="#en"~}}
     {{{text}}}
 {{~else~}}
-    {{~#is "en"~}}
+    {{~#is "en, enbusiness, entech, ennewsletters, encoffeeshops, enlifestyle"~}}
         {{{text}}}
     {{~else~}}
         {{~#if text~}}
@@ -9,3 +9,4 @@
         {{~/if~}}
     {{~/is~}}
 {{~/has~}}
+{{log this}}
