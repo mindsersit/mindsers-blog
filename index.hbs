@@ -1,13 +1,13 @@
 {{!< default}}
 
 {{#is 'frlifestyle, enlifestyle'}}
-    {{> feeds/title-header title="Lifestyle" }}
+    {{> feeds/title-header title="Lifestyle posts" }}
 {{else is 'frtech, entech'}}
-    {{> feeds/title-header title="Tech" }}
+    {{> feeds/title-header title="Tech posts" }}
 {{else is 'frbusiness, enbusiness'}}
-    {{> feeds/title-header title="Business" }}
+    {{> feeds/title-header title="Business posts" }}
 {{else is 'frnewsletters, ennewsletters'}}
-    {{> feeds/title-header title="Newsletter" }}
+    {{> feeds/title-header title="Newsletter issues" }}
 {{else is 'frcoffeeshops, encoffeeshops'}}
     {{> feeds/title-header title="Coffee Shops" }}
 {{else}}

@@ -1,10 +1,14 @@
 <section class="title-header">
     <div class="title-header-content">
         <h1>
-            {{#if title}}
-                {{title}}
+            {{#if translatedTitle}}
+                {{translatedTitle}}
             {{else}}
-                {{> helpers/trans text="Posts"}}
+                {{#if title}}
+                    {{> helpers/trans text=title}}
+                {{else}}
+                    {{> helpers/trans text="Posts"}}
+                {{/if}}
             {{/if}}
         </h1>
     </div>

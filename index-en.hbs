@@ -1,8 +1,22 @@
 {{!< default}}
 
-<section class="list-header">
+{{#is 'enlifestyle'}}
+    {{> feeds/title-header translatedTitle="Lifestyle posts" }}
+{{else is 'entech'}}
+    {{> feeds/title-header translatedTitle="Tech posts" }}
+{{else is 'enbusiness'}}
+    {{> feeds/title-header translatedTitle="Business posts" }}
+{{else is 'ennewsletters'}}
+    {{> feeds/title-header translatedTitle="Newsletter issues" }}
+{{else is 'encoffeeshops'}}
+    {{> feeds/title-header translatedTitle="Coffee Shops" }}
+{{else}}
+    {{> feeds/title-header }}
+{{/is}}
+
+{{!-- <section class="list-header">
     <div class="list-header-content">
-        <h1 class="list-header-title">{{@site.description}}</h1>
+        <h1 class="list-header-title">Posts in English</h1>
         <div class="infos">
             <div class="featured-links">
                 <h3>Featured</h3>
@@ -25,7 +39,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <main id="site-main" class="site-main outer">
     <div class="post-feed inner" lang="en">
