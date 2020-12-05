@@ -42,32 +42,43 @@
                     </div>
                 </div>
             </header>
-
+            {{#if access}}
             <section class="post-full-content">
                 {{content}}
             </section>
 
             {{^is "page"}}
-            {{#if @labs.members}}
-            <form data-members-form="subscribe">
-              <section class="subscribe-form">
-                <h3 class="subscribe-form-title">{{> helpers/trans text="Subscribe to"}} {{@site.title}}</h3>
-                <p>{{> helpers/trans text="Get the latest posts delivered right to your inbox"}}</p>
-                    <input data-members-email type="email" required="true" placeholder="{{> helpers/trans text="your@email.com"}}" />
-                    <button class="button" type="submit">{{> helpers/trans text="Subscribe"}}</button>
-              </section>
-              <p class="loader">...LOADING...</p>
-              <p class="error">{{> helpers/trans text="There was an error sending the email, please try again"}}</p>
-            </form>
-            {{/if}}
+                {{#if @labs.members}}
+                <form data-members-form="subscribe">
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">{{> helpers/trans text="Subscribe to"}} {{@site.title}}</h3>
+                    <p>{{> helpers/trans text="Get the latest posts delivered right to your inbox"}}</p>
+                        <input data-members-email type="email" required="true" placeholder="{{> helpers/trans text="your@email.com"}}" />
+                        <button class="button" type="submit">{{> helpers/trans text="Subscribe"}}</button>
+                </section>
+                <p class="loader">...LOADING...</p>
+                <p class="error">{{> helpers/trans text="There was an error sending the email, please try again"}}</p>
+                </form>
+                {{/if}}
 
-            <footer class="post-full-footer">
-                <hr>
-                <p>
-                    {{> helpers/trans text="If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}
-                </p>
-            </footer>
+                
+                <footer class="post-full-footer">
+                    <hr>
+                    <p>
+                        {{> helpers/trans text="If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}
+                    </p>
+                </footer>
             {{/is}}
+            {{else}}
+                <section class="post-restricted-content">
+                    {{excerpt}}...
+                </section>
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">{{> helpers/trans text="This post is for paying subscribers only"}}</h3>
+                    <a class="button-subscribe-paid" href="#" data-portal="signup">{{> helpers/trans text="Subscribe"}}</a>
+                    <p>{{> helpers/trans text="Already have an account?"}} <a href="#" data-portal="signin">{{> helpers/trans text="Sign in"}}</a></p>
+                </section>
+            {{/if}}
         </article>
     </div>
 </main>
