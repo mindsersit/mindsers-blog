@@ -4,6 +4,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/error.css"}}">
 {{/contentFor}}
 
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header}}
+
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <header>
@@ -11,8 +15,10 @@
         </header>
         <section>
             <p>
-                {{> helpers/trans text="An unknown error occured. Sorry for trouble."}}
+                Une erreur inconnue s'est produite. Excusez-nous pour le dérangement.
             </p>
         </section>
     </div>
 </main>
+
+{{> footer}}

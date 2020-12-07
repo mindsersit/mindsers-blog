@@ -13,7 +13,7 @@
     </div>
     <footer class="read-next-card-footer">
         <a href="{{#primary_tag}}{{url}}{{/primary_tag}}">
-        {{#primary_post}}{{> helpers/trans text="See all posts"}}{{/primary_post}}<sup>({{meta.pagination.total}})</sup> →
+        {{#primary_post}}{{#has tag="#en"}}See all posts{{else}}Voir tous les articles{{/has}}{{/primary_post}}<sup>({{meta.pagination.total}})</sup> →
         </a>
     </footer>
 </div>

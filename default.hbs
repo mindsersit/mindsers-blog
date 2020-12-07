@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{> helpers/lang}}">
+<html lang="{{{block "lang"}}}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,11 +18,7 @@
 </head>
 <body class="{{body_class}} line-numbers">
     <div class="site-wrapper">
-        {{> header}}
-
         {{{body}}}
-
-        {{> footer}}
     </div>
 
     {{{block "scripts"}}}

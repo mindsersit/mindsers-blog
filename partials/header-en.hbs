@@ -12,51 +12,51 @@
                     <i class="fa fa-search"></i>
                 </li>
                 <li role="menuitem">
-                    <a href="/fr/pricing">Abonnement</a>
+                    <a href="/en/pricing">Membership</a>
                 </li>
                 <li role="menuitem" class="more">
                     <i class="fa fa-bars"></i>
                     <div class="sub-menu">
                         <div class="search-bar">
                             <form id="searchbar">
-                                <input type="text" name="term" placeholder="Tapez quelque chose et appuyez sur Entrée" />
+                                <input type="text" name="term" placeholder="Type something and hit enter" />
                             </form>
                         </div>
                         <div class="menu-section collections">
                             <p>
-                                <a href="/fr/tech/">
+                                <a href="/en/tech/">
                                     <span class="title">
-                                        Articles Tech<br>
+                                        Tech posts<br>
                                     </span>
-                                    Tous mes articles sur le code et l'informatique
+                                    All my code/tech related posts
                                 </a>
                             </p>
                             <p>
-                                <a href="/fr/coffeeshops/">
+                                <a href="/en/coffeeshops/">
                                     <span class="title">
-                                        Les cafés<br>
+                                        Coffee Shops<br>
                                     </span>
-                                    Je teste des cafés où travailler un peu partout sur la terre
+                                    I test coffee shops around the world for you
                                 </a>
                             </p>
                             <p>
-                                <a href="/fr/business/">
+                                <a href="/en/business/">
                                     <span class="title">
-                                        Articles Business <span class="premium">premium</span><br>
+                                        Business posts <span class="premium">premium</span><br>
                                     </span>
                                     Posts about my businesses: test and learn approach
                                 </a>
                             </p>
                             <p>
-                                <a href="/fr/lifestyle/">
+                                <a href="/en/lifestyle/">
                                     <span class="title">
-                                        Articles Lifestyle <span class="premium">premium</span><br>
+                                        Lifestyle posts <span class="premium">premium</span><br>
                                     </span>
                                     Other posts. I blog about what I want
                                 </a>
                             </p>
                             <p>
-                                <a href="/fr/newsletters">
+                                <a href="/en/newsletters">
                                     <span class="title">
                                         Newsletter issues <span class="premium">premium</span><br>
                                     </span>
@@ -65,13 +65,13 @@
                             </p>
                             {{#unless @member.paid}}
                             <p>
-                                <a class="btn" href="/fr/pricing">Accéder au contenu payant</a>
+                                <a class="btn" href="/en/pricing">Get access to my premium content</a>
                             </p>
                             {{/unless}}
                         </div>
                         {{#if @site.navigation}}
                         <div class="menu-section ghost">
-                            {{navigation}}
+                            {{navigation type="secondary"}}
                         </div>
                         {{/if}}
                         <div class="menu-section language">

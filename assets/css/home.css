@@ -20,6 +20,42 @@ section.list-header .social-networks {
     margin: auto;
 }
 
+.site-main section.description {
+    padding: 50px 0;
+}
+
+.site-main section.description a {
+    background-color: rgba(0, 118, 223, 0.2);
+    color: var(--primaryColor);
+    display: inline-block;
+    padding: 1px 3px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.site-main section.description .actions {
+    text-align: center;
+    margin: 45px 0 0;
+}
+
+.site-main section.description .actions .btn {
+    background-color: transparent;
+    color: var(--primaryColor);
+    display: inline-block;
+    border: 2px solid var(--primaryColor);
+    border-radius: 3px;
+    text-align: center;
+    padding: 15px 25px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-size: 0.9em;
+}
+
+.site-main section.description .actions .btn.btn-primary {
+    background-color: var(--primaryColor);
+    color: var(--lightColor);
+}
+
 .site-main .inner {
     width: 1024px;
     margin: auto;
@@ -31,7 +67,8 @@ section.list-header .social-networks {
 }
 
 .site-main section.post-feeds {
-    margin: 40px 0;
+    margin: 50px 0;
+    padding: 20px 0;
 }
 .site-main .feed {
     display: flex;
@@ -79,6 +116,7 @@ section.list-header .social-networks {
 .site-main .description {
     font-family: var(--primaryFont);
     font-size: 1.2em;
+    background-color: var(--bgSecondaryColor);
 }
 
 .site-main .description p {

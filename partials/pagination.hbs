@@ -1,9 +1,19 @@
 <nav class="pagination" role="navigation">
-    {{#if prev}}
-        <a class="html-tag newer-posts" href="{{page_url prev}}">{{> helpers/trans text="prev"}}</a>
-    {{/if}}
-    <span class="page-number">{{t "{page} of {pages}" page=page pages=pages}}</span>
-    {{#if next}}
-        <a class="html-tag older-posts" href="{{page_url next}}">{{> helpers/trans text="next"}}</a>
+    {{#if english}}
+        {{#if prev}}
+        <a class="html-tag newer-posts" href="{{page_url prev}}">prev</a>
+        {{/if}}
+        <span class="page-number">{{page}} of {{pages}}</span>
+        {{#if next}}
+            <a class="html-tag older-posts" href="{{page_url next}}">next</a>
+        {{/if}}
+    {{else}}
+        {{#if prev}}
+            <a class="html-tag newer-posts" href="{{page_url prev}}">prec</a>
+        {{/if}}
+        <span class="page-number">{{page}} sur {{pages}}</span>
+        {{#if next}}
+            <a class="html-tag older-posts" href="{{page_url next}}">suiv</a>
+        {{/if}}
     {{/if}}
 </nav>

@@ -1,28 +1,23 @@
 {{!< default}}
 
-{{#is 'frlifestyle, enlifestyle'}}
-    {{> feeds/title-header title="Lifestyle posts" }}
-{{else is 'frtech, entech'}}
-    {{> feeds/title-header title="Tech posts" }}
-{{else is 'frbusiness, enbusiness'}}
-    {{> feeds/title-header title="Business posts" }}
-{{else is 'frnewsletters, ennewsletters'}}
-    {{> feeds/title-header title="Newsletter issues" }}
-{{else is 'frcoffeeshops, encoffeeshops'}}
-    {{> feeds/title-header title="Coffee Shops" }}
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header}}
+
+{{#is "frlifestyle"}}
+    {{> index/title-header title="Article Lifestyle" }}
+{{else is "frtech"}}
+    {{> index/title-header title="Articles Tech" }}
+{{else is "frbusiness"}}
+    {{> index/title-header title="Articles Business" }}
+{{else is "frnewsletters"}}
+    {{> index/title-header title="Newsletters" }}
+{{else is "frcoffeeshops"}}
+    {{> index/title-header title="Les tests de cafés" }}
 {{else}}
-    {{> feeds/title-header }}
+    {{> index/title-header title="Articles" }}
 {{/is}}
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner">
-        {{#foreach posts visibility="all"}}
-            {{> post-card/main}}
-        {{else}}
-            <p class="no-post">{{> helpers/trans text="No post here"}}</p>
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> index/feed}}
+
+{{> footer}}

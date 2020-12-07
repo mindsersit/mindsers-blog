@@ -4,11 +4,11 @@
             <h2 class="post-card-title">$> {{title}}</h2>
             <span class="reading-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
             {{#has tag="sponsored" author="value"}}
-                <span class="sponsored-tag">{{> helpers/trans text="sponsored"}}</span>
+                <span class="sponsored-tag">sponsorisé</span>
             {{/has}}
         </header>
         <section class="post-card-excerpt">
-            <p>{{excerpt words="50"}}</p>
+            <p>{{excerpt words="50"}}...</p>
         </section>
     </a>
     <footer class="post-card-meta">
@@ -17,8 +17,8 @@
                 {{{t "Posted in <a href='{url}' class='post-card-tags'>{name}</a> on" url=(url) name=name}}}
             {{/primary_tag}}
         {{else}}
-            {{> helpers/trans text="Posted on"}}
+            Posté le
         {{/if}}
-        <time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">{{date}}</time>
+        <time class="post-date" datetime="{{date format="YYYY-MM-DDTHH:mm:ss.SS\Z"}}">{{date format="D MMM YYYY"}}</time>
     </footer>
 </article>

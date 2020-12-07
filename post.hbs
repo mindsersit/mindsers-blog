@@ -1,21 +1,29 @@
 {{!< default}}
 
 {{#post}}
+{{#has tag="#en"}}
+    {{#contentFor "lang"}}en{{/contentFor}}
+    {{> header-en}}
+{{else}}
+    {{#contentFor "lang"}}fr{{/contentFor}}
+    {{> header}}
+{{/has}}
+
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <article  class="post-full {{post_class}}">
             <header  class="post-full-header">
                 <div class="post-full-header-content">
                     <div class="infos upper">
-                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{#has tag="#en"}}{{date format="MMM D, YYYY"}}{{else}}{{date format="D MMMM YYYY"}}{{/has}}</time>
                         {{#has tag="sponsored" author="value"}}
-                            <div class="sponsored-tag">{{> helpers/trans text="sponsored"}}</div>
+                            <div class="sponsored-tag">{{#has tag="#en"}}sponsored{{else}}sponsorisé{{/has}}</div>
                         {{/has}}
                         <p class="post-full-meta-author">
                             {{#has author="count:>1"}}
-                                {{> helpers/trans text="This post was a collaboration between"}} {{authors}}
+                                {{#has tag="#en"}}This post was a collaboration between{{else}}Cet article est une collaboration entre{{/has}} {{authors}}
                             {{else}}
-                                {{> helpers/trans text="Written by"}} {{authors}}
+                                {{#has tag="#en"}}Written by{{else}}Écrit par{{/has}} {{authors}}
                             {{/has}}
                         </p>
                     </div>
@@ -23,12 +31,12 @@
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
                             <p>
-                                {{> helpers/trans text="Published in"}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                                {{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
                             </p>
                         </div>
                         <div class="post-full-meta-share">
                             <p>
-                                {{> helpers/trans text="Share this"}}
+                                {{#has tag="#en"}}Share this{{else}}Partagez l'article{{/has}}
                             </p>
                             <p>
                                 <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
@@ -50,14 +58,26 @@
             {{^is "page"}}
                 {{#if @labs.members}}
                 <form data-members-form="subscribe">
-                <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">{{> helpers/trans text="Subscribe to"}} {{@site.title}}</h3>
-                    <p>{{> helpers/trans text="Get the latest posts delivered right to your inbox"}}</p>
-                        <input data-members-email type="email" required="true" placeholder="{{> helpers/trans text="your@email.com"}}" />
-                        <button class="button" type="submit">{{> helpers/trans text="Subscribe"}}</button>
-                </section>
-                <p class="loader">...LOADING...</p>
-                <p class="error">{{> helpers/trans text="There was an error sending the email, please try again"}}</p>
+                    <section class="subscribe-form">
+                        <h3 class="subscribe-form-title">{{#has tag="#en"}}Subscribe to{{else}}Abonnez-vous à{{/has}} {{@site.title}}</h3>
+                        <p>
+                        {{#has tag="#en"}}
+                            Get the latest posts delivered right to your inbox
+                        {{else}}
+                            Recevez les derniers articles directement dans votre boite de reception
+                        {{/has}}
+                        </p>
+                        <input data-members-email type="email" required="true" placeholder="{{#has tag="#en"}}your@email.com{{else}}votre@email.fr{{/has}}" />
+                        <button class="button" type="submit">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</button>
+                    </section>
+                    <p class="loader">...LOADING...</p>
+                    <p class="error">
+                    {{#has tag="#en"}}
+                        There was an error sending the email, please try again
+                    {{else}}
+                        Nous avons rencontré une erreur en vous envoyant un e-mail. Merci de réessayer.
+                    {{/has}}
+                    </p>
                 </form>
                 {{/if}}
 
@@ -65,7 +85,11 @@
                 <footer class="post-full-footer">
                     <hr>
                     <p>
-                        {{> helpers/trans text="If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}
+                    {{#has tag="#en"}}
+                        If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.
+                    {{else}}
+                        Si vous avez des questions ou des remarques/conseils, n'hésitez pas à en discuter avec les autres membres du forum (zone de commentaires plus bas) ! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. Vous pouvez aussi soutenir le blog sur <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.
+                    {{/has}}
                     </p>
                 </footer>
             {{/is}}
@@ -74,9 +98,15 @@
                     {{excerpt}}...
                 </section>
                 <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">{{> helpers/trans text="This post is for paying subscribers only"}}</h3>
-                    <a class="button-subscribe-paid" href="#" data-portal="signup">{{> helpers/trans text="Subscribe"}}</a>
-                    <p>{{> helpers/trans text="Already have an account?"}} <a href="#" data-portal="signin">{{> helpers/trans text="Sign in"}}</a></p>
+                    <h3 class="subscribe-form-title">
+                        {{#has tag="#en"}}
+                            This post is for paying subscribers only
+                        {{else}}
+                            Il s'agit d'un article réservé aux abonnés seulement
+                        {{/has}}
+                    </h3>
+                    <a class="button-subscribe-paid" href="#" data-portal="signup">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</a>
+                    <p>{{#has tag="#en"}}Already have an account?{{else}}Vous avez déjà un compte ?{{/has}} <a href="#" data-portal="signin">{{#has tag="#en"}}Sign in{{else}}S'inscrire{{/has}}</a></p>
                 </section>
             {{/if}}
         </article>
@@ -105,7 +135,7 @@
             <div class="read-next-time-related">
                 {{#next_post}}
                 <div>
-                    <span class="direction">{{#../../post}}{{> helpers/trans text="Next post"}}{{/../../post}}</span>
+                    <span class="direction">{{#../../post}}{{#has tag="#en"}}Next post{{else}}Article suivant{{/has}}{{/../../post}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p class="tag-list">
                         {{#foreach tags}}
@@ -117,7 +147,7 @@
 
                 {{#prev_post}}
                 <div>
-                    <span class="direction">{{#../../post}}{{> helpers/trans text="Previous post"}}{{/../../post}}</span>
+                    <span class="direction">{{#../../post}}{{#has tag="#en"}}Previous post{{else}}Article précedent{{/has}}{{/../../post}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p class="tag-list">
                         {{#foreach tags}}
@@ -138,6 +168,12 @@
     </div>
 </aside>
 {{/is}}
+
+{{#has tag="#en"}}
+    {{> footer-en}}
+{{else}}
+    {{> footer}}
+{{/has}}
 {{/post}}
 
 {{#contentFor "scripts"}}

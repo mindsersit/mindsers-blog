@@ -1,17 +1,21 @@
 {{!< default}}
 
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header-en}}
+
 {{#is 'enlifestyle'}}
-    {{> feeds/title-header translatedTitle="Lifestyle posts" }}
+    {{> index/title-header title="Lifestyle posts" }}
 {{else is 'entech'}}
-    {{> feeds/title-header translatedTitle="Tech posts" }}
+    {{> index/title-header title="Tech posts" }}
 {{else is 'enbusiness'}}
-    {{> feeds/title-header translatedTitle="Business posts" }}
+    {{> index/title-header title="Business posts" }}
 {{else is 'ennewsletters'}}
-    {{> feeds/title-header translatedTitle="Newsletter issues" }}
+    {{> index/title-header title="Newsletter issues" }}
 {{else is 'encoffeeshops'}}
-    {{> feeds/title-header translatedTitle="Coffee Shops" }}
+    {{> index/title-header title="Coffee Shops"}}
 {{else}}
-    {{> feeds/title-header }}
+    {{> index/title-header title="Posts"}}
 {{/is}}
 
 {{!-- <section class="list-header">
@@ -41,15 +45,6 @@
     </div>
 </section> --}}
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner" lang="en">
-        {{#foreach posts visibility="all"}}
-            {{> post-card/en}}
-        {{else}}
-            <p class="no-post">No post here</p>
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> index/feed-en}}
+
+{{> footer-en}}

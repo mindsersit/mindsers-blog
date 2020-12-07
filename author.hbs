@@ -1,8 +1,12 @@
 {{!< default}}
 
+{{#contentFor "lang"}}en{{/contentFor}}
+
 {{#contentFor "styles"}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/author.css"}}">
 {{/contentFor}}
+
+{{> header-en}}
 
 <section class="list-header">
     <div class="list-header-content">
@@ -30,13 +34,6 @@
     </div>
 </section>
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner">
-        {{#foreach posts}}
-            {{> post-card/main}}
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> index/feed-en}}
+
+{{> footer-en}}

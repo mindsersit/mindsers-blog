@@ -1,5 +1,9 @@
 {{!< default}}
 
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header}}
+
 <section class="list-header">
     <div class="list-header-content">
         <h1 class="list-header-title">{{@site.title}}</h1>
@@ -16,18 +20,27 @@
 </section>
 
 <main id="site-main" class="site-main outer">
-    <div class="inner">
-        <section class="description">
-            <p>In this is publication I write about my developer, my entreupreuner, my father journey</p>
+    <section class="description">
+        <div class="inner">
+            <p>Je suis <a href="https://nathanaelcherrier.com">Nathanaël Cherrier</a>, un lead développeur JavsScript. J'écris sur {{@site.title}} depuis plus de 12 ans maintenant.</p>
+            <p>De quoi parle cette publication ? De code et d'informatique bien sûr mais aussi d'entrepreunariat, de télétravail, de création de contenu, et d'autres sujets intéressants.</p>
+            <p>{{@site.title}} c'est :</p>
             <ul>
-                <li>Exclusive content</li>
-                <li>Discussion space</li>
-                <li>Weekly nesletter</li>
+                <li>Des tutos et des articles tech</li>
+                <li>Des tests de coffee shops pour télé-travailler dehors</li>
+                <li>Des analyses et des articles business</li>
+                <li>Des articles "off" sur plein de sujets</li>
+                <li>Une newsletter hebdomadaire</li>
             </ul>
-            <p>Expect to see one new free content published each week. For more content and features you'll have to subcribe.</p>
-        </section>
-        <section class="post-feeds">
-            <h3>Last French stories</h3>
+            <p>Pour avoir accès à la totalité du site, abonnez-vous !</p>
+            <p class="actions">
+                <a class="btn" href="/fr/pricing">En savoir plus</a> <a class="btn btn-primary" href="#" data-portal="signup">S'abonner</a>
+            </p>
+        </div>
+    </section>
+    <section class="post-feeds">
+        <div class="inner">
+            <h3>Derniers articles en français</h3>
             {{#get "posts" filter="tags:-hash-en" limit="3"}}
                 <div class="feed" lang="fr">
                     {{#foreach posts visibility="public"}}
@@ -35,14 +48,16 @@
                     {{/foreach}}
                     <article class="post-card more-link">
                         <a class="post-card-more-link" href="/fr/">
-                            See the other French stories. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
+                            Voir les autres articles. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
                         </a>
                     </article>
                 </div>
             {{/get}}
-        </section>
-        <section class="post-feeds">
-            <h3>Last English stories</h3>
+        </div>
+    </section>
+    <section class="post-feeds">
+        <div class="inner">
+            <h3>Derniers articles en anglais</h3>
             {{#get "posts" filter="tags:hash-en" limit="3"}}
                 <div class="feed" lang="en">
                     {{#foreach posts visibility="public"}}
@@ -50,15 +65,17 @@
                     {{/foreach}}
                     <article class="post-card more-link">
                         <a class="post-card-more-link" href="/en/">
-                            See the other English stories. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
+                            Voir les autres articles. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
                         </a>
                     </article>
                 </div>
             {{/get}}
-        </section>
-    </div>
+        </div>
+    </section>
 </main>
 
 {{#contentFor "styles"}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}">
 {{/contentFor}}
+
+{{> footer}}
