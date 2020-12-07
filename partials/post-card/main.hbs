@@ -2,7 +2,7 @@
     <a class="post-card-content-link" href="{{url}}">
         <header class="post-card-header">
             <h2 class="post-card-title">$> {{title}}</h2>
-            <span class="reading-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+            <span class="reading-time">{{reading_time minute="1 minute de lecture" minutes="% minutes de lecture"}}</span>
             {{#has tag="sponsored" author="value"}}
                 <span class="sponsored-tag">sponsorisé</span>
             {{/has}}

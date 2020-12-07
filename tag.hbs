@@ -1,8 +1,8 @@
 {{!< default}}
 
-{{#contentFor "lang"}}en{{/contentFor}}
+{{#contentFor "lang"}}fr{{/contentFor}}
 
-{{> header-en}}
+{{> header}}
 
 {{#tag}}
     {{#> index/title-header }}
@@ -14,12 +14,12 @@
             {{#if description}}
                 {{description}}
             {{else}}
-                {{plural ../../pagination.total empty=(t "A collection of posts") singular=(t "A collection of 1 post") plural=(t "A collection of % posts")}}
+                {{plural ../../pagination.total empty="Une collection d'articles" singular="Une collection contenant un seul article" plural="Une collection de % articles"}}
             {{/if}}
         {{/inline}}
     {{/index/title-header}}
 {{/tag}}
 
-{{> index/feed-en}}
+{{> index/feed}}
 
-{{> footer-en}}
+{{> footer}}
