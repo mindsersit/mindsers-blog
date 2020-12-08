@@ -1,4 +1,9 @@
 .site-main .inner {
+    width: 1024px;
+    margin: auto;
+}
+
+.site-main .inner.large {
     width: 1248px;
     margin: auto;
 }
@@ -81,6 +86,7 @@
     width: 100%;
     text-align: center;
     box-sizing: border-box;
+    font-family: var(--primaryFont);
 }
 
 section.title-header {
@@ -93,4 +99,28 @@ section.title-header {
 section.title-header h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 300;
+}
+
+.site-main .patreon {
+    color: var(--secondaryColor);
+    text-align: center;
+    margin: 100px auto;
+    font-family: var(--primaryFont);
+}
+
+.site-main .patreon .button {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgb(255, 66, 77);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.4s ease-in-out;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.site-main .patreon .button:hover {
+    background-color: rgb(255, 53, 65);
 }
