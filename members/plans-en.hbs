@@ -1,0 +1,75 @@
+{{!< ../default}}
+
+{{#contentFor "lang"}}en{{/contentFor}}
+
+{{> header-en}}
+
+<section class="list-header">
+    <div class="list-header-content">
+        <h1>Premium Membership</h1>
+        <div class="infos">
+            <p class="description">{{@site.title}} has a premium membership. Members get access to a private newsletter and new content every week.</p>
+        </div>
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="checkout-box">
+        <div class="checkout-plan">
+            <header class="checkout-plan-header">
+                <h3>Free</h3>
+                <strong>{{@price.monthly}}</strong><span>{{@price.currency_symbol}}</span> / mois
+            </header>
+            <div class="checkout-plan-content">
+                <ul>
+                    <li>Newsletter mensuelle par e-mail</li>
+                    <li>Contenus exclusifs</li>
+                    <li>Poster imprimable exclusifs</li>
+                    <li>Soutenez une publication indépendente</li>
+                    <li>Aucune publicité ciblée</li>
+                    <li>-</li>
+                    <li>-</li>
+                </ul>
+                <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choisir ce plan</a>
+            </div>
+        </div>
+        <div class="checkout-plan">
+            <header class="checkout-plan-header">
+                <h3>Mensuellement</h3>
+                <strong>{{@price.monthly}}</strong><span>{{@price.currency_symbol}}</span> / mois
+            </header>
+            <div class="checkout-plan-content">
+                <ul>
+                    <li>Newsletter mensuelle par e-mail</li>
+                    <li>Contenus exclusifs</li>
+                    <li>Poster imprimable exclusifs</li>
+                    <li>Soutenez une publication indépendente</li>
+                    <li>Aucune publicité ciblée</li>
+                    <li>-</li>
+                    <li>-</li>
+                </ul>
+                <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choisir ce plan</a>
+            </div>
+        </div>
+        <div class="checkout-plan">
+            <header class="checkout-plan-header">
+                <h3>Annuellement</h3>
+                <strong>{{@price.yearly}}</strong><span>{{@price.currency_symbol}}</span> / an <span class="old-price"><strong>72</strong>{{@price.currency_symbol}} / an</span>
+            </header>
+            <div class="checkout-plan-content">
+                <ul>
+                    <li>Newsletter mensuelle par e-mail</li>
+                    <li>Contenus exclusifs</li>
+                    <li>Poster imprimable exclusifs</li>
+                    <li>Soutenez une publication indépendente</li>
+                    <li>Aucune publicité ciblée</li>
+                    <li><strong>Un seul paiement au lieu de 12 !</strong></li>
+                    <li><strong>25% de reduction</strong></li>
+                </ul>
+                <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choisir ce plan</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{> footer-en}}

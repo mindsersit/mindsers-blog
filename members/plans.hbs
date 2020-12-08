@@ -1,0 +1,95 @@
+{{!< ../default}}
+
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header}}
+
+<section class="title-header">
+    <div class="title-header-content">
+        <h1>Premium Membership</h1>
+        <p class="description">
+        {{@site.title}} est une publication premium sur le code, la tech, l'entrepreunariat, le travail à distance et la vie d'un développeur.
+        Les membres ont accès a du nouveau contenu toutes les semaines et une newsletter mensuelle.
+        </p>
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner">
+
+        <div class="checkout-box">
+            <div class="checkout-plan">
+                <header class="checkout-plan-header">
+                    <h3>Gratuit</h3>
+                    <strong>0</strong><span>{{@price.currency_symbol}}</span>
+                </header>
+                <div class="checkout-plan-content">
+                    <ul>
+                        <li>📬 Articles publics par e-mail</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                    </ul>
+                    <a class="button primary fit" href="javascript:" data-portal="signup">Choisir ce plan</a>
+                </div>
+            </div>
+            <div class="checkout-plan">
+                <header class="checkout-plan-header">
+                    <h3>Mensuellement</h3>
+                    <strong>{{@price.monthly}}</strong><span>{{@price.currency_symbol}}</span> / mois
+                </header>
+                <div class="checkout-plan-content">
+                    <ul>
+                        <li>📬 Articles publics par e-mail</li>
+                        <li>📫 Articles réservés aux abonnés par e-mail</li>
+                        <li>💼 Accès aux articles "business"</li>
+                        <li>😉 Accès aux articles "lifestyle"</li>
+                        <li>🎭 Contenus additionnels exclusifs</li>
+                        <li>💌 Newsletter mensuelle par e-mail</li>
+                        <li>🎙 Espace de discussion réservés aux abonnés</li>
+                        <li>✊🏽 Soutenez une publication indépendente</li>
+                        <li>🚫 Aucune publicité ciblée</li>
+                        <li>-</li>
+                        <li>-</li>
+                    </ul>
+                    <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choisir ce plan</a>
+                </div>
+            </div>
+            <div class="checkout-plan">
+                <header class="checkout-plan-header">
+                    <h3>Annuellement</h3>
+                    <strong>{{@price.yearly}}</strong><span>{{@price.currency_symbol}}</span> / an <span class="old-price"><strong>84</strong>{{@price.currency_symbol}} / an</span>
+                </header>
+                <div class="checkout-plan-content">
+                    <ul>
+                        <li>📬 Articles publics par e-mail</li>
+                        <li>📫 Articles réservés aux abonnés par e-mail</li>
+                        <li>💼 Accès aux articles "business"</li>
+                        <li>😉 Accès aux articles "lifestyle"</li>
+                        <li>🎭 Contenus additionnels exclusifs</li>
+                        <li>💌 Newsletter mensuelle par e-mail</li>
+                        <li>🎙 Espace de discussion réservés aux abonnés</li>
+                        <li>✊🏽 Soutenez une publication indépendente</li>
+                        <li>🚫 Aucune publicité ciblée</li>
+                        <li>⚡️ <strong>Un seul paiement au lieu de 12 !</strong></li>
+                        <li>💸 <strong>17% de reduction</strong></li>
+                    </ul>
+                    <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choisir ce plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/subscribe.css"}}">
+{{/contentFor}}
+
+{{> footer}}
