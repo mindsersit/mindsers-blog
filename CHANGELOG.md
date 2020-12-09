@@ -6,11 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Create new helpers to get the right locale and translation depending
-  on the tags of the content.
+- Create topic hubs
+- New "complex" menu to improve navigation
+- Support for paid posts
+- Support for members (login, signup, etc)
+- Add a CTA before public posts
 
 ### Changed
 - Simplify templates and avoid some duplicate templates by language
+
+### Removed
+- No more classic translation using ghost HBS tag
 
 ### Fixed
 - Remove typos
