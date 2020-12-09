@@ -221,7 +221,11 @@ article .post-full-content ol {
     line-height: 1.6;
 }
 
-article .post-full-content > p:first-child {
+article .post-full-content .subcriber-cta {
+    font-style: italic;
+}
+
+article .post-full-content > p:first-of-type {
     font-size: 1.25em;
     line-height: 1.5em;
 }
