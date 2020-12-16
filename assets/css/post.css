@@ -8,14 +8,14 @@
     --primaryFont: 'Inconsolata', monospace;
     --secondaryFont: 'Source Code Pro', monospace;
     --lightColor: #e5eff5;
-    --darkColor: #333f44;
+    --darkColor: #2f3640;
 }
 
 @media screen and (prefers-color-scheme: dark) {
     :root {
         --secondaryColor: #e5eff5;
         --bgColor: #212a2e;
-        --bgSecondaryColor: #333f44;
+        --bgSecondaryColor: #2f3640;
     }
 }
 
