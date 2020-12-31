@@ -16,8 +16,8 @@
 
 <main id="site-main" class="site-main outer">
     <div class="inner large">
-        <div class="checkout-box">
-            <div class="checkout-plan">
+        <div class="checkout-box {{#foreach @member.subscriptions}}selected-interval-{{plan.interval}}{{/foreach}}">
+            <div class="checkout-plan free-plan">
                 <header class="checkout-plan-header">
                     <h3>Gratuit</h3>
                     <strong>0</strong><span>{{@price.currency_symbol}}</span>
@@ -36,10 +36,14 @@
                         <li>-</li>
                         <li>-</li>
                     </ul>
+                    {{#if @member.paid}}
+                    <a class="button primary fit" href="javascript:" data-portal="account/plans">Changer de plan</a>
+                    {{else}}
                     <a class="button primary fit" href="javascript:" data-portal="signup">Choisir ce plan</a>
+                    {{/if}}
                 </div>
             </div>
-            <div class="checkout-plan">
+            <div class="checkout-plan monthly-plan">
                 <header class="checkout-plan-header">
                     <h3>Mensuellement</h3>
                     <strong>{{@price.monthly}}</strong><span>{{@price.currency_symbol}}</span> / mois
@@ -58,10 +62,14 @@
                         <li>-</li>
                         <li>-</li>
                     </ul>
+                    {{#if @member.paid}}
+                    <a class="button primary fit" href="javascript:" data-portal="account/plans">Changer de plan</a>
+                    {{else}}
                     <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choisir ce plan</a>
+                    {{/if}}
                 </div>
             </div>
-            <div class="checkout-plan">
+            <div class="checkout-plan yearly-plan">
                 <header class="checkout-plan-header">
                     <h3>Annuellement</h3>
                     <strong>{{@price.yearly}}</strong><span>{{@price.currency_symbol}}</span> / an <span class="old-price"><strong>84</strong>{{@price.currency_symbol}} / an</span>
@@ -80,7 +88,11 @@
                         <li>⚡️ <strong>Un seul paiement au lieu de 12 !</strong></li>
                         <li>💸 <strong>17% de reduction</strong></li>
                     </ul>
+                    {{#if @member.paid}}
+                    <a class="button primary fit" href="javascript:" data-portal="account/plans">Changer de plan</a>
+                    {{else}}
                     <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choisir ce plan</a>
+                    {{/if}}
                 </div>
             </div>
         </div>

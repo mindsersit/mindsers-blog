@@ -39,7 +39,9 @@
     }
 }
 
-.checkout-plan:hover {
+.checkout-plan:hover,
+.checkout-box.selected-interval-month .checkout-plan.monthly-plan,
+.checkout-box.selected-interval-year .checkout-plan.yearly-plan {
     border: 1px solid var(--primaryColor);
 }
 
