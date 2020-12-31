@@ -38,6 +38,8 @@
                     </ul>
                     {{#if @member.paid}}
                     <a class="button primary fit" href="javascript:" data-portal="account/plans">Changer de plan</a>
+                    {{else if @member}}
+                    <a class="button primary fit" href="javascript:" data-portal="signup/free">Choisir ce plan</a>
                     {{else}}
                     <a class="button primary fit" href="javascript:" data-portal="signup">Choisir ce plan</a>
                     {{/if}}
@@ -64,6 +66,8 @@
                     </ul>
                     {{#if @member.paid}}
                     <a class="button primary fit" href="javascript:" data-portal="account/plans">Changer de plan</a>
+                    {{else if @member}}
+                    <a class="button primary fit" href="javascript:" data-portal="signup/monthly">Choisir ce plan</a>
                     {{else}}
                     <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choisir ce plan</a>
                     {{/if}}
@@ -90,6 +94,8 @@
                     </ul>
                     {{#if @member.paid}}
                     <a class="button primary fit" href="javascript:" data-portal="account/plans">Changer de plan</a>
+                    {{else if @member}}
+                    <a class="button primary fit" href="javascript:" data-portal="signup/yearly">Choisir ce plan</a>
                     {{else}}
                     <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choisir ce plan</a>
                     {{/if}}
