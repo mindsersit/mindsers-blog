@@ -10,14 +10,6 @@ routes:
     controller: channel
     filter: tag:hash-coffeeshop-review+tag:hash-en
     template: index-en
-  /fr/business/:
-    controller: channel
-    filter: tag:hash-business-post+tag:-hash-en
-    template: index
-  /en/business/:
-    controller: channel
-    filter: tag:hash-business-post+tag:hash-en
-    template: index-en
   /fr/tech/:
     controller: channel
     filter: tag:hash-tech-post+tag:-hash-en
@@ -26,13 +18,13 @@ routes:
     controller: channel
     filter: tag:hash-tech-post+tag:hash-en
     template: index-en
-  /fr/lifestyle/:
+  /fr/miscellaneous/:
     controller: channel
-    filter: tag:hash-lifestyle-post+tag:-hash-en
+    filter: tag:hash-misc-post+tag:-hash-en
     template: index
-  /en/lifestyle/:
+  /en/miscellaneous/:
     controller: channel
-    filter: tag:hash-lifestyle-post+tag:hash-en
+    filter: tag:hash-misc-post+tag:hash-en
     template: index-en
 
 collections:
