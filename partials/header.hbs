@@ -12,7 +12,11 @@
                     <i class="fa fa-search"></i>
                 </li>
                 <li role="menuitem">
+                    {{#if @member.paid}}
+                    <a href="/fr/newsletters">Newsletter issues</a>
+                    {{else}}
                     <a href="/fr/pricing">Abonnement</a>
+                    {{/if}}
                 </li>
                 <li role="menuitem" class="more">
                     <i class="fa fa-bars"></i>
@@ -45,14 +49,6 @@
                                         Articles divers <span class="premium">premium</span><br>
                                     </span>
                                     Other posts. I blog about what I want
-                                </a>
-                            </p>
-                            <p>
-                                <a href="/fr/newsletters">
-                                    <span class="title">
-                                        Newsletter issues <span class="premium">premium</span><br>
-                                    </span>
-                                    Complete archive. All my awesome newsletter's issues
                                 </a>
                             </p>
                             {{#unless @member.paid}}
