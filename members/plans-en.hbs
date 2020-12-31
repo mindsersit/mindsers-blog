@@ -36,12 +36,10 @@
                         <li>-</li>
                         <li>-</li>
                     </ul>
-                    {{#if @member.paid}}
+                    {{#if @member}}
                     <a class="button primary fit" href="javascript:" data-portal="account/plans">Change plan</a>
-                    {{else if @member}}
-                    <a class="button primary fit" href="javascript:" data-portal="signup/free">Choose this plan</a>
                     {{else}}
-                    <a class="button primary fit" href="javascript:" data-portal="signup">Choose this plan</a>
+                    <a class="button primary fit" href="javascript:" data-portal="signup/free">Choose this plan</a>
                     {{/if}}
                 </div>
             </div>
@@ -64,12 +62,10 @@
                         <li>-</li>
                         <li>-</li>
                     </ul>
-                    {{#if @member.paid}}
+                    {{#if @member}}
                     <a class="button primary fit" href="javascript:" data-portal="account/plans">Change plan</a>
-                    {{else if @member}}
-                    <a class="button primary fit" href="javascript:" data-portal="signup/monthly">Choose this plan</a>
                     {{else}}
-                    <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choose this plan</a>
+                    <a class="button primary fit" href="javascript:" data-portal="signup/monthly">Choose this plan</a>
                     {{/if}}
                 </div>
             </div>
@@ -92,12 +88,10 @@
                         <li>⚡️ <strong>1 quick payment instead of 12!</strong></li>
                         <li>💸 <strong>Extra 17% discount</strong></li>
                     </ul>
-                    {{#if @member.paid}}
+                    {{#if @member}}
                     <a class="button primary fit" href="javascript:" data-portal="account/plans">Change plan</a>
-                    {{else if @member}}
-                    <a class="button primary fit" href="javascript:" data-portal="signup/yearly">Choose this plan</a>
                     {{else}}
-                    <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choose this plan</a>
+                    <a class="button primary fit" href="javascript:" data-portal="signup/yearly">Choose this plan</a>
                     {{/if}}
                 </div>
             </div>
