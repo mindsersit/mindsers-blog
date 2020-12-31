@@ -16,7 +16,7 @@
 
 <main id="site-main" class="site-main outer">
     <div class="inner large">
-        <div class="checkout-box {{#foreach @member.subscriptions}}selected-interval-{{plan.interval}}{{/foreach}}">
+        <div class="checkout-box {{#foreach @member.subscriptions}}selected-interval-{{plan.interval}} {{/foreach}}">
             <div class="checkout-plan free-plan">
                 <header class="checkout-plan-header">
                     <h3>Gratuit</h3>
