@@ -175,10 +175,19 @@
         </div>
     </div>
 </aside>
-
 <aside class="comments outer">
     <div class="inner">
-        <div id='commento'></div>
+        {{#if @member.paid}}
+        <div id='commento'>test</div>
+        {{else}}
+        <div class="comments-fallback">
+            {{#has tag="#en"}}
+            The comment section is only available for paying subscribers.
+            {{else}}
+            La section de commentaires est accessible uniquement aux abonnés du blog.
+            {{/has}}
+        </div>
+        {{/if}}
     </div>
 </aside>
 {{/is}}

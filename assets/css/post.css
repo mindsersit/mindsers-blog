@@ -643,6 +643,13 @@ aside.comments {
     background-color: var(--bgColor);
 }
 
+aside.comments .comments-fallback {
+    color: var(--lightColor);
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: bolder;
+}
+
 aside.read-next .inner, aside.comments .inner {
     max-width: 1024px;
     margin: 0 auto;
