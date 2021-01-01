@@ -68,8 +68,9 @@
                 {{content}}
             </section>
 
-            {{^is "page"}}
+                {{^is "page"}}
                 {{#if @labs.members}}
+                {{#unless @member}}
                 <form data-members-form="subscribe">
                     <section class="subscribe-form">
                         <h3 class="subscribe-form-title">{{#has tag="#en"}}Subscribe to{{else}}Abonnez-vous à{{/has}} {{@site.title}}</h3>
@@ -92,20 +93,20 @@
                     {{/has}}
                     </p>
                 </form>
+                {{/unless}}
                 {{/if}}
 
-                
                 <footer class="post-full-footer">
                     <hr>
                     <p>
                     {{#has tag="#en"}}
-                        If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.
+                        If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. {{#unless @member.paid}}You can also support the blog on <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.{{/unless}}
                     {{else}}
-                        Si vous avez des questions ou des remarques/conseils, n'hésitez pas à en discuter avec les autres membres du forum (zone de commentaires plus bas) ! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. Vous pouvez aussi soutenir le blog sur <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.
+                        Si vous avez des questions ou des remarques/conseils, n'hésitez pas à laisser un commentaires plus bas ! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. {{#unless @member.paid}}Vous pouvez aussi soutenir le blog sur <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.{{/unless}}
                     {{/has}}
                     </p>
                 </footer>
-            {{/is}}
+                {{/is}}
             {{else}}
                 <section class="post-restricted-content">
                     {{excerpt}}...
