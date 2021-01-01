@@ -695,9 +695,12 @@ aside.read-next .read-next-tag-related li a {
     color: var(--primaryColor);
 }
 
+aside.read-next .read-next-time-related {
+    max-width: 50%;
+}
+
 aside.read-next .read-next-time-related > div {
     margin: 25px 0;
-    max-width: 600px;
 }
 
 aside.read-next .read-next-time-related .direction {
