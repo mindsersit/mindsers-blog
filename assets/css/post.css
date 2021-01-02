@@ -221,16 +221,12 @@ article .post-full-content ol {
     line-height: 1.6;
 }
 
-article .post-full-content .subcriber-cta {
-    font-style: italic;
-}
-
 article .post-full-content > p:first-of-type {
     font-size: 1.25em;
     line-height: 1.5em;
 }
 
-article .post-full-content > p.message-box {
+article .post-full-content p.message-box {
     text-align: center;
     border-radius: 3px;
     color: var(--secondaryColor);
@@ -238,21 +234,21 @@ article .post-full-content > p.message-box {
     padding: 20px;
 }
 
-article .post-full-content > p.message-box a,
-article .post-full-content > p.message-box a:visited {
+article .post-full-content p.message-box a,
+article .post-full-content p.message-box a:visited {
     color: var(--secondaryColor);
     font-weight: bold;
 }
 
-article .post-full-content > p.message-box.message-box-info {
+article .post-full-content p.message-box.message-box-info {
     background-color: rgba(52, 152, 219, 0.2);
 }
 
-article .post-full-content > p.message-box.message-box-success {
+article .post-full-content p.message-box.message-box-success {
     background-color: rgba(26, 188, 156, 0.2);
 }
 
-article .post-full-content > p.message-box.message-box-error {
+article .post-full-content p.message-box.message-box-error {
     background-color: rgba(231, 76, 60, 0.2);
 }
 

@@ -57,10 +57,10 @@
             {{#if access}}
             <section class="post-full-content">
                 {{#has visibility="public"}}
-                    <div class="subcriber-cta">
-                        <p>
+                    <div class="subscriber-cta">
+                        <p class="message-box message-box-info">
                             {{#has tag="#en"}}
-                                This post is free for all to read thanks to the investment {{@site.title}} subscribers have made in independent publication. 
+                                This post is free for all to read thanks to the investment {{@site.title}}'s subscribers have made in independent publication. 
                                 If this work is meaningful to you, I invite you to <a href="/en/pricing">become a subscriber</a> today.
                             {{else}}
                                 Cet article est libre d'accès pour tous grâce à la générosité des abonnés de {{@site.title}} qui soutiennent les publications indépendantes. 
@@ -283,10 +283,10 @@
         // alternative versions
         ((document, window) => {
             const alternativeLinks = document.querySelectorAll('link[rel="alternate"][hreflang]')
-            const firsParagraph = document.querySelector('section.post-full-content p:first-child')
+            const firstParagraph = document.querySelector('section.post-full-content > p:first-of-type')
 
             const exist = lang => link => !(new RegExp(`^\/${lang}`)).test(window.location.pathname) && (new RegExp(`^${lang}`)).test(link)
-            const insert = box => firsParagraph.parentNode.insertBefore(box, firsParagraph.nextSibling)
+            const insert = box => firstParagraph.parentNode.insertBefore(box, firstParagraph.nextSibling)
 
             for (const link of alternativeLinks) {
                 const info = document.createElement('p')
