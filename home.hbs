@@ -34,7 +34,7 @@
     <section class="post-feeds">
         <div class="inner">
             <h3>Derniers articles en français</h3>
-            {{#get "posts" filter="tags:-hash-en" limit="3"}}
+            {{#get "posts" filter="tags:-hash-en+visibility:public" limit="3"}}
                 <div class="feed" lang="fr">
                     {{#foreach posts visibility="public"}}
                         {{> post-card/small}}
@@ -51,7 +51,7 @@
     <section class="post-feeds">
         <div class="inner">
             <h3>Derniers articles en anglais</h3>
-            {{#get "posts" filter="tags:hash-en" limit="3"}}
+            {{#get "posts" filter="tags:hash-en+visibility:public" limit="3"}}
                 <div class="feed" lang="en">
                     {{#foreach posts visibility="public"}}
                         {{> post-card/small-en}}
