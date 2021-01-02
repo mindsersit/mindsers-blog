@@ -30,11 +30,9 @@
                     <h1 class="post-full-title">{{title}}</h1>
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
-                            {{#if tags}}
                             <p>
-                                {{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                                {{#foreach tags}}{{^has slug="sponsored"}}{{#if @first}}{{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{else}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
                             </p>
-                            {{/if}}
                         </div>
                         <div class="post-full-meta-share">
                             <p>
