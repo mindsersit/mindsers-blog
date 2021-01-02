@@ -6,20 +6,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Create topic hubs
+- Create topic hubs (tech, misc, coffee shops)
 - New "complex" menu to improve navigation
-- Support for paid posts
+- Support for paid posts (paywall, etc)
 - Support for members (login, signup, etc)
-- Add a CTA before public posts
+- New a message CTA before public posts
+- Dark mode by system preferences
+- New simple homepage in French
 
 ### Changed
 - Simplify templates and avoid some duplicate templates by language
+- New minimal header for index pages
 
 ### Removed
 - No more classic translation using ghost HBS tag
 
 ### Fixed
 - Remove typos
+- Updated link to intagram
 
 ## [1.6.0] - 2020-11-13
 ### Added
