@@ -16,15 +16,7 @@
                 <div class="post-full-header-content">
                     <h1 class="post-full-title">{{title}}</h1>
                     <div class="infos lower">
-                        <div class="post-full-meta-tags">
-                            <p>
-                                {{~#foreach tags~}}
-                                    {{^has slug="sponsored"~}}
-                                        {{#if @first}}{{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{else}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>
-                                    {{~/has~}}
-                                {{~/foreach~}}
-                            </p>
-                        </div>
+                        <div class="post-full-meta-tags"></div>
                         <div class="post-full-meta-share">
                             <p>
                                 {{#has tag="#en"}}Share this{{else}}Partagez la page{{/has}}
