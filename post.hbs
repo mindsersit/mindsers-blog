@@ -316,7 +316,9 @@
     </script>
 
     {{^is "page"}}
+    {{#if @member.paid}}
     <script defer src="https://commento.mindsers.blog/js/commento.js"></script>
+    {{/if}}
     {{/is}}
 {{/contentFor}}
 
