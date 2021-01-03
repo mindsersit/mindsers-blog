@@ -14,6 +14,7 @@
         <article  class="post-full {{post_class}}">
             <header  class="post-full-header">
                 <div class="post-full-header-content">
+                    {{^is "page"}}
                     <div class="infos upper">
                         <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{#has tag="#en"}}{{date format="MMM D, YYYY"}}{{else}}{{date format="D MMMM YYYY"}}{{/has}}</time>
                         {{#has tag="sponsored" author="value"}}
@@ -27,6 +28,7 @@
                             {{/has}}
                         </p>
                     </div>
+                    {{/is}}
                     <h1 class="post-full-title">{{title}}</h1>
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
@@ -40,7 +42,7 @@
                         </div>
                         <div class="post-full-meta-share">
                             <p>
-                                {{#has tag="#en"}}Share this{{else}}Partagez l'article{{/has}}
+                                {{#has tag="#en"}}Share this{{else}}Partagez {{#is "page"}}la page{{else}}l'article{{/is}}{{/has}}
                             </p>
                             <p>
                                 <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
