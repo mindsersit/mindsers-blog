@@ -640,7 +640,7 @@ aside.comments {
 }
 
 aside.comments .comments-fallback {
-    color: var(--lightColor);
+    color: var(--secondaryColor);
     font-size: 1.3em;
     text-align: center;
     font-weight: bolder;
