@@ -56,6 +56,7 @@
             </header>
             {{#if access}}
             <section class="post-full-content">
+                {{^is "page"}}
                 {{#has visibility="public"}}
                     <div class="subscriber-cta">
                         <p class="message-box message-box-info">
@@ -69,6 +70,7 @@
                         </p>
                     </div>
                 {{/has}}
+                {{/is}}
                 {{content}}
             </section>
 
