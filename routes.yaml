@@ -26,6 +26,15 @@ routes:
     controller: channel
     filter: tag:hash-misc-post+tag:hash-en
     template: index-en
+  /fr/uses/:
+    template: page-route
+    data: page.fr-uses
+  /fr/to-be-read/:
+    template: page-route
+    data: page.fr-to-be-read
+  /en/to-be-read/:
+    template: page-route
+    data: page.to-be-read
 
 collections:
   /fr/:
