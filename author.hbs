@@ -1,8 +1,12 @@
-{{!< partials/layouts/default}}
+{{!< default}}
+
+{{#contentFor "lang"}}fr{{/contentFor}}
 
 {{#contentFor "styles"}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/author.css"}}">
 {{/contentFor}}
+
+{{> header}}
 
 <section class="list-header">
     <div class="list-header-content">
@@ -17,7 +21,7 @@
             <div class="infos">
                 <p class="location">{{location}}</p>
                 <p class="posts">
-                    {{plural ../pagination.total empty=(t 'posts') singular=(t '1 post') plural=(t '% posts')}}
+                    {{plural ../pagination.total empty="articles" singular="1 article" plural="% articles"}}
                 </p>
                 <div class="social-networks">
                     <ul>
@@ -30,13 +34,6 @@
     </div>
 </section>
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner">
-        {{#foreach posts}}
-            {{> includes/post-card}}
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> index/feed}}
+
+{{> footer}}

@@ -1,8 +1,27 @@
-{{!< partials/layouts/default-en}}
+{{!< default}}
 
-<section class="list-header">
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header-en}}
+
+{{#is 'enmiscellaneous'}}
+    {{> index/title-header title="Miscellaneous posts" }}
+{{else is 'entech'}}
+    {{> index/title-header title="Tech posts" }}
+{{else is 'enbusiness'}}
+    {{> index/title-header title="Business posts" }}
+{{else is 'ennewsletters'}}
+    {{> index/title-header title="Newsletter issues" }}
+{{else is 'encoffeeshops'}}
+    {{> index/title-header title="Coffee Shops"}}
+    {{> index/coffeeshops-map english="true"}}
+{{else}}
+    {{> index/title-header title="Posts"}}
+{{/is}}
+
+{{!-- <section class="list-header">
     <div class="list-header-content">
-        <h1 class="list-header-title">{{@site.description}}</h1>
+        <h1 class="list-header-title">Posts in English</h1>
         <div class="infos">
             <div class="featured-links">
                 <h3>Featured</h3>
@@ -19,29 +38,14 @@
             <div class="social-networks">
                 <h3>Social networks</h3>
                 <ul>
-                    {{#if @blog.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
-                    {{#if @blog.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
+                    {{#if @site.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
+                    {{#if @site.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
                 </ul>
             </div>
         </div>
     </div>
-</section>
-<section class="support">
-    <p>Did you find something helpful on the blog and are feeling a little grateful today?</p>
-    <p class="actions">
-        <a href="https://nathanaelcherrier.com/en/support" class="button">Support now!</a>
-    </p>
-</section>
+</section> --}}
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner" lang="en">
-        {{#foreach posts}}
-            {{> includes/post-card-en}}
-        {{else}}
-            <p class="no-post">No post here</p>
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> index/feed-en}}
+
+{{> footer-en}}

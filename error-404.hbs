@@ -1,8 +1,12 @@
-{{!< partials/layouts/default}}
+{{!< default}}
 
 {{#contentFor "styles"}}
     <link rel="stylesheet" type="text/css" href="{{asset "css/error.css"}}">
 {{/contentFor}}
+
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header}}
 
 <main id="site-main" class="site-main outer">
     <div class="inner">
@@ -11,8 +15,10 @@
         </header>
         <section>
             <p>
-                {{t "Oups! It seems like we didn't find what you want."}}
+                Oups! On dirait bien que nous n'arrivons pas à trouver ce que vous voulez voir.
             </p>
         </section>
     </div>
 </main>
+
+{{> footer}}

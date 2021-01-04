@@ -1,0 +1,118 @@
+{{!< ../default}}
+
+{{#contentFor "lang"}}en{{/contentFor}}
+
+{{> header-en}}
+
+<section class="title-header">
+    <div class="title-header-content">
+        <h1>Premium Membership</h1>
+        <p class="description">
+        {{@site.title}} is a premium publication about coding, tech world, entreupreuneurship, remote work and the life of a mordern developer.
+        Members get access to weekly new content and a monthly newsletter.
+        </p>
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <div class="inner large">
+        <div class="checkout-box {{#foreach @member.subscriptions}}selected-interval-{{plan.interval}}{{/foreach}}">
+            <div class="checkout-plan free-plan">
+                <header class="checkout-plan-header">
+                    <h3>Free</h3>
+                    <strong>0</strong><span>{{@price.currency_symbol}}</span>
+                </header>
+                <div class="checkout-plan-content">
+                    <ul>
+                        <li>📬 New public post notifications by email</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                    </ul>
+                    {{#if @member}}
+                    <a class="button primary fit" href="#/portal/account/plans">Change plan</a>
+                    {{else}}
+                    <a class="button primary fit" href="#/portal/signup/free">Choose this plan</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="checkout-plan monthly-plan">
+                <header class="checkout-plan-header">
+                    <h3>Monthly</h3>
+                    <strong>{{@price.monthly}}</strong><span>{{@price.currency_symbol}}</span> / mois
+                </header>
+                <div class="checkout-plan-content">
+                    <ul>
+                        <li>📬 New public post notifications by email</li>
+                        <li>📫 New private post notifications by email</li>
+                        <li>💼 Full access to the business posts</li>
+                        <li>😉 Full acess to the miscellaneous posts</li>
+                        <li>🎭 Exclusive additional content</li>
+                        <li>💌 Monthly email newsletter</li>
+                        <li>🎙 Comments on posts</li>
+                        <li>✊🏽 Support an independent publication</li>
+                        <li>🚫 No advertising</li>
+                        <li>-</li>
+                        <li>-</li>
+                    </ul>
+                    {{#if @member}}
+                    <a class="button primary fit" href="#/portal/account/plans">Change plan</a>
+                    {{else}}
+                    <a class="button primary fit" href="#/portal/signup/monthly">Choose this plan</a>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="checkout-plan yearly-plan">
+                <header class="checkout-plan-header">
+                    <h3>Yearly</h3>
+                    <strong>{{@price.yearly}}</strong><span>{{@price.currency_symbol}}</span> / an <span class="old-price"><strong>84</strong>{{@price.currency_symbol}} / an</span>
+                </header>
+                <div class="checkout-plan-content">
+                    <ul>
+                        <li>📬 New post notifications by email</li>
+                        <li>📫 New private post notifications by email</li>
+                        <li>💼 Full access to the business posts</li>
+                        <li>😉 Full acess to the miscellaneous posts</li>
+                        <li>🎭 Exclusive additional content</li>
+                        <li>💌 Monthly email newsletter</li>
+                        <li>🎙 Comments on posts</li>
+                        <li>✊🏽 Support an independent publication</li>
+                        <li>🚫 No advertising</li>
+                        <li>⚡️ <strong>1 quick payment instead of 12!</strong></li>
+                        <li>💸 <strong>Extra 17% discount</strong></li>
+                    </ul>
+                    {{#if @member}}
+                    <a class="button primary fit" href="#/portal/account/plans">Change plan</a>
+                    {{else}}
+                    <a class="button primary fit" href="#/portal/signup/yearly">Choose this plan</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inner patreon">
+        <p>
+            Patreon supporters can get full access to the premium content depending on their Patreon tier.<br>
+            You only have to login using the same address as your Patreon account.
+        </p>
+        <p>
+            If the plans listed here aren't convinient for you, you can support our independent publication using Patreon and giving whatever you want.
+        </p>
+        <p>
+            <a class="button" href="https://patreon.com/mindsers" rel="nofollow">Support with Patreon</a>
+        </p>
+    </div>
+</main>
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/subscribe.css"}}">
+{{/contentFor}}
+
+{{> footer-en}}

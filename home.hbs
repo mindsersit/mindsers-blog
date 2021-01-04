@@ -1,0 +1,74 @@
+{{!< default}}
+
+{{#contentFor "lang"}}fr{{/contentFor}}
+
+{{> header}}
+
+<section class="list-header">
+    <div class="list-header-content">
+        <h1 class="list-header-title">{{@site.title}}</h1>
+        <h2>{{@site.description}}</h2>
+        <div class="infos">
+            <div class="social-networks">
+                <ul>
+                    {{#if @site.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
+                    {{#if @site.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main id="site-main" class="site-main outer">
+    <section class="description">
+        <div class="inner">
+            <p>
+                Bienvenue sur {{@site.title}}, ici on parle de code, business et d'autres trucs techs.
+                Je vous emmène aussi visiter les coffeeshops les plus cools du monde pour bosser. 
+            </p>
+            <p class="actions">
+                <a class="btn" href="/fr/pricing">En savoir plus</a> <a class="btn btn-primary" href="#" data-portal="signup">S'abonner</a>
+            </p>
+        </div>
+    </section>
+    <section class="post-feeds">
+        <div class="inner">
+            <h3>Derniers articles en français</h3>
+            {{#get "posts" filter="tags:-hash-en+visibility:public" limit="3"}}
+                <div class="feed" lang="fr">
+                    {{#foreach posts visibility="public"}}
+                        {{> post-card/small}}
+                    {{/foreach}}
+                    <article class="post-card more-link">
+                        <a class="post-card-more-link" href="/fr/">
+                            Voir les autres articles. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
+                        </a>
+                    </article>
+                </div>
+            {{/get}}
+        </div>
+    </section>
+    <section class="post-feeds">
+        <div class="inner">
+            <h3>Derniers articles en anglais</h3>
+            {{#get "posts" filter="tags:hash-en+visibility:public" limit="3"}}
+                <div class="feed" lang="en">
+                    {{#foreach posts visibility="public"}}
+                        {{> post-card/small-en}}
+                    {{/foreach}}
+                    <article class="post-card more-link">
+                        <a class="post-card-more-link" href="/en/">
+                            Voir les autres articles. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
+                        </a>
+                    </article>
+                </div>
+            {{/get}}
+        </div>
+    </section>
+</main>
+
+{{#contentFor "styles"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}">
+{{/contentFor}}
+
+{{> footer}}

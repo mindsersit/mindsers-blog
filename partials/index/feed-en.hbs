@@ -1,0 +1,12 @@
+<main id="site-main" class="site-main outer">
+    <div class="post-feed inner">
+        {{#foreach posts visibility="all"}}
+            {{> post-card/en}}
+        {{else}}
+            <p class="no-post">No post here</p>
+        {{/foreach}}
+    </div>
+    <div class="post-feed-pagination">
+        {{pagination english="true"}}
+    </div>
+</main>
