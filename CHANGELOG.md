@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Re-create the RSS feed at website root with both French and English posts.
+- Update Twitter link in the footer
 
 ## [1.7.0] - 2021-01-04
 ### Added
