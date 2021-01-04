@@ -727,8 +727,13 @@ aside.read-next .read-next-time-related p.tag-list a {
 @media screen and (max-width: 1024px) {
     article .post-full-header-content,
     article .post-full-content,
-    article .post-full-footer {
+    article .post-full-footer,
+    article .post-restricted-content {
         padding: 15px;
+    }
+
+    article .subscribe-form {
+        margin: 15px;
     }
 
     article .post-full-content .kg-image-card,

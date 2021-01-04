@@ -5,6 +5,7 @@
         const moreIcon = moreItem.querySelector('i')
         const searchIcon = searchItem.querySelector('i')
         const subMenu = moreItem.querySelector('.sub-menu')
+        const closeButton = document.querySelector('.sub-menu .closeicon-container')
 
         moreIcon.addEventListener('click', () => {
             if(!searchItem.classList.contains('active')) {
@@ -30,6 +31,12 @@
             subMenu
                 .querySelectorAll('.menu-section')
                 .forEach(section => section.classList.add('hide'))
+        })
+
+        closeButton.addEventListener('click', () => {
+            subMenu.classList.remove('open')
+            moreItem.classList.remove('active')
+            searchItem.classList.remove('active')
         })
     }
 

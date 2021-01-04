@@ -129,6 +129,13 @@ footer.site-footer .site-footer-content .copyright {
     }
 }
 
+
+@media screen and (max-width: 300px) {
+    footer.site-footer .site-footer-content nav.items .item .coin-address {
+        overflow-wrap: anywhere;
+    }
+}
+
 /* 2 - Header */
 
 header.site-header {
@@ -250,6 +257,49 @@ header.site-header .menu li > .sub-menu.open {
     z-index: 1;
 }
 
+header.site-header .menu li .sub-menu .mobile-menu-header {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondaryColor);
+    margin: 5px 5px 20px;
+}
+
+header.site-header .menu li .sub-menu .mobile-menu-header .logo {
+    width: 56px;
+}
+
+header.site-header .menu li .sub-menu .mobile-menu-header h2 {
+    font-weight: 500;
+}
+
+header.site-header .menu li .sub-menu .mobile-menu-header h2 a {
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+header.site-header .menu li .sub-menu .mobile-menu-header .closeicon-container {
+    align-self: flex-end;
+}
+
+header.site-header .menu li .sub-menu .mobile-menu-header .closeicon {
+    --lenght: 40px;
+    height: var(--lenght);
+    width: var(--lenght);
+    padding: 12px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+header.site-header .menu li .sub-menu .mobile-menu-header .closeicon .a {
+    fill: none;
+    stroke: #c5c5c5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.2px
+}
+
 header.site-header .menu li > .sub-menu .menu-section {
     border-top: 1px solid var(--bgSecondaryColor);
     border-bottom: 1px solid var(--bgSecondaryColor);
@@ -352,6 +402,32 @@ header.site-header .menu li > .sub-menu .menu-section.language {
     header.site-header .menu li.search .search-popup input {
         max-width: calc(100% - 40px);
         padding: 10px 5px;
+    }
+
+    header.site-header .menu li {
+        position: static;
+    }
+
+    header.site-header .menu li > .sub-menu.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        overflow-y: scroll;
+        margin: 0;
+        border: 0px solid transparent;
+    }
+
+    header.site-header .menu li .sub-menu input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    header.site-header .menu li .sub-menu .mobile-menu-header {
+        display: flex;
     }
 }
 
@@ -492,6 +568,10 @@ section.list-header .infos .description {
     section.list-header  .infos .social-networks {
         display: none;
     }
+
+    section.title-header h1 {
+        text-align: center;
+    }
 }
 
 /* 4 - Article card */
@@ -542,6 +622,26 @@ article.post-card .post-card-header .sponsored-tag {
     padding: 2px 5px;
     font-size: 0.85em;
     display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 700px) {}
+
+@media screen and (max-width: 500px) {
+    article.post-card .post-card-header .post-card-title {
+        width: 100%;
+        max-width: unset;
+    }
+
+    article.post-card .post-card-header .reading-time {
+        margin: 0;
+        display: none;
+    }
+
+    article.post-card .post-card-excerpt {
+        display: none;
+    }
 }
 
 /* 5 - Pagination */
