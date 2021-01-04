@@ -1,18 +1,58 @@
 routes:
-  /fr/:
+  /: home
+  /fr/pricing/: members/plans
+  /en/pricing/: members/plans-en
+  /fr/coffeeshops/:
     controller: channel
+    filter: tag:hash-coffeeshop-review+tag:-hash-en
     template: index
-    filter: "tag:-hash-en"
+  /en/coffeeshops/:
+    controller: channel
+    filter: tag:hash-coffeeshop-review+tag:hash-en
+    template: index-en
+  /fr/tech/:
+    controller: channel
+    filter: tag:hash-tech-post+tag:-hash-en
+    template: index
+  /en/tech/:
+    controller: channel
+    filter: tag:hash-tech-post+tag:hash-en
+    template: index-en
+  /fr/miscellaneous/:
+    controller: channel
+    filter: tag:hash-misc-post+tag:-hash-en
+    template: index
+  /en/miscellaneous/:
+    controller: channel
+    filter: tag:hash-misc-post+tag:hash-en
+    template: index-en
+  /fr/uses/:
+    template: page-route
+    data: page.fr-uses
+  /fr/to-be-read/:
+    template: page-route
+    data: page.fr-to-be-read
+  /en/to-be-read/:
+    template: page-route
+    data: page.to-be-read
 
 collections:
-  /:
+  /fr/:
     permalink: /fr/{slug}/
     template: index
-    filter: "tag:-hash-en"
+    filter: "tag:-hash-en+tag:-hash-newsletter"
   /en/:
     permalink: /en/{slug}/
     template: index-en
-    filter: "tag:hash-en"
+    filter: "tag:hash-en+tag:-hash-newsletter"
+  /fr/newsletters/:
+    permalink: /fr/newsletters/{slug}/
+    template: index
+    filter: tag:hash-newsletter+tag:-hash-en
+  /en/newsletters/:
+    permalink: /fr/newsletters/{slug}/
+    template: index-en
+    filter: tag:hash-newsletter+tag:hash-en
 
 taxonomies:
   tag: /tag/{slug}/

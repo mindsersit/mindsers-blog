@@ -1,0 +1,87 @@
+[
+  {
+    "from": "/fr/smalllink/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/ice-berry/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/simiux/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/ma-premiere-application-windows-8/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/find-a-bike/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/ios-7-colormind-ma-premiere-application/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/ios-7-european-converter-le-convertisseur-de-leurope/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/checkyourvat-un-outil-pour-vendeur-commerciaux-et-businessman/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/european-converter-passe-en-2-0/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/fr/bonjour-tout-le-monde/" ,
+    "to":  "https://nathanaelcherrier.dev/fr/",
+    "permanent": true
+  },
+  {
+    "from": "/tag/checkyourvat/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/tag/currency/" ,
+    "to":  "/fr/",
+    "permanent": false
+  },
+  {
+    "from": "/tag/design-patterns/" ,
+    "to":  "/tag/best-practices/",
+    "permanent": true
+  },
+  {
+    "from": "/tag/multilingual/" ,
+    "to":  "/fr/",
+    "permanent": true
+  },
+  {
+    "from": "/tag/simiux/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/tag/findabike/" ,
+    "to":  "/tag/portfolio/",
+    "permanent": true
+  },
+  {
+    "from": "/tag/application-design/" ,
+    "to":  "/tag/ddd/",
+    "permanent": true
+  }
+]

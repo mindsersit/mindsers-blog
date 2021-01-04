@@ -1,0 +1,87 @@
+<header class="site-header outer">
+    <div class="site-header-content inner">
+        <div class="title">
+            <a href="/">
+                <img src="{{@site.logo}}" class="logo" alt="{{@site.title}} logo">
+                {{@site.title}}
+            </a>
+        </div>
+        <div class="menu">
+            <ul class="nav" role="menu">
+                <li role="menuitem" class="search">
+                    <i class="fa fa-search"></i>
+                </li>
+                <li role="menuitem">
+                    {{#if @member.paid}}
+                    <a href="/fr/newsletters">Newsletter issues</a>
+                    {{else}}
+                    <a href="/fr/pricing">Abonnement</a>
+                    {{/if}}
+                </li>
+                <li role="menuitem" class="more">
+                    <i class="fa fa-bars"></i>
+                    <div class="sub-menu">
+                        <div class="mobile-menu-header">
+                            <div class="closeicon-container">
+                                <svg viewBox="0 0 24 24" class="closeicon" alt="Close">
+                                    <path class="a" d="M.75 23.249l22.5-22.5M23.25 23.249L.75.749"></path>
+                                </svg>
+                            </div>
+                            <a href="/">
+                                <img src="{{@site.logo}}" class="logo" alt="{{@site.title}} logo">
+                            </a>
+                            <h2><a href="/">{{@site.title}}</a></h2>
+                        </div>
+                        <div class="search-bar">
+                            <form id="searchbar">
+                                <input type="text" name="term"
+                                    placeholder="Tapez quelque chose et appuyez sur Entrée" />
+                            </form>
+                        </div>
+                        <div class="menu-section collections">
+                            <p>
+                                <a href="/fr/tech/">
+                                    <span class="title">
+                                        Articles Tech<br>
+                                    </span>
+                                    Tous mes articles sur le code et l'informatique
+                                </a>
+                            </p>
+                            <p>
+                                <a href="/fr/coffeeshops/">
+                                    <span class="title">
+                                        Les cafés<br>
+                                    </span>
+                                    Je teste des cafés où travailler un peu partout sur la terre
+                                </a>
+                            </p>
+                            <p>
+                                <a href="/fr/miscellaneous/">
+                                    <span class="title">
+                                        Articles divers <span class="premium">premium</span><br>
+                                    </span>
+                                    Other posts. I blog about what I want
+                                </a>
+                            </p>
+                            {{#unless @member.paid}}
+                            <p>
+                                <a class="btn" href="/fr/pricing">Accéder au contenu payant</a>
+                            </p>
+                            {{/unless}}
+                        </div>
+                        {{#if @site.navigation}}
+                        <div class="menu-section ghost">
+                            {{navigation}}
+                        </div>
+                        {{/if}}
+                        <div class="menu-section language">
+                            <p>
+                                <a href="/fr/">Français</a> • <a href="/en/">English</a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

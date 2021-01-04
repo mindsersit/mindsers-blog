@@ -1,47 +1,24 @@
-{{!< partials/layouts/default}}
+{{!< default}}
 
-<section class="list-header">
-    <div class="list-header-content">
-        <h1 class="list-header-title">{{@site.description}}</h1>
-        <div class="infos">
-            <div class="featured-links">
-                <h3>{{t "Featured"}}</h3>
-                <ul>
-                    {{#get "posts" filter="featured:true+tag:hash-fr"}}
-                        {{#foreach posts limit="3"}}
-                            <li><a href="{{url}}">{{title}}</a></li>
-                        {{else}}
-                            <li>{{t "No featured content"}}</li>
-                        {{/foreach}}
-                    {{/get}}
-                </ul>
-            </div>
-            <div class="social-networks">
-                <h3>{{t "Social networks"}}</h3>
-                <ul>
-                    {{#if @blog.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
-                    {{#if @blog.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="support">
-    <p>Avez-vous lu quelque chose qui vous a aidé sur le blog aujourd'hui? Si vous souhaitez montrer votre reconnaissance, c'est par ici.</p>
-    <p class="actions">
-        <a href="https://nathanaelcherrier.com/fr/support/" class="button">Soutenir</a>
-    </p>
-</section>
+{{#contentFor "lang"}}fr{{/contentFor}}
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner">
-        {{#foreach posts}}
-            {{> includes/post-card}}
-        {{else}}
-            <p class="no-post">{{t "No post here"}}</p>
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> header}}
+
+{{#is "frmiscellaneous"}}
+    {{> index/title-header title="Article divers" }}
+{{else is "frtech"}}
+    {{> index/title-header title="Articles Tech" }}
+{{else is "frbusiness"}}
+    {{> index/title-header title="Articles Business" }}
+{{else is "frnewsletters"}}
+    {{> index/title-header title="Newsletters" }}
+{{else is "frcoffeeshops"}}
+    {{> index/title-header title="Les tests de cafés" }}
+    {{> index/coffeeshops-map}}
+{{else}}
+    {{> index/title-header title="Articles" }}
+{{/is}}
+
+{{> index/feed}}
+
+{{> footer}}

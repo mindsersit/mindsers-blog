@@ -1,0 +1,75 @@
+<header class="site-header outer">
+    <div class="site-header-content inner">
+        <div class="title">
+            <a href="/">
+                <img src="{{@site.logo}}" class="logo" alt="{{@site.title}} logo">
+                {{@site.title}}
+            </a>
+        </div>
+        <div class="menu">
+            <ul class="nav" role="menu">
+                <li role="menuitem" class="search">
+                    <i class="fa fa-search"></i>
+                </li>
+                <li role="menuitem">
+                    {{#if @member.paid}}
+                    <a href="/en/newsletters">Newsletter issues</a>
+                    {{else}}
+                    <a href="/en/pricing">Membership</a>
+                    {{/if}}
+                </li>
+                <li role="menuitem" class="more">
+                    <i class="fa fa-bars"></i>
+                    <div class="sub-menu">
+                        <div class="search-bar">
+                            <form id="searchbar">
+                                <input type="text" name="term" placeholder="Type something and hit enter" />
+                            </form>
+                        </div>
+                        <div class="menu-section collections">
+                            <p>
+                                <a href="/en/tech/">
+                                    <span class="title">
+                                        Tech posts<br>
+                                    </span>
+                                    All my code/tech related posts
+                                </a>
+                            </p>
+                            <p>
+                                <a href="/en/coffeeshops/">
+                                    <span class="title">
+                                        Coffee Shops<br>
+                                    </span>
+                                    I test coffee shops around the world for you
+                                </a>
+                            </p>
+                            <p>
+                                <a href="/en/miscellaneous/">
+                                    <span class="title">
+                                        Misc. posts <span class="premium">premium</span><br>
+                                    </span>
+                                    Other posts. I blog about what I want
+                                </a>
+                            </p>
+                            {{#unless @member.paid}}
+                            <p>
+                                <a class="btn" href="/en/pricing">Get access to my premium content</a>
+                            </p>
+                            {{/unless}}
+                        </div>
+                        {{#if @site.navigation}}
+                        <div class="menu-section ghost">
+                            {{navigation type="secondary"}}
+                        </div>
+                        {{/if}}
+                        <div class="menu-section language">
+                            <p>
+                                <a href="/fr/">Français</a> • <a href="/en/">English</a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

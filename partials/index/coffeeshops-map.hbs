@@ -1,0 +1,33 @@
+{{!-- <div id="map" style="width: 800px; height:400px; margin: 10px auto;"></div>
+
+{{#contentFor "scripts"}}
+    {{#if english}}
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95jJ6PNR8aHfgW96cl1vEiqkXKd-KSys&callback=initMap&libraries=&v=weekly&region=US&language=en"
+            defer
+        ></script>
+    {{else}}
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD95jJ6PNR8aHfgW96cl1vEiqkXKd-KSys&callback=initMap&libraries=&v=weekly&region=FR&language=fr"
+            defer
+        ></script>
+    {{/if}}
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 45.7579341, lng: 4.7650814 },
+                zoom: 8,
+            });
+
+            {{#foreach posts visibility="all"}}
+            new google.maps.Marker({
+                position: { lat: 45.7579341, lng: 4.7650814 },
+                map,
+                title: "{{title}}"
+            });
+            {{/foreach}}
+        }
+    </script>
+{{/contentFor}} --}}

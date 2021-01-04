@@ -1,34 +1,48 @@
-{{!< partials/layouts/default}}
+{{!< default}}
 
 {{#post}}
+{{#has tag="#en"}}
+    {{#contentFor "lang"}}en{{/contentFor}}
+    {{> header-en}}
+{{else}}
+    {{#contentFor "lang"}}fr{{/contentFor}}
+    {{> header}}
+{{/has}}
+
 <main id="site-main" class="site-main outer">
     <div class="inner">
         <article  class="post-full {{post_class}}">
             <header  class="post-full-header">
                 <div class="post-full-header-content">
+                    {{^is "page"}}
                     <div class="infos upper">
-                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
+                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{#has tag="#en"}}{{date format="MMM D, YYYY"}}{{else}}{{date format="D MMMM YYYY"}}{{/has}}</time>
                         {{#has tag="sponsored" author="value"}}
-                            <div class="sponsored-tag">{{t "sponsored"}}</div>
+                            <div class="sponsored-tag">{{#has tag="#en"}}sponsored{{else}}sponsorisé{{/has}}</div>
                         {{/has}}
                         <p class="post-full-meta-author">
                             {{#has author="count:>1"}}
-                                {{{t "This post was a collaboration between {authors}" authors=(authors)}}}
+                                {{#has tag="#en"}}This post was a collaboration between{{else}}Cet article est une collaboration entre{{/has}} {{authors}}
                             {{else}}
-                                {{{t "Written by {authors}" authors=(authors)}}}
+                                {{#has tag="#en"}}Written by{{else}}Écrit par{{/has}} {{authors}}
                             {{/has}}
                         </p>
                     </div>
+                    {{/is}}
                     <h1 class="post-full-title">{{title}}</h1>
                     <div class="infos lower">
                         <div class="post-full-meta-tags">
                             <p>
-                                {{t "Published in"}} {{#foreach tags}}{{^has slug="sponsored"}}{{^if @first}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>{{/has}}{{/foreach}}
+                                {{~#foreach tags~}}
+                                    {{^has slug="sponsored"~}}
+                                        {{#if @first}}{{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{else}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>
+                                    {{~/has~}}
+                                {{~/foreach~}}
                             </p>
                         </div>
                         <div class="post-full-meta-share">
                             <p>
-                                {{t "Share this"}}
+                                {{#has tag="#en"}}Share this{{else}}Partagez {{#is "page"}}la page{{else}}l'article{{/is}}{{/has}}
                             </p>
                             <p>
                                 <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
@@ -42,32 +56,81 @@
                     </div>
                 </div>
             </header>
-
+            {{#if access}}
             <section class="post-full-content">
+                {{^is "page"}}
+                {{#has visibility="public"}}
+                    <div class="subscriber-cta">
+                        <p class="message-box message-box-info">
+                            {{#has tag="#en"}}
+                                This post is free for all to read thanks to the investment {{@site.title}}'s subscribers have made in independent publication. 
+                                If this work is meaningful to you, I invite you to <a href="/en/pricing">become a subscriber</a> today.
+                            {{else}}
+                                Cet article est libre d'accès pour tous grâce à la générosité des abonnés de {{@site.title}} qui soutiennent les publications indépendantes. 
+                                Si vous appréciez le contenu que je propose, je vous invite à <a href="/en/pricing">vous abonner</a> aujourd'hui. 
+                            {{/has}}
+                        </p>
+                    </div>
+                {{/has}}
+                {{/is}}
                 {{content}}
             </section>
 
-            {{^is "page"}}
-            {{#if @labs.members}}
-            <form data-members-form="subscribe">
-              <section class="subscribe-form">
-                <h3 class="subscribe-form-title">{{t "Subscribe to {blogtitle}" blogtitle=@blog.title}}</h3>
-                <p>{{t "Get the latest posts delivered right to your inbox"}}</p>
-                    <input data-members-email type="email" required="true" placeholder="{{t "your@email.com"}}" />
-                    <button class="button" type="submit">{{t "Subscribe"}}</button>
-              </section>
-              <p class="loader">...LOADING...</p>
-              <p class="error">{{t "There was an error sending the email, please try again"}}</p>
-            </form>
-            {{/if}}
+                {{^is "page"}}
+                {{#if @labs.members}}
+                {{#unless @member}}
+                <form data-members-form="subscribe">
+                    <section class="subscribe-form">
+                        <h3 class="subscribe-form-title">{{#has tag="#en"}}Subscribe to{{else}}Abonnez-vous à{{/has}} {{@site.title}}</h3>
+                        <p>
+                        {{#has tag="#en"}}
+                            Get the latest posts delivered right to your inbox
+                        {{else}}
+                            Recevez les derniers articles directement dans votre boite de reception
+                        {{/has}}
+                        </p>
+                        <input data-members-email type="email" required="true" placeholder="{{#has tag="#en"}}your@email.com{{else}}votre@email.fr{{/has}}" />
+                        <button class="button" type="submit">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</button>
+                    </section>
+                    <p class="loader">...LOADING...</p>
+                    <p class="error">
+                    {{#has tag="#en"}}
+                        There was an error sending the email, please try again
+                    {{else}}
+                        Nous avons rencontré une erreur en vous envoyant un e-mail. Merci de réessayer.
+                    {{/has}}
+                    </p>
+                </form>
+                {{/unless}}
+                {{/if}}
 
-            <footer class="post-full-footer">
-                <hr>
-                <p>
-                    {{{t "If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. You can also support the blog on <a href='https://www.patreon.com/mindsers' rel='nofollow'>Patreon</a>."}}}
-                </p>
-            </footer>
-            {{/is}}
+                <footer class="post-full-footer">
+                    <hr>
+                    <p>
+                    {{#has tag="#en"}}
+                        If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. {{#unless @member.paid}}You can also support the blog on <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.{{/unless}}
+                    {{else}}
+                        Si vous avez des questions ou des remarques/conseils, n'hésitez pas à laisser un commentaire plus bas ! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. {{#unless @member.paid}}Vous pouvez aussi soutenir le blog sur <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.{{/unless}}
+                    {{/has}}
+                    </p>
+                </footer>
+                {{/is}}
+            {{else}}
+                <section class="post-restricted-content">
+                    {{excerpt}}...
+                </section>
+                <section class="subscribe-form">
+                    <h3 class="subscribe-form-title">
+                        {{#has tag="#en"}}
+                            This post is for paying subscribers only
+                        {{else}}
+                            Il s'agit d'un article réservé aux abonnés seulement
+                        {{/has}}
+                    </h3>
+                    <a class="button-subscribe-paid" href="#" data-portal="signup">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</a>
+                    <p>{{#has tag="#en"}}Already have an account?{{else}}Vous avez déjà un compte ?{{/has}} <a href="#" data-portal="signin">{{#has tag="#en"}}Sign in{{else}}S'inscrire{{/has}}</a></p>
+                </section>
+            {{/if}}
         </article>
     </div>
 </main>
@@ -77,32 +140,24 @@
     <div class="inner">
         <div class="read-next-feed">
             {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
-                {{#if related_posts}}
-                <div class="read-next-tag-related">
-                        <header class="read-next-card-header">
-                            {{#../primary_tag}}
-                            <h3 class="read-next-card-header-title"><a href="{{url}}">{{name}}</a></h3>
-                            {{/../primary_tag}}
-                        </header>
-                        <div class="read-next-card-content">
-                            <ul>
-                                {{#foreach related_posts}}
-                                <li><a href="{{url}}">{{title}}</a></li>
-                                {{/foreach}}
-                            </ul>
-                        </div>
-                        <footer class="read-next-card-footer">
-                            <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "See all % posts")}} →</a>
-                        </footer>
-                </div>
-                {{/if}}
-            {{/get}}
+                {{#has tag="#en"}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-fr+id:-{{id}}" limit="3" as |related_posts|}}
+                        {{#if related_posts}}
+                        {{> related-posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
+                        {{/if}}
+                    {{/get}}
+                {{else}}
+                    {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
+                        {{#if related_posts}}
+                        {{> related-posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
+                        {{/if}}
+                    {{/get}}
+                {{/has}}
             {{/if}}
             <div class="read-next-time-related">
                 {{#next_post}}
                 <div>
-                    <span class="direction">{{t "Next post"}}</span>
+                    <span class="direction">{{#../../post}}{{#has tag="#en"}}Next post{{else}}Article suivant{{/has}}{{/../../post}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p class="tag-list">
                         {{#foreach tags}}
@@ -114,7 +169,7 @@
 
                 {{#prev_post}}
                 <div>
-                    <span class="direction">{{t "Previous post"}}</span>
+                    <span class="direction">{{#../../post}}{{#has tag="#en"}}Previous post{{else}}Article précedent{{/has}}{{/../../post}}</span>
                     <h3><a href="{{url}}">{{title}}</a></h3>
                     <p class="tag-list">
                         {{#foreach tags}}
@@ -128,13 +183,28 @@
         </div>
     </div>
 </aside>
-
 <aside class="comments outer">
     <div class="inner">
-        <div id='discourse-comments'></div>
+        {{#if @member.paid}}
+        <div id='commento'>test</div>
+        {{else}}
+        <div class="comments-fallback">
+            {{#has tag="#en"}}
+            The comment section is only available for paying subscribers.
+            {{else}}
+            La section de commentaires est accessible uniquement aux abonnés du blog.
+            {{/has}}
+        </div>
+        {{/if}}
     </div>
 </aside>
 {{/is}}
+
+{{#has tag="#en"}}
+    {{> footer-en}}
+{{else}}
+    {{> footer}}
+{{/has}}
 {{/post}}
 
 {{#contentFor "scripts"}}
@@ -217,10 +287,10 @@
         // alternative versions
         ((document, window) => {
             const alternativeLinks = document.querySelectorAll('link[rel="alternate"][hreflang]')
-            const firsParagraph = document.querySelector('section.post-full-content p:first-child')
+            const firstParagraph = document.querySelector('section.post-full-content > p:first-of-type')
 
             const exist = lang => link => !(new RegExp(`^\/${lang}`)).test(window.location.pathname) && (new RegExp(`^${lang}`)).test(link)
-            const insert = box => firsParagraph.parentNode.insertBefore(box, firsParagraph.nextSibling)
+            const insert = box => firstParagraph.parentNode.insertBefore(box, firstParagraph.nextSibling)
 
             for (const link of alternativeLinks) {
                 const info = document.createElement('p')
@@ -246,18 +316,9 @@
     </script>
 
     {{^is "page"}}
-    <script type="text/javascript">
-        DiscourseEmbed = { discourseUrl: 'https://community.nathanaelcherrier.com/',
-                            discourseEmbedUrl: '{{url absolute="true"}}' };
-
-        (function() {
-            if (DiscourseEmbed.discourseEmbedUrl.includes("blog.nathanaelcherrier.com/p/")) return
-
-            var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-            d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-        })();
-    </script>
+    {{#if @member.paid}}
+    <script defer src="https://commento.mindsers.blog/js/commento.js"></script>
+    {{/if}}
     {{/is}}
 {{/contentFor}}
 

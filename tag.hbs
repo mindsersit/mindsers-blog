@@ -1,36 +1,25 @@
-{{!< partials/layouts/default}}
+{{!< default}}
 
-<section class="list-header">
-    <div class="list-header-content">
-        {{#tag}}
-            <h1 class="list-header-title">#{{name}}</h1>
-            <div class="infos">
-                <p class="description">
-                    {{#if description}}
-                        {{description}}
-                    {{else}}
-                        {{plural ../pagination.total empty=(t "A collection of posts") singular=(t "A collection of 1 post") plural=(t "A collection of % posts")}}
-                    {{/if}}
-                </p>
-                <div class="social-networks">
-                    <h3>{{t "Social networks"}}</h3>
-                    <ul>
-                        {{#if @blog.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
-                        {{#if @blog.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
-                    </ul>
-                </div>
-            </div>
-        {{/tag}}
-    </div>
-</section>
+{{#contentFor "lang"}}fr{{/contentFor}}
 
-<main id="site-main" class="site-main outer">
-    <div class="post-feed inner">
-        {{#foreach posts}}
-            {{> includes/post-card}}
-        {{/foreach}}
-    </div>
-    <div class="post-feed-pagination">
-        {{pagination}}
-    </div>
-</main>
+{{> header}}
+
+{{#tag}}
+    {{#> index/title-header }}
+        {{#*inline "titleBlock"}}
+            #{{name}}
+        {{/inline}}
+
+        {{#*inline "descriptionBlock"}}
+            {{#if description}}
+                {{description}}
+            {{else}}
+                {{plural ../../pagination.total empty="Une collection d'articles" singular="Une collection contenant un seul article" plural="Une collection de % articles"}}
+            {{/if}}
+        {{/inline}}
+    {{/index/title-header}}
+{{/tag}}
+
+{{> index/feed}}
+
+{{> footer}}

@@ -1,42 +1,185 @@
-section.subscribe {
-    background-color: white;
-    padding: 100px 0;
-    text-align: center;
-    font-family: var(--primaryFont);
-}
-
-section.subscribe .subscribe-content {
-    max-width: 1024px;
+.site-main .inner {
+    width: 1024px;
     margin: auto;
-    background-color: #f5f5f5;
-    padding: 70px 0;
 }
 
-section.subscribe .subscribe-header {
-    font-family: var(--secondaryFont);
-    font-size: 1.5em;
+.site-main .inner.large {
+    width: 1248px;
+    margin: auto;
 }
 
-section.subscribe input {
-    font-family: var(--primaryFont);
-    font-size: 1em;
-    border: 0 solid black;
-    padding: 10px;
-    outline: none;
-    width: 75%;
-    margin: 20px;
+.checkout-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    text-align: center;
+    margin: 40px 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-section.subscribe button {
-    font-size: 1em;
-    background: var(--defaultGradientBackground);
-    color: white;
-    border: 1px solid var(--primaryFont);
-    padding: 10px 40px;
-    margin: 20px;
+.checkout-plan {
+    border: 1px solid var(--bgSecondaryColor);
     border-radius: 3px;
+    padding: 20px 20px;
+    text-align: left;
+    min-width: 330px;
+
+    box-sizing: border-box;
 }
 
-@media screen and (max-width: 700px) {}
+.checkout-plan:hover,
+.checkout-box.selected-interval-month .checkout-plan.monthly-plan,
+.checkout-box.selected-interval-year .checkout-plan.yearly-plan {
+    border: 1px solid var(--primaryColor);
+}
 
-@media screen and (max-width: 500px) {}
+.checkout-plan .checkout-plan-header {
+    padding: 0 0 20px;
+    margin: 0 0 30px;
+    border-bottom: 1.1px solid var(--bgSecondaryColor);
+    font-size: 1.4em;
+}
+
+.checkout-plan .checkout-plan-header h3 {
+    color: var(--primaryColor);
+    font-family: var(--secondaryFont);
+    font-weight: 800;
+    font-size: 1.1em;
+    margin: 0 0 15px;
+}
+
+.checkout-plan .checkout-plan-header .old-price {
+    color: var(--bgSecondaryColor);
+    text-decoration: line-through;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.checkout-plan .checkout-plan-content ul {
+    padding: 0;
+    margin-left: 0;
+}
+
+.checkout-plan .checkout-plan-content li {
+    list-style: none;
+    line-height: 40px;
+}
+
+.checkout-plan .checkout-plan-content .button {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: var(--primaryColor);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.4s ease-in-out;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: var(--primaryFont);
+}
+
+section.title-header {
+    text-align: center;
+    margin: 100px 0;
+    padding: 0;
+    color: var(--secondaryColor);
+}
+
+section.title-header h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 300;
+}
+
+.site-main .patreon {
+    color: var(--secondaryColor);
+    text-align: center;
+    margin: 100px auto;
+    font-family: var(--primaryFont);
+}
+
+.site-main .patreon .button {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: rgb(255, 66, 77);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.4s ease-in-out;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.site-main .patreon .button:hover {
+    background-color: rgb(255, 53, 65);
+}
+
+@media (max-width: 1024px) {
+    .site-main .inner, .site-main .inner.large {
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .checkout-box {
+        width: 100%;
+    }
+
+    .checkout-plan {
+        margin: 10px 0;
+        min-width: unset;
+        width: calc(33% - 50px);
+    }
+}
+
+@media (max-width: 767px) {
+    .checkout-box {
+        flex-direction: column-reverse;
+    }
+
+    .checkout-plan {
+        width: 100%;
+    }
+
+    .site-main .patreon {
+        margin: 30px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .checkout-box {
+        flex-direction: column-reverse;
+    }
+
+    .checkout-plan {
+        width: 100%;
+    }
+
+    .site-main .patreon {
+        margin: 30px 0;
+    }
+
+    section.title-header h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section.title-header {
+        margin: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    section.title-header h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    section.title-header h1 {
+        font-size: 2.5em;
+    }
+}
