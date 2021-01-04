@@ -1,5 +1,7 @@
 routes:
-  /: home
+  /: 
+    template: home
+    controller: channel
   /fr/pricing/: members/plans
   /en/pricing/: members/plans-en
   /fr/coffeeshops/:
