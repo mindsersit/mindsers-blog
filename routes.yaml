@@ -1,7 +1,9 @@
 routes:
-  /: home
-  /fr/pricing/: members/plans
-  /en/pricing/: members/plans-en
+  /: 
+    template: home
+    controller: channel
+  /fr/membership/: members/plans
+  /en/membership/: members/plans-en
   /fr/coffeeshops/:
     controller: channel
     filter: tag:hash-coffeeshop-review+tag:-hash-en
