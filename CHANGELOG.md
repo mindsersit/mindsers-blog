@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.7.2] - 2021-01-05
 ### Fixed
 - Remove typos
 
@@ -162,7 +163,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First version of the website
 
-[Unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.1...HEAD
+[Unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.2...HEAD
+[1.7.2]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.1...v1.7.2
 [1.7.1]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.0...v1.7.1
 [1.7.0]: https://github.com/mindsers/mindsersit-blog/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/mindsers/mindsersit-blog/compare/v1.5.1...v1.6.0
