@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.4] - 2021-01-14
+### Fixed
+- Removed a development test string
 ## [1.7.3] - 2021-01-05
 ### Fixed
 - Update the last occurence of `/pricing/`
@@ -169,6 +172,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First version of the website
 
 [Unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.3...HEAD
+[1.7.4]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.3...v1.7.4
 [1.7.3]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.2...v1.7.3
 [1.7.2]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.1...v1.7.2
 [1.7.1]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.0...v1.7.1
