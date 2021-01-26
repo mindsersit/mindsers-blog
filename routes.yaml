@@ -42,19 +42,19 @@ collections:
   /fr/:
     permalink: /fr/{slug}/
     template: index
-    filter: "tag:-hash-en+tag:-hash-newsletter"
+    filter: "tag:-hash-en+tag:-hash-newsletter-issue"
   /en/:
     permalink: /en/{slug}/
     template: index-en
-    filter: "tag:hash-en+tag:-hash-newsletter"
+    filter: "tag:hash-en+tag:-hash-newsletter-issue"
   /fr/newsletters/:
     permalink: /fr/newsletters/{slug}/
     template: index
-    filter: tag:hash-newsletter+tag:-hash-en
+    filter: tag:hash-newsletter-issue+tag:-hash-en
   /en/newsletters/:
     permalink: /fr/newsletters/{slug}/
     template: index-en
-    filter: tag:hash-newsletter+tag:hash-en
+    filter: tag:hash-newsletter-issue+tag:hash-en
 
 taxonomies:
   tag: /tag/{slug}/
