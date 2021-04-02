@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.5] - 2021-04-02
+### Fixed
+- Add again the EUR symbol which was removed by Ghost in version 4
+
 ## [1.7.4] - 2021-01-14
 ### Fixed
 - Removed a development test string
@@ -172,6 +176,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First version of the website
 
 [Unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.3...HEAD
+[1.7.5]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.4...v1.7.5
 [1.7.4]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.3...v1.7.4
 [1.7.3]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.2...v1.7.3
 [1.7.2]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.1...v1.7.2
