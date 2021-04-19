@@ -1,50 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{{block "lang"}}}">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="{{lang}}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{{meta_title}} | {{@site.title}}</title>
+        <title>{{meta_title}} | {{@site.title}}</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Code+Pro:400,600" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.css"}}" />
+        {{ghost_head}}
+    </head>
 
-    {{{block "styles"}}}
+    <body class="{{body_class}} line-numbers">
+        <div class="site-wrapper">
+            {{{body}}}
+        </div>
 
-    {{ghost_head}}
-</head>
-<body class="{{body_class}} line-numbers">
-    <div class="site-wrapper">
-        {{{body}}}
-    </div>
-
-    {{{block "scripts"}}}
-
-    <script>
-        document
-            .querySelector('#searchbar')
-            .addEventListener('submit', (event) => {
-                event.preventDefault()
-
-                const data = new FormData(event.target)
-                if (data.get('term') == null || data.get('term').length < 1) {
-                    return
-                }
-
-                const term = data
-                    .get('term')
-                    .trim()
-                    .split(' ')
-                    .join('+')
-
-                document.location.href = `https://www.google.com/search?q=site:blog.nathanaelcherrier.com+${term}`
-            })
-    </script>
-    <script src="{{asset "js/menu.js"}}"></script>
-
-    {{ghost_foot}}
-</body>
+        {{ghost_foot}}
+    </body>
 </html>
