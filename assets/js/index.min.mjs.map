@@ -1,0 +1,1 @@
+{"version":3,"sources":["../ts/index.ts"],"names":["console","log"],"mappings":"AACEA,QAAQC,IAAI","sourcesContent":["{\n  console.log(\"hi all\");\n}\n"]}

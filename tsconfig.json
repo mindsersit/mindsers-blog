@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom", "dom.iterable"],
+    "module": "es6",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "outDir": "./assets/js"
+  },
+  "include": ["assets/ts/**/*"],
+  "exclude": ["assets/js", "node_modules"]
+}

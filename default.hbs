@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="{{lang}}">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="{{@site.lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link role="stylesheet" href="assets/css/main.css" />
 
-        <title>{{meta_title}} | {{@site.title}}</title>
+    <title>{{meta_title}} | {{@site.title}}</title>
 
-        {{ghost_head}}
-    </head>
+    {{ghost_head}}
+  </head>
 
-    <body class="{{body_class}} line-numbers">
-        <div class="site-wrapper">
-            {{{body}}}
-        </div>
+  <body class="{{body_class}}">
+    <div class="site-wrapper">
+      {{{body}}}
+    </div>
 
-        {{ghost_foot}}
-    </body>
+    <script type="module" src="assets/js/index.min.mjs"></script>
+    {{ghost_foot}}
+  </body>
 </html>
