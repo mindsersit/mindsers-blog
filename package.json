@@ -1,11 +1,21 @@
 {
-  "name": "@mindsersit/blog",
+  "name": "mindsers-blog",
   "version": "1.7.5",
   "description": "Theme for MindsersIT Blog",
   "keywords": [
     "ghost-theme"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "pnpm run build:clean && pnpm run build:styles && pnpm run build:scripts && pnpm run bundle && pnpm run build:clean:after",
+    "build:dev": "pnpm run build:styles -- --watch",
+    "build:scripts": "tsc",
+    "build:styles": "sass assets/scss:assets/css --style=compressed --error-css --color",
+    "build:clean": "rimraf assets/{js,css} && mkdir assets/{js,css}",
+    "build:clean:after": "rimraf \"assets/js/!(*.min.*|)\"",
+    "bundle": "pnpm run bundle:esm && pnpm run bundle:minimify",
+    "bundle:esm": "rollup assets/js/index.js --file assets/js/index.mjs --format esm --sourcemap --plugin rollup-plugin-sourcemaps",
+    "bundle:minimify": "terser --ecma 6 --compress --mangle --module -o assets/js/index.min.mjs  --source-map \"content='assets/js/index.mjs.map'\" -- assets/js/index.mjs"
+  },
   "author": {
     "name": "Nathanaël CHERRIER",
     "email": "nathanael@cherrier.co"
@@ -17,5 +27,13 @@
   },
   "config": {
     "posts_per_page": 5
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "rollup": "^2.47.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "sass": "^1.32.12",
+    "terser": "^5.7.0",
+    "typescript": "^4.2.4"
   }
 }
