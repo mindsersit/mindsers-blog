@@ -1,22 +1,82 @@
-<html lang="{{@site.lang}}">
+<html lang="{{@site.locale}}">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link role="stylesheet" href="assets/css/main.css" />
+    <link role="stylesheet" href="{{asset "css/main.css"}}" />
 
     <title>{{meta_title}} | {{@site.title}}</title>
 
     {{ghost_head}}
+
   </head>
 
   <body class="{{body_class}}">
-    <div class="site-wrapper">
-      {{{body}}}
-    </div>
+<div class="gh-viewport">
 
-    <script type="module" src="assets/js/index.min.mjs"></script>
-    {{ghost_foot}}
-  </body>
+<header id="gh-head" class="gh-head">
+    <nav class="gh-head-inner gh-container">
+
+        <div class="gh-head-brand">
+            <a class="gh-head-logo" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                {{else}}
+                    {{@site.title}}
+                {{/if}}
+            </a>
+            <a class="gh-burger" role="button">
+                <div class="gh-burger-box">
+                    <div class="gh-burger-inner"></div>
+                </div>
+            </a>
+        </div>
+        <div class="gh-head-menu">
+            {{navigation}}
+        </div>
+        <div class="gh-head-actions">
+            <div class="gh-head-actions-list">
+                {{#if @site.facebook}}
+                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
+                {{/if}}
+                {{#if @site.twitter}}
+                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+                {{/if}}
+                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="gh-main">
+
+    {{{body}}}
+    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+
+</main>
+
+<footer class="gh-foot">
+    <div class="gh-container">
+        <div class="gh-foot-menu">
+            {{navigation}}
+        </div>
+        <div class="gh-foot-meta">
+            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+        </div>
+    </div>
+</footer>
+
+</div>
+
+{{!-- <foot> --}}
+
+<script src="{{asset "js/index.js"}}"></script>
+
+{{{ block "scripts" }}}
+
+{{ghost_foot}}
+{{!-- Outputs important scripts - should always be included before closing body tag --}}
+
+</body>
 </html>

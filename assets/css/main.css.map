@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/main.scss"],"names":[],"mappings":"AAAA,OACE","file":"main.css"}
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAAA,OACI,qBAAA,CAEA,uBACI,YAAA","file":"main.css","sourcesContent":["header {\n    background-color: white;\n\n    .main-menu .nav {\n        display: flex;\n    }\n}\n"]}

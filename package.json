@@ -1,39 +1,48 @@
 {
-  "name": "mindsers-blog",
-  "version": "1.7.5",
-  "description": "Theme for MindsersIT Blog",
-  "keywords": [
-    "ghost-theme"
-  ],
-  "scripts": {
-    "build": "pnpm run build:clean && pnpm run build:styles && pnpm run build:scripts && pnpm run bundle && pnpm run build:clean:after",
-    "build:dev": "pnpm run build:styles -- --watch",
-    "build:scripts": "tsc",
-    "build:styles": "sass assets/scss:assets/css --style=compressed --error-css --color",
-    "build:clean": "rimraf assets/{js,css} && mkdir assets/{js,css}",
-    "build:clean:after": "rimraf \"assets/js/!(*.min.*|)\"",
-    "bundle": "pnpm run bundle:esm && pnpm run bundle:minimify",
-    "bundle:esm": "rollup assets/js/index.js --file assets/js/index.mjs --format esm --sourcemap --plugin rollup-plugin-sourcemaps",
-    "bundle:minimify": "terser --ecma 6 --compress --mangle --module -o assets/js/index.min.mjs  --source-map \"content='assets/js/index.mjs.map'\" -- assets/js/index.mjs"
-  },
-  "author": {
-    "name": "Nathanaël CHERRIER",
-    "email": "nathanael@cherrier.co"
-  },
-  "private": true,
-  "engines": {
-    "ghost": ">=1.0.0",
-    "ghost-api": "v3"
-  },
-  "config": {
-    "posts_per_page": 5
-  },
-  "devDependencies": {
-    "rimraf": "^3.0.2",
-    "rollup": "^2.47.0",
-    "rollup-plugin-sourcemaps": "^0.6.3",
-    "sass": "^1.32.12",
-    "terser": "^5.7.0",
-    "typescript": "^4.2.4"
-  }
+    "name": "mindsers-blog",
+    "version": "1.7.5",
+    "description": "Theme for MindsersIT Blog",
+    "keywords": [
+        "ghost-theme"
+    ],
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan .",
+        "test:ci": "gscan --fatal --verbose .",
+        "pretest": "gulp build",
+        "preship": "yarn test"
+    },
+    "author": {
+        "name": "Nathanaël CHERRIER",
+        "email": "nathanael@cherrier.co"
+    },
+    "private": true,
+    "engines": {
+        "ghost": ">=1.0.0",
+        "ghost-api": "v3"
+    },
+    "config": {
+        "posts_per_page": 5
+    },
+    "devDependencies": {
+        "autoprefixer": "10.2.5",
+        "beeper": "2.1.0",
+        "cssnano": "5.0.4",
+        "fibers": "^5.0.0",
+        "gscan": "4.0.2",
+        "gulp": "4.0.2",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "3.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-util": "3.0.8",
+        "gulp-watch": "5.0.1",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.3.0",
+        "postcss-color-mod-function": "3.0.3",
+        "postcss-easy-import": "3.0.0",
+        "sass": "^1.34.0"
+    }
 }
