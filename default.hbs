@@ -1,82 +1,110 @@
 <html lang="{{@site.locale}}">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link role="stylesheet" href="{{asset "css/main.css"}}" />
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css"  href="{{asset "css/main.css"}}" />
 
-    <title>{{meta_title}} | {{@site.title}}</title>
+        <title>{{meta_title}} | {{@site.title}}</title>
 
-    {{ghost_head}}
+        {{ghost_head}}
+    </head>
 
-  </head>
+    <body class="{{body_class}}">
+        <div class="gh-viewport">
+            <header id="gh-head" class="gh-head">
+                <nav class="gh-head-inner gh-container" aria-label="Main Navigation">
 
-  <body class="{{body_class}}">
-<div class="gh-viewport">
+                    <div class="gh-head-brand">
+                        <a class="gh-head-logo" href="{{@site.url}}">
+                            {{#if @site.logo}}
+                                <img src="{{@site.logo}}" alt="{{@site.title}} - Back to home page" />
+                            {{else}}
+                                {{@site.title}}
+                            {{/if}}
+                        </a>
+                        <a class="gh-burger" role="button">
+                            <div class="gh-burger-box">
+                                <div class="gh-burger-inner"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="gh-head-menu">
+                        {{navigation}}
+                    </div>
+                    <div class="gh-head-placeholder"></div>
+                    <div class="gh-head-actions">
+                        <button class="button primary">Login</button>
+                    </div>
+                </nav>
+            </header>
 
-<header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
+            <main class="gh-main">
 
-        <div class="gh-head-brand">
-            <a class="gh-head-logo" href="{{@site.url}}">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </a>
-            <a class="gh-burger" role="button">
-                <div class="gh-burger-box">
-                    <div class="gh-burger-inner"></div>
+                {{{body}}}
+                {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+
+            </main>
+
+            <footer class="gh-foot">
+                <div class="gh-container">
+                    <nav class="gh-foot-menu">
+                        <div class="menu-list">
+                            <h2>Plus de liens</h2>
+                            <ul>
+                                <li><a href="https://discord.gg/WrHUfSC">Discord</a></li>
+                                <li><a href="https://nathanaelcherrier.dev/fr/resume">CV</a></li>
+                                <li><a href="https://nathanaelcherrier.dev/fr/contact">Me contacter</a></li>
+                                <li><a href="https://feedly.com/i/subscription/feed/{{@site.url}}/fr/rss/" title="RSS" target="_blank" rel="noopener">RSS</a></li>
+                            </ul>
+                            {{navigation type="secondary"}}
+                        </div>
+                        <div class="menu-list">
+                            <h2>Open Sources</h2>
+                            <ul>
+                                <li><a href="https://github.com/mindsers/configfile" rel="nofollow">Configfile</a></li>
+                                <li><a href="https://github.com/mindsers/yabf" rel="nofollow">Yabf</a></li>
+                                <li><a href="https://github.com/mindsers/nativetable" rel="nofollow">Nativetable</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-list">
+                            <h2>Réseaux sociaux</h2>
+                            <ul>
+                                <li><a href="https://www.instagram.com/mindsers.codes/" title="Instagram" target="_blank" rel="nofollow">Instagram</a></li>
+                                <li><a href="https://twitter.com/MindsersCodes" title="Twitter" target="_blank" rel="nofollow">Twitter</a></li>
+                                <li><a href="https://github.com/Mindsers" title="GitHub" target="_blank" rel="nofollow">GitHub</a></li>
+                                <li><a href="https://dev.to/mindsers" title="Dev" target="_blank" rel="nofollow">Dev</a></li>
+                                <li><a href="https://www.twitch.tv/mindsers" title="Twitch" target="_blank" rel="nofollow">Twitch</a></li>
+                                <li><a href="https://www.facebook.com/MindsersIT" title="Facebook" target="_blank" rel="nofollow">Facebook</a></li>
+                                <li><a href="https://www.malt.fr/profile/nathanaelcherrier" title="Malt" target="_blank" rel="nofollow">Malt</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-list">
+                            <h2>Soutenir</h2>
+                            <ul>
+                                <li>Bitcoin: <span class="coin-address">3N7iAYWKz5rqdtbYJ4r1SRJHq9sEQbXHDk</span></li>
+                                <li>Ethereum: <span class="coin-address">0x30B42B1487262fE55aD8CDF046342AB6bF4d4e73</span></li>
+                                <li>Ripple: <span class="coin-address">rUwDYme9YMzNo8ufvgKE7VET1QgbKgJuGT</span></li>
+                                <li>Litecoin: <span class="coin-address">MU47RMv5KGHiBU8Kw5PNPbn3cyFLjmQXPt</span></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="gh-foot-meta">
+                        &copy;2014-{{date format="YYYY"}} <a href="https://nathanaelcherrier.dev/fr/">Nathanaël Cherrier</a>. Tous droits réservés<br>
+            <a href="https://nathanaelcherrier.dev/fr/legal">Mentions légales</a>
+                    </div>
                 </div>
-            </a>
+            </footer>
         </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{#if @site.facebook}}
-                <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">{{> "icons/facebook"}}</a>
-                {{/if}}
-                {{#if @site.twitter}}
-                <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
-                {{/if}}
-                <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">{{> "icons/rss"}}</a>
-            </div>
-        </div>
-    </nav>
-</header>
 
-<main class="gh-main">
+        {{!-- <foot> --}}
 
-    {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+        <script src="{{asset "js/main.js"}}"></script>
 
-</main>
+        {{{ block "scripts" }}}
 
-<footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-        </div>
-    </div>
-</footer>
-
-</div>
-
-{{!-- <foot> --}}
-
-<script src="{{asset "js/index.js"}}"></script>
-
-{{{ block "scripts" }}}
-
-{{ghost_foot}}
-{{!-- Outputs important scripts - should always be included before closing body tag --}}
-
-</body>
+        {{ghost_foot}}
+        {{!-- Outputs important scripts - should always be included before closing body tag --}}
+    </body>
 </html>

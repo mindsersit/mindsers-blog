@@ -19,82 +19,76 @@ const easyimport = require('postcss-easy-import')
 sass.compiler = require('sass')
 
 function serve(done) {
-    livereload.listen()
-    done()
+  livereload.listen()
+  done()
 }
 
 const handleError = done => {
-    return err => {
-        if (err) {
-            beeper()
-        }
-
-        return done(err)
+  return err => {
+    if (err) {
+      beeper()
     }
+
+    return done(err)
+  }
 }
 
 function templates(done) {
-    pump(
-        [src(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs']), livereload()],
-        handleError(done)
-    )
+  pump(
+    [src(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs']), livereload()],
+    handleError(done)
+  )
 }
 
 function styles(done) {
-    const processors = [easyimport, colorFunction(), autoprefixer(), cssnano()]
+  const processors = [easyimport, colorFunction(), autoprefixer(), cssnano()]
 
-    pump(
-        [
-            src('styles/*.scss', { sourcemaps: true }),
-            sass({ outputStyle: 'compressed', fiber: fibers }).on(
-                'error',
-                sass.logError
-            ),
-            postcss(processors),
-            dest('assets/css/', { sourcemaps: '.' }),
-            livereload(),
-        ],
-        handleError(done)
-    )
+  pump(
+    [
+      src('styles/*.scss', { sourcemaps: true }),
+      sass({ outputStyle: 'compressed', fiber: fibers }).on(
+        'error',
+        sass.logError
+      ),
+      postcss(processors),
+      dest('assets/css/', { sourcemaps: '.' }),
+      livereload(),
+    ],
+    handleError(done)
+  )
 }
 
 function scripts(done) {
-    pump(
-        [
-            src('scripts/*.js', { sourcemaps: true }),
-            uglify(),
-            dest('assets/js/', { sourcemaps: '.' }),
-            livereload(),
-        ],
-        handleError(done)
-    )
+  pump(
+    [
+      src('scripts/*.js', { sourcemaps: true }),
+      uglify(),
+      dest('assets/js/', { sourcemaps: '.' }),
+      livereload(),
+    ],
+    handleError(done)
+  )
 }
 
 function zipper(done) {
-    const targetDir = 'dist/'
-    const themeName = require('./package.json').name
-    const filename = `${themeName}.zip`
+  const targetDir = 'dist/'
+  const themeName = require('./package.json').name
+  const filename = `${themeName}.zip`
 
-    pump(
-        [
-            src([
-                '**',
-                '!node_modules',
-                '!node_modules/**',
-                '!dist',
-                '!dist/**',
-            ]),
-            zip(filename),
-            dest(targetDir),
-        ],
-        handleError(done)
-    )
+  pump(
+    [
+      src(['**', '!node_modules', '!node_modules/**', '!dist', '!dist/**']),
+      zip(filename),
+      dest(targetDir),
+    ],
+    handleError(done)
+  )
 }
 
 const stylesWatcher = () => watch('styles/**', styles)
 const scriptsWatcher = () => watch(['scripts/**'], scripts)
 const templatesWatcher = () =>
-    watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], templates)
+  watch(['*.hbs', '**/**/*.hbs', '!node_modules/**/*.hbs'], templates)
 const watcher = parallel(scriptsWatcher, stylesWatcher, templatesWatcher)
 const build = series(styles, scripts)
 const dev = series(build, serve, watcher)

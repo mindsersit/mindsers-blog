@@ -1,0 +1,25 @@
+@import 'colors';
+
+.button {
+    appearance: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border-width: 0;
+    border-style: solid;
+    background-color: #bdbdbd;
+    color: white;
+
+    &.primary {
+        background-color: $accent_color;
+    }
+
+    &.patreon {
+        background-color: #ff424d;
+    }
+
+    &.highlighted {
+        background: $default_gradient;
+        font-size: 1.05em;
+    }
+}

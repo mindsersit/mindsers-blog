@@ -1,0 +1,21 @@
+$accent_color: var(--ghost-accent-color);
+$secondary_color: #23b7ae;
+$foreground_color: var(--foreground-color);
+$background_color: var(--background-color);
+$default_gradient: linear-gradient(
+    85deg,
+    $accent_color 0%,
+    $secondary_color 80.21%
+);
+
+:root {
+    --foreground-color: #2d3436;
+    --background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-color: #f1f2f6;
+        --background-color: #2d3436;
+    }
+}
