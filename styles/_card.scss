@@ -4,11 +4,6 @@
     box-sizing: border-box;
     padding: 0;
 
-    &:focus,
-    &:hover {
-        padding: 3px;
-    }
-
     .mds-card-link {
         box-sizing: border-box;
         text-decoration: none;
@@ -43,6 +38,20 @@
             margin-bottom: 10px;
         }
 
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: $default_gradient;
+            border-radius: 6px;
+            z-index: -1;
+            animation: rotate 3s ease alternate infinite;
+            background-size: 300% 300%;
+        }
+
         &:focus,
         &:hover {
             border-width: 0;
@@ -50,18 +59,12 @@
             .cta {
                 visibility: inherit;
             }
+
             &::after {
-                content: '';
-                position: absolute;
                 top: calc(-1 * 3px);
                 left: calc(-1 * 3px);
                 height: calc(100% + 3px * 2);
                 width: calc(100% + 3px * 2);
-                background: $default_gradient;
-                border-radius: 6px;
-                z-index: -1;
-                animation: rotate 3s ease alternate infinite;
-                background-size: 300% 300%;
             }
         }
     }
