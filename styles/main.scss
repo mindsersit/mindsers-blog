@@ -8,6 +8,8 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     letter-spacing: 0.2px;
+    background-color: $background_color;
+    color: $foreground_color;
 
     .mds-container {
         max-width: 1280px;
