@@ -1,0 +1,80 @@
+.mds-card {
+    border-radius: 4px;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 0;
+
+    &:focus,
+    &:hover {
+        padding: 3px;
+    }
+
+    .mds-card-link {
+        box-sizing: border-box;
+        text-decoration: none;
+        color: $foreground_color;
+        display: inline-block;
+        background-color: $background_color;
+        width: 100%;
+        border-width: 4px;
+        border-radius: 3px;
+        padding: 15px;
+        position: relative;
+
+        .cta {
+            visibility: hidden;
+            color: $accent_color;
+            font-size: 0.85em;
+
+            &::after {
+                content: '->';
+                display: inline-block;
+                padding: 3px;
+                font-size: 0.95em;
+            }
+        }
+
+        p {
+            font-size: 0.8em;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        &:focus,
+        &:hover {
+            border-width: 0;
+
+            .cta {
+                visibility: inherit;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(-1 * 3px);
+                left: calc(-1 * 3px);
+                height: calc(100% + 3px * 2);
+                width: calc(100% + 3px * 2);
+                background: $default_gradient;
+                border-radius: 6px;
+                z-index: -1;
+                animation: rotate 3s ease alternate infinite;
+                background-size: 300% 300%;
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
