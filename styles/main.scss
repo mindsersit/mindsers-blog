@@ -5,25 +5,32 @@
 body {
     padding: 0;
     margin: 0;
+    $layout_width: 1080px;
 
-    .gh-head {
+    .mds-container {
+        width: $layout_width;
+        margin: auto;
+    }
+
+    .mds-head {
         background-color: $background_color;
         font-family: $sans_font;
         padding: 0 20px;
 
-        .gh-container {
+        .mds-container {
             display: flex;
-            justify-content: space-around;
+            width: $layout_width * 1.2;
+            justify-content: space-between;
             align-items: center;
 
-            .gh-head-logo {
+            .mds-head-logo {
                 font-size: 1.5em;
                 font-weight: 700;
                 text-decoration: none;
                 color: $foreground_color;
             }
 
-            .gh-head-menu {
+            .mds-head-menu {
                 margin: 0 20px;
                 font-size: 0.95em;
 
@@ -45,13 +52,13 @@ body {
                 }
             }
 
-            .gh-head-placeholder {
+            .mds-head-placeholder {
                 flex-grow: 2;
             }
         }
     }
 
-    .gh-foot {
+    .mds-foot {
         background-color: $foreground_color;
         color: $background_color;
         font-family: $sans_font;
@@ -59,11 +66,12 @@ body {
         margin-top: 30px;
         font-size: 0.85em;
 
-        .gh-container {
+        .mds-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-direction: column;
             align-items: center;
+            width: $layout_width * 1.2;
 
             a {
                 color: $accent_color;
@@ -71,12 +79,13 @@ body {
                 font-weight: normal;
             }
 
-            .gh-foot-menu {
+            .mds-foot-menu {
                 padding: 0;
                 margin: 20px;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                width: 100%;
 
                 .menu-list {
                     margin: 20px;
@@ -94,7 +103,7 @@ body {
                 }
             }
 
-            .gh-foot-actions {
+            .mds-foot-actions {
                 display: flex;
                 flex-direction: row;
 
@@ -104,7 +113,7 @@ body {
                 }
             }
 
-            .gh-foot-meta {
+            .mds-foot-meta {
                 margin: 20px;
                 text-align: center;
             }

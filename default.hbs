@@ -12,44 +12,44 @@
     </head>
 
     <body class="{{body_class}}">
-        <div class="gh-viewport">
-            <header id="gh-head" class="gh-head">
-                <nav class="gh-head-inner gh-container" aria-label="Main Navigation">
+        <div class="mds-viewport">
+            <header id="mds-head" class="mds-head">
+                <nav class="mds-head-inner mds-container" aria-label="Main Navigation">
 
-                    <div class="gh-head-brand">
-                        <a class="gh-head-logo" href="{{@site.url}}">
+                    <div class="mds-head-brand">
+                        <a class="mds-head-logo" href="{{@site.url}}">
                             {{#if @site.logo}}
                                 <img src="{{@site.logo}}" alt="{{@site.title}} - Back to home page" />
                             {{else}}
                                 {{@site.title}}
                             {{/if}}
                         </a>
-                        <a class="gh-burger" role="button">
-                            <div class="gh-burger-box">
-                                <div class="gh-burger-inner"></div>
+                        <a class="mds-burger" role="button">
+                            <div class="mds-burger-box">
+                                <div class="mds-burger-inner"></div>
                             </div>
                         </a>
                     </div>
-                    <div class="gh-head-menu">
+                    <div class="mds-head-menu">
                         {{navigation}}
                     </div>
-                    <div class="gh-head-placeholder"></div>
-                    <div class="gh-head-actions">
+                    <div class="mds-head-placeholder"></div>
+                    <div class="mds-head-actions">
                         <button class="button primary">Login</button>
                     </div>
                 </nav>
             </header>
 
-            <main class="gh-main">
+            <main class="mds-main">
 
                 {{{body}}}
                 {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
             </main>
 
-            <footer class="gh-foot">
-                <div class="gh-container">
-                    <nav class="gh-foot-menu">
+            <footer class="mds-foot">
+                <div class="mds-container">
+                    <nav class="mds-foot-menu">
                         <div class="menu-list">
                             <h2>Plus de liens</h2>
                             <ul>
@@ -86,13 +86,13 @@
                                 <li>Bitcoin: <span class="coin-address">3N7iAYWKz5rqdtbYJ4r1SRJHq9sEQbXHDk</span></li>
                                 <li>Ethereum: <span class="coin-address">0x30B42B1487262fE55aD8CDF046342AB6bF4d4e73</span></li>
                                 <li>Ripple: <span class="coin-address">rUwDYme9YMzNo8ufvgKE7VET1QgbKgJuGT</span></li>
-                                <li>Litecoin: <span class="coin-address">MU47RMv5KGHiBU8Kw5PNPbn3cyFLjmQXPt</span></li>
+                                <li>Litecoin: <span class="coin-address">MU47RMv5KmdsiBU8Kw5PNPbn3cyFLjmQXPt</span></li>
                             </ul>
                         </div>
                     </nav>
-                    <div class="gh-foot-meta">
+                    <div class="mds-foot-meta">
                         &copy;2014-{{date format="YYYY"}} <a href="https://nathanaelcherrier.dev/fr/">Nathanaël Cherrier</a>. Tous droits réservés<br>
-            <a href="https://nathanaelcherrier.dev/fr/legal">Mentions légales</a>
+                        <a href="https://nathanaelcherrier.dev/fr/legal">Mentions légales</a>
                     </div>
                 </div>
             </footer>
