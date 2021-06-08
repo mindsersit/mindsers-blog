@@ -5,21 +5,22 @@
 body {
     padding: 0;
     margin: 0;
-    $layout_width: 1080px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.2px;
 
     .mds-container {
-        width: $layout_width;
+        max-width: 1280px;
         margin: auto;
     }
 
     .mds-head {
         background-color: $background_color;
-        font-family: $sans_font;
+        font-family: $sans;
         padding: 0 20px;
 
         .mds-container {
             display: flex;
-            width: $layout_width * 1.2;
             justify-content: space-between;
             align-items: center;
 
@@ -61,7 +62,7 @@ body {
     .mds-foot {
         background-color: $foreground_color;
         color: $background_color;
-        font-family: $sans_font;
+        font-family: $sans;
         padding: 30px;
         margin-top: 30px;
         font-size: 0.85em;
@@ -71,7 +72,6 @@ body {
             justify-content: space-between;
             flex-direction: column;
             align-items: center;
-            width: $layout_width * 1.2;
 
             a {
                 color: $accent_color;

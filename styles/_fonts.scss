@@ -1,12 +1,24 @@
 @font-face {
-    font-family: 'Noto Sans';
+    font-family: 'Fira Sans';
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     font-display: auto; /* or block, swap, fallback, optional */
-    src: local('Noto Sans'),
-        url('/assets/fonts/NotoSans-Regular.ttf') format('truetype');
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Regular.ttf') format('truetype');
     unicode-range: U+000-5FF; /* Latin glyphs */
 }
 
-$sans_font: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, 'Droid Sans', 'Helvetica Neue', sans-serif;
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto; /* or block, swap, fallback, optional */
+    src: local('Merriweather'),
+        url('/assets/fonts/Merriweather-Regular.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+$sans: 'Fira Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+$mono: 'Fira Code', monospace;
+$serif: 'Merriweather', serif;
