@@ -16,10 +16,28 @@
         padding: 15px;
         position: relative;
 
+        .mds-card-meta {
+            font-size: 0.9em;
+            font-weight: 300;
+
+            .premium-label {
+                background-color: $premium_color;
+                border-radius: 2px;
+                padding: 2px;
+            }
+
+            .member-label {
+                background-color: rgba($secondary_color, 0.3);
+                border-radius: 2px;
+                padding: 2px;
+            }
+        }
+
         .cta {
             visibility: hidden;
             color: $accent_color;
             font-size: 0.85em;
+            font-weight: 600;
 
             .gg-arrow-right {
                 box-sizing: border-box;
@@ -58,7 +76,7 @@
         }
 
         p {
-            font-size: 0.8em;
+            font-size: 0.85em;
             font-family: $serif;
         }
 

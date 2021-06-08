@@ -5,11 +5,21 @@ Re-usable card for linking to posts
 <article class='mds-card {{post_class}}'>
     <a class='mds-card-link' href='{{url}}'>
         <div class='mds-card-content'>
-            {{!-- <span class='mds-card-meta'><time
-                    datetime='{{date format='YYYY-MM-DD'}}'
-                >{{date format='D MMM YYYY'}}</time>
+            <span class='mds-card-meta'>
+                <time datetime='{{date format='YYYY-MM-DD'}}'>
+                    {{date format='D MMM YYYY'}}
+                </time>
                 <span class='bull'>&bull;</span>
-                {{reading_time}}</span> --}}
+                {{reading_time}}
+                {{#has visibility='paid'}}
+                    <span class='bull'>&bull;</span>
+                    <span class='premium-label'>Premium</span>
+                {{/has}}
+                {{#has visibility='members'}}
+                    <span class='bull'>&bull;</span>
+                    <span class='member-label'>Member Only</span>
+                {{/has}}
+            </span>
             <h2 class='mds-card-title'>{{title}}</h2>
             <p>{{excerpt}}</p>
             <strong class='cta'>

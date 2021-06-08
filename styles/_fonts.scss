@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Fira Sans';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-display: auto; /* or block, swap, fallback, optional */
     src: local('Fira Sans'),
         url('/assets/fonts/FiraSans-Regular.ttf') format('truetype');
@@ -9,9 +9,19 @@
 }
 
 @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: auto; /* or block, swap, fallback, optional */
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Light.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
     font-family: 'Merriweather';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-display: auto; /* or block, swap, fallback, optional */
     src: local('Merriweather'),
         url('/assets/fonts/Merriweather-Regular.ttf') format('truetype');
