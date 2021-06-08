@@ -4,4 +4,21 @@
 
 .mds-page {
     font-family: $sans;
+
+    nav.pagination {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+
+        .pagination-link {
+            text-decoration: none;
+            color: $accent_color;
+            margin: 0 5px;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+    }
 }
