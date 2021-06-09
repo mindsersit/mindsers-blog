@@ -19,6 +19,16 @@
 }
 
 @font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: auto; /* or block, swap, fallback, optional */
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Bold.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
     font-family: 'Merriweather';
     font-style: normal;
     font-weight: 400;

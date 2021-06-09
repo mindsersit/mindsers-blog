@@ -5,6 +5,16 @@
 .mds-page {
     font-family: $sans;
 
+    .mds-header {
+        margin: 50px;
+
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
     nav.pagination {
         display: flex;
         justify-content: space-between;
