@@ -1,0 +1,23 @@
+@import 'fonts';
+
+.mds-page {
+    font-family: $sans;
+    min-height: 80vh;
+
+    .mds-error-code {
+        margin: 50px;
+        margin-bottom: 20px;
+        font-size: 4em;
+        font-weight: 600;
+    }
+
+    .mds-error-description,
+    .mds-error-link,
+    .mds-error-code {
+        text-align: center;
+    }
+
+    .mds-error-link {
+        margin: 50px;
+    }
+}
