@@ -7,11 +7,11 @@ collections:
     /posts/:
         permalink: /posts/{slug}/
         template: index
-        filter: 'tag:-[hash-fr,hash-email,hash-newsletter-issue]'
+        filter: 'tag:hash-en+tag:-[hash-email,hash-newsletter-issue]'
     /issues/:
         permalink: /issues/{slug}/
         template: index
-        filter: 'tag:hash-newsletter-issue+tag:-hash-fr'
+        filter: 'tag:hash-en+tag:hash-newsletter-issue'
     /emails/:
         permalink: /emails/{slug}/
         template: index
@@ -23,7 +23,7 @@ collections:
     /fr/issues/:
         permalink: /fr/issues/{slug}/
         template: index
-        filter: 'tag:hash-newsletter-issue+tag:hash-fr'
+        filter: 'tag:hash-fr+tag:hash-newsletter-issue'
 
 taxonomies:
     tag: /topics/{slug}/
