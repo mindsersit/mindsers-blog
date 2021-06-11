@@ -5,14 +5,40 @@
 <div class="mds-page">
     <div class="mds-container">
         <header class="mds-header">
+        {{#is "issues"}}
+            <h1 class="mds-title">Mindsers' newsletter issues</h1>
+            <p>
+                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
+                This newsletter is about my own journey as a developer and entrepreneur.
+            </p>
+            <p>
+                <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                <a class="button" href="/fr/issues/">See French issues</a>
+            </p>
+        {{else is "frissues"}}
+            <h1 class="mds-title">Mindsers' newsletter issues in French</h1>
+            <p>
+                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
+                This newsletter is about my own journey as a developer and entrepreneur.
+            </p>
+            <p>
+                <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                <a class="button" href="/issues/">See English issues</a>
+            </p>
+        {{else is "emails"}}
+            <h1 class="mds-title">Emails archives</h1>
+        {{else is "posts"}}
+            <h1 class="mds-title">English posts</h1>
+        {{else is "frposts"}}
+            <h1 class="mds-title">French posts</h1>
+        {{else}}
             <h1 class="mds-title">Posts</h1>
+        {{/is}}
         </header>
 
         <div class="mds-postfeed">
         {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
+            {{> "card"}}
         {{/foreach}}
         </div>
 
