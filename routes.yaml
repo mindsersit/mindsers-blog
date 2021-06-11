@@ -1,10 +1,30 @@
 routes:
+    /: home
+    /membership/: home
+    /newsletter/: home
 
 collections:
-    /:
-        permalink: /{slug}/
+    /posts/:
+        permalink: /posts/{slug}/
         template: index
+        filter: 'tag:-[hash-fr,hash-email,hash-newsletter-issue]'
+    /issues/:
+        permalink: /issues/{slug}/
+        template: index
+        filter: 'tag:hash-newsletter-issue+tag:-hash-fr'
+    /emails/:
+        permalink: /emails/{slug}/
+        template: index
+        filter: 'tag:hash-email'
+    /fr/posts/:
+        permalink: /fr/posts/{slug}/
+        template: index
+        filter: 'tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]'
+    /fr/issues/:
+        permalink: /fr/issues/{slug}/
+        template: index
+        filter: 'tag:hash-newsletter-issue+tag:hash-fr'
 
 taxonomies:
-    tag: /tag/{slug}/
-    author: /author/{slug}/
+    tag: /topics/{slug}/
+    author: /developers/{slug}/
