@@ -8,8 +8,8 @@
     border-radius: 3px;
     border-width: 0;
     border-style: solid;
-    background-color: $background_color;
-    color: $foreground_color;
+    color: $background_color;
+    background-color: $foreground_color;
     font-family: $sans;
     font-weight: 600;
 
@@ -26,7 +26,21 @@
     &.highlighted {
         background-color: $secondary_color;
         background: $default_gradient;
+        background-size: 200% 200%;
+        animation: highlightButton 3s ease alternate infinite;
         font-size: 1.05em;
         color: white;
+    }
+}
+
+@keyframes highlightButton {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
