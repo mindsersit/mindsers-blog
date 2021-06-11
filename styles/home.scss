@@ -29,4 +29,14 @@
             width: 55%;
         }
     }
+
+    .mds-featured {
+        display: flex;
+        column-gap: 5%;
+        flex-basis: 45%;
+
+        article {
+            width: 45%;
+        }
+    }
 }

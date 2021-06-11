@@ -16,6 +16,14 @@
             <div class="illustration"></div>
         </header>
 
+        <div class="mds-featured">
+            {{#get "posts" filter="featured:true" limit="2"}}
+                {{#foreach posts}}
+                    {{> "card"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
         <div class="mds-postfeed">
         {{#foreach posts}}
             {{> "card"}}
