@@ -16,29 +16,33 @@
             <div class="illustration"></div>
         </header>
 
-        <div class="mds-featured">
+        <section class="mds-featured">
             {{#get "posts" filter="featured:true" limit="2"}}
                 {{#foreach posts}}
                     {{> "card"}}
                 {{/foreach}}
             {{/get}}
-        </div>
+        </section>
 
-        <h2>My last blog posts</h2>
-        <div class="mds-postfeed">
-        {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
-            {{#foreach posts}}
-                {{> "thumbnail-card"}}
-            {{/foreach}}
-        {{/get}}
-        </div>
-        <h2>My last French blog posts</h2>
-        <div class="mds-postfeed">
-        {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
-            {{#foreach posts}}
-                {{> "thumbnail-card"}}
-            {{/foreach}}
-        {{/get}}
-        </div>
+        <section>
+            <h2 class="section-title">My last blog posts</h2>
+            <div class="mds-postfeed">
+            {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#foreach posts}}
+                    {{> "thumbnail-card"}}
+                {{/foreach}}
+            {{/get}}
+            </div>
+        </section>
+        <section>
+            <h2 class="section-title">My last French blog posts</h2>
+            <div class="mds-postfeed">
+            {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#foreach posts}}
+                    {{> "thumbnail-card"}}
+                {{/foreach}}
+            {{/get}}
+            </div>
+        </section>
     </div>
 </div>
