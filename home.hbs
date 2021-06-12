@@ -52,7 +52,7 @@
     <section>
         <div class="mds-container">
             <h2 class="section-title">My last French blog posts</h2>
-            <div class="mds-postfeed">
+            <div class="mds-postfeed" lang="fr">
             {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
                 {{#foreach posts}}
                     {{> "thumbnail-card"}}
