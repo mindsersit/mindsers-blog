@@ -93,34 +93,43 @@
 
     &.mds-thumbnail-card {
         margin: 20px;
-        .mds-card-link {
-            display: flex;
-            flex-direction: column;
-            height: 400px;
 
-            .image-container {
-                flex-grow: 1;
-                height: 250px;
-                width: calc(100% + #{$padding * 2});
-                position: relative;
-                top: -$padding;
-                left: -$padding;
-                border-radius: 3px 3px 0 0;
+        .mds-card-link {
+            height: 400px;
+            padding: 0;
+            background: unset;
+
+            .mds-card-content-container {
+                margin: 0;
                 overflow: hidden;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                height: 100%;
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 3px;
+                position: relative;
 
                 .mds-card-image {
                     min-width: calc(100% * 1.5);
                 }
-            }
 
-            .mds-card-content {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                flex-grow: 2;
+                .mds-card-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 100%;
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 310px;
+                    bottom: -105px;
+                    padding: 15px;
+                    background-color: $background_color;
+                    transition: bottom 0.8s ease-in-out;
+
+                    p,
+                    .cta {
+                        display: none;
+                    }
+                }
             }
 
             &::after {
@@ -131,6 +140,16 @@
             }
 
             &:hover {
+                .mds-card-content {
+                    top: unset;
+                    bottom: 0;
+
+                    p,
+                    .cta {
+                        display: block;
+                    }
+                }
+
                 &::after {
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 }
