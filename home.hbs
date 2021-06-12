@@ -3,8 +3,8 @@
 <link rel="stylesheet" type="text/css"  href="{{asset "css/home.css"}}" />
 
 <div class="mds-home">
-    <div class="mds-container">
-        <header class="mds-header">
+    <header class="mds-header">
+        <div class="mds-container">
             <div class="presentation">
                 <h1 class="mds-title">{{@site.description}}</h1>
                 <p>
@@ -14,17 +14,21 @@
                 <p><a href="/membership/" class="button primary">Subscribe</a></p>
             </div>
             <div class="illustration"></div>
-        </header>
+        </div>
+    </header>
 
-        <section class="mds-featured">
-            {{#get "posts" filter="featured:true" limit="2"}}
-                {{#foreach posts}}
-                    {{> "card"}}
-                {{/foreach}}
-            {{/get}}
-        </section>
+    <section class="mds-featured">
+        <div class="mds-container">
+        {{#get "posts" filter="featured:true" limit="2"}}
+            {{#foreach posts}}
+                {{> "card"}}
+            {{/foreach}}
+        {{/get}}
+        </div>
+    </section>
 
-        <section>
+    <section>
+        <div class="mds-container">
             <h2 class="section-title">My last blog posts</h2>
             <div class="mds-postfeed">
             {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
@@ -33,8 +37,20 @@
                 {{/foreach}}
             {{/get}}
             </div>
-        </section>
-        <section>
+        </div>
+    </section>
+
+    <section class="highlighted-band">
+        <div class="mds-container">
+            <h2 class="section-title">
+                I also have a monthly paid newsletter about my coding journey and my business journey
+            </h2>
+            <a href="/newsletter/" class="button">Learn about the newsletter</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="mds-container">
             <h2 class="section-title">My last French blog posts</h2>
             <div class="mds-postfeed">
             {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
@@ -43,6 +59,7 @@
                 {{/foreach}}
             {{/get}}
             </div>
-        </section>
+        </div>
+    </section>
     </div>
 </div>

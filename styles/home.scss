@@ -5,8 +5,8 @@
 .mds-home {
     font-family: $sans;
 
-    .mds-header {
-        margin: 80px 0;
+    .mds-header .mds-container {
+        margin: 80px auto;
         display: flex;
         justify-content: space-around;
 
@@ -30,11 +30,11 @@
         }
     }
 
-    .mds-featured {
+    .mds-featured .mds-container {
         display: flex;
         column-gap: 5%;
         flex-basis: 45%;
-        margin: 40px 0;
+        margin: 40px auto;
 
         article {
             width: 45%;
@@ -46,6 +46,28 @@
         font-weight: 600;
         text-align: center;
         margin: 30px 0;
+    }
+
+    .highlighted-band {
+        background: $default_gradient;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 40px 0;
+        padding: 30px;
+        color: white;
+        text-align: center;
+        padding: 100px 0;
+
+        .section-title {
+            margin: 0 0 60px 0;
+        }
+
+        .button {
+            background: white;
+            color: $accent_color;
+            font-weight: 400;
+        }
     }
 
     .mds-postfeed {
