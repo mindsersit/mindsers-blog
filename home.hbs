@@ -24,10 +24,21 @@
             {{/get}}
         </div>
 
+        <h2>My last blog posts</h2>
         <div class="mds-postfeed">
-        {{#foreach posts}}
-            {{> "card"}}
-        {{/foreach}}
+        {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+            {{#foreach posts}}
+                {{> "thumbnail-card"}}
+            {{/foreach}}
+        {{/get}}
+        </div>
+        <h2>My last French blog posts</h2>
+        <div class="mds-postfeed">
+        {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+            {{#foreach posts}}
+                {{> "thumbnail-card"}}
+            {{/foreach}}
+        {{/get}}
         </div>
     </div>
 </div>

@@ -3,6 +3,7 @@
     margin: 10px;
     box-sizing: border-box;
     padding: 0;
+    $padding: 15px;
 
     .mds-card-link {
         box-sizing: border-box;
@@ -13,7 +14,7 @@
         width: 100%;
         border-width: 4px;
         border-radius: 3px;
-        padding: 15px;
+        padding: $padding;
         position: relative;
 
         .mds-card-meta {
@@ -86,6 +87,53 @@
                 left: calc(-1 * 3px);
                 height: calc(100% + 3px * 2);
                 width: calc(100% + 3px * 2);
+            }
+        }
+    }
+
+    &.mds-thumbnail-card {
+        margin: 20px;
+        .mds-card-link {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+
+            .image-container {
+                flex-grow: 1;
+                height: 250px;
+                width: calc(100% + #{$padding * 2});
+                position: relative;
+                top: -$padding;
+                left: -$padding;
+                border-radius: 3px 3px 0 0;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .mds-card-image {
+                    min-width: calc(100% * 1.5);
+                }
+            }
+
+            .mds-card-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex-grow: 2;
+            }
+
+            &::after {
+                top: calc(-1 * 3px);
+                left: calc(-1 * 3px);
+                height: calc(100% + 3px * 2);
+                width: calc(100% + 3px * 2);
+            }
+
+            &:hover {
+                &::after {
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
             }
         }
     }

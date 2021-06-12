@@ -1,5 +1,8 @@
 routes:
-    /: home
+    /:
+        controller: channel
+        template: home
+        filter: tag:-[hash-email,hash-newsletter-issue]
     /membership/: home
     /newsletter/: home
 

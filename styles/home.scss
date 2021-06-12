@@ -40,4 +40,13 @@
             width: 45%;
         }
     }
+
+    .mds-postfeed {
+        display: flex;
+        flex-wrap: wrap;
+
+        article {
+            width: 30%;
+        }
+    }
 }
