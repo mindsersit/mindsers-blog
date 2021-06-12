@@ -76,8 +76,17 @@
             display: flex;
             flex-wrap: wrap;
 
-            article {
+            .mds-card,
+            .more {
                 width: 30%;
+            }
+
+            .more {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 20px;
             }
         }
     }
