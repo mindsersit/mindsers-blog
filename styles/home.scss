@@ -81,4 +81,30 @@
             }
         }
     }
+
+    .mds-testimonials {
+        margin: 100px 0;
+        .mds-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .testimonial {
+                text-align: center;
+                margin: 10px;
+
+                .stars {
+                    font-size: 2em;
+                    background: radial-gradient(gold, goldenrod, brown);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .author {
+                    color: $accent_color;
+                }
+            }
+        }
+    }
 }
