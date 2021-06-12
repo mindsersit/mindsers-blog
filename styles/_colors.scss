@@ -1,6 +1,6 @@
 $accent_color: var(--ghost-accent-color);
 $secondary_color: #23b7ae;
-$premium_color: gold;
+$premium_color: var(--premium-color);
 $foreground_color: var(--foreground-color);
 $background_color: var(--background-color);
 $default_gradient: linear-gradient(
@@ -12,11 +12,13 @@ $default_gradient: linear-gradient(
 :root {
     --foreground-color: #2d3436;
     --background-color: #fff;
+    --premium-color: gold;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --foreground-color: #f1f2f6;
         --background-color: #1e272e;
+        --premium-color: goldenrod;
     }
 }
