@@ -70,12 +70,15 @@
         }
     }
 
-    .mds-postfeed {
-        display: flex;
-        flex-wrap: wrap;
+    .post-grid {
+        margin: 100px 0;
+        .mds-postfeed {
+            display: flex;
+            flex-wrap: wrap;
 
-        article {
-            width: 30%;
+            article {
+                width: 30%;
+            }
         }
     }
 }
