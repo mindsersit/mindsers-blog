@@ -109,7 +109,9 @@
                 position: relative;
 
                 .mds-card-image {
-                    min-width: calc(100% * 1.5);
+                    width: calc(100% * 1.5);
+                    position: relative;
+                    left: -25%;
                 }
 
                 .mds-card-content {
