@@ -1,0 +1,22 @@
+@import 'colors';
+@import 'fonts';
+
+.mds-plans {
+    font-family: $sans;
+
+    .mds-header {
+        margin: 80px;
+
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            width: 75%;
+            margin: 30px auto;
+        }
+    }
+}

@@ -3,7 +3,7 @@ routes:
         controller: channel
         template: home
         filter: tag:-[hash-email,hash-newsletter-issue]
-    /membership/: home
+    /membership/: plans
     /newsletter/: home
 
 collections:
