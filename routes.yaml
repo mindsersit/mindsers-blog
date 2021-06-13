@@ -4,7 +4,7 @@ routes:
         template: home
         filter: tag:-[hash-email,hash-newsletter-issue]
     /membership/: plans
-    /newsletter/: home
+    /newsletter/: newsletter
 
 collections:
     /posts/:

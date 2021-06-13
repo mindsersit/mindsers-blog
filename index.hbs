@@ -57,6 +57,8 @@
         <div class="mds-postfeed">
         {{#foreach posts}}
             {{> "card"}}
+        {{else}}
+                <p class="no-post">No posts here</p>
         {{/foreach}}
         </div>
 

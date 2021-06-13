@@ -25,7 +25,7 @@
         margin: 120px 0;
         .mds-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
 
             .plan-container {
@@ -168,6 +168,16 @@
 
         p {
             margin: 40px 0;
+        }
+    }
+
+    .mds-issues {
+        .no-post {
+            margin: 40px;
+            text-align: center;
+        }
+        .more {
+            text-align: center;
         }
     }
 }

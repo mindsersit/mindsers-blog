@@ -1,0 +1,105 @@
+{{!< default}}
+
+<link rel='stylesheet' type='text/css' href='{{asset 'css/plans.css'}}' />
+
+<div class='mds-plans'>
+    <div class='mds-container'>
+        <header class='mds-header'>
+            <h1 class='mds-title'>Mindsers’ Newsletter</h1>
+            <p>
+                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
+                This newsletter is about my own journey as a developer and entrepreneur.
+            </p>
+        </header>
+    </div>
+
+    <section class='mds-testimonials'>
+        <div class='mds-container'>
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+        </div>
+    </section>
+
+    <section class="mds-plan-grid">
+        <div class="mds-container">
+            <div class="plan-container">
+                <div class="plan-bg">
+                    <header>
+                        <h2>Monthly Subscription</h2>
+                    </header>
+                    <section class="plan-body">
+                        <ul>
+                            <li>💌 Receive the monthly newsletter by email</li>
+                            <li>📨 Get complete access to previous issues on the website</li>
+                            <li>✊🏽 Support an independent publication</li>
+                            <li class="eco"><strong>♻️ 1.5% of your subscription</strong> is reserved to help removing CO₂ from the atmosphere.</li>
+                        </ul>
+                    </section>
+                    <section class="plan-price">
+                        <a href="javascript:" data-members-plan="Monthly"class="button highlighted">{{price @price.monthly}} / month</a>
+                    </section>
+                </div>
+            </div>
+            <div class="plan-container">
+                <div class="plan-bg">
+                    <header>
+                        <h2>Yearly Subscription</h2>
+                    </header>
+                    <section class="plan-body">
+                        <ul>
+                            <li>💌 Receive the monthly newsletter by email</li>
+                            <li>📨 Get complete access to previous issues on the website</li>
+                            <li>✊🏽 Support an independent publication</li>
+                            <li class="eco"><strong>♻️ 1.5% of your subscription</strong> is reserved to help removing CO₂ from the atmosphere.</li>
+                            <li><strong>⚡️ 1 quick payment instead of 12!</strong></li>
+                            <li><strong>💸 Extra 17% discount</strong></li>
+                        </ul>
+                    </section>
+                    <section class="plan-price">
+                        <a href="javascript:" data-members-plan="Yearly" class="button highlighted">{{price @price.monthly}} / year</a>
+                    </section>
+                </div>
+                <div class="plan-favourite-notice">
+                    <div class="arrow">
+                        <div class="curve"></div>
+                    </div>
+                    <div class="notice">
+                        My favourite readers’ option
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mds-issues">
+        <div class="mds-container">
+            <p>
+                Subscribe now and get access to all the previous issues:
+            </p>
+            <div class="mds-postfeed">
+            {{#get "posts" filter="tag:hash-en+tag:hash-newsletter-issue" limit="5"}}
+                {{#foreach posts}}
+                    {{> "card"}}
+                {{else}}
+                    <p class="no-post">No issues here</p>
+                {{/foreach}}
+            {{/get}}
+            <p class="more"><a href="/issues/" class="button primary">Browse all</a></p>
+            </div>
+        </div>
+    </section>
+</div>
