@@ -1,0 +1,28 @@
+{{!< default}}
+
+<link rel='stylesheet' type='text/css' href='{{asset 'css/login.css'}}' />
+
+<div class='mds-login'>
+    <div class='mds-container'>
+        <header class='mds-header'>
+            <h1 class='mds-title'>Welcome back!</h1>
+        </header>
+
+        <form data-members-form='signin'>
+            <label>
+                Email
+                <input
+                    data-members-email
+                    type='email'
+                    required='true'
+                    placeholder='jamie@example.com'
+                />
+            </label>
+            <button class='button primary' type='submit'>Continue</button>
+            <p class='switch'>
+                Don't have an account?
+                <a href='/signup/'>Sign up</a>
+            </p>
+        </form>
+    </div>
+</div>

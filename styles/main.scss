@@ -121,4 +121,14 @@ body {
             }
         }
     }
+
+    input[type='text'],
+    input[type='email'] {
+        padding: 10px 15px;
+        border: 1px solid $accent_color;
+        border-radius: 3px;
+        margin: 5px 0;
+        font-family: $sans;
+        font-size: 1rem;
+    }
 }

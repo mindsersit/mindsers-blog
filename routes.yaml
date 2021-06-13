@@ -5,6 +5,8 @@ routes:
         filter: tag:-[hash-email,hash-newsletter-issue]
     /membership/: plans
     /newsletter/: newsletter
+    /login/: login
+    /signup/: signup
 
 collections:
     /posts/:

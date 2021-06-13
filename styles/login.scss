@@ -1,0 +1,51 @@
+@import 'colors';
+@import 'fonts';
+@import 'buttons';
+
+.mds-login,
+.mds-signin {
+    font-family: $sans;
+    min-height: 500px;
+
+    .mds-header {
+        margin: 80px;
+
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 500px;
+        margin: auto;
+
+        label {
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0;
+
+            & + label {
+                margin-top: 0;
+            }
+        }
+
+        .switch {
+            text-align: center;
+
+            a {
+                color: $accent_color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
