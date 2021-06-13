@@ -19,6 +19,11 @@
         color: white;
     }
 
+    &.secondary {
+        background-color: $secondary_color;
+        color: white;
+    }
+
     &.patreon {
         background-color: #ff424d;
         color: white;
