@@ -35,7 +35,11 @@
                     </div>
                     <div class="mds-head-placeholder"></div>
                     <div class="mds-head-actions">
+                    {{#if @member}}
+                        <a class="button primary" href="javascript:" data-members-signout>Sign out</a>
+                    {{else}}
                         <button class="button primary">Login</button>
+                    {{/if}}
                     </div>
                 </nav>
             </header>
