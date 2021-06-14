@@ -132,4 +132,28 @@ body {
         font-size: 1rem;
         appearance: none;
     }
+
+    input[type='checkbox'] {
+        display: none;
+
+        & + label::before {
+            content: '';
+            display: inline-block;
+            border: 1px solid $accent_color;
+            margin: 5px;
+            height: 12px;
+            width: 12px;
+            vertical-align: middle;
+            border-radius: 3px;
+            background-color: $background_color;
+            line-height: 12px;
+            text-align: center;
+            position: relative;
+            top: -1px;
+        }
+
+        &:checked + label::before {
+            content: '\2713';
+        }
+    }
 }
