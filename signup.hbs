@@ -9,6 +9,9 @@
         </header>
 
         <form data-members-form='signup'>
+            <p class='message-success'><strong>Great!</strong>
+                Check your inbox and click the link to complete sign in</p>
+            <p class='message-error' data-members-error></p>
             <label>
                 Name
                 <input
@@ -27,6 +30,31 @@
                     placeholder='jamie@example.com'
                 />
             </label>
+            <label>Which content do you want to receive from
+                {{@site.title}}:</label>
+            <label class='checkbox-label'>
+                <input
+                    id='en-check'
+                    type='checkbox'
+                    name='language'
+                    value='English'
+                    checked
+                />
+                English content
+            </label>
+            <label class='checkbox-label'>
+                <input
+                    id='fr-check'
+                    type='checkbox'
+                    name='language'
+                    value='French'
+                    checked
+                />
+                French content
+            </label>
+            <input data-members-label type='hidden' value='English' />
+            <input data-members-label type='hidden' value='French' />
+
             <button class='button primary' type='submit'>Continue</button>
             <p class='switch'>
                 Already a member?
@@ -35,3 +63,5 @@
         </form>
     </div>
 </div>
+
+<script type='module' src='{{asset 'js/signup.js'}}'></script>

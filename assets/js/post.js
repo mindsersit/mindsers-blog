@@ -1,2 +1,2 @@
-function main(){const e=document.querySelectorAll(".kg-gallery-image img");e.forEach(function(e){const t=e.closest(".kg-gallery-image");var n=e.attributes.width.value,e=e.attributes.height.value;t.style.flex=n/e+" 1 0%"})}"loading"!==document.readyState?main():document.addEventListener("DOMContentLoaded",function e(){document.removeEventListener("DOMContentLoaded",e),main()});
+import{ready}from"./ready.js";ready(()=>{const e=document.querySelectorAll(".kg-gallery-image img");e.forEach(function(e){const t=e.closest(".kg-gallery-image");var a=e.attributes.width.value,e=e.attributes.height.value;t.style.flex=a/e+" 1 0%"})});
 //# sourceMappingURL=post.js.map

@@ -1,4 +1,6 @@
-function main() {
+import { ready } from './ready.js'
+
+ready(() => {
   const images = document.querySelectorAll('.kg-gallery-image img')
   images.forEach(function (image) {
     const container = image.closest('.kg-gallery-image')
@@ -8,16 +10,4 @@ function main() {
 
     container.style.flex = ratio + ' 1 0%'
   })
-}
-
-{
-  if (document.readyState !== 'loading') {
-    main()
-  } else {
-    document.addEventListener('DOMContentLoaded', function handleLoaded() {
-      document.removeEventListener('DOMContentLoaded', handleLoaded)
-
-      main()
-    })
-  }
-}
+})

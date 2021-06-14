@@ -5,7 +5,7 @@
 .mds-login,
 .mds-signin {
     font-family: $sans;
-    min-height: 500px;
+    min-height: 600px;
 
     .mds-header {
         margin: 80px;
@@ -24,6 +24,30 @@
         max-width: 500px;
         margin: auto;
 
+        .message-success,
+        .message-error {
+            display: none;
+            text-align: center;
+        }
+
+        .message-success {
+            display: $secondary_color;
+        }
+
+        .message-error {
+            color: #ff424d;
+        }
+
+        &.success .message-success,
+        &.error .message-error {
+            display: block;
+        }
+
+        &.loading button {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
         label {
             font-weight: bold;
             display: flex;
@@ -33,6 +57,15 @@
             & + label {
                 margin-top: 0;
             }
+
+            &.checkbox-label {
+                font-weight: normal;
+                display: block;
+            }
+        }
+
+        button[type='submit'] {
+            margin-top: 15px;
         }
 
         .switch {

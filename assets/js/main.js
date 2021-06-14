@@ -1,2 +1,2 @@
-function main(){}"loading"!==document.readyState?main():document.addEventListener("DOMContentLoaded",function n(){document.removeEventListener("DOMContentLoaded",n),main()});
+import{ready}from"./ready.js";ready(()=>{});
 //# sourceMappingURL=main.js.map

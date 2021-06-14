@@ -1,13 +1,3 @@
-function main() {}
+import { ready } from './ready.js'
 
-{
-  if (document.readyState !== 'loading') {
-    main()
-  } else {
-    document.addEventListener('DOMContentLoaded', function handleLoaded() {
-      document.removeEventListener('DOMContentLoaded', handleLoaded)
-
-      main()
-    })
-  }
-}
+ready(() => {})
