@@ -1,6 +1,9 @@
 {{!< default}}
 
-<link rel="stylesheet" type="text/css"  href="{{asset "css/home.css"}}" />
+
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/home.css"}}" />
+{{/contentFor}}
 
 <div class="mds-home">
     <header class="mds-header">

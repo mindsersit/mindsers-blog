@@ -1,6 +1,8 @@
 {{!< default}}
 
-<link rel='stylesheet' type='text/css' href='{{asset 'css/error.css'}}' />
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/error.css'}}' />
+{{/contentFor}}
 
 <section class='mds-page mds-error'>
     <div class='mds-container'>
