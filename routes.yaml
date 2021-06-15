@@ -7,6 +7,7 @@ routes:
     /newsletter/: newsletter
     /login/: login
     /signup/: signup
+    /profile/: profile
 
 collections:
     /posts/:
