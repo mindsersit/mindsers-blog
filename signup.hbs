@@ -66,4 +66,6 @@
     </div>
 </div>
 
-<script type='module' src='{{asset 'js/signup.js'}}'></script>
+{{#contentFor 'scripts'}}
+    <script type='module' src='{{asset 'js/signup.js'}}'></script>
+{{/contentFor}}

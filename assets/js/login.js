@@ -1,2 +1,0 @@
-function main(){var e=document.querySelector("#loginForm");const n=document.querySelector(".mds-title");"signin"===e.dataset.memberForm&&(n.innerHTML="Welcome back!")}"loading"!==document.readyState?main():document.addEventListener("DOMContentLoaded",function e(){document.removeEventListener("DOMContentLoaded",e),main()});
-//# sourceMappingURL=login.js.map
