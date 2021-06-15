@@ -20,8 +20,8 @@ Re-usable card for linking to posts
                     <span class='member-label'>Member Only</span>
                 {{/has}}
             </span>
-            <h2 class='mds-card-title'>{{title}}</h2>
-            <p>{{excerpt}}</p>
+            <h2 class='mds-card-title' {{#has tag="#fr"}}lang="fr"{{/has}}>{{title}}</h2>
+            <p {{#has tag="#fr"}}lang="fr"{{/has}}>{{excerpt}}</p>
             <strong class='cta'>
                 Read more &rarr;
             </strong>
