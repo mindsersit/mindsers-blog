@@ -14,7 +14,9 @@
                     Hundreds of ressources I created to share with you everything
                     I learned from coding to starting a business
                 </p>
-                <p><a href="/membership/" class="button primary">Subscribe</a></p>
+                {{#unless @member.paid}}
+                    <p><a href="/membership/" class="button primary">Subscribe</a></p>
+                {{/unless}}
             </div>
             <div class="illustration"></div>
         </div>
@@ -70,10 +72,17 @@
 
     <section class="highlighted-band">
         <div class="mds-container">
-            <h2 class="section-title">
-                I also have a monthly paid newsletter about my coding journey and my business journey
-            </h2>
-            <a href="/newsletter/" class="button">Learn about the newsletter</a>
+            {{#if @member.paid}}
+                <h2 class="section-title">
+                    You have complete access to my monthly paid newsletter about my coding journey and my business journey
+                </h2>
+                <a href="/issues/" class="button">Browse the newsletter issues!</a>
+            {{else}}
+                <h2 class="section-title">
+                    I also have a monthly paid newsletter about my coding journey and my business journey
+                </h2>
+                <a href="/newsletter/" class="button">Learn about the newsletter</a>
+            {{/if}}
         </div>
     </section>
 

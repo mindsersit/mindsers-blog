@@ -38,7 +38,11 @@
                         </a>
                     </div>
                     <div class='mds-head-menu'>
-                        {{navigation}}
+                        {{#if @member.paid}}
+                            {{navigation type='secondary'}}
+                        {{else}}
+                            {{navigation}}
+                        {{/if}}
                     </div>
                     <div class='mds-head-placeholder'></div>
                     <div class='mds-head-actions'>
@@ -88,7 +92,6 @@
                                         rel='noopener'
                                     >RSS</a></li>
                             </ul>
-                            {{navigation type='secondary'}}
                         </div>
                         <div class='menu-list'>
                             <h2>Open Sources</h2>

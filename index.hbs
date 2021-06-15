@@ -14,7 +14,9 @@
                 This newsletter is about my own journey as a developer and entrepreneur.
             </p>
             <p>
-                <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                {{/unless}}
                 <a class="button" href="/fr/issues/">See French issues</a>
             </p>
         {{else is "frissues"}}
@@ -24,7 +26,9 @@
                 This newsletter is about my own journey as a developer and entrepreneur.
             </p>
             <p>
-                <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                {{/unless}}
                 <a class="button" href="/issues/">See English issues</a>
             </p>
         {{else is "emails"}}
@@ -34,10 +38,14 @@
             <p>
                 I wrote several blog posts through years to share my knowledge and my journey.
                 Most of them are free thanks to my awesome paid members.
+                {{#unless @member.paid}}
                 Join them to get complete access.
+                {{/unless}}
             </p>
             <p>
-                <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{/unless}}
                 <a class="button" href="/fr/posts/">See French posts</a>
             </p>
         {{else is "frposts"}}
@@ -45,10 +53,14 @@
             <p>
                 I wrote several blog posts through years to share my knowledge and my journey.
                 Most of them are free thanks to my awesome paid members.
+                {{#unless @member.paid}}
                 Join them to get complete access.
+                {{/unless}}
             </p>
             <p>
-                <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{/unless}}
                 <a class="button" href="/posts/">See English posts</a>
             </p>
         {{else}}
