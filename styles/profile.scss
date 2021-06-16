@@ -1,3 +1,53 @@
 @import 'colors';
 @import 'fonts';
 @import 'global';
+
+.mds-profile {
+    font-family: $sans;
+
+    .mds-header {
+        margin: 80px 0 40px;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            font-size: 3em;
+            font-weight: 600;
+        }
+
+        .avatar {
+            margin: 0 20px;
+            position: relative;
+            min-width: 150px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            svg,
+            img {
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    .infos,
+    .subscriptions {
+        margin: 40px 0;
+    }
+
+    .infos label {
+        font-weight: 600;
+    }
+
+    .subscriptions {
+        .fallback {
+            text-align: center;
+            margin: 30px 0 50px;
+        }
+    }
+}
