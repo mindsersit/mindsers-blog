@@ -124,15 +124,22 @@ body {
 
                         li {
                             padding: 10px;
-                            border-top: 1px solid $color;
-                            text-align: center;
+                            font-size: 0.85rem;
 
                             &.reminder {
-                                font-size: 0.85rem;
+                                border-top: 1px solid $color;
+                                border-bottom: 1px solid $color;
                                 color: #bfbfbf;
-                                text-align: left;
                                 text-overflow: ellipsis;
                                 overflow: hidden;
+                            }
+
+                            &:not(.reminder) {
+                                padding: 15px 10px;
+
+                                & + li:not(.reminder) {
+                                    padding-top: 0;
+                                }
                             }
 
                             a {
