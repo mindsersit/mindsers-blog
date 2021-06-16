@@ -49,12 +49,19 @@
                         {{#if @member}}
                             <a href="/profile/" class="profile-button">
                                 {{> "icons/profile"}}
+                                {{#if @member.avatar_image}}
+                                    <img src='{{@member.avatar_image}}' />
+                                {{/if}}
                             </a>
-                            <a
-                                class='button primary'
-                                href='javascript:'
-                                data-members-signout
-                            >Sign out</a>
+                            <div class="profile-menu">
+                                <ul>
+                                    <li class="reminder">Signed as<br>{{@member.email}}</li>
+                                    <li><a href="/profile/">Account</a></li>
+                                    <li>
+                                        <a href='javascript:'data-members-signout>Sign out</a>
+                                    </li>
+                                </ul>
+                            </div>
                         {{else}}
                             <a class='button primary' href='/login/'>Log in</a>
                         {{/if}}
