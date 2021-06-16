@@ -96,7 +96,6 @@ body {
                 .profile-menu {
                     $color: #e5e5e5;
                     position: absolute;
-                    border: 1px solid $color;
                     background-color: $background_color;
                     border-radius: 3px;
                     right: 0;
@@ -104,7 +103,7 @@ body {
                     margin: 10px 0;
                     width: 200px;
                     display: none;
-                    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 
                     &::before {
                         content: '';
@@ -127,7 +126,6 @@ body {
                             font-size: 0.85rem;
 
                             &.reminder {
-                                border-top: 1px solid $color;
                                 border-bottom: 1px solid $color;
                                 color: #bfbfbf;
                                 text-overflow: ellipsis;
