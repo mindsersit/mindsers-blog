@@ -39,6 +39,16 @@
 }
 
 @font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto; /* or block, swap, fallback, optional */
+    src: local('Fira Code'),
+        url('/assets/fonts/FiraCode.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
     font-family: 'Merriweather';
     font-style: normal;
     font-weight: 400;

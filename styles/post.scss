@@ -67,4 +67,273 @@
             }
         }
     }
+
+    .mds-content {
+        font-family: $serif;
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: $sans;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            font-size: 2.4rem;
+        }
+
+        h4 {
+            font-size: 2rem;
+        }
+
+        h5 {
+            font-size: 1.5rem;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+        }
+
+        a {
+            color: $accent_color;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        hr {
+            border: 0.5px solid #e5e5e5;
+            width: 75%;
+            margin: 30px auto;
+        }
+
+        code {
+            font-family: $mono;
+            font-variant-ligatures: normal;
+            font-size: 0.9em;
+            display: inline-block;
+            background-color: rgba($secondary_color, 0.3);
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        p {
+            margin: 25px 0;
+            line-height: 1.5;
+        }
+
+        pre {
+            background-color: $foreground_color;
+            color: $background-color;
+            border-radius: 3px;
+            padding: 20px;
+            margin: 30px;
+            overflow-y: auto;
+
+            code {
+                background: none;
+                display: inline;
+            }
+        }
+
+        ul {
+            li {
+                margin: 5px 0;
+            }
+        }
+
+        .kg-card {
+            &.kg-code-card {
+                pre {
+                    margin: 0;
+                }
+            }
+
+            &.kg-image-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .kg-image {
+                    width: 100%;
+                    border-radius: 3px;
+                }
+
+                &.kg-width-wide {
+                    margin: 30px 0;
+
+                    .kg-image {
+                        max-width: 85vw;
+                    }
+                }
+
+                &.kg-width-full {
+                    margin: 30px 0;
+                    box-sizing: border-box;
+                    width: 100%;
+
+                    .kg-image {
+                        width: 100vw;
+                        border-radius: 0;
+                    }
+                }
+            }
+
+            &.kg-gallery-card {
+                margin: 0 0 1.5em;
+
+                &.kg-width-wide {
+                    margin: 30px 0;
+                }
+
+                .kg-gallery-container {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 1.5em auto;
+                    max-width: 100%;
+                    width: 100vw;
+                }
+
+                .kg-gallery-row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+
+                    &:not(:first-of-type) {
+                        margin: 0.75em 0 0 0;
+                    }
+                }
+
+                .kg-gallery-image {
+                    &:not(:first-of-type) {
+                        margin: 0 0 0 0.75em;
+                    }
+
+                    img {
+                        display: block;
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            &.kg-bookmark-card {
+                position: relative;
+                box-sizing: border-box;
+
+                .kg-bookmark-container {
+                    display: flex;
+                    color: $foreground_color;
+                    text-decoration: none;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    min-height: 150px;
+                    border-radius: 3px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                .kg-bookmark-content {
+                    flex-grow: 2;
+                    padding: 20px;
+                    max-width: 70%;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .kg-bookmark-title {
+                        font-family: $sans;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        margin-bottom: 10px;
+                    }
+
+                    .kg-bookmark-metadata {
+                        font-family: $sans;
+                        margin-top: 10px;
+                    }
+
+                    .kg-bookmark-description {
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2;
+                        overflow: hidden;
+                        margin: 10px 0;
+                    }
+
+                    .kg-bookmark-icon {
+                        height: 20px;
+                        margin: 0 5px 0 0;
+                        vertical-align: middle;
+                    }
+                }
+
+                .kg-bookmark-thumbnail {
+                    flex-grow: 1;
+                    width: 30%;
+                    min-width: 30%;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        position: absolute;
+                    }
+                }
+            }
+
+            &.kg-embed-card {
+                $size: 1080px;
+                iframe,
+                object,
+                embed {
+                    position: unset !important;
+                    width: 100% !important;
+                    height: calc(100% / 1.765) !important;
+                }
+            }
+
+            figcaption {
+                font-family: $sans;
+                font-size: 0.8rem;
+                color: #b8b8b8;
+                margin: 4px;
+                text-align: center;
+            }
+        }
+
+        blockquote {
+            font-size: 1.4rem;
+
+            &::before {
+                content: '❝';
+            }
+
+            &::after {
+                content: '❞';
+            }
+        }
+    }
 }
