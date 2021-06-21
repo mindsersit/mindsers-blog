@@ -37,6 +37,18 @@
         </div>
     </header>
 
+    <div class="mds-share">
+        <a class="button rounded primary" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}">
+            {{> "icons/facebook"}}
+        </a>
+        <a class="button rounded primary" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{title}}">
+            {{> "icons/twitter"}}
+        </a>
+        <a class="button rounded primary" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}">
+            {{> "icons/linkedin"}}
+        </a>
+    </div>
+
     <div class="mds-content mds-canvas">
         {{content}}
     </div>
