@@ -55,7 +55,7 @@
         }
 
         .featured {
-            background-color: #e5e5e5;
+            background-color: $neutral_color;
             right: 0;
             display: flex;
             justify-content: center;
@@ -120,7 +120,7 @@
         }
 
         hr {
-            border: 0.5px solid #e5e5e5;
+            border: 0.5px solid $neutral_color;
             width: 75%;
             margin: 30px auto;
         }
