@@ -49,12 +49,56 @@
         </a>
     </div>
 
-    <div class="mds-content mds-canvas">
+    <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr"{{/has}}>
         {{content}}
+
+        {{#if access}}
+            {{#unless @member}}
+            <div class="member-cta" lang="en">
+                <h2>
+                    Join 100+ developers and entrepreneurs and get
+                    notified on every new content.
+                </h2>
+                <form data-members-form='subscribe'>
+                    <label>
+                        Email
+                        <input
+                            data-members-email
+                            type='email'
+                            required='true'
+                            placeholder='jamie@example.com'
+                        />
+                    </label>
+                    {{#has tag="#fr"}}
+                    <input data-members-label type='hidden' value='French' />
+                    {{else}}
+                    <input data-members-label type='hidden' value='English' />
+                    {{/has}}
+                    <button class='button' type='submit'>Let's go!</button>
+                </form>
+                <p>No spam ever. Unsubscribe in a single click at any time.</p>
+            </div>
+            {{/unless}}
+
+            {{#has tag="#fr"}}
+            <p class="mds-auto-content">
+                Si vous avez des questions ou des remarques/conseils,
+                n'hésitez pas à laisser un commentaire plus bas ! Je serais ravis de vous lire.
+                Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis.
+            </p>
+            {{else}}
+            <p class="mds-auto-content">
+                If you have any questions or advices, please create a comment below!
+                I'll be really glad to read you.
+                Also if you like this post, don't forget to share it with your friends.
+                It helps a lot!
+            </p>
+            {{/has}}
+        {{/if}}
     </div>
 
     <footer class="mds-footer mds-canvas">
-
+        <hr />
         <div class="mds-post-authors">
             Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
         </div>
@@ -68,6 +112,18 @@
     </footer>
 
 </article>
+
+{{!-- <aside class="comments outer">
+    <div class="inner">
+        {{#if @member.paid}}
+        <div id='commento'></div>
+        {{else}}
+        <div class="comments-fallback">
+            The comment section is only available for paying subscribers.
+        </div>
+        {{/if}}
+    </div>
+</aside> --}}
 
 <aside class="mds-readmore">
     <div class="mds-readmore-inner mds-container">
