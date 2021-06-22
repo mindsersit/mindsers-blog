@@ -50,6 +50,12 @@
     </div>
 
     <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr"{{/has}}>
+        {{^if access}}
+            <p class="post-restricted-content">
+                {{excerpt}}...
+            </p>
+        {{/if}}
+
         {{content}}
 
         {{#if access}}

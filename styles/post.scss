@@ -341,6 +341,20 @@
             }
         }
 
+        .post-restricted-content {
+            line-height: 1.6;
+            background-image: linear-gradient(
+                180deg,
+                $foreground_color,
+                $background_color
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+        }
+
         .member-cta,
         .upgrade-cta {
             text-align: center;
