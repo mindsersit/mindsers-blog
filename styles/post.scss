@@ -378,6 +378,11 @@
             font-family: $serif;
         }
 
+        .mds-comments-fallback {
+            text-align: center;
+            margin: 60px 0 0;
+        }
+
         a {
             color: $accent_color;
             text-decoration: none;

@@ -102,38 +102,32 @@
         <div class="mds-post-authors">
             Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
         </div>
-
-        {{!--
-        <section class="mds-post-comments">
-            If you want to embed comments, this is a good place to do it!
-        </section>
-        --}}
-
-    </footer>
-
-</article>
-
-{{!-- <aside class="comments outer">
-    <div class="inner">
+        <hr>
         {{#if @member.paid}}
         <div id='commento'></div>
         {{else}}
-        <div class="comments-fallback">
+        <div class="mds-comments-fallback">
             The comment section is only available for paying subscribers.
         </div>
         {{/if}}
-    </div>
-</aside> --}}
+    </footer>
+</article>
 
 <aside class="mds-readmore">
     <div class="mds-readmore-inner mds-container">
         <div class="mds-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+            {{#next_post}}
+            <a href="{{url}}">
+                {{> "icons/arrow-left"}} <h4>{{title}}</h4>
+            </a>
+            {{/next_post}}
         </div>
         <div class="mds-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
+            {{#prev_post}}
+            <a href="{{url}}">
                 <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
+            </a>
+            {{/prev_post}}
         </div>
     </div>
 </aside>
@@ -143,4 +137,7 @@
 {{#contentFor "scripts"}}
     <script src="https://unpkg.com/shiki" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="{{asset 'js/post.js'}}"></script>
+    {{#if @member.paid}}
+    <script defer src="https://commento.mindsers.blog/js/commento.js"></script>
+    {{/if}}
 {{/contentFor}}
