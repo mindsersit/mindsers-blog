@@ -341,7 +341,8 @@
             }
         }
 
-        .member-cta {
+        .member-cta,
+        .upgrade-cta {
             text-align: center;
             background: $default_gradient;
             border-radius: 3px;
@@ -366,6 +367,24 @@
                 margin: 10px 0;
                 text-align: left;
                 font-weight: 600;
+            }
+        }
+
+        .upgrade-cta {
+            .button {
+                background: transparent;
+                border: 1px solid white;
+                color: white;
+                text-decoration: none;
+            }
+
+            p {
+                margin: 30px 80px;
+            }
+
+            .switch a {
+                color: white;
+                text-decoration: underline;
             }
         }
     }
