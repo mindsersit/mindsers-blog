@@ -97,10 +97,13 @@
         margin-top: 80px;
 
         .button {
+            $size: 20px;
             margin: 0 10px;
+            height: $size;
+            width: $size;
             svg {
-                height: 20px;
-                width: 20px;
+                height: $size;
+                width: $size;
             }
         }
     }
