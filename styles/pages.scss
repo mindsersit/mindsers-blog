@@ -1,0 +1,25 @@
+@import 'colors';
+@import 'fonts';
+@import 'global';
+@import 'content';
+
+.mds-page {
+    .mds-header {
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            width: 75%;
+            margin: 30px auto;
+        }
+    }
+
+    .mds-content {
+        margin-bottom: 60px;
+        margin-top: 0px;
+    }
+}
