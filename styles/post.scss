@@ -2,70 +2,14 @@
 @import 'fonts';
 @import 'global';
 
-.mds-article {
+.mds-article,
+.mds-page {
     font-family: $sans;
 
     .mds-canvas {
         max-width: 1080px;
         margin: auto;
         padding: 20px;
-    }
-
-    .mds-header {
-        position: relative;
-        height: 450px;
-        margin-top: 50px;
-        margin-bottom: 40px;
-
-        .summary,
-        .featured {
-            position: absolute;
-            width: 53%;
-            height: 100%;
-            box-sizing: border-box;
-            border-radius: 10px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        }
-
-        .summary {
-            background-color: $accent_color;
-            height: 80%;
-            top: 15%;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 30px;
-
-            .mds-title {
-                font-size: 2.8rem;
-                font-weight: 600;
-                margin: 25px 0;
-            }
-
-            .mds-excerpt {
-                font-family: $serif;
-                font-size: 0.85rem;
-                letter-spacing: 0.3px;
-            }
-
-            .mds-post-meta {
-                font-weight: 600;
-            }
-        }
-
-        .featured {
-            background-color: $neutral_color;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-
-            img {
-                max-height: 100%;
-            }
-        }
     }
 
     .mds-content {
@@ -402,6 +346,65 @@
             }
         }
     }
+}
+
+.mds-article {
+    .mds-header {
+        position: relative;
+        height: 450px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+
+        .summary,
+        .featured {
+            position: absolute;
+            width: 53%;
+            height: 100%;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .summary {
+            background-color: $accent_color;
+            height: 80%;
+            top: 15%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+
+            .mds-title {
+                font-size: 2.8rem;
+                font-weight: 600;
+                margin: 25px 0;
+            }
+
+            .mds-excerpt {
+                font-family: $serif;
+                font-size: 0.85rem;
+                letter-spacing: 0.3px;
+            }
+
+            .mds-post-meta {
+                font-weight: 600;
+            }
+        }
+
+        .featured {
+            background-color: $neutral_color;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            img {
+                max-height: 100%;
+            }
+        }
+    }
 
     .mds-footer {
         .mds-post-authors {
@@ -445,5 +448,26 @@
                 width: 20px;
             }
         }
+    }
+}
+
+.mds-page {
+    .mds-header {
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            width: 75%;
+            margin: 30px auto;
+        }
+    }
+
+    .mds-content {
+        margin-bottom: 60px;
+        margin-top: 0px;
     }
 }
