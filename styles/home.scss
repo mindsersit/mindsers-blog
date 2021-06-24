@@ -12,8 +12,16 @@
         display: flex;
         justify-content: space-around;
 
+        @media (max-width: 1024px) {
+            margin: 0 20px;
+        }
+
         .presentation {
             width: 40%;
+
+            @media (max-width: 1024px) {
+                width: 45%;
+            }
 
             .mds-title {
                 font-size: 3.5em;
@@ -38,6 +46,10 @@
         flex-basis: 45%;
         justify-content: space-between;
         margin: 40px auto;
+
+        @media (max-width: 1024px) {
+            margin: 0 auto;
+        }
 
         article {
             width: 45%;
@@ -76,9 +88,13 @@
 
     .post-grid {
         margin: 100px 0;
+        @media (max-width: 1024px) {
+            margin: 0 auto;
+        }
         .mds-postfeed {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
 
             .mds-card,
             .more {
@@ -91,6 +107,10 @@
                 justify-content: center;
                 align-items: center;
                 margin: 20px;
+
+                @media (max-width: 1024px) {
+                    margin: 15px;
+                }
             }
         }
     }

@@ -43,10 +43,13 @@
         }
 
         .cta {
-            visibility: hidden;
             color: $accent_color;
             font-size: 0.85em;
             font-weight: 600;
+
+            @media (hover: hover) {
+                visibility: hidden;
+            }
         }
 
         p {
@@ -93,6 +96,10 @@
     &.mds-thumbnail-card {
         margin: 20px;
 
+        @media (max-width: 1024px) {
+            margin: 15px;
+        }
+
         .mds-card-link {
             height: 400px;
             padding: 0;
@@ -121,15 +128,20 @@
                     width: 100%;
                     box-sizing: border-box;
                     position: absolute;
-                    top: 310px;
-                    bottom: -105px;
+
+                    top: unset;
+                    bottom: 0;
                     padding: 15px;
                     background-color: $background_color;
                     transition: bottom 0.8s ease-in-out;
 
-                    p,
-                    .cta {
-                        display: none;
+                    @media (hover: hover) {
+                        top: 310px;
+                        bottom: -105px;
+                        p,
+                        .cta {
+                            display: none;
+                        }
                     }
                 }
             }
