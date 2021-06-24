@@ -23,7 +23,7 @@
         "ghost-api": "v3"
     },
     "config": {
-        "posts_per_page": 5
+        "posts_per_page": 10
     },
     "devDependencies": {
         "autoprefixer": "10.2.5",
