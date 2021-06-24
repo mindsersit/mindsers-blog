@@ -34,6 +34,11 @@ body {
                 font-weight: 700;
                 text-decoration: none;
                 color: $foreground_color;
+
+                img {
+                    display: inline-block;
+                    height: 40px;
+                }
             }
 
             .mds-head-menu {
