@@ -54,13 +54,71 @@
                                     <li class="reminder">Signed as<br>{{@member.email}}</li>
                                     <li><a href="/profile/">Account</a></li>
                                     <li>
-                                        <a href='javascript:'data-members-signout>Sign out</a>
+                                        <a href='javascript:' data-members-signout>Sign out</a>
                                     </li>
                                 </ul>
                             </div>
                         {{else}}
                             <a class='button primary' href='/login/'>Log in</a>
                         {{/if}}
+
+                        <div class="more-menu">
+                            <header class="mds-head">
+                                <div class="mds-container">
+                                    <div class='mds-head-brand'>
+                                        <a class='mds-head-logo' href='{{@site.url}}'>
+                                            {{#if @site.logo}}
+                                                <img
+                                                    src='{{@site.logo}}'
+                                                    alt='{{@site.title}} - Back to home page'
+                                                />
+                                            {{else}}
+                                                {{@site.title}}
+                                            {{/if}}
+                                        </a>
+                                    </div>
+                                    <div class='mds-head-placeholder'></div>
+                                    <div class="close-button">x</div>
+                                </div>
+                            </header>
+
+                            {{#if @member}}
+                            <ul>
+                                <li class="reminder">Signed as<br>{{@member.email}}</li>
+                                <li><a href="/profile/">Account</a></li>
+                            </ul>
+                            {{/if}}
+
+                            {{#if @member.paid}}
+                                {{navigation type='secondary'}}
+                            {{else}}
+                                {{navigation}}
+                            {{/if}}
+
+                            {{#if @member}}
+                            <ul>
+                                <li>
+                                    <a href='javascript:' data-members-signout>Sign out</a>
+                                </li>
+                            </ul>
+                            {{/if}}
+
+                            {{!-- {{#if @member.paid}}
+                                {{navigation type='secondary'}}
+                            {{else}}
+                                {{navigation}}
+                            {{/if}}
+                            <hr>
+                            {{#if @member}}
+                            <ul>
+                                <li class="reminder">Signed as<br>{{@member.email}}</li>
+                                <li><a href="/profile/">Account</a></li>
+                                <li>
+                                    <a href='javascript:' data-members-signout>Sign out</a>
+                                </li>
+                            </ul>
+                            {{/if}} --}}
+                        </div>
                     </div>
                 </nav>
             </header>
@@ -215,6 +273,7 @@
         </div>
 
         {{! <foot> }}
+        <script type="module" src="{{asset 'js/menu.js'}}" async></script>
         {{{block 'scripts'}}}
 
         {{ghost_foot}}

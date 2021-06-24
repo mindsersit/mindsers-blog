@@ -13,6 +13,12 @@ body {
     background-color: $background_color;
     color: $foreground_color;
 
+    &.no-scroll-small-screen {
+        @media (max-width: 700px) {
+            overflow: hidden;
+        }
+    }
+
     .mds-container {
         max-width: 1280px;
         margin: auto;
@@ -44,6 +50,10 @@ body {
             .mds-head-menu {
                 margin: 0 20px;
                 font-size: 0.95em;
+
+                @media (max-width: 700px) {
+                    display: none;
+                }
 
                 ul {
                     display: flex;
@@ -101,6 +111,57 @@ body {
                     }
                 }
 
+                .more-menu {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    overflow: scroll;
+                    background-color: $background_color;
+                    z-index: 2;
+                    display: none;
+
+                    &.menu-open {
+                        display: none;
+
+                        @media (max-width: 700px) {
+                            display: block;
+                        }
+                    }
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-between;
+                        list-style: none;
+                        padding: 0;
+                        margin: 40px 0;
+
+                        li {
+                            margin: 10px;
+
+                            a {
+                                color: $accent_color;
+                                text-decoration: none;
+                                font-weight: bold;
+
+                                &[data-members-signout] {
+                                    color: #ff424d;
+                                }
+                            }
+
+                            &.reminder {
+                                color: #bfbfbf;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+
                 .profile-menu {
                     $color: $neutral_color;
                     position: absolute;
@@ -112,6 +173,14 @@ body {
                     width: 200px;
                     display: none;
                     box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+
+                    &.menu-open {
+                        display: block;
+
+                        @media (max-width: 700px) {
+                            display: none;
+                        }
+                    }
 
                     &::before {
                         content: '';
@@ -154,10 +223,6 @@ body {
                             }
                         }
                     }
-                }
-
-                &:hover .profile-menu {
-                    display: block;
                 }
             }
         }
