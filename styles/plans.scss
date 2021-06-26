@@ -8,6 +8,7 @@
 
     .mds-header {
         margin: 80px;
+        margin-bottom: 50px;
 
         .mds-title {
             font-size: 3em;
@@ -23,7 +24,7 @@
     }
 
     .mds-plan-grid {
-        margin: 120px 0;
+        margin: 50px 0 120px;
         .mds-container {
             display: flex;
             justify-content: center;
@@ -156,7 +157,7 @@
 
     .mds-patreon {
         text-align: center;
-        margin: 250px 0 100px;
+        margin: 150px 0 100px;
 
         p {
             margin: 20px 0;
