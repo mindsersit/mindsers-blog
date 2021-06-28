@@ -5,15 +5,16 @@
 
 .mds-article {
     .mds-header {
-        position: relative;
-        height: 450px;
         margin-top: 50px;
         margin-bottom: 40px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
 
         .summary,
         .featured {
-            position: absolute;
-            width: 53%;
+            max-width: 54%;
+            min-width: 53%;
             height: 100%;
             box-sizing: border-box;
             border-radius: 10px;
@@ -29,6 +30,9 @@
             flex-direction: column;
             justify-content: center;
             padding: 30px;
+            flex-grow: 1;
+            position: relative;
+            left: 6%;
 
             .mds-title {
                 font-size: 2.8rem;
@@ -54,6 +58,9 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            flex-grow: 1.2;
+            max-height: 450px;
+            object-fit: cover;
 
             img {
                 max-height: 100%;
