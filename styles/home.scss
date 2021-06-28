@@ -21,6 +21,10 @@
             flex-direction: row-reverse;
         }
 
+        @media (max-width: 350px) {
+            margin: 0;
+        }
+
         .presentation {
             width: 40%;
 
@@ -30,6 +34,7 @@
 
             @media (max-width: 550px) {
                 width: 100%;
+                text-align: center;
             }
 
             .mds-title {
@@ -40,6 +45,15 @@
 
                 @media (max-width: 850px) {
                     font-size: 3em;
+                }
+
+                @media (max-width: 550px) {
+                    text-align: center;
+                    font-size: 2.8em;
+                }
+
+                @media (max-width: 350px) {
+                    font-size: 2.5em;
                 }
             }
 
