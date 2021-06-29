@@ -92,6 +92,7 @@ body {
                     margin: 0 10px;
                     position: relative;
                     overflow: hidden;
+                    cursor: pointer;
 
                     svg {
                         stop-color: white;
@@ -127,6 +128,15 @@ body {
 
                         @media (max-width: 700px) {
                             display: block;
+                        }
+                    }
+
+                    .close-button {
+                        margin: 0 20px;
+                        cursor: pointer;
+
+                        svg {
+                            height: 30px;
                         }
                     }
 

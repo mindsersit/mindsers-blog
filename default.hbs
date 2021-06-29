@@ -78,7 +78,7 @@
                                         </a>
                                     </div>
                                     <div class='mds-head-placeholder'></div>
-                                    <div class="close-button">x</div>
+                                    <div class="close-button">{{> "icons/times"}}</div>
                                 </div>
                             </header>
 
@@ -102,22 +102,6 @@
                                 </li>
                             </ul>
                             {{/if}}
-
-                            {{!-- {{#if @member.paid}}
-                                {{navigation type='secondary'}}
-                            {{else}}
-                                {{navigation}}
-                            {{/if}}
-                            <hr>
-                            {{#if @member}}
-                            <ul>
-                                <li class="reminder">Signed as<br>{{@member.email}}</li>
-                                <li><a href="/profile/">Account</a></li>
-                                <li>
-                                    <a href='javascript:' data-members-signout>Sign out</a>
-                                </li>
-                            </ul>
-                            {{/if}} --}}
                         </div>
                     </div>
                 </nav>
