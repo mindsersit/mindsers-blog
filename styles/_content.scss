@@ -29,27 +29,46 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 30px;
+
+            @media (max-width: 350px) {
+                font-size: 2.8rem;
+            }
         }
 
         h2 {
             font-size: 2.8rem;
             margin-bottom: 25px;
+            @media (max-width: 350px) {
+                font-size: 2.4rem;
+            }
         }
 
         h3 {
             font-size: 2.4rem;
+            @media (max-width: 350px) {
+                font-size: 2rem;
+            }
         }
 
         h4 {
             font-size: 2rem;
+            @media (max-width: 350px) {
+                font-size: 1.5rem;
+            }
         }
 
         h5 {
             font-size: 1.5rem;
+            @media (max-width: 350px) {
+                font-size: 1.1rem;
+            }
         }
 
         h6 {
             font-size: 1.1rem;
+            @media (max-width: 350px) {
+                font-size: 1rem;
+            }
         }
 
         a {
