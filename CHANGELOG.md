@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2021-06-29
+
+### Changed
+
+-   **[BREAKING CHANGE]** Complete re-write of the theme.
+
 ## [1.7.5] - 2021-04-02
 
 ### Fixed
@@ -236,7 +242,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.3...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.5...v2.0.0
 [1.7.5]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.4...v1.7.5
 [1.7.4]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.3...v1.7.4
 [1.7.3]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.2...v1.7.3
