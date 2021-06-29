@@ -1,0 +1,77 @@
+@import 'colors';
+@import 'fonts';
+@import 'global';
+@import 'card';
+
+.mds-page {
+    font-family: $sans;
+
+    .mds-header {
+        margin: 80px;
+
+        @media (max-width: 1024px) {
+            margin: 0 20px;
+        }
+
+        @media (max-width: 550px) {
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 350px) {
+            margin: 0;
+        }
+
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+
+            @media (max-width: 850px) {
+                font-size: 3em;
+            }
+
+            @media (max-width: 550px) {
+                text-align: center;
+                font-size: 2.8em;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 2.5em;
+            }
+        }
+
+        p {
+            text-align: center;
+            width: 75%;
+            margin: 30px auto;
+
+            @media (max-width: 550px) {
+                margin: 20px 0;
+                width: auto;
+            }
+        }
+    }
+
+    .no-post {
+        margin: 40px;
+        text-align: center;
+    }
+
+    nav.pagination {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px 0;
+
+        .pagination-link {
+            text-decoration: none;
+            color: $accent_color;
+            margin: 0 5px;
+
+            &.disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+    }
+}

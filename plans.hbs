@@ -1,0 +1,142 @@
+{{!< default}}
+
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/plans.css'}}' />
+{{/contentFor}}
+
+<div class='mds-plans'>
+    <div class='mds-container'>
+        <header class='mds-header'>
+            <h1 class='mds-title'>Mindsers' Blog Premium Membership</h1>
+            <p>
+                Mindsers Blog is a premium publication about coding, tech world, entrepreneurship, remote work and the life of a mordern developer.
+                Members get access to weekly new content and a monthly newsletter.
+            </p>
+        </header>
+    </div>
+
+    <section class="mds-plan-grid">
+        <div class="mds-container">
+            <div class="plan-container">
+                <div class="plan-bg">
+                    <header>
+                        <h2>Free signup</h2>
+                    </header>
+                    <section class="plan-body">
+                        <ul>
+                            <li>📫 Receive a notification for new public posts</li>
+                            <li>🚫 No advertising</li>
+                        </ul>
+                    </section>
+                    <section class="plan-price">
+                        <a href="/signup/" class="button highlighted">$0</a>
+                    </section>
+                </div>
+            </div>
+            <div class="plan-container">
+                <div class="plan-bg">
+                    <header>
+                        <h2>Yearly Subscription</h2>
+                    </header>
+                    <section class="plan-body">
+                        <ul>
+                            <li>🔓 Complete access to the free and paid blog posts library</li>
+                            <li>📫 Email notification for free and paid blog posts</li>
+                            <li>🎭 Exclusive additional content</li>
+                            <li>💼 Answers to your questions by email</li>
+                            <li>🎙 Comments and discussion section on posts</li>
+                            <li>💌 Complete access to the monthly paid newsletter</li>
+                            <li>✊🏽 Support an independent publication</li>
+                            <li>🚫 No advertising</li>
+                            <li class="eco"><strong>♻️ 1.5% of the subscription</strong> is reserved to help removing CO₂ from the atmosphere.</li>
+                            <li><strong>⚡️ 1 quick payment instead of 12!</strong></li>
+                            <li><strong>💸 Extra 17% discount</strong></li>
+                        </ul>
+                    </section>
+                    <section class="plan-price">
+                        <a href="javascript:" data-members-plan="Yearly" class="button highlighted">{{price @price.yearly}} / year</a>
+                    </section>
+                </div>
+                <div class="plan-favourite-notice">
+                    <div class="arrow">
+                        <div class="curve"></div>
+                    </div>
+                    <div class="notice">
+                        My favourite readers’ option
+                    </div>
+                </div>
+            </div>
+            <div class="plan-container">
+                <div class="plan-bg">
+                    <header>
+                        <h2>Monthly Subscription</h2>
+                    </header>
+                    <section class="plan-body">
+                        <ul>
+                            <li>🔓 Complete access to the free and paid blog posts library</li>
+                            <li>📫 Email notification for free and paid blog posts</li>
+                            <li>🎭 Exclusive additional content</li>
+                            <li>💼 Answers to your questions by email</li>
+                            <li>🎙 Comments and discussion section on posts</li>
+                            <li>💌 Complete access to the monthly paid newsletter</li>
+                            <li>✊🏽 Support an independent publication</li>
+                            <li>🚫 No advertising</li>
+                            <li class="eco"><strong>♻️ 1.5% of the subscription</strong> is reserved to help removing CO₂ from the atmosphere.</li>
+                        </ul>
+                    </section>
+                    <section class="plan-price">
+                        <a href="javascript:" data-members-plan="Monthly"class="button highlighted">{{price @price.monthly}} / month</a>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mds-patreon">
+        <div class="mds-container">
+            <p>
+                Patreon supporters can get full access to the premium content depending on their Patreon tier.<br />
+                You only have to login using the same address as your Patreon account.
+            </p>
+            <p>
+                If the plans listed here aren't convenient for you,<br /> you can support our independent publication using Patreon and giving whatever you want.
+            </p>
+            <p>
+                <a href="https://www.patreon.com/mindsers" class="button patreon" target="_blank" rel="nofollow noreferrer">Support on Patreon</a>
+            </p>
+        </div>
+    </section>
+
+    <section class='mds-testimonials'>
+        <div class='mds-container'>
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+        </div>
+    </section>
+
+    <section class="mds-eco">
+        <div class="mds-container">
+            <p>
+                Our goal at Mindsers Blog is to act positively on coders’ life but we want to act positively on our planet’s life too.<br />
+                Using Stripe Climate we contribute 1.5% of each premium subscription to help scale emerging carbon removal technologies.<br />
+            </p>
+            <p>
+                <a href="https://stripe.com/climate" class="button secondary" target="_blank" rel="nofollow noreferrer">Learn more about Stripe Climate</a>
+            </p>
+        </div>
+    </section>
+</div>

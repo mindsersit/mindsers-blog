@@ -1,0 +1,2 @@
+function ready(n){"loading"!==document.readyState?n():document.addEventListener("DOMContentLoaded",function e(){document.removeEventListener("DOMContentLoaded",e),n()})}export{ready};
+//# sourceMappingURL=ready.js.map

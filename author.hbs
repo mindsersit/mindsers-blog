@@ -1,39 +1,50 @@
 {{!< default}}
 
-{{#contentFor "lang"}}fr{{/contentFor}}
-
-{{#contentFor "styles"}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/author.css"}}">
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
 {{/contentFor}}
 
-{{> header}}
+<div class="mds-page">
+    <div class="mds-container">
 
-<section class="list-header">
-    <div class="list-header-content">
         {{#author}}
+        <header class="mds-page-head">
             {{#if profile_image}}
-                <p class="profil-pic"><img src="{{profile_image}}" alt="{{name}}'s Picture" /></p>
+                <img class="mds-author-image" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
+
             <h1>{{name}}</h1>
-            <h2>
-                {{bio}}
-            </h2>
-            <div class="infos">
-                <p class="location">{{location}}</p>
-                <p class="posts">
-                    {{plural ../pagination.total empty="articles" singular="1 article" plural="% articles"}}
-                </p>
-                <div class="social-networks">
-                    <ul>
-                        {{#if twitter}}<li><a href="{{twitter_url twitter}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
-                        {{#if facebook}}<li><a href="{{facebook_url facebook}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
-                    </ul>
+            {{#if bio}}
+                <p>{{bio}}</p>
+            {{/if}}
+
+            <div class="mds-author-meta">
+                <div class="mds-author-links">
+                    {{#if website}}
+                        <a href="{{website}}" target="_blank" rel="noopener">Website</a>
+                    {{/if}}
+                    {{#if twitter}}
+                        <a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a>
+                    {{/if}}
+                    {{#if facebook}}
+                        <a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a>
+                    {{/if}}
                 </div>
             </div>
+
+            {{#if cover_image}}
+                <img class="mds-page-image" src="{{cover_image}}" alt="{{name}}" />
+            {{/if}}
+        </header>
         {{/author}}
+
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+
+            {{> "card"}} {{!-- partials/card.hbs --}}
+
+        {{/foreach}}
+        </div>
+
     </div>
-</section>
-
-{{> index/feed}}
-
-{{> footer}}
+</div>

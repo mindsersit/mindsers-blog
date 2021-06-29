@@ -1,0 +1,34 @@
+.mds-testimonials {
+    margin: 50px 0;
+
+    @media (max-width: 1024px) {
+        margin: 0 auto;
+    }
+
+    .mds-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media (max-width: 850px) {
+            overflow: scroll;
+        }
+
+        .testimonial {
+            text-align: center;
+            margin: 10px;
+
+            .stars {
+                font-size: 2em;
+                background: radial-gradient(gold, goldenrod, brown);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .author {
+                color: $accent_color;
+            }
+        }
+    }
+}

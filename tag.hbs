@@ -1,25 +1,30 @@
 {{!< default}}
 
-{{#contentFor "lang"}}fr{{/contentFor}}
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
+{{/contentFor}}
 
-{{> header}}
+<div class="mds-page">
+    <div class="mds-container">
+        {{#tag}}
+        <header class="mds-header">
+            <h1 class="mds-title">{{name}}</h1>
+            <p>
+                {{#if description}}
+                    {{description}}
+                {{else}}
+                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+                {{/if}}
+            </p>
+        </header>
+        {{/tag}}
 
-{{#tag}}
-    {{#> index/title-header }}
-        {{#*inline "titleBlock"}}
-            #{{name}}
-        {{/inline}}
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{/foreach}}
+        </div>
 
-        {{#*inline "descriptionBlock"}}
-            {{#if description}}
-                {{description}}
-            {{else}}
-                {{plural ../../pagination.total empty="Une collection d'articles" singular="Une collection contenant un seul article" plural="Une collection de % articles"}}
-            {{/if}}
-        {{/inline}}
-    {{/index/title-header}}
-{{/tag}}
-
-{{> index/feed}}
-
-{{> footer}}
+        {{pagination}}
+    </div>
+</div>

@@ -1,0 +1,105 @@
+{{!< default}}
+
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/profile.css'}}' />
+{{/contentFor}}
+
+<div class='mds-profile'>
+    <div class='mds-container'>
+    {{#if @member}}
+        {{! Logged in, not paying: Link to checkout }}
+        <header class="mds-header">
+            <div>
+                <h1>Your profile</h1>
+            {{#if member.paid}}
+                <p>
+                    Hello! You have an active {{@site.title}} account with full
+                    access to all aeras. Get in touch if have any problems or
+                    need some help getting things updated (like email language),
+                    and thanks for subscribing.
+                </p>
+            {{else}}
+                <p>
+                    Hey!
+                    You are subscribed to free updates from
+                    {{@site.title}}, but doesn't have a paid subscription to
+                    unlock full access. Get in touch if have any problems or
+                    need some help getting things updated (like email language),
+                    and thanks for being part of the community.
+                </p>
+            {{/if}}
+            </div>
+            <div class="avatar">
+            {{> "icons/profile"}}
+            {{#if @member.avatar_image}}
+                <img src='{{@member.avatar_image}}' />
+            {{/if}}
+            </div>
+        </header>
+        <section class="infos">
+            <h2>Personal data</h2>
+            <p><label>Name</label>: {{@member.name}}</p>
+            <p><label>Email</label>: {{@member.email}}</p>
+            {{#has label="french"}}
+            french
+            {{/has}}
+        </section>
+        <section class="subscriptions">
+            <h2>Subscriptions</h2>
+        {{#foreach @member.subscriptions}}
+            <div class="subscription">
+                {{#if cancel_at_period_end}}
+                <p>
+                    <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD MMM YYYY"}}.</strong> If you change your mind in the mean time you can turn auto-renew back on to continue your subscription.
+                </p>
+                {{else}}
+                <p>
+                    Hey! You have an active {{@site.title}} account with access to all areas. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing.
+                </p>
+                {{/if}}
+                <div class="subscriber-details">
+                <div class="subscriber-detail">
+                    <label class="subscriber-detail-label">Email address</label>
+                    <span class="subscriber-detail-content">{{@member.email}}</span>
+                </div>
+                <div class="subscriber-detail">
+                    <label class="subscriber-detail-label">Your plan</label>
+                    <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
+                </div>
+                <div class="subscriber-detail">
+                    <label class="subscriber-detail-label">Card</label>
+                    <span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+                </div>
+                <div class="subscriber-detail">
+                    <label class="subscriber-detail-label">
+                    {{#if cancel_at_period_end}}
+                        Expires
+                    {{else}}
+                        Next bill date
+                    {{/if}}
+                    </label>
+                    <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+                </div>
+                </div>
+                {{cancel_link}}
+            </div>
+        {{else}}
+            <div class="fallback">
+                <p>No subscription can be found for your account.</p>
+                <p>
+                    Join our paid members and get full access to private posts,
+                    a monthly newsletter and an awesome community of coders and
+                    entrepreneurs!
+                </p>
+                <a class='button highlighted' href='/membership/'>
+                    Subscribe now!
+                </a>
+            </div>
+        {{/foreach}}
+        </section>
+    {{else}}
+        {{! Not logged in: Redirect to signin }}
+        <script>window.location = '{{@site.url}}/login/';</script>
+    {{/if}}
+    </div>
+</div>

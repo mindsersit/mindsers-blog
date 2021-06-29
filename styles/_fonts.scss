@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Regular.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Light.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Bold.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: local('Fira Sans'),
+        url('/assets/fonts/FiraSans-Black.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: local('Fira Code'),
+        url('/assets/fonts/FiraCode.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Merriweather'),
+        url('/assets/fonts/Merriweather-Regular.ttf') format('truetype');
+    unicode-range: U+000-5FF; /* Latin glyphs */
+}
+
+$sans: 'Fira Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+$mono: 'Fira Code', monospace;
+$serif: 'Merriweather', serif;

@@ -1,155 +1,36 @@
 {{!< default}}
 
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/pages.css'}}' />
+{{/contentFor}}
+
 {{#post}}
-{{#has tag="#en"}}
-    {{#contentFor "lang"}}en{{/contentFor}}
-    {{> header-en}}
-{{else}}
-    {{#contentFor "lang"}}fr{{/contentFor}}
-    {{> header}}
-{{/has}}
+<article class="mds-page {{post_class}}">
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-        <article  class="post-full {{post_class}}">
-            <header  class="post-full-header">
-                <div class="post-full-header-content">
-                    <h1 class="post-full-title">{{title}}</h1>
-                    <div class="infos lower">
-                        <div class="post-full-meta-tags">
-                            <p>
-                                {{~#foreach tags~}}
-                                    {{^has slug="sponsored"~}}
-                                        {{#if @first}}{{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{else}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>
-                                    {{~/has~}}
-                                {{~/foreach~}}
-                            </p>
-                        </div>
-                        <div class="post-full-meta-share">
-                            <p>
-                                {{#has tag="#en"}}Share this{{else}}Partagez la page{{/has}}
-                            </p>
-                            <p>
-                                <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
-                                    twitter
-                                </a>
-                                <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}">
-                                    facebook
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            {{#if access}}
-            <section class="post-full-content">
-                {{content}}
-            </section>
-            {{else}}
-                <section class="post-restricted-content">
-                    {{excerpt}}...
-                </section>
-                <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">
-                        {{#has tag="#en"}}
-                            This post is for paying subscribers only
-                        {{else}}
-                            Il s'agit d'un article réservé aux abonnés seulement
-                        {{/has}}
-                    </h3>
-                    <a class="button-subscribe-paid" href="#" data-portal="signup">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</a>
-                    <p>{{#has tag="#en"}}Already have an account?{{else}}Vous avez déjà un compte ?{{/has}} <a href="#" data-portal="signin">{{#has tag="#en"}}Sign in{{else}}S'inscrire{{/has}}</a></p>
-                </section>
-            {{/if}}
-        </article>
+    <header class="mds-header mds-canvas">
+        <h1 class="mds-title">{{title}}</h1>
+
+        {{#if feature_image}}
+        <img class="mds-feature-image"
+            srcset="{{img_url feature_image size="s"}} 300w,
+                    {{img_url feature_image size="m"}} 600w,
+                    {{img_url feature_image size="l"}} 1000w,
+                    {{img_url feature_image size="xl"}} 2000w"
+            sizes="(max-width: 1000px) 1000px, 2000px"
+            loading="lazy"
+            src="{{img_url feature_image size="xl"}}"
+            alt="{{title}}"
+        />
+        {{/if}}
+    </header>
+
+    <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr"{{/has}}>
+        {{content}}
     </div>
-</main>
-
-{{#has tag="#en"}}
-    {{> footer-en}}
-{{else}}
-    {{> footer}}
-{{/has}}
+</article>
 {{/post}}
 
 {{#contentFor "scripts"}}
-    <script src="{{asset "js/prism.js"}}"></script>
-
-    <script>
-        // logic for share button
-        ((document, window) => {
-            document
-                .querySelector('.floating-header-share-fb')
-                .addEventListener('click', ({ target }) => {
-                    window.open(target.href, 'share-facebook', 'width=580,height=296')
-                })
-
-            document
-                .querySelector('.floating-header-share-tw')
-                .addEventListener('click', ({ target }) => {
-                    window.open(target.href, 'share-twitter', 'width=550,height=235')
-                })
-        })(document, window)
-    </script>
-
-    <script>
-        // logic for title links
-        ((document) => {
-            const titles = document.querySelectorAll('.post-full-content h1[id], .post-full-content h2[id], .post-full-content h3[id], .post-full-content h4[id], .post-full-content h5[id], .post-full-content h6[id]')
-
-            for (const title of titles) {
-                const anchor = document.createElement('a')
-
-                anchor.href = `#${title.id}`
-                anchor.innerHTML = '<img class="title-link" src="{{asset "images/link-solid.svg"}}">'
-
-                title.appendChild(anchor)
-            }
-        })(document)
-    </script>
-
-    <script>
-        // youtube video & map embeded wrapping
-        ((document) => {
-            const wrapper = cssClass => videoTag => {
-                const parent = videoTag.parentElement
-                const container = document.createElement('div')
-
-                videoTag.removeAttribute('height')
-                videoTag.removeAttribute('width')
-
-                container.classList.add(cssClass)
-
-                parent.insertBefore(container, videoTag)
-                parent.removeChild(videoTag)
-
-                container.appendChild(videoTag)
-            }
-
-            document
-                .querySelectorAll(`.kg-embed-card iframe, .kg-embed-card object, .kg-embed-card embed`)
-                .forEach(wrapper('kg-embeded-card-fluid'))
-        })(document)
-    </script>
-
-    <script>
-        // logic for image gallery
-        ((document) => {
-            const images = document.querySelectorAll('.kg-gallery-image img')
-
-            for (const image of images) {
-                const container = image.closest('.kg-gallery-image')
-                const width = image.attributes.width.value
-                const height = image.attributes.height.value
-                const ratio = width / height
-
-                container.style.flex = ratio + ' 1 0%'
-            }
-        })(document)
-    </script>
-{{/contentFor}}
-
-{{#contentFor "styles"}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}">
+    <script src="https://unpkg.com/shiki" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="{{asset 'js/post.js'}}"></script>
 {{/contentFor}}
