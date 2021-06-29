@@ -145,11 +145,11 @@
             .more {
                 width: 30%;
 
-                @media (max-width: 850px) {
+                @media (max-width: 900px) {
                     width: 45%;
                 }
 
-                @media (max-width: 550px) {
+                @media (max-width: 600px) {
                     width: 100%;
                 }
             }
