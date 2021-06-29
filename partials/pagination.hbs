@@ -1,19 +1,11 @@
-<nav class="pagination" role="navigation">
-    {{#if english}}
-        {{#if prev}}
-        <a class="html-tag newer-posts" href="{{page_url prev}}">prev</a>
-        {{/if}}
-        <span class="page-number">{{page}} of {{pages}}</span>
-        {{#if next}}
-            <a class="html-tag older-posts" href="{{page_url next}}">next</a>
-        {{/if}}
-    {{else}}
-        {{#if prev}}
-            <a class="html-tag newer-posts" href="{{page_url prev}}">prec</a>
-        {{/if}}
-        <span class="page-number">{{page}} sur {{pages}}</span>
-        {{#if next}}
-            <a class="html-tag older-posts" href="{{page_url next}}">suiv</a>
-        {{/if}}
-    {{/if}}
+<nav class='pagination' role='navigation' aria-label='Pagination'>
+    <div>
+        <a class='pagination-link {{#unless prev}}disabled{{/unless}}' href='{{page_url 1}}'>&laquo; First</a>
+        <a class='pagination-link {{#unless prev}}disabled{{/unless}}' href='{{page_url prev}}'>&lsaquo; Prev</a>
+    </div>
+    <span class='page-number'>{{page}} / {{pages}}</span>
+    <div>
+        <a class='pagination-link {{#unless next}}disabled{{/unless}}' href='{{page_url next}}'>Next &rsaquo;</a>
+        <a class='pagination-link {{#unless next}}disabled{{/unless}}' href='{{page_url pages}}'>Last &raquo;</a>
+    </div>
 </nav>

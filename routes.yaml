@@ -1,61 +1,36 @@
 routes:
-  /: 
-    template: home
-    controller: channel
-  /fr/membership/: members/plans
-  /en/membership/: members/plans-en
-  /fr/coffeeshops/:
-    controller: channel
-    filter: tag:hash-coffeeshop-review+tag:-hash-en
-    template: index
-  /en/coffeeshops/:
-    controller: channel
-    filter: tag:hash-coffeeshop-review+tag:hash-en
-    template: index-en
-  /fr/tech/:
-    controller: channel
-    filter: tag:hash-tech-post+tag:-hash-en
-    template: index
-  /en/tech/:
-    controller: channel
-    filter: tag:hash-tech-post+tag:hash-en
-    template: index-en
-  /fr/miscellaneous/:
-    controller: channel
-    filter: tag:hash-misc-post+tag:-hash-en
-    template: index
-  /en/miscellaneous/:
-    controller: channel
-    filter: tag:hash-misc-post+tag:hash-en
-    template: index-en
-  /fr/uses/:
-    template: page-route
-    data: page.fr-uses
-  /fr/to-be-read/:
-    template: page-route
-    data: page.fr-to-be-read
-  /en/to-be-read/:
-    template: page-route
-    data: page.to-be-read
+    /:
+        controller: channel
+        template: home
+        filter: tag:-[hash-email,hash-newsletter-issue]
+    /membership/: plans
+    /newsletter/: newsletter
+    /login/: login
+    /signup/: signup
+    /profile/: profile
 
 collections:
-  /fr/:
-    permalink: /fr/{slug}/
-    template: index
-    filter: "tag:-hash-en+tag:-hash-newsletter-issue"
-  /en/:
-    permalink: /en/{slug}/
-    template: index-en
-    filter: "tag:hash-en+tag:-hash-newsletter-issue"
-  /fr/newsletters/:
-    permalink: /fr/newsletters/{slug}/
-    template: index
-    filter: tag:hash-newsletter-issue+tag:-hash-en
-  /en/newsletters/:
-    permalink: /fr/newsletters/{slug}/
-    template: index-en
-    filter: tag:hash-newsletter-issue+tag:hash-en
+    /posts/:
+        permalink: /posts/{slug}/
+        template: index
+        filter: 'tag:hash-en+tag:-[hash-email,hash-newsletter-issue]'
+    /issues/:
+        permalink: /issues/{slug}/
+        template: index
+        filter: 'tag:hash-en+tag:hash-newsletter-issue'
+    /emails/:
+        permalink: /emails/{slug}/
+        template: index
+        filter: 'tag:hash-email'
+    /fr/posts/:
+        permalink: /fr/posts/{slug}/
+        template: index
+        filter: 'tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]'
+    /fr/issues/:
+        permalink: /fr/issues/{slug}/
+        template: index
+        filter: 'tag:hash-fr+tag:hash-newsletter-issue'
 
 taxonomies:
-  tag: /tag/{slug}/
-  author: /author/{slug}/
+    tag: /topics/{slug}/
+    author: /developers/{slug}/

@@ -1,74 +1,106 @@
 {{!< default}}
 
-{{#contentFor "lang"}}fr{{/contentFor}}
 
-{{> header}}
-
-<section class="list-header">
-    <div class="list-header-content">
-        <h1 class="list-header-title">{{@site.title}}</h1>
-        <h2>{{@site.description}}</h2>
-        <div class="infos">
-            <div class="social-networks">
-                <ul>
-                    {{#if @site.twitter}}<li><a href="{{twitter_url}}" rel="nofollow"><img src="{{asset "images/twitter.svg"}}" title="twitter"></a></li>{{/if}}
-                    {{#if @site.facebook}}<li><a href="{{facebook_url}}" rel="nofollow"><img src="{{asset "images/facebook.svg"}}" title="facebook"></a></li>{{/if}}
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<main id="site-main" class="site-main outer">
-    <section class="description">
-        <div class="inner">
-            <p>
-                Bienvenue sur {{@site.title}}, ici on parle de code, business et d'autres trucs techs.
-                Je vous emmène aussi visiter les coffeeshops les plus cools du monde pour bosser. 
-            </p>
-            <p class="actions">
-                <a class="btn" href="/fr/membership/">En savoir plus</a> <a class="btn btn-primary" href="#" data-portal="signup">S'abonner</a>
-            </p>
-        </div>
-    </section>
-    <section class="post-feeds">
-        <div class="inner">
-            <h3>Derniers articles en français</h3>
-            {{#get "posts" filter="tags:-hash-en+visibility:public" limit="3"}}
-                <div class="feed" lang="fr">
-                    {{#foreach posts visibility="public"}}
-                        {{> post-card/small}}
-                    {{/foreach}}
-                    <article class="post-card more-link">
-                        <a class="post-card-more-link" href="/fr/">
-                            Voir les autres articles. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
-                        </a>
-                    </article>
-                </div>
-            {{/get}}
-        </div>
-    </section>
-    <section class="post-feeds">
-        <div class="inner">
-            <h3>Derniers articles en anglais</h3>
-            {{#get "posts" filter="tags:hash-en+visibility:public" limit="3"}}
-                <div class="feed" lang="en">
-                    {{#foreach posts visibility="public"}}
-                        {{> post-card/small-en}}
-                    {{/foreach}}
-                    <article class="post-card more-link">
-                        <a class="post-card-more-link" href="/en/">
-                            Voir les autres articles. <br/><br/> <i class="fa fa-arrow-circle-right fa-7x"></i>
-                        </a>
-                    </article>
-                </div>
-            {{/get}}
-        </div>
-    </section>
-</main>
-
-{{#contentFor "styles"}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}">
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/home.css"}}" />
 {{/contentFor}}
 
-{{> footer}}
+<div class="mds-home">
+    <header class="mds-header">
+        <div class="mds-container">
+            <div class="presentation">
+                <h1 class="mds-title">{{@site.description}}</h1>
+                <p>
+                    Hundreds of ressources I created to share with you everything
+                    I learned from coding to starting a business
+                </p>
+                {{#unless @member.paid}}
+                    <p><a href="/membership/" class="button primary">Subscribe</a></p>
+                {{/unless}}
+            </div>
+            <div class="illustration"></div>
+        </div>
+    </header>
+
+    <section class="mds-featured">
+        <div class="mds-container">
+        {{#get "posts" filter="featured:true" limit="2"}}
+            {{#foreach posts}}
+                {{> "card"}}
+            {{/foreach}}
+        {{/get}}
+        </div>
+    </section>
+
+    <section class="mds-testimonials">
+        <div class="mds-container">
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+            {{> "testimonials"
+                text="A recommandation from a satisfied customer or reader"
+                people="Nathanaël C."
+            }}
+        </div>
+    </section>
+
+    <section class="post-grid">
+        <div class="mds-container">
+            <h2 class="section-title">My last blog posts</h2>
+            <div class="mds-postfeed">
+            {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#foreach posts}}
+                    {{> "thumbnail-card"}}
+                {{/foreach}}
+            {{/get}}
+                <div class="more">
+                    <p>Want to read more?</p>
+                    <p><a href="/posts/" class="button primary">Browse all</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlighted-band">
+        <div class="mds-container">
+            {{#if @member.paid}}
+                <h2 class="section-title">
+                    You have complete access to my monthly paid newsletter about my coding journey and my business journey
+                </h2>
+                <a href="/issues/" class="button">Browse the newsletter issues!</a>
+            {{else}}
+                <h2 class="section-title">
+                    I also have a monthly paid newsletter about my coding journey and my business journey
+                </h2>
+                <a href="/newsletter/" class="button">Learn about the newsletter</a>
+            {{/if}}
+        </div>
+    </section>
+
+    <section class="post-grid">
+        <div class="mds-container">
+            <h2 class="section-title">My last French blog posts</h2>
+            <div class="mds-postfeed" lang="fr">
+            {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#foreach posts}}
+                    {{> "thumbnail-card"}}
+                {{/foreach}}
+            {{/get}}
+                <div class="more" lang="en">
+                    <p>Want to read more?</p>
+                    <p><a href="/fr/posts/" class="button primary">Browse all</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+</div>

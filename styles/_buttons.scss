@@ -1,0 +1,61 @@
+@import 'colors';
+@import 'fonts';
+
+.button {
+    display: inline-block;
+    appearance: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border-width: 0;
+    border-style: solid;
+    color: $background_color;
+    background-color: $foreground_color;
+    font-family: $sans;
+    font-weight: 600;
+    font-size: 0.83rem;
+
+    &.primary {
+        background-color: $accent_color;
+        color: white;
+    }
+
+    &.secondary {
+        background-color: $secondary_color;
+        color: white;
+    }
+
+    &.patreon {
+        background-color: #ff424d;
+        color: white;
+    }
+
+    &.highlighted {
+        background-color: $secondary_color;
+        background: $default_gradient;
+        background-size: 200% 200%;
+        animation: highlightButton 3s ease alternate infinite;
+        color: white;
+    }
+
+    &.rounded {
+        border-radius: 50%;
+        padding: 10px 10px;
+    }
+
+    &:hover {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+@keyframes highlightButton {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

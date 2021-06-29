@@ -1,0 +1,185 @@
+.mds-card {
+    border-radius: 4px;
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 0;
+    $padding: 15px;
+
+    .mds-card-link {
+        box-sizing: border-box;
+        text-decoration: none;
+        color: $foreground_color;
+        display: inline-block;
+        background-color: $background_color;
+        width: 100%;
+        border-width: 4px;
+        border-radius: 3px;
+        padding: $padding;
+        position: relative;
+
+        .mds-card-meta {
+            font-size: 0.9em;
+            font-weight: 300;
+
+            .premium-label {
+                background-color: $premium_color;
+                border-radius: 2px;
+                padding: 2px;
+
+                @media (prefers-color-scheme: dark) {
+                    color: $background_color;
+                }
+            }
+
+            .member-label {
+                background-color: rgba($secondary_color, 0.3);
+                border-radius: 2px;
+                padding: 2px;
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: rgba($secondary_color, 0.9);
+                }
+            }
+        }
+
+        .cta {
+            color: $accent_color;
+            font-size: 0.85em;
+            font-weight: 600;
+
+            @media (hover: hover) {
+                visibility: hidden;
+            }
+        }
+
+        p {
+            font-size: 0.85em;
+            font-family: $serif;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: $default_gradient;
+            border-radius: 6px;
+            z-index: -1;
+            animation: rotate 3s ease alternate infinite;
+            background-size: 300% 300%;
+        }
+
+        &:focus,
+        &:hover {
+            border-width: 0;
+
+            .cta {
+                visibility: inherit;
+            }
+
+            &::after {
+                top: calc(-1 * 3px);
+                left: calc(-1 * 3px);
+                height: calc(100% + 3px * 2);
+                width: calc(100% + 3px * 2);
+            }
+        }
+    }
+
+    &.mds-thumbnail-card {
+        margin: 20px;
+
+        @media (max-width: 1024px) {
+            margin: 15px;
+        }
+
+        .mds-card-link {
+            height: 400px;
+            padding: 0;
+            background: unset;
+
+            .mds-card-content-container {
+                margin: 0;
+                overflow: hidden;
+                height: 100%;
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 3px;
+                position: relative;
+
+                .mds-card-image {
+                    width: calc(100% * 1.5);
+                    position: relative;
+                    left: -25%;
+                    object-fit: cover;
+                }
+
+                .mds-card-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 100%;
+                    box-sizing: border-box;
+                    position: absolute;
+
+                    top: unset;
+                    bottom: 0;
+                    padding: 15px;
+                    background-color: $background_color;
+                    transition: bottom 0.8s ease-in-out;
+
+                    @media (hover: hover) {
+                        top: 310px;
+                        bottom: -105px;
+                        p,
+                        .cta {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &::after {
+                top: calc(-1 * 3px);
+                left: calc(-1 * 3px);
+                height: calc(100% + 3px * 2);
+                width: calc(100% + 3px * 2);
+            }
+
+            &:hover {
+                .mds-card-content {
+                    top: unset;
+                    bottom: 0;
+
+                    p,
+                    .cta {
+                        display: block;
+                    }
+                }
+
+                &::after {
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+    }
+}
+
+@keyframes rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

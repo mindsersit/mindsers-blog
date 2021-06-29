@@ -1,24 +1,45 @@
 {{!< default}}
 
-{{#contentFor "styles"}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/error.css"}}">
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/error.css'}}' />
 {{/contentFor}}
 
-{{#contentFor "lang"}}en{{/contentFor}}
+<section class='mds-page mds-error'>
+    <div class='mds-container'>
 
-{{> header-en}}
+        <section class='mds-error-content'>
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-        <header>
-            <h1>{{statusCode}}'</h1>
-        </header>
-        <section>
-            <p>
-                {{message}}
-            </p>
+            <h1 class='mds-error-code'>{{statusCode}}</h1>
+            <p class='mds-error-description'>{{message}}</p>
+            <p class='mds-error-link'>
+                <a class='button primary' href='{{@site.url}}'>Go to the front
+                    page →</a></p>
+
+            {{#if errorDetails}}
+                <section class='mds-error-stack'>
+                    <h4>Theme errors:</h4>
+                    <ul class='mds-error-stack-list'>
+                        {{#foreach errorDetails}}
+                            <li>
+                                <h5
+                                    class='mds-error-stack-function'
+                                >{{{rule}}}</h5>
+
+                                {{#foreach failures}}
+                                    <span class='mds-error-stack-file'><strong
+                                        >Ref:</strong>
+                                        {{ref}}</span><br />
+                                    <span class='mds-error-stack-file'><strong
+                                        >Message:</strong>
+                                        {{message}}</span>
+                                {{/foreach}}
+                            </li>
+                        {{/foreach}}
+                    </ul>
+                </section>
+            {{/if}}
+
         </section>
-    </div>
-</main>
 
-{{> footer-en}}
+    </div>
+</section>

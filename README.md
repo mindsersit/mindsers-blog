@@ -1,6 +1,6 @@
 ![Repo header image](https://repository-images.githubusercontent.com/189204408/ea286180-8cf2-11e9-9c88-ad7a2517c8f8)
 
-# @mindsersit/blog
+# @mindsers/blog
 
 "MindsersIT Blog" is a blog for nathanaelcherrier.dev. This part of the site is based on [Ghost][ghost-blog].
 
@@ -9,14 +9,14 @@ This repo host the ghost theme that powers mindsers.blog.
 
 All the repositories part of the MindsersIT project:
 
-- [@mindsersit/website](https://github.com/mindsers/mindsersit-website)
-- [@mindsersit/blog](https://github.com/mindsers/mindsersit-blog)
+-   [@mindsersit/website](https://github.com/mindsers/mindsersit-website)
+-   [@mindsersit/blog](https://github.com/mindsers/mindsersit-blog)
 
 ## Getting started
 
-- Download this repo into `/content/theme` on the Ghost installation.
-- In the Ghost GUI (`SETTINGS > Design`), activate the `@mindsersit/blog` theme
-- Check if the version number is the right one
+-   Download this repo into `/content/theme` on the Ghost installation.
+-   In the Ghost GUI (`SETTINGS > Design`), activate the `@mindsersit/blog` theme
+-   Check if the version number is the right one
 
 ## License
 
@@ -41,6 +41,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 
 [ghost-blog]: https://ghost.org?lmref=739

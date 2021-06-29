@@ -1,328 +1,126 @@
 {{!< default}}
 
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/post.css'}}' />
+{{/contentFor}}
+
 {{#post}}
-{{#has tag="#en"}}
-    {{#contentFor "lang"}}en{{/contentFor}}
-    {{> header-en}}
-{{else}}
-    {{#contentFor "lang"}}fr{{/contentFor}}
-    {{> header}}
-{{/has}}
 
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-        <article  class="post-full {{post_class}}">
-            <header  class="post-full-header">
-                <div class="post-full-header-content">
-                    {{^is "page"}}
-                    <div class="infos upper">
-                        <time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{#has tag="#en"}}{{date format="MMM D, YYYY"}}{{else}}{{date format="D MMMM YYYY"}}{{/has}}</time>
-                        {{#has tag="sponsored" author="value"}}
-                            <div class="sponsored-tag">{{#has tag="#en"}}sponsored{{else}}sponsorisé{{/has}}</div>
-                        {{/has}}
-                        <p class="post-full-meta-author">
-                            {{#has author="count:>1"}}
-                                {{#has tag="#en"}}This post was a collaboration between{{else}}Cet article est une collaboration entre{{/has}} {{authors}}
-                            {{else}}
-                                {{#has tag="#en"}}Written by{{else}}Écrit par{{/has}} {{authors}}
-                            {{/has}}
-                        </p>
-                    </div>
-                    {{/is}}
-                    <h1 class="post-full-title">{{title}}</h1>
-                    <div class="infos lower">
-                        <div class="post-full-meta-tags">
-                            <p>
-                                {{~#foreach tags~}}
-                                    {{^has slug="sponsored"~}}
-                                        {{#if @first}}{{#has tag="#en"}}Published in{{else}}Publié dans{{/has}} {{else}},{{/if}} <a href="{{url}}" class="post-tags">{{name}}</a>
-                                    {{~/has~}}
-                                {{~/foreach~}}
-                            </p>
-                        </div>
-                        <div class="post-full-meta-share">
-                            <p>
-                                {{#has tag="#en"}}Share this{{else}}Partagez {{#is "page"}}la page{{else}}l'article{{/is}}{{/has}}
-                            </p>
-                            <p>
-                                <a class="floating-header-share-tw" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">
-                                    twitter
-                                </a>
-                                <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}">
-                                    facebook
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            {{#if access}}
-            <section class="post-full-content">
-                {{^is "page"}}
-                {{#has visibility="public"}}
-                    <div class="subscriber-cta">
-                        <p class="message-box message-box-info">
-                            {{#has tag="#en"}}
-                                This post is free for all to read thanks to the investment {{@site.title}}'s subscribers have made in independent publication. 
-                                If this work is meaningful to you, I invite you to <a href="/en/membership/">become a subscriber</a> today.
-                            {{else}}
-                                Cet article est libre d'accès pour tous grâce à la générosité des abonnés de {{@site.title}} qui soutiennent les publications indépendantes. 
-                                Si vous appréciez le contenu que je propose, je vous invite à <a href="/en/membership/">vous abonner</a> aujourd'hui. 
-                            {{/has}}
-                        </p>
-                    </div>
-                {{/has}}
-                {{/is}}
-                {{content}}
-            </section>
+<article class="mds-article {{post_class}}">
 
-                {{^is "page"}}
-                {{#if @labs.members}}
-                {{#unless @member}}
-                <form data-members-form="subscribe">
-                    <section class="subscribe-form">
-                        <h3 class="subscribe-form-title">{{#has tag="#en"}}Subscribe to{{else}}Abonnez-vous à{{/has}} {{@site.title}}</h3>
-                        <p>
-                        {{#has tag="#en"}}
-                            Get the latest posts delivered right to your inbox
-                        {{else}}
-                            Recevez les derniers articles directement dans votre boite de reception
-                        {{/has}}
-                        </p>
-                        <input data-members-email type="email" required="true" placeholder="{{#has tag="#en"}}your@email.com{{else}}votre@email.fr{{/has}}" />
-                        <button class="button" type="submit">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</button>
-                    </section>
-                    <p class="loader">...LOADING...</p>
-                    <p class="error">
-                    {{#has tag="#en"}}
-                        There was an error sending the email, please try again
-                    {{else}}
-                        Nous avons rencontré une erreur en vous envoyant un e-mail. Merci de réessayer.
-                    {{/has}}
-                    </p>
-                </form>
-                {{/unless}}
-                {{/if}}
-
-                <footer class="post-full-footer">
-                    <hr>
-                    <p>
-                    {{#has tag="#en"}}
-                        If you have any questions or advices, create a comment below! Also if you like this post, don't forget to share it with your friends. {{#unless @member.paid}}You can also support the blog on <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.{{/unless}}
-                    {{else}}
-                        Si vous avez des questions ou des remarques/conseils, n'hésitez pas à laisser un commentaire plus bas ! Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis. {{#unless @member.paid}}Vous pouvez aussi soutenir le blog sur <a href="https://www.patreon.com/mindsers" rel="nofollow">Patreon</a>.{{/unless}}
-                    {{/has}}
-                    </p>
-                </footer>
-                {{/is}}
-            {{else}}
-                <section class="post-restricted-content">
-                    {{excerpt}}...
-                </section>
-                <section class="subscribe-form">
-                    <h3 class="subscribe-form-title">
-                        {{#has tag="#en"}}
-                            This post is for paying subscribers only
-                        {{else}}
-                            Il s'agit d'un article réservé aux abonnés seulement
-                        {{/has}}
-                    </h3>
-                    <a class="button-subscribe-paid" href="#" data-portal="signup">{{#has tag="#en"}}Subscribe{{else}}S'abonner{{/has}}</a>
-                    <p>{{#has tag="#en"}}Already have an account?{{else}}Vous avez déjà un compte ?{{/has}} <a href="#" data-portal="signin">{{#has tag="#en"}}Sign in{{else}}S'inscrire{{/has}}</a></p>
-                </section>
+    <header class="mds-header mds-canvas">
+        <div class="featured">
+            {{#if feature_image}}
+            <img class="mds-feature-image"
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(max-width: 1000px) 1000px, 2000px"
+                loading="lazy"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{title}}"
+            />
             {{/if}}
-        </article>
-    </div>
-</main>
-
-{{^is "page"}}
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-            {{#if primary_tag}}
-                {{#has tag="#en"}}
-                    {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-fr+id:-{{id}}" limit="3" as |related_posts|}}
-                        {{#if related_posts}}
-                        {{> related-posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
-                        {{/if}}
-                    {{/get}}
-                {{else}}
-                    {{#get "posts" filter="tags:{{primary_tag.slug}}+tag:-hash-en+id:-{{id}}" limit="3" as |related_posts|}}
-                        {{#if related_posts}}
-                        {{> related-posts primary_post=../../post primary_tag=../primary_tag posts=related_posts}}
-                        {{/if}}
-                    {{/get}}
-                {{/has}}
-            {{/if}}
-            <div class="read-next-time-related">
-                {{#next_post}}
-                <div>
-                    <span class="direction">{{#../../post}}{{#has tag="#en"}}Next post{{else}}Article suivant{{/has}}{{/../../post}}</span>
-                    <h3><a href="{{url}}">{{title}}</a></h3>
-                    <p class="tag-list">
-                        {{#foreach tags}}
-                            {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
-                        {{/foreach}}
-                    </p>
-                </div>
-                {{/next_post}}
-
-                {{#prev_post}}
-                <div>
-                    <span class="direction">{{#../../post}}{{#has tag="#en"}}Previous post{{else}}Article précedent{{/has}}{{/../../post}}</span>
-                    <h3><a href="{{url}}">{{title}}</a></h3>
-                    <p class="tag-list">
-                        {{#foreach tags}}
-                            {{^has slug="sponsored"}}<a href="{{url}}" class="post-card-tags">#{{name}}</a>{{/has}}
-                        {{/foreach}}
-                    </p>
-                </div>
-                {{/prev_post}}
-            </div>
-
         </div>
+        <div class="summary">
+            <h1 class="mds-title">{{title}}</h1>
+
+            {{#if custom_excerpt}}
+            <p class="mds-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <p class="mds-post-meta">
+                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                <span class="bull">&bull;</span> {{reading_time}}
+            </p>
+        </div>
+    </header>
+
+    <div class="mds-share">
+        <a class="button rounded primary" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="nofollow noreferrer">
+            {{> "icons/facebook"}}
+        </a>
+        <a class="button rounded primary" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{title}}" target="_blank" rel="nofollow noreferrer">
+            {{> "icons/twitter"}}
+        </a>
+        <a class="button rounded primary" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}" target="_blank" rel="nofollow noreferrer">
+            {{> "icons/linkedin"}}
+        </a>
     </div>
-</aside>
-<aside class="comments outer">
-    <div class="inner">
+
+    <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr"{{/has}}>
+        {{^if access}}
+            <p class="post-restricted-content">
+                {{excerpt}}...
+            </p>
+        {{/if}}
+
+        {{content}}
+
+        {{#if access}}
+            {{#unless @member}}
+                {{> "notification-cta"}}
+            {{/unless}}
+
+            {{#has tag="#fr"}}
+            <p class="mds-auto-content">
+                Si vous avez des questions ou des remarques/conseils,
+                n'hésitez pas à laisser un commentaire plus bas ! Je serais ravis de vous lire.
+                Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis.
+            </p>
+            {{else}}
+            <p class="mds-auto-content">
+                If you have any questions or advices, please create a comment below!
+                I'll be really glad to read you.
+                Also if you like this post, don't forget to share it with your friends.
+                It helps a lot!
+            </p>
+            {{/has}}
+        {{/if}}
+    </div>
+
+    <footer class="mds-footer mds-canvas">
+        <hr />
+        <div class="mds-post-authors">
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+        <hr>
         {{#if @member.paid}}
         <div id='commento'></div>
         {{else}}
-        <div class="comments-fallback">
-            {{#has tag="#en"}}
+        <div class="mds-comments-fallback">
             The comment section is only available for paying subscribers.
-            {{else}}
-            La section de commentaires est accessible uniquement aux abonnés du blog.
-            {{/has}}
         </div>
         {{/if}}
+    </footer>
+</article>
+
+<aside class="mds-readmore">
+    <div class="mds-readmore-inner mds-container">
+        <div class="mds-readmore-next">
+            {{#next_post}}
+            <a href="{{url}}">
+                {{> "icons/arrow-left"}} <h4>{{title}}</h4>
+            </a>
+            {{/next_post}}
+        </div>
+        <div class="mds-readmore-prev">
+            {{#prev_post}}
+            <a href="{{url}}">
+                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
+            </a>
+            {{/prev_post}}
+        </div>
     </div>
 </aside>
-{{/is}}
 
-{{#has tag="#en"}}
-    {{> footer-en}}
-{{else}}
-    {{> footer}}
-{{/has}}
 {{/post}}
 
 {{#contentFor "scripts"}}
-    <script src="{{asset "js/prism.js"}}"></script>
-
-    <script>
-        // logic for share button
-        ((document, window) => {
-            document
-                .querySelector('.floating-header-share-fb')
-                .addEventListener('click', ({ target }) => {
-                    window.open(target.href, 'share-facebook', 'width=580,height=296')
-                })
-
-            document
-                .querySelector('.floating-header-share-tw')
-                .addEventListener('click', ({ target }) => {
-                    window.open(target.href, 'share-twitter', 'width=550,height=235')
-                })
-        })(document, window)
-    </script>
-
-    <script>
-        // logic for title links
-        ((document) => {
-            const titles = document.querySelectorAll('.post-full-content h1[id], .post-full-content h2[id], .post-full-content h3[id], .post-full-content h4[id], .post-full-content h5[id], .post-full-content h6[id]')
-
-            for (const title of titles) {
-                const anchor = document.createElement('a')
-
-                anchor.href = `#${title.id}`
-                anchor.innerHTML = '<img class="title-link" src="{{asset "images/link-solid.svg"}}">'
-
-                title.appendChild(anchor)
-            }
-        })(document)
-    </script>
-
-    <script>
-        // youtube video & map embeded wrapping
-        ((document) => {
-            const wrapper = cssClass => videoTag => {
-                const parent = videoTag.parentElement
-                const container = document.createElement('div')
-
-                videoTag.removeAttribute('height')
-                videoTag.removeAttribute('width')
-
-                container.classList.add(cssClass)
-
-                parent.insertBefore(container, videoTag)
-                parent.removeChild(videoTag)
-
-                container.appendChild(videoTag)
-            }
-
-            document
-                .querySelectorAll(`.kg-embed-card iframe, .kg-embed-card object, .kg-embed-card embed`)
-                .forEach(wrapper('kg-embeded-card-fluid'))
-        })(document)
-    </script>
-
-    <script>
-        // logic for image gallery
-        ((document) => {
-            const images = document.querySelectorAll('.kg-gallery-image img')
-
-            for (const image of images) {
-                const container = image.closest('.kg-gallery-image')
-                const width = image.attributes.width.value
-                const height = image.attributes.height.value
-                const ratio = width / height
-
-                container.style.flex = ratio + ' 1 0%'
-            }
-        })(document)
-    </script>
-
-    <script>
-        // alternative versions
-        ((document, window) => {
-            const alternativeLinks = document.querySelectorAll('link[rel="alternate"][hreflang]')
-            const firstParagraph = document.querySelector('section.post-full-content > p:first-of-type')
-
-            const exist = lang => link => !(new RegExp(`^\/${lang}`)).test(window.location.pathname) && (new RegExp(`^${lang}`)).test(link)
-            const insert = box => firstParagraph.parentNode.insertBefore(box, firstParagraph.nextSibling)
-
-            for (const link of alternativeLinks) {
-                const info = document.createElement('p')
-                info.classList.add('language-info')
-                info.classList.add('message-box-info')
-                info.classList.add('message-box')
-
-                if (exist('en')(link.hreflang)) {
-                    info.innerHTML = `Hey! English speaking friends! <a href="${link.href}">This post also exists in english</a>.`
-                    info.lang = 'en'
-
-                    insert(info)
-                }
-
-                if (exist('fr')(link.hreflang)) {
-                    info.innerHTML = `Oh! Amis francophone! <a href="${link.href}">Cet article existe aussi en français</a>.`
-                    info.lang = 'fr'
-
-                    insert(info)
-                }
-            }
-        })(document, window)
-    </script>
-
-    {{^is "page"}}
+    <script src="https://unpkg.com/shiki" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="{{asset 'js/post.js'}}"></script>
     {{#if @member.paid}}
     <script defer src="https://commento.mindsers.blog/js/commento.js"></script>
     {{/if}}
-    {{/is}}
-{{/contentFor}}
-
-{{#contentFor "styles"}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}">
 {{/contentFor}}

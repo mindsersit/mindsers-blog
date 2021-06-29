@@ -1,50 +1,268 @@
 <!DOCTYPE html>
-<html lang="{{{block "lang"}}}">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="monetization" content="$ilp.uphold.com/Apm7DzrByBYN">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang='{{@site.locale}}'>
+    <head>
+        <meta charset='utf-8' />
+        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+        <meta name='monetization' content='$ilp.uphold.com/Apm7DzrByBYN' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        {{{block 'styles'}}}
 
-    <title>{{meta_title}} | {{@site.title}}</title>
+        <title>{{meta_title}} | {{@site.title}}</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Code+Pro:400,600" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/fontawesome.css"}}" />
+        {{ghost_head}}
+    </head>
 
-    {{{block "styles"}}}
+    <body class='{{body_class}}'>
+        <div class='mds-viewport'>
+            <header id='mds-head' class='mds-head'>
+                <nav
+                    class='mds-head-inner mds-container'
+                    role='navigation'
+                    aria-label='Main Navigation'
+                >
 
-    {{ghost_head}}
-</head>
-<body class="{{body_class}} line-numbers">
-    <div class="site-wrapper">
-        {{{body}}}
-    </div>
+                    <div class='mds-head-brand'>
+                        <a class='mds-head-logo' href='{{@site.url}}'>
+                            {{#if @site.logo}}
+                                <img
+                                    src='{{@site.logo}}'
+                                    alt='{{@site.title}} - Back to home page'
+                                />
+                            {{else}}
+                                {{@site.title}}
+                            {{/if}}
+                        </a>
+                    </div>
+                    <div class='mds-head-menu'>
+                        {{#if @member.paid}}
+                            {{navigation type='secondary'}}
+                        {{else}}
+                            {{navigation}}
+                        {{/if}}
+                    </div>
+                    <div class='mds-head-placeholder'></div>
+                    <div class='mds-head-actions'>
+                        {{#if @member}}
+                            <a href="/profile/" class="profile-button">
+                                {{> "icons/profile"}}
+                                {{#if @member.avatar_image}}
+                                    <img src='{{@member.avatar_image}}' />
+                                {{/if}}
+                            </a>
+                            <div class="profile-menu">
+                                <ul>
+                                    <li class="reminder">Signed as<br>{{@member.email}}</li>
+                                    <li><a href="/profile/">Account</a></li>
+                                    <li>
+                                        <a href='javascript:' data-members-signout>Sign out</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        {{else}}
+                            <a class='button primary login-button' href='/login/'>Log in</a>
+                            <a class='more-button-small-screen' >{{> "icons/more"}}</a>
+                        {{/if}}
 
-    {{{block "scripts"}}}
+                        <div class="more-menu">
+                            <header class="mds-head">
+                                <div class="mds-container">
+                                    <div class='mds-head-brand'>
+                                        <a class='mds-head-logo' href='{{@site.url}}'>
+                                            {{#if @site.logo}}
+                                                <img
+                                                    src='{{@site.logo}}'
+                                                    alt='{{@site.title}} - Back to home page'
+                                                />
+                                            {{else}}
+                                                {{@site.title}}
+                                            {{/if}}
+                                        </a>
+                                    </div>
+                                    <div class='mds-head-placeholder'></div>
+                                    <div class="close-button">{{> "icons/times"}}</div>
+                                </div>
+                            </header>
 
-    <script>
-        document
-            .querySelector('#searchbar')
-            .addEventListener('submit', (event) => {
-                event.preventDefault()
+                            {{#if @member}}
+                            <ul>
+                                <li class="reminder">Signed as<br>{{@member.email}}</li>
+                                <li><a href="/profile/">Account</a></li>
+                            </ul>
+                            {{/if}}
 
-                const data = new FormData(event.target)
-                if (data.get('term') == null || data.get('term').length < 1) {
-                    return
-                }
+                            {{#if @member.paid}}
+                                {{navigation type='secondary'}}
+                            {{else}}
+                                {{navigation}}
+                            {{/if}}
 
-                const term = data
-                    .get('term')
-                    .trim()
-                    .split(' ')
-                    .join('+')
+                            <ul>
+                                <li>
+                                {{#if @member}}
+                                    <a href='javascript:' data-members-signout>Sign out</a>
+                                {{else}}
+                                    <a class='login-button-small-screen' href='/login/'>Log in</a>
+                                {{/if}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
 
-                document.location.href = `https://www.google.com/search?q=site:blog.nathanaelcherrier.com+${term}`
-            })
-    </script>
-    <script src="{{asset "js/menu.js"}}"></script>
+            <main class='mds-main'>
 
-    {{ghost_foot}}
-</body>
+                {{{body}}}
+                {{! All content gets inserted here, index.hbs, post.hbs, etc }}
+
+            </main>
+
+            <footer class='mds-foot'>
+                <div class='mds-container'>
+                    <nav
+                        class='mds-foot-menu'
+                        role='navigation'
+                        aria-label='More Links'
+                    >
+                        <div class='menu-list'>
+                            <h2>Plus de liens</h2>
+                            <ul>
+                                <li>
+                                    <a
+                                        href='https://discord.gg/WrHUfSC'
+                                        rel="noreferrer"
+                                    >
+                                        Discord
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href='https://nathanaelcherrier.dev/fr/resume'
+                                    >
+                                        CV
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href='https://nathanaelcherrier.dev/fr/contact'
+                                    >
+                                        Me contacter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href='https://feedly.com/i/subscription/feed/{{@site.url}}/fr/rss/'
+                                        title='RSS'
+                                        target='_blank'
+                                        rel="noreferrer"
+                                    >
+                                        RSS
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class='menu-list'>
+                            <h2>Open Sources</h2>
+                            <ul>
+                                <li><a
+                                        href='https://github.com/mindsers/configfile'
+                                        rel='nofollow noreferrer'
+                                    >Configfile</a></li>
+                                <li><a
+                                        href='https://github.com/mindsers/yabf'
+                                        rel='nofollow noreferrer'
+                                    >Yabf</a></li>
+                                <li><a
+                                        href='https://github.com/mindsers/nativetable'
+                                        rel='nofollow noreferrer'
+                                    >Nativetable</a></li>
+                            </ul>
+                        </div>
+                        <div class='menu-list'>
+                            <h2>Réseaux sociaux</h2>
+                            <ul>
+                                <li><a
+                                        href='https://www.instagram.com/mindsers.codes/'
+                                        title='Instagram'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >Instagram</a></li>
+                                <li><a
+                                        href='https://twitter.com/MindsersCodes'
+                                        title='Twitter'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >Twitter</a></li>
+                                <li><a
+                                        href='https://github.com/Mindsers'
+                                        title='GitHub'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >GitHub</a></li>
+                                <li><a
+                                        href='https://dev.to/mindsers'
+                                        title='Dev'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >Dev</a></li>
+                                <li><a
+                                        href='https://www.twitch.tv/mindsers'
+                                        title='Twitch'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >Twitch</a></li>
+                                <li><a
+                                        href='https://www.facebook.com/MindsersIT'
+                                        title='Facebook'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >Facebook</a></li>
+                                <li><a
+                                        href='https://www.malt.fr/profile/nathanaelcherrier'
+                                        title='Malt'
+                                        target='_blank'
+                                        rel='nofollow noreferrer'
+                                    >Malt</a></li>
+                            </ul>
+                        </div>
+                        <div class='menu-list'>
+                            <h2>Soutenir</h2>
+                            <ul>
+                                <li>Bitcoin:
+                                    <span
+                                        class='coin-address'
+                                    >3N7iAYWKz5rqdtbYJ4r1SRJHq9sEQbXHDk</span></li>
+                                <li>Ethereum:
+                                    <span
+                                        class='coin-address'
+                                    >0x30B42B1487262fE55aD8CDF046342AB6bF4d4e73</span></li>
+                                <li>Ripple:
+                                    <span
+                                        class='coin-address'
+                                    >rUwDYme9YMzNo8ufvgKE7VET1QgbKgJuGT</span></li>
+                                <li>Litecoin:
+                                    <span
+                                        class='coin-address'
+                                    >MU47RMv5KmdsiBU8Kw5PNPbn3cyFLjmQXPt</span></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class='mds-foot-meta'>
+                        &copy;2014-{{date format='YYYY'}}
+                        <a href='https://nathanaelcherrier.dev/fr/'>Nathanaël
+                            Cherrier</a>. Tous droits réservés<br />
+                        <a
+                            href='https://nathanaelcherrier.dev/fr/legal'
+                        >Mentions légales</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        {{! <foot> }}
+        <script type="module" src="{{asset 'js/menu.js'}}" async></script>
+        {{{block 'scripts'}}}
+
+        {{ghost_foot}}
+    </body>
 </html>

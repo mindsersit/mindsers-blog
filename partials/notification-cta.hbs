@@ -1,0 +1,24 @@
+<div class='member-cta' lang='en'>
+    <h2>
+        Join 100+ developers and entrepreneurs and get notified on every new
+        content.
+    </h2>
+    <form data-members-form='subscribe'>
+        <label>
+            Email
+            <input
+                data-members-email
+                type='email'
+                required='true'
+                placeholder='jamie@example.com'
+            />
+        </label>
+        {{#has tag='#fr'}}
+            <input data-members-label type='hidden' value='French' />
+        {{else}}
+            <input data-members-label type='hidden' value='English' />
+        {{/has}}
+        <button class='button' type='submit'>Let's go!</button>
+    </form>
+    <p>No spam ever. Unsubscribe in a single click at any time.</p>
+</div>

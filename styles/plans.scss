@@ -1,0 +1,276 @@
+@import 'colors';
+@import 'fonts';
+@import 'global';
+@import 'testimonials';
+
+.mds-plans {
+    font-family: $sans;
+
+    .mds-header {
+        margin: 80px;
+        margin-bottom: 50px;
+
+        @media (max-width: 1024px) {
+            margin: 0 20px;
+        }
+
+        @media (max-width: 550px) {
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 350px) {
+            margin: 0;
+        }
+
+        .mds-title {
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+
+            @media (max-width: 850px) {
+                font-size: 3em;
+            }
+
+            @media (max-width: 550px) {
+                text-align: center;
+                font-size: 2.8em;
+            }
+
+            @media (max-width: 350px) {
+                font-size: 2.5em;
+            }
+        }
+
+        p {
+            text-align: center;
+            width: 75%;
+            margin: 30px auto;
+
+            @media (max-width: 550px) {
+                margin: 20px 0;
+                width: auto;
+            }
+        }
+    }
+
+    .mds-plan-grid {
+        margin: 50px 0 120px;
+
+        @media (max-width: 850px) {
+            margin: 0 0 120px;
+        }
+
+        @media (max-width: 700px) {
+            margin: 0;
+        }
+
+        .mds-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 850px) {
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            @media (max-width: 700px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .plan-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px;
+                padding: 3px;
+                background: $default_gradient;
+                border-radius: 3px;
+                width: 30%;
+                position: relative;
+
+                @media (max-width: 1024px) {
+                    margin: 0 10px;
+                }
+
+                @media (max-width: 850px) {
+                    margin: 0 5px;
+                }
+
+                @media (max-width: 700px) {
+                    width: 60%;
+                    margin: 10px 0;
+                }
+
+                @media (max-width: 550px) {
+                    width: auto;
+                }
+
+                .plan-bg {
+                    background-color: $background_color;
+                    border-radius: 3px;
+                    padding: 15px;
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    header {
+                        margin: 30px 0;
+                        h2 {
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                    }
+
+                    .plan-body {
+                        margin: 30px 10px;
+
+                        ul {
+                            padding: 0;
+
+                            li {
+                                list-style: none;
+                                margin: 15px 0;
+                            }
+                        }
+
+                        .eco {
+                            color: $secondary_color;
+                        }
+                    }
+
+                    .plan-price {
+                        margin: 10px;
+                        a {
+                            width: 100%;
+                            box-sizing: border-box;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .plan-favourite-notice {
+                    $color: $neutral_color;
+                    position: absolute;
+                    bottom: -150px;
+                    left: 50%;
+                    width: 100%;
+                    height: 140px;
+
+                    @media (max-width: 700px) {
+                        display: none;
+                    }
+
+                    .notice {
+                        border-width: 2px;
+                        border-style: solid;
+                        border-color: $color;
+                        border-radius: 50%;
+                        height: 50%;
+                        width: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        text-align: center;
+                        top: 20%;
+                        left: 25%;
+                        background-color: $background_color;
+                        color: $color;
+                        padding-top: 10px;
+
+                        @media (max-width: 850px) {
+                            padding: 10px;
+                        }
+                    }
+
+                    .arrow {
+                        position: relative;
+                        width: 20%;
+                        height: 50%;
+
+                        .curve {
+                            width: 100%;
+                            height: 95%;
+                            margin-left: 8px;
+                            border-width: 0 0 2px 2px;
+                            border-style: solid;
+                            border-color: $color;
+                            border-bottom-left-radius: 100%;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: -4px;
+                                left: 10px;
+                                border-style: solid;
+                                border-width: 1px;
+                                border-color: $color;
+                                height: 10px;
+                                transform: rotate(-20deg);
+                            }
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                top: -4px;
+                                left: 6px;
+                                border-style: solid;
+                                border-width: 1px;
+                                border-color: $color;
+                                height: 10px;
+                                transform: rotate(20deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mds-patreon {
+        text-align: center;
+        margin: 150px 0 100px;
+
+        @media (max-width: 700px) {
+            margin: 30px 0;
+        }
+
+        @media (max-width: 550px) {
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+    }
+
+    .mds-eco {
+        text-align: center;
+        margin: 100px 0;
+
+        @media (max-width: 700px) {
+            margin: 30px 0;
+        }
+
+        @media (max-width: 550px) {
+            margin: 20px 0;
+        }
+
+        p {
+            margin: 40px 0;
+        }
+    }
+
+    .mds-issues {
+        .no-post {
+            margin: 40px;
+            text-align: center;
+        }
+        .more {
+            text-align: center;
+        }
+    }
+}

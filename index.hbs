@@ -1,24 +1,81 @@
 {{!< default}}
 
-{{#contentFor "lang"}}fr{{/contentFor}}
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
+{{/contentFor}}
 
-{{> header}}
+<div class="mds-page">
+    <div class="mds-container">
+        <header class="mds-header">
+        {{#is "issues"}}
+            <h1 class="mds-title">Mindsers' newsletter issues</h1>
+            <p>
+                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
+                This newsletter is about my own journey as a developer and entrepreneur.
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                {{/unless}}
+                <a class="button" href="/fr/issues/">See French issues</a>
+            </p>
+        {{else is "frissues"}}
+            <h1 class="mds-title">Mindsers' newsletter issues in French</h1>
+            <p>
+                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
+                This newsletter is about my own journey as a developer and entrepreneur.
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                {{/unless}}
+                <a class="button" href="/issues/">See English issues</a>
+            </p>
+        {{else is "emails"}}
+            <h1 class="mds-title">Emails archives</h1>
+        {{else is "posts"}}
+            <h1 class="mds-title">English posts</h1>
+            <p>
+                I wrote several blog posts through years to share my knowledge and my journey.
+                Most of them are free thanks to my awesome paid members.
+                {{#unless @member.paid}}
+                Join them to get complete access.
+                {{/unless}}
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{/unless}}
+                <a class="button" href="/fr/posts/">See French posts</a>
+            </p>
+        {{else is "frposts"}}
+            <h1 class="mds-title">French posts</h1>
+            <p>
+                I wrote several blog posts through years to share my knowledge and my journey.
+                Most of them are free thanks to my awesome paid members.
+                {{#unless @member.paid}}
+                Join them to get complete access.
+                {{/unless}}
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{/unless}}
+                <a class="button" href="/posts/">See English posts</a>
+            </p>
+        {{else}}
+            <h1 class="mds-title">Posts</h1>
+        {{/is}}
+        </header>
 
-{{#is "frmiscellaneous"}}
-    {{> index/title-header title="Article divers" }}
-{{else is "frtech"}}
-    {{> index/title-header title="Articles Tech" }}
-{{else is "frbusiness"}}
-    {{> index/title-header title="Articles Business" }}
-{{else is "frnewsletters"}}
-    {{> index/title-header title="Newsletters" }}
-{{else is "frcoffeeshops"}}
-    {{> index/title-header title="Les cafés" }}
-    {{> index/coffeeshops-map}}
-{{else}}
-    {{> index/title-header title="Articles" }}
-{{/is}}
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{else}}
+                <p class="no-post">No posts here</p>
+        {{/foreach}}
+        </div>
 
-{{> index/feed}}
-
-{{> footer}}
+        {{pagination}}
+    </div>
+</div>
