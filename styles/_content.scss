@@ -202,6 +202,10 @@
                 position: relative;
                 box-sizing: border-box;
 
+                @media (max-width: 350px) {
+                    margin: 15px 0;
+                }
+
                 .kg-bookmark-container {
                     display: flex;
                     color: $foreground_color;
@@ -223,6 +227,10 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+
+                    @media (max-width: 350px) {
+                        max-width: 100%;
+                    }
 
                     .kg-bookmark-title {
                         font-family: $sans;
@@ -254,6 +262,10 @@
                     .kg-bookmark-publisher {
                         font-family: $sans;
                     }
+
+                    .kg-bookmark-publisher::before {
+                        content: '•';
+                    }
                 }
 
                 .kg-bookmark-thumbnail {
@@ -261,6 +273,10 @@
                     width: 30%;
                     min-width: 30%;
                     position: relative;
+
+                    @media (max-width: 350px) {
+                        display: none;
+                    }
 
                     img {
                         width: 100%;
