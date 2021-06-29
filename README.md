@@ -2,10 +2,10 @@
 
 # @mindsers/blog
 
-"MindsersIT Blog" is a blog for nathanaelcherrier.dev. This part of the site is based on [Ghost][ghost-blog].
+"Mindsers Blog" is a blog for nathanaelcherrier.dev. This part of the site is based on [Ghost][ghost-blog].
 
 This repo host the ghost theme that powers mindsers.blog.
-**Be aware that some parts of the theme are hardcoded for the needs of "MindsersIT Blog". This theme is NOT production ready.**
+**Be aware that some parts of the theme are hardcoded for the needs of "Mindsers Blog". This theme is NOT production ready.**
 
 All the repositories part of the MindsersIT project:
 
