@@ -202,7 +202,7 @@
                 position: relative;
                 box-sizing: border-box;
 
-                @media (max-width: 350px) {
+                @media (max-width: 400px) {
                     margin: 15px 0;
                 }
 
@@ -228,7 +228,7 @@
                     flex-direction: column;
                     justify-content: space-between;
 
-                    @media (max-width: 350px) {
+                    @media (max-width: 400px) {
                         max-width: 100%;
                     }
 
@@ -274,7 +274,7 @@
                     min-width: 30%;
                     position: relative;
 
-                    @media (max-width: 350px) {
+                    @media (max-width: 400px) {
                         display: none;
                     }
 
