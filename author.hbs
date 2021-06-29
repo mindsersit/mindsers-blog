@@ -1,12 +1,16 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
+{{/contentFor}}
+
+<div class="mds-page">
+    <div class="mds-container">
 
         {{#author}}
-        <header class="gh-page-head">
+        <header class="mds-page-head">
             {{#if profile_image}}
-                <img class="gh-author-image" src="{{profile_image}}" alt="{{name}}" />
+                <img class="mds-author-image" src="{{profile_image}}" alt="{{name}}" />
             {{/if}}
 
             <h1>{{name}}</h1>
@@ -14,8 +18,8 @@
                 <p>{{bio}}</p>
             {{/if}}
 
-            <div class="gh-author-meta">
-                <div class="gh-author-links">
+            <div class="mds-author-meta">
+                <div class="mds-author-links">
                     {{#if website}}
                         <a href="{{website}}" target="_blank" rel="noopener">Website</a>
                     {{/if}}
@@ -29,12 +33,12 @@
             </div>
 
             {{#if cover_image}}
-                <img class="gh-page-image" src="{{cover_image}}" alt="{{name}}" />
+                <img class="mds-page-image" src="{{cover_image}}" alt="{{name}}" />
             {{/if}}
         </header>
         {{/author}}
 
-        <div class="gh-postfeed">
+        <div class="mds-postfeed">
         {{#foreach posts}}
 
             {{> "card"}} {{!-- partials/card.hbs --}}
