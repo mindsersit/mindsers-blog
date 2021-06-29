@@ -59,7 +59,8 @@
                                 </ul>
                             </div>
                         {{else}}
-                            <a class='button primary' href='/login/'>Log in</a>
+                            <a class='button primary login-button' href='/login/'>Log in</a>
+                            <a class='more-button-small-screen' >{{> "icons/more"}}</a>
                         {{/if}}
 
                         <div class="more-menu">
@@ -95,13 +96,15 @@
                                 {{navigation}}
                             {{/if}}
 
-                            {{#if @member}}
                             <ul>
                                 <li>
+                                {{#if @member}}
                                     <a href='javascript:' data-members-signout>Sign out</a>
+                                {{else}}
+                                    <a class='login-button-small-screen' href='/login/'>Log in</a>
+                                {{/if}}
                                 </li>
                             </ul>
-                            {{/if}}
                         </div>
                     </div>
                 </nav>

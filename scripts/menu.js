@@ -5,7 +5,7 @@ ready(async () => {
   const page = document.querySelector('body')
 
   for (const button of document.querySelectorAll(
-    '.profile-button, .close-button'
+    '.profile-button, .close-button, .more-button-small-screen'
   )) {
     button.addEventListener('click', event => {
       event.preventDefault()
