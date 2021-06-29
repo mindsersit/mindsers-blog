@@ -48,6 +48,8 @@
                 position: inherit;
                 background-color: unset;
                 box-shadow: unset;
+                color: $foreground_color;
+                padding: 0;
             }
 
             @media (max-width: 500px) {
