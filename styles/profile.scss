@@ -64,5 +64,31 @@
             text-align: center;
             margin: 30px 0 50px;
         }
+
+        .subscription {
+            padding: 20px;
+            box-shadow: 0px 0 4px rgba(0, 0, 0, 0.25);
+            border-radius: 3px;
+
+            .summary {
+                margin: 10px 0 30px;
+                text-align: center;
+            }
+
+            .subscriber-detail {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+
+                .subscriber-detail-label {
+                    font-weight: 600;
+                }
+            }
+
+            .actions {
+                margin: 20px 0 0;
+                text-align: center;
+            }
+        }
     }
 }
