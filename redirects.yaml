@@ -1,0 +1,32 @@
+301:
+    # new hubs
+    /en/: /posts/
+    /fr/: /fr/posts/
+    /post/: /posts/
+    /fr/post/: /fr/posts/
+    /issue/: /issues/
+    /fr/issue/: /fr/issues/
+    /email/: /emails/
+    # old content
+    /fr/bonjour-tout-le-monde/: https://nathanaelcherrier.dev/fr/
+    /fr/european-converter-passe-en-2-0/: /topic/portfolio/
+    /fr/checkyourvat-un-outil-pour-vendeur-commerciaux-et-businessman/: /topic/portfolio/
+    /fr/ios-7-european-converter-le-convertisseur-de-leurope/: /topic/portfolio/
+    /fr/ios-7-colormind-ma-premiere-application/: /topic/portfolio/
+    /fr/ma-premiere-application-windows-8/: /topic/portfolio/
+    /fr/ice-berry/: /topic/portfolio/
+    /fr/smalllink/: /topic/portfolio/
+    /fr/simiux/: /topic/portfolio/
+    /fr/find-a-bike/: /topic/portfolio/
+    /tag/checkyourvat/: /topic/portfolio/
+    /tag/simiux/: /topic/portfolio/
+    /tag/findabike/: /topic/portfolio/
+    /tag/design-patterns/: /topic/best-practices/
+    /tag/application-design/: /topic/ddd/
+    # dynamics
+    ^\/tag\/(.+)$: /topic/$1
+    ^\/en\/(.+)$: /post/$1
+    ^\/fr\/(?!post\/)(.+)$: /fr/post/$1
+302:
+    /tag/currency/: /posts/
+    /tag/multilingual/: /posts/
