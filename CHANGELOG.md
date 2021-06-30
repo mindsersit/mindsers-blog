@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+-   Move hero image at the top of page on small screen
+
 ## [2.1.0] - 2021-06-30
 
 ### Added
