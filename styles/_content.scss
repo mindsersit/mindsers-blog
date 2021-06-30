@@ -387,6 +387,14 @@
 
             p {
                 margin: 30px 80px;
+
+                @media (max-width: 700px) {
+                    margin: 30px;
+                }
+
+                @media (max-width: 400px) {
+                    margin: 30px 0;
+                }
             }
 
             .switch a {
