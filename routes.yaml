@@ -11,26 +11,26 @@ routes:
 
 collections:
     /posts/:
-        permalink: /posts/{slug}/
+        permalink: /post/{slug}/
         template: index
         filter: 'tag:hash-en+tag:-[hash-email,hash-newsletter-issue]'
     /issues/:
-        permalink: /issues/{slug}/
+        permalink: /issue/{slug}/
         template: index
         filter: 'tag:hash-en+tag:hash-newsletter-issue'
     /emails/:
-        permalink: /emails/{slug}/
+        permalink: /email/{slug}/
         template: index
         filter: 'tag:hash-email'
     /fr/posts/:
-        permalink: /fr/posts/{slug}/
+        permalink: /fr/post/{slug}/
         template: index
         filter: 'tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]'
     /fr/issues/:
-        permalink: /fr/issues/{slug}/
+        permalink: /fr/issue/{slug}/
         template: index
         filter: 'tag:hash-fr+tag:hash-newsletter-issue'
 
 taxonomies:
-    tag: /topics/{slug}/
-    author: /developers/{slug}/
+    tag: /topic/{slug}/
+    author: /author/{slug}/
