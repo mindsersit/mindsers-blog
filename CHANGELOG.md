@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 -   Move hero image at the top of page on small screen
+-   Display success and error message on log in form
 
 ## [2.1.0] - 2021-06-30
 
