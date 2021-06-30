@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+-   Display only public posts on authors page
+
 ### Fixed
 
 -   Avoid redirecting for "issues" urls
+-   Display a pagination on authors page
 
 ## [2.2.0] - 2021-06-30
 

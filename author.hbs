@@ -39,12 +39,11 @@
         {{/author}}
 
         <div class="mds-postfeed">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
+        {{#foreach posts visibility="public"}}
+            {{> "card"}}
         {{/foreach}}
         </div>
 
+        {{pagination}}
     </div>
 </div>
