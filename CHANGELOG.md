@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   Design and style the author page
+
 ### Fixed
 
 -   Improve the responsiveness of the CTA's text
