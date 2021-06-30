@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2021-06-30
+
 ### Added
 
 -   Design and style the author page
+-   New image in the hero header
+
+### Changed
+
+-   Redirection uses YAML format
+-   Collections use singular version for the url (`/posts/slug/` => `/post/slug/`)
 
 ### Fixed
 
@@ -263,7 +271,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.2...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.2...v2.1.0
 [2.0.2]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/mindsers/mindsersit-blog/compare/v1.7.5...v2.0.0
