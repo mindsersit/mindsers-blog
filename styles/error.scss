@@ -23,10 +23,18 @@
 
         .mds-error-link {
             margin: 50px;
+            @media (max-width: 350px) {
+                margin: 30px;
+            }
         }
 
         svg {
             max-height: 350px;
+            max-width: 100%;
+
+            @media (max-width: 350px) {
+                max-height: 250px;
+            }
         }
     }
 }
