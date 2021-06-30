@@ -289,13 +289,19 @@
             }
 
             &.kg-embed-card {
-                $size: 1080px;
-                iframe,
-                object,
-                embed {
-                    position: unset !important;
-                    width: 100% !important;
-                    height: calc(100% / 1.765) !important;
+                position: relative;
+                &.kg-embed-video {
+                    height: 0;
+                    padding-bottom: 56.25%;
+                    overflow: hidden;
+
+                    iframe[src*='youtube'] {
+                        position: absolute;
+                        height: 100% !important;
+                        width: 100% !important;
+                        left: 0;
+                        top: 0;
+                    }
                 }
             }
 

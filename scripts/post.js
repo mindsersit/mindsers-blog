@@ -17,6 +17,13 @@ ready(async () => {
     container.style.flex = ratio + ' 1 0%'
   })
 
+  const videos = document.querySelectorAll('iframe[src*=youtube]')
+  for (const video of videos) {
+    video.parentNode.classList.add('kg-embed-video')
+  }
+})
+
+ready(async () => {
   const codeblocks = document.querySelectorAll('pre > code[class^="language-"]')
   for (const block of codeblocks) {
     const [, language] = Array.from(block.classList)[0].split('-')

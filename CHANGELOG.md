@@ -10,12 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 -   Display only public posts on authors page
+-   Javascript execution is faster on posts
 
 ### Fixed
 
 -   Avoid redirecting for "issues" urls
 -   Display a pagination on authors page
 -   Hide fake recommandations
+-   Videos are shown in full height
 
 ## [2.2.0] - 2021-06-30
 
