@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Avoid redirecting for "issues" urls
 -   Display a pagination on authors page
+-   Hide fake recommandations
 
 ## [2.2.0] - 2021-06-30
 
