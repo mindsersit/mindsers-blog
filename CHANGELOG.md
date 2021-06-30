@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.0] - 2021-06-30
+
+### Changed
+
+-   Display only public posts on authors page
+-   Javascript execution is faster on posts
+
+### Fixed
+
+-   Avoid redirecting for "issues" urls
+-   Display a pagination on authors page
+-   Hide fake recommandations
+-   Videos are shown in full height
+
 ## [2.2.0] - 2021-06-30
 
 ### Added
@@ -283,7 +297,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.2.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.3.0...HEAD
+[2.3.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.2...v2.1.0
 [2.0.2]: https://github.com/mindsers/mindsersit-blog/compare/v2.0.1...v2.0.2

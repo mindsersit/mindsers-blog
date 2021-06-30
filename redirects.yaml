@@ -26,7 +26,7 @@
     # dynamics
     ^\/tag\/(.+)$: /topic/$1
     ^\/en\/(.+)$: /post/$1
-    ^\/fr\/(?!post\/)(.+)$: /fr/post/$1
+    ^\/fr\/(?!posts?\/)(?!issues?\/)(.+)$: /fr/post/$1
 302:
     /tag/currency/: /posts/
     /tag/multilingual/: /posts/
