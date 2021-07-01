@@ -8,7 +8,6 @@
     .mds-container {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
 
         @media (max-width: 850px) {
             overflow: scroll;
@@ -17,6 +16,10 @@
         .testimonial {
             text-align: center;
             margin: 10px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             .stars {
                 font-size: 2em;
@@ -24,10 +27,16 @@
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+                flex-grow: 1;
+            }
+
+            p {
+                flex-grow: 1;
             }
 
             .author {
                 color: $accent_color;
+                flex-grow: 2;
             }
         }
     }

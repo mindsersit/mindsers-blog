@@ -43,10 +43,10 @@
                     <div class='mds-head-placeholder'></div>
                     <div class='mds-head-actions'>
                         {{#if @member}}
-                            <a href="/profile/" class="profile-button">
+                            <a href="/profile/" class="profile-button" tabindex="0" title="Open profile menu" aria-haspopup="true">
                                 {{> "icons/profile"}}
                                 {{#if @member.avatar_image}}
-                                    <img src='{{@member.avatar_image}}' />
+                                    <img src='{{@member.avatar_image}}' alt="Your avatar" />
                                 {{/if}}
                             </a>
                             <div class="profile-menu">
@@ -54,13 +54,13 @@
                                     <li class="reminder">Signed as<br>{{@member.email}}</li>
                                     <li><a href="/profile/">Account</a></li>
                                     <li>
-                                        <a href='javascript:' data-members-signout>Sign out</a>
+                                        <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
                                     </li>
                                 </ul>
                             </div>
                         {{else}}
                             <a class='button primary login-button' href='/login/'>Log in</a>
-                            <a class='more-button-small-screen' >{{> "icons/more"}}</a>
+                            <a class='more-button-small-screen' tabindex="0" title="Open main menu" aria-haspopup="true">{{> "icons/more"}}</a>
                         {{/if}}
 
                         <div class="more-menu">
@@ -79,7 +79,7 @@
                                         </a>
                                     </div>
                                     <div class='mds-head-placeholder'></div>
-                                    <div class="close-button">{{> "icons/times"}}</div>
+                                    <div class="close-button"  tabindex="0" >{{> "icons/times"}}</div>
                                 </div>
                             </header>
 
@@ -99,7 +99,7 @@
                             <ul>
                                 <li>
                                 {{#if @member}}
-                                    <a href='javascript:' data-members-signout>Sign out</a>
+                                    <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
                                 {{else}}
                                     <a class='login-button-small-screen' href='/login/'>Log in</a>
                                 {{/if}}
