@@ -4,6 +4,8 @@ routes:
         template: home
         filter: tag:-[hash-email,hash-newsletter-issue]
     /membership/: plans
+    /membership/welcome/: welcome
+    /membership/welcome-paid/: welcome-paid
     /newsletter/: newsletter
     /login/: login
     /signup/: signup

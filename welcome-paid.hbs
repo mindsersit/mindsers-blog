@@ -1,0 +1,52 @@
+{{!< default}}
+
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/welcome.css'}}' />
+{{/contentFor}}
+
+<div class='mds-welcome'>
+    <div class='mds-container'>
+        {{#if @member.paid}}
+            {{! Logged in }}
+            <header class='mds-header'>
+                <div>
+                    <h1>Thank you for subscribing!</h1>
+                </div>
+            </header>
+
+            <section class='mds-welcome-content'>
+                {{> "images/welcome"}}
+                <p class='mds-welcome-description'>
+                    Hey! Thank you so much for subscribing to my blog.
+                    As it is <strong>a completely independent publication</strong>, each subscription means the world to me.
+                    And I hope you'll find it worth the money you spent.
+                </p>
+                <p class='mds-welcome-description'>
+                    You now have full access to the library of blog posts and newsletter issues.
+                    You'll receive each new issue straight into you inbox. You'll get also a notification email for each new blog post I publish.
+                    If it's not already done, please join
+                    <a href="https://discord.gg/WrHUfSC" target="_blank" rel="noreferrer">our discord community server</a>!
+                    I can't wait to talk to you about the content but also about your own journey as a
+                    developer/entrepreneur.
+                </p>
+                <p class='mds-welcome-description'>
+                    Also, if you like what I try to create here or have any idea to improve it,
+                    <strong>can you please send me your feedbacks?</strong> I would love to read them!
+                </p>
+                <p class='mds-welcome-link'>
+                    <a class='button' href='/posts/'>
+                        Read the blog posts
+                    </a>
+                    <a class='button primary' href='/issues/'>
+                        Read the previous issues
+                    </a>
+                </p>
+
+            </section>
+
+        {{else}}
+            {{! Not logged in: Redirect to signin }}
+            <script>window.location = '{{@site.url}}/login/';</script>
+        {{/if}}
+    </div>
+</div>
