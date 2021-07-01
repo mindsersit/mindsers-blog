@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Create a welcome page for new members
 -   Create a welcome page specifically for premium members
 
+### Fixed
+
+-   Issue cards are now styled on newsletter page
+
 ## [2.5.0] - 2021-07-01
 
 ### Added
