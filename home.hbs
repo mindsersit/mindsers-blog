@@ -57,7 +57,10 @@
 
     <section class="post-grid">
         <div class="mds-container">
-            <h2 class="section-title">My last blog posts</h2>
+            <h2 class="section-title">
+                My last blog posts
+                <a class="icon" href="{{@site.url}}/posts/rss/" title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
+            </h2>
             <div class="mds-postfeed">
             {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
                 {{#foreach posts}}
@@ -90,7 +93,10 @@
 
     <section class="post-grid">
         <div class="mds-container">
-            <h2 class="section-title">My last French blog posts</h2>
+            <h2 class="section-title">
+                My last French blog posts
+                <a class="icon" href="{{@site.url}}/fr/posts/rss/" title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
+            </h2>
             <div class="mds-postfeed" lang="fr">
             {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
                 {{#foreach posts}}
