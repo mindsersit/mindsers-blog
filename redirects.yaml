@@ -25,6 +25,8 @@
     /tag/application-design/: /topic/ddd/
     /en/rss/: /posts/rss/
     /fr/rss/: /fr/posts/rss/
+    /en/pricing/: /membership/
+    /fr/pricing/: /membership/
     # dynamics
     ^\/tag\/(.+)$: /topic/$1
     ^\/en\/(.+)$: /post/$1
