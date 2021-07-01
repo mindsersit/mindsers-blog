@@ -39,6 +39,14 @@
             @media (max-width: 350px) {
                 font-size: 2.5em;
             }
+
+            .icon {
+                color: $accent_color;
+
+                svg {
+                    height: 30px;
+                }
+            }
         }
 
         p {

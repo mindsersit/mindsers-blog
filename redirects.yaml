@@ -23,6 +23,14 @@
     /tag/findabike/: /topic/portfolio/
     /tag/design-patterns/: /topic/best-practices/
     /tag/application-design/: /topic/ddd/
+    /en/rss/: /posts/rss/
+    /fr/rss/: /fr/posts/rss/
+    /en/pricing/: /membership/
+    /fr/pricing/: /membership/
+    /fr/membership/: /membership/
+    /en/membership/: /membership/
+    /to-be-read/: /readings/
+    /fr/uses/: /uses/
     # dynamics
     ^\/tag\/(.+)$: /topic/$1
     ^\/en\/(.+)$: /post/$1

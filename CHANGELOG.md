@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.0] - 2021-07-01
+
+### Added
+
+-   New link to rss feed in the section title of the homepage
+-   New link to rss feed in the title of posts index pages
+-   A meta linking to the rss feed is adding on home and index pages
+
+### Changed
+
+-   Change the quote character used in testimonials to match the ones used in posts
+
+### Fixed
+
+-   Hide testimonials again
+
 ## [2.4.0] - 2021-07-01
 
 ### Added
@@ -309,7 +325,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.4.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.5.0...HEAD
+[2.5.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.3.0...v2.4.0
 [2.3.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.2.0...v2.3.0
 [2.2.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.1.0...v2.2.0
