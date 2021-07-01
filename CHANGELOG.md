@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fix typos on welcome page for premium members
+
 ## [2.6.0] - 2021-07-01
 
 ### Added
