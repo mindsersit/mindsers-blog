@@ -1,5 +1,9 @@
 {{!< default}}
 
+{{#contentFor 'meta'}}
+    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - English" href="{{@site.url}}/posts/rss/">
+    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - French" href="{{@site.url}}/fr/posts/rss/">
+{{/contentFor}}
 
 {{#contentFor 'styles'}}
     <link rel="stylesheet" type="text/css"  href="{{asset "css/home.css"}}" />

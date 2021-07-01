@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   New link to rss feed in the section title of the homepage
 -   New link to rss feed in the title of posts index pages
+-   A meta linking to the rss feed is adding on home and index pages
 
 ### Changed
 

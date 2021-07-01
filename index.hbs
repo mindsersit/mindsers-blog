@@ -1,5 +1,17 @@
 {{!< default}}
 
+{{#contentFor 'meta'}}
+    {{#is "issues"}}
+        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog Newsletter - English" href="{{@site.url}}/issues/rss/">
+    {{else is "frissues"}}
+        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog Newsletter - English" href="{{@site.url}}/fr/issues/rss/">
+    {{else is "posts"}}
+        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - English" href="{{@site.url}}/posts/rss/">
+    {{else is "frposts"}}
+        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - French" href="{{@site.url}}/fr/posts/rss/">
+    {{/is}}
+{{/contentFor}}
+
 {{#contentFor 'styles'}}
     <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
 {{/contentFor}}
