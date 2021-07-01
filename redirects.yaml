@@ -27,6 +27,9 @@
     /fr/rss/: /fr/posts/rss/
     /en/pricing/: /membership/
     /fr/pricing/: /membership/
+    /fr/membership/: /membership/
+    /to-be-read/: /readings/
+    /fr/uses/: /uses/
     # dynamics
     ^\/tag\/(.+)$: /topic/$1
     ^\/en\/(.+)$: /post/$1
