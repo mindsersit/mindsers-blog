@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   New testimonial from @aartwix
+-   New testimonial from @maevatravelandfood
+
+### Fixed
+
+-   Improve testimonials positionning
+
 ## [2.3.0] - 2021-06-30
 
 ### Changed
