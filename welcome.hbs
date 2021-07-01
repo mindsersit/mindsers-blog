@@ -1,0 +1,49 @@
+{{!< default}}
+
+{{#contentFor 'styles'}}
+    <link rel='stylesheet' type='text/css' href='{{asset 'css/welcome.css'}}' />
+{{/contentFor}}
+
+<div class='mds-welcome'>
+    <div class='mds-container'>
+        {{#if @member}}
+            {{! Logged in, not paying: Link to checkout }}
+            <header class='mds-header'>
+                <div>
+                    <h1>Welcome in the community!</h1>
+                </div>
+            </header>
+
+            <section class='mds-welcome-content'>
+                {{> "images/community"}}
+                <p class='mds-welcome-description'>
+                    I'm really happy to see you join our little community of developers
+                    and entrepreneurs learning together. You will now receive a
+                    notification email each time I publish a new public content as promised.
+                </p>
+                <p class='mds-welcome-description'>
+                    I can't wait to see you and talk to you on <a href="https://discord.gg/WrHUfSC" target="_blank" rel="noreferrer">our discord server</a>
+                    about the blog posts but also about your own journey as a
+                    developer/entrepreneur.
+                </p>
+                <p class='mds-welcome-description'>
+                    Also, if you like the content here or have any idea to improve the blog
+                    <strong>can you please send me your feedbacks?</strong> I would love to read them!
+                </p>
+                <p class='mds-welcome-link'>
+                    <a class='button' href='/profile/'>
+                        Visit your profile
+                    </a>
+                    <a class='button highlighted' href='/membership/'>
+                        Upgrade for more content!
+                    </a>
+                </p>
+
+            </section>
+
+        {{else}}
+            {{! Not logged in: Redirect to signin }}
+            <script>window.location = '{{@site.url}}/login/';</script>
+        {{/if}}
+    </div>
+</div>
