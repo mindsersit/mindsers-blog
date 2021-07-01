@@ -34,7 +34,10 @@
         {{else is "emails"}}
             <h1 class="mds-title">Emails archives</h1>
         {{else is "posts"}}
-            <h1 class="mds-title">English posts</h1>
+            <h1 class="mds-title">
+                English posts
+                <a class="icon" href="{{@site.url}}/posts/rss/" title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
+            </h1>
             <p>
                 I wrote several blog posts through years to share my knowledge and my journey.
                 Most of them are free thanks to my awesome paid members.
@@ -49,7 +52,10 @@
                 <a class="button" href="/fr/posts/">See French posts</a>
             </p>
         {{else is "frposts"}}
-            <h1 class="mds-title">French posts</h1>
+            <h1 class="mds-title">
+                French posts
+                <a class="icon" href="{{@site.url}}/fr/posts/rss/" title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
+            </h1>
             <p>
                 I wrote several blog posts through years to share my knowledge and my journey.
                 Most of them are free thanks to my awesome paid members.
