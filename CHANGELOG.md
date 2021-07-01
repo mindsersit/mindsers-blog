@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   New link to rss feed in the section title of the homepage
+-   New link to rss feed in the title of posts index pages
+
+### Changed
+
+-   Change the quote character used in testimonials to match the ones used in posts
+
+### Fixed
+
+-   Hide testimonials again
+
 ## [2.4.0] - 2021-07-01
 
 ### Added
