@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   Create a new FAQ section on plan pages
+
 ### Fixed
 
 -   Fix typos on welcome page for premium members
