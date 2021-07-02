@@ -296,10 +296,22 @@
             display: flex;
             flex-wrap: wrap;
 
+            @media (max-width: 700px) {
+                flex-direction: column;
+            }
+
             & > div {
                 width: 50%;
                 box-sizing: border-box;
                 padding: 0 20px;
+
+                @media (max-width: 700px) {
+                    width: 100%;
+                }
+
+                @media (max-width: 550px) {
+                    padding: 0 10px;
+                }
 
                 a:not(.button) {
                     color: $accent_color;
