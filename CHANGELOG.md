@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 -   Fix typos on welcome page for premium members
+-   Make footer text bigger on mobile devices
 
 ## [2.6.0] - 2021-07-01
 
