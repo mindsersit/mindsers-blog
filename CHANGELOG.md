@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.0] - 2021-07-02
+
+### Added
+
+-   Create a new FAQ section on plan pages
+-   Configure breakpoint for reponsive images
+
+### Changed
+
+-   Customize every meta title
+
+### Fixed
+
+-   Fix typos on welcome page for premium members
+-   Make footer text bigger on mobile devices
+
 ## [2.6.0] - 2021-07-01
 
 ### Added
@@ -336,7 +352,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.6.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.7.0...HEAD
+[2.7.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.6.0...v2.7.0
 [2.6.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.5.0...v2.6.0
 [2.5.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.4.0...v2.5.0
 [2.4.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.3.0...v2.4.0
