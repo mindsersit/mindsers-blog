@@ -2,13 +2,13 @@
 <html lang='{{@site.locale}}'>
     <head>
         <meta charset='utf-8' />
-        {{{block 'meta'}}}
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
         <meta name='monetization' content='$ilp.uphold.com/Apm7DzrByBYN' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        {{{block 'styles'}}}
 
-        <title>{{meta_title}} | {{@site.title}}</title>
+        {{{block 'meta'}}}
+        <title>{{{block 'title'}}}</title>
+        {{{block 'styles'}}}
 
         {{ghost_head}}
     </head>

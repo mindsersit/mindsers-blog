@@ -4,6 +4,8 @@
     <link rel='stylesheet' type='text/css' href='{{asset 'css/post.css'}}' />
 {{/contentFor}}
 
+{{#contentFor 'title'}}{{meta_title}} - {{@site.title}}{{/contentFor}}
+
 {{#post}}
 
 <article class="mds-article {{post_class}}">

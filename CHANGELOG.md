@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Create a new FAQ section on plan pages
 -   Configure breakpoint for reponsive images
 
+### Changed
+
+-   Customize every meta title
+
 ### Fixed
 
 -   Fix typos on welcome page for premium members

@@ -20,6 +20,7 @@
     <div class="mds-container">
         <header class="mds-header">
         {{#is "issues"}}
+            {{#contentFor 'title'}}English Newsletter Issues - {{meta_title}}{{/contentFor}}
             <h1 class="mds-title">Mindsers' newsletter issues</h1>
             <p>
                 In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
@@ -32,6 +33,7 @@
                 <a class="button" href="/fr/issues/">See French issues</a>
             </p>
         {{else is "frissues"}}
+            {{#contentFor 'title'}}French Newsletter Issues - {{meta_title}}{{/contentFor}}
             <h1 class="mds-title">Mindsers' newsletter issues in French</h1>
             <p>
                 In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
@@ -44,8 +46,10 @@
                 <a class="button" href="/issues/">See English issues</a>
             </p>
         {{else is "emails"}}
+            {{#contentFor 'title'}}Emails archives - {{meta_title}}{{/contentFor}}
             <h1 class="mds-title">Emails archives</h1>
         {{else is "posts"}}
+            {{#contentFor 'title'}}English Posts - {{meta_title}}{{/contentFor}}
             <h1 class="mds-title">
                 English posts
                 <a class="icon" href="{{@site.url}}/posts/rss/" title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
@@ -64,6 +68,7 @@
                 <a class="button" href="/fr/posts/">See French posts</a>
             </p>
         {{else is "frposts"}}
+            {{#contentFor 'title'}}French Posts - {{meta_title}}{{/contentFor}}
             <h1 class="mds-title">
                 French posts
                 <a class="icon" href="{{@site.url}}/fr/posts/rss/" title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
@@ -82,6 +87,7 @@
                 <a class="button" href="/posts/">See English posts</a>
             </p>
         {{else}}
+            {{#contentFor 'title'}}Posts - {{meta_title}}{{/contentFor}}
             <h1 class="mds-title">Posts</h1>
         {{/is}}
         </header>
