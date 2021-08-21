@@ -30,10 +30,10 @@
             {{/if}}
         </div>
         <div class="summary">
-            <h1 class="mds-title">{{title}}</h1>
+            <h1 class="mds-title" {{#has tag="#fr"}}lang="fr"{{/has}}>{{title}}</h1>
 
             {{#if custom_excerpt}}
-            <p class="mds-excerpt">{{custom_excerpt}}</p>
+            <p class="mds-excerpt" {{#has tag="#fr"}}lang="fr"{{/has}}>{{custom_excerpt}}</p>
             {{/if}}
 
             <p class="mds-post-meta">
