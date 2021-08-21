@@ -8,6 +8,10 @@
 
 {{#post}}
 
+{{#contentFor 'meta'}}
+    <link rel="alternate" hreflang="{{#has tag="#fr"}}fr{{else}}en{{/has}}" href="{{url}}" />
+{{/contentFor}}
+
 <article class="mds-article {{post_class}}">
 
     <header class="mds-header mds-canvas">
