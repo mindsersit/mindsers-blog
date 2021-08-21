@@ -9,7 +9,7 @@
 {{#post}}
 
 {{#contentFor 'meta'}}
-    <link rel="alternate" hreflang="{{#has tag="#fr"}}fr{{else}}en{{/has}}" href="{{url}}" />
+    <link rel="alternate" hreflang="{{#has tag="#fr"}}fr{{else}}en{{/has}}" href="{{@site.url}}{{url}}" />
 {{/contentFor}}
 
 <article class="mds-article {{post_class}}">
