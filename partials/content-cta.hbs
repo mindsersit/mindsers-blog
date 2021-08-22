@@ -1,4 +1,10 @@
-{{{html}}}
+{{#if html}}
+    {{{html}}}
+{{else}}
+    <p class='post-restricted-content'>
+        {{excerpt}}...
+    </p>
+{{/if}}
 <div class='upgrade-cta' lang='en'>
     {{#has visibility='paid'}}
         <h2>
