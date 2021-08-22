@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   Automatically add the meta[hreflang] tag for the current language
+-   Display the previous post's link and the next post's link below current post
 
 ## [2.7.0] - 2021-07-02
 
