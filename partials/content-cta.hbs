@@ -7,12 +7,20 @@
 {{/if}}
 <div class='upgrade-cta' lang='en'>
     {{#has visibility='paid'}}
-        <h2>
-            This post is for premium members only
-        </h2>
+        {{#has tag='#additional-content'}}
+            <h2>
+                This free post contains additional content for premium members
+                only
+            </h2>
+        {{else}}
+            <h2>
+                This post is for premium members only
+            </h2>
+        {{/has}}
         <p>
             Join the 100+ developers and entrepreneur, premium members of our
-            community and get full access to our library of private posts.
+            community and get full access to our library of private posts and
+            additional content.
         </p>
     {{else}}
         <h2>

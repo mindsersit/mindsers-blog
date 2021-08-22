@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Automatically add the meta[hreflang] tag for the current language
 -   Display the previous post's link and the next post's link below current post
+-   A badge appears on post list when #addtional-content is used and
+    the access level is paid member-only
+-   The Premuim CTA changes when the #additional-content is used. Let people know
+    that additional content is available if they subscribe.
 
 ## [2.7.0] - 2021-07-02
 
