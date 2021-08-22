@@ -7,8 +7,41 @@
     /issue/: /issues/
     /fr/issue/: /fr/issues/
     /email/: /emails/
+    # blog.nathanaelcherrier.com content
+    /2016/03/07/linting-good-practices/: /fr/post/linting-good-practices/
+    /2016/08/03/gerer-plusieurs-versions-avec-gitflow/: /fr/post/gerer-plusieurs-versions-avec-gitflow/
+    /2017/11/29/angular-les-resolvers/: /fr/post/angular-les-resolvers/
+    /2016/10/26/fetch-fin-jquery-ajax/: /fr/post/fetch-fin-jquery-ajax/
+    /2017/01/11/les-meilleurs-commentaires-ne-secrivent-pas/: /fr/post/les-meilleurs-commentaires-ne-secrivent-pas/
+    /2016/08/10/fabriquer-sa-cle-usb-rsa/: /fr/post/fabriquer-sa-cle-usb-rsa/
+    /2017/02/22/la-documentation-sera-toujours-utile/: /fr/post/la-documentation-sera-toujours-utile/
+    /2017/06/21/git-bisect/: /fr/post/git-bisect/
+    /2016/11/02/pseudo-classes-ou-pseudo-elements/: /fr/post/pseudo-classes-ou-pseudo-elements/
+    /2016/03/29/utiliser-ssh-sur-votre-serveur-distant/: /fr/post/utiliser-ssh-sur-votre-serveur-distant/
+    /2016/11/09/rest-parameter-et-spread-operator-en-javascript/: /fr/post/rest-parameter-et-spread-operator-en-javascript/
+    /2017/02/08/doit-on-encore-utiliser-jquery-en-2017-2/: /fr/post/doit-on-encore-utiliser-jquery-en-2017-2/
+    /2016/07/11/gitflow-la-methodologie-et-la-pratique/: /fr/post/gitflow-la-methodologie-et-la-pratique/
+    /2017/06/07/3-commandes-git-jutilise-le-plus/: /fr/post/3-commandes-git-jutilise-le-plus/
+    /2017/06/14/introduction-au-typescript/: /fr/post/introduction-au-typescript/
+    /2017/01/18/je-suis-un-extremiste-du-formatage/: /fr/post/je-suis-un-extremiste-du-formatage/
+    /2016/08/24/devenez-un-meilleur-developpeur-grace-aux-bonnes-pratiques/: /fr/post/devenez-un-meilleur-developpeur-grace-aux-bonnes-pratiques/
+    /2017/03/08/ghost-ngnix-how-to/: /fr/post/ghost-nginx-how-to/
+    /2017/03/30/maitriser-les-tableaux-en-javascript-frp/: /fr/post/maitriser-les-tableaux-en-javascript-fp/
+    /2016/08/30/decouplez-votre-code/: /fr/post/decouplez-votre-code/
+    /2016/03/17/ubiquitous-language/: /fr/post/ubiquitous-language/
+    /2017/07/12/ssl-rapide-gratuit/: /fr/post/ssl-rapide-gratuit/
+    /2017/04/05/coder-une-barre-de-progression-circulaire-pour-ios/: /fr/post/coder-une-barre-de-progression-circulaire-pour-ios/
+    /2016/09/21/documenter-le-code-swift-pour-xcode/: /fr/post/documenter-le-code-swift-pour-xcode/
+    /2016/03/21/utiliser-les-selecteurs-en-swift/: /fr/post/utiliser-les-selecteurs-en-swift/
+    /2016/03/03/le-mot-cle-guard-en-swift-2-0/: /fr/post/le-mot-cle-guard-en-swift-2-0/
+    /2016/11/30/les-fat-arrow-function-en-javascript/: /fr/post/les-fat-arrow-function-en-javascript/
+    /2016/11/23/decomposition-et-destructuration-en-javascript/: /fr/post/decomposition-et-destructuration-en-javascript/
+    /2015/12/15/swift-les-closures/: /fr/post/swift-les-closures/
     # old content
+    /fr/post/travel-dev-life-budapest/: /fr/post/coder-digital-nomad-travel-budapest/
     /fr/bonjour-tout-le-monde/: https://nathanaelcherrier.dev/fr/
+    /fr/post/ghost-ngnix-how-to/: /fr/post/ghost-nginx-how-to/
+    /fr/post/maitriser-les-tableaux-en-javascript-frp/: /fr/post/maitriser-les-tableaux-en-javascript-fp/
     /fr/european-converter-passe-en-2-0/: /topic/portfolio/
     /fr/checkyourvat-un-outil-pour-vendeur-commerciaux-et-businessman/: /topic/portfolio/
     /fr/ios-7-european-converter-le-convertisseur-de-leurope/: /topic/portfolio/

@@ -157,3 +157,32 @@
         }
     }
 }
+
+.mds-readmore-inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    font-family: $sans;
+
+    & > div {
+        &:first-of-type {
+            margin-right: 10px;
+        }
+        &:last-of-type {
+            margin-left: 10px;
+            text-align: right;
+        }
+    }
+
+    .pagination-link {
+        display: flex;
+        text-decoration: none;
+        color: $accent_color;
+        margin: 0 5px;
+        align-items: center;
+
+        h4 {
+            font-weight: normal;
+        }
+    }
+}

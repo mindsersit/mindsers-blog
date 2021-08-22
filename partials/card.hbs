@@ -13,7 +13,11 @@ Re-usable card for linking to posts
                 {{reading_time}}
                 {{#has visibility='paid'}}
                     <span class='bull'>&bull;</span>
-                    <span class='premium-label'>Premium</span>
+                    {{#has tag="#additional-content"}}
+                        <span class='premium-label'>Additional Content</span>
+                    {{else}}
+                        <span class='premium-label'>Premium</span>
+                    {{/has}}
                 {{/has}}
                 {{#has visibility='members'}}
                     <span class='bull'>&bull;</span>

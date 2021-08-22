@@ -9,8 +9,8 @@ This repo host the ghost theme that powers mindsers.blog.
 
 All the repositories part of the MindsersIT project:
 
--   [@mindsersit/website](https://github.com/mindsers/mindsersit-website)
--   [@mindsersit/blog](https://github.com/mindsers/mindsersit-blog)
+-   [@mindsers/website](https://github.com/mindsers/personal-website)
+-   [@mindsers/blog](https://github.com/mindsers/mindsers-blog)
 
 ## Getting started
 
