@@ -11,13 +11,13 @@
 {{#has tag="#fr"}}
     {{#contentFor 'htmlLang'}}fr{{/contentFor}}
     {{#contentFor 'meta'}}
-        <link rel="alternate" hreflang="fr" href="{{url absolute="true"}}" />
+        <link rel="alternate" hreflang="fr" href="{{canonical_url}}" />
     {{/contentFor}}
 {{else}}
     {{#contentFor 'htmlLang'}}en{{/contentFor}}
     {{#contentFor 'meta'}}
-        <link rel="alternate" hreflang="x-default" href="{{url absolute="true"}}" />
-        <link rel="alternate" hreflang="en" href="{{url absolute="true"}}" />
+        <link rel="alternate" hreflang="x-default" href="{{canonical_url}}" />
+        <link rel="alternate" hreflang="en" href="{{canonical_url}}" />
     {{/contentFor}}
 {{/has}}
 

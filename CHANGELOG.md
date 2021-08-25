@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - New automatic x-default declaration for English posts
 
+### Changed
+- Use canonical URL instead of URL in automatic lang declaration
+
 ### Fixed
 - Match the html lang attribute and hreflang declaration
 
