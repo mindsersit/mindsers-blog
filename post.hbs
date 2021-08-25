@@ -8,14 +8,18 @@
 
 {{#post}}
 
-{{#contentFor 'htmlLang'}}{{#has tag="#fr"}}fr{{else}}en{{/has}}{{/contentFor}}
-
-{{#contentFor 'meta'}}
-    {{#has tag="#en"}}
-    <link rel="alternate" hreflang="x-default" href="{{url absolute="true"}}" />
-    {{/has}}
-    <link rel="alternate" hreflang="{{#has tag="#fr"}}fr{{else}}en{{/has}}" href="{{url absolute="true"}}" />
-{{/contentFor}}
+{{#has tag="#fr"}}
+    {{#contentFor 'htmlLang'}}fr{{/contentFor}}
+    {{#contentFor 'meta'}}
+        <link rel="alternate" hreflang="fr" href="{{url absolute="true"}}" />
+    {{/contentFor}}
+{{else}}
+    {{#contentFor 'htmlLang'}}en{{/contentFor}}
+    {{#contentFor 'meta'}}
+        <link rel="alternate" hreflang="x-default" href="{{url absolute="true"}}" />
+        <link rel="alternate" hreflang="en" href="{{url absolute="true"}}" />
+    {{/contentFor}}
+{{/has}}
 
 <article class="mds-article {{post_class}}">
 
