@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- New automatic x-default declaration for English posts
+
 ### Fixed
 - Match the html lang attribute and hreflang declaration
 
