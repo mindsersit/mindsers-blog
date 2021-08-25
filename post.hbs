@@ -8,6 +8,8 @@
 
 {{#post}}
 
+{{#contentFor 'htmlLang'}}{{#has tag="#fr"}}fr{{else}}en{{/has}}{{/contentFor}}
+
 {{#contentFor 'meta'}}
     <link rel="alternate" hreflang="{{#has tag="#fr"}}fr{{else}}en{{/has}}" href="{{@site.url}}{{url}}" />
 {{/contentFor}}

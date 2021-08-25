@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Match the html lang attribute and hreflang declaration
+
 ## [2.8.0] - 2021-08-22
 
 ### Added
