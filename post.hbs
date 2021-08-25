@@ -8,9 +8,18 @@
 
 {{#post}}
 
-{{#contentFor 'meta'}}
-    <link rel="alternate" hreflang="{{#has tag="#fr"}}fr{{else}}en{{/has}}" href="{{@site.url}}{{url}}" />
-{{/contentFor}}
+{{#has tag="#fr"}}
+    {{#contentFor 'htmlLang'}}fr{{/contentFor}}
+    {{#contentFor 'meta'}}
+        <link rel="alternate" hreflang="fr" href="{{canonical_url}}" />
+    {{/contentFor}}
+{{else}}
+    {{#contentFor 'htmlLang'}}en{{/contentFor}}
+    {{#contentFor 'meta'}}
+        <link rel="alternate" hreflang="x-default" href="{{canonical_url}}" />
+        <link rel="alternate" hreflang="en" href="{{canonical_url}}" />
+    {{/contentFor}}
+{{/has}}
 
 <article class="mds-article {{post_class}}">
 

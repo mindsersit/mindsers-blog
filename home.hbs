@@ -1,5 +1,7 @@
 {{!< default}}
 
+{{#contentFor 'htmlLang'}}{{@site.locale}}{{/contentFor}}
+
 {{#contentFor 'meta'}}
     <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All English posts" href="{{@site.url}}/posts/rss/">
     <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All French posts" href="{{@site.url}}/fr/posts/rss/">
