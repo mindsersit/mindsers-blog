@@ -2,6 +2,10 @@
 
 {{#contentFor 'htmlLang'}}{{@site.locale}}{{/contentFor}}
 
+{{#contentFor 'meta'}}
+    <meta name="robots" content="noindex" />
+{{/contentFor}}
+
 {{#contentFor 'styles'}}
     <link rel='stylesheet' type='text/css' href='{{asset 'css/profile.css'}}' />
 {{/contentFor}}
