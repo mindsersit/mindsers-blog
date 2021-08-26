@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed 
+- Welcome and profile pages are now below the robots "no-index" rule
+
 ## [2.9.1] - 2021-08-26
 
 ### Fixed
