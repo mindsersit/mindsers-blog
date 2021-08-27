@@ -7,8 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- Display tag list on posts
+## [2.10.0] - 2021-08-27
 
 ### Changed 
 - Welcome and profile pages are now below the robots "no-index" rule
@@ -385,7 +384,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.1...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...HEAD
+[2.10.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.1...v2.10.0
 [2.9.1]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.8.0...v2.9.0
 [2.8.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.7.0...v2.8.0
