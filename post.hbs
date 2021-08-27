@@ -93,7 +93,8 @@
     <footer class="mds-footer mds-canvas">
         <hr />
         <div class="mds-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}<br/>
+            Published in {{tags separator=", "}}
         </div>
         <hr>
         {{#if @member.paid}}
