@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.10.0] - 2021-08-27
 
+### Added
+- Display tag list on posts
+
 ### Changed 
 - Welcome and profile pages are now below the robots "no-index" rule
 
