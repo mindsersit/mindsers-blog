@@ -1,22 +1,18 @@
 const { series, watch, src, dest, parallel } = require('gulp')
 const pump = require('pump')
-const fibers = require('fibers')
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload')
 const postcss = require('gulp-postcss')
 const zip = require('gulp-zip')
 const uglify = require('gulp-uglify')
-const sass = require('gulp-sass')
-const beeper = require('beeper')
+const sass = require('gulp-sass')(require('sass'))
 
 // postcss plugins
 const autoprefixer = require('autoprefixer')
 const colorFunction = require('postcss-color-mod-function')
 const cssnano = require('cssnano')
 const easyimport = require('postcss-easy-import')
-
-sass.compiler = require('sass')
 
 function serve(done) {
   livereload.listen()
@@ -25,10 +21,6 @@ function serve(done) {
 
 const handleError = done => {
   return err => {
-    if (err) {
-      beeper()
-    }
-
     return done(err)
   }
 }
@@ -46,10 +38,7 @@ function styles(done) {
   pump(
     [
       src('styles/*.scss', { sourcemaps: true }),
-      sass({ outputStyle: 'compressed', fiber: fibers }).on(
-        'error',
-        sass.logError
-      ),
+      sass({ outputStyle: 'compressed' }).on('error', sass.logError),
       postcss(processors),
       dest('assets/css/', { sourcemaps: '.' }),
       livereload(),
