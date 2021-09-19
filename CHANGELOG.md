@@ -7,32 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   A "no span" message was added below the subscribe buttons of plan pages
+
 ### Fixed
-- Translate footer
+
+-   Translate footer
 
 ## [2.10.0] - 2021-08-27
 
 ### Added
-- Display tag list on posts
 
-### Changed 
-- Welcome and profile pages are now below the robots "no-index" rule
+-   Display tag list on posts
+
+### Changed
+
+-   Welcome and profile pages are now below the robots "no-index" rule
 
 ## [2.9.1] - 2021-08-26
 
 ### Fixed
-- Declare hreflang using canonical URL only if canonical URL exists
+
+-   Declare hreflang using canonical URL only if canonical URL exists
 
 ## [2.9.0] - 2021-08-26
 
 ### Added
-- New automatic x-default declaration for English posts
+
+-   New automatic x-default declaration for English posts
 
 ### Changed
-- Use canonical URL instead of URL in automatic lang declaration
+
+-   Use canonical URL instead of URL in automatic lang declaration
 
 ### Fixed
-- Match the html lang attribute and hreflang declaration
+
+-   Match the html lang attribute and hreflang declaration
 
 ## [2.8.0] - 2021-08-22
 
