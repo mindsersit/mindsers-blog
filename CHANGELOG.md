@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 -   Translate footer
+-   Hide the tags list on newsletter issue (there is no tag on issue)
 
 ## [2.10.0] - 2021-08-27
 

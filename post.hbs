@@ -94,7 +94,7 @@
         <hr />
         <div class="mds-post-authors">
             Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}<br/>
-            Published in {{tags separator=", "}}
+            {{^has tag="#newsletter-issue"}}Published in {{tags separator=", "}}{{/has}}
         </div>
         <hr>
         {{#if @member.paid}}
