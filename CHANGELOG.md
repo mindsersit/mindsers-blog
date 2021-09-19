@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   A "no span" message was added below the subscribe buttons of plan pages
 
+### Changed
+
+-   Make the "Subscribe" button more visible on content-cta block
+-   Trigger a direct stripe checkout from the post page when a user click on the subscribe button of the content-cta block
+-   Add a new "See plans" link on the content-cta block
+
 ### Fixed
 
 -   Translate footer
