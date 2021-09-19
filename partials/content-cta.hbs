@@ -14,7 +14,13 @@
             </h2>
         {{else}}
             <h2>
-                This post is for premium members only
+                This
+                {{#has tag='#newsletter-issue'}}
+                    newsletter issue
+                {{else}}
+                    outstanding post
+                {{/has}}
+                is for premium members only
             </h2>
         {{/has}}
         <p>
