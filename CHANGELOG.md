@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   A "no span" message was added below the subscribe buttons of plan pages
+-   New CTA message displayed on top of articles. When user is paid member, it displays a thank you message.
 
 ### Changed
 
