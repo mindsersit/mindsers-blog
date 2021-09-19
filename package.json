@@ -6,12 +6,13 @@
         "ghost-theme"
     ],
     "scripts": {
-        "dev": "gulp",
-        "zip": "gulp zip",
+        "start": "pnpm run build:dev",
+        "build": "pnpm run build:prod && pnpm run build:zip",
+        "build:dev": "gulp",
+        "build:prod": "gulp build",
+        "build:zip": "gulp zip",
         "test": "gscan .",
-        "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test"
+        "test:ci": "gscan --fatal --verbose ."
     },
     "author": {
         "name": "Nathanaël CHERRIER",
