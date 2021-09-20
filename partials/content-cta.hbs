@@ -14,13 +14,21 @@
             </h2>
         {{else}}
             <h2>
-                This post is for premium members only
+                This
+                {{#has tag='#newsletter-issue'}}
+                    newsletter issue
+                {{else}}
+                    outstanding post
+                {{/has}}
+                is for premium members only
             </h2>
         {{/has}}
         <p>
             Join the 100+ developers and entrepreneur, premium members of our
             community and get full access to our library of private posts and
-            additional content.
+            additional content for only
+            {{price @price.monthly}}
+            / month.
         </p>
     {{else}}
         <h2>
@@ -31,7 +39,16 @@
             and get access to our library of member-only posts.
         </p>
     {{/has}}
-    <a href='/membership/' class='button'>Subscribe!</a>
+
+    {{#has tag='#newsletter-issue'}}
+        <a href='/newsletter/' class='plan-link'>See newsletter plans</a>
+    {{else}}
+        <a href='/membership/' class='plan-link'>See other plans</a>
+    {{/has}}
+
+    <a href='javascript:' data-members-plan='Monthly' class='button'>
+        Subscribe now!
+    </a>
     <p class='switch'>
         Already a member?
         <a href='/login/'>Log in</a>

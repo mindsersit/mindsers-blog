@@ -7,29 +7,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.0] - 2021-09-20
+
+### Added
+
+-   A "no span" message was added below the subscribe buttons of plan pages
+-   New CTA message displayed on top of articles. When user is paid member, it displays a thank you message.
+
+### Changed
+
+-   Make the "Subscribe" button more visible on content-cta block
+-   Trigger a direct stripe checkout from the post page when a user click on the subscribe button of the content-cta block
+-   Add a new "See plans" link on the content-cta block
+
+### Fixed
+
+-   Translate footer
+-   Hide the tags list on newsletter issue (there is no tag on issue)
+-   Improve the post title when no featured image is available
+
 ## [2.10.0] - 2021-08-27
 
 ### Added
-- Display tag list on posts
 
-### Changed 
-- Welcome and profile pages are now below the robots "no-index" rule
+-   Display tag list on posts
+
+### Changed
+
+-   Welcome and profile pages are now below the robots "no-index" rule
 
 ## [2.9.1] - 2021-08-26
 
 ### Fixed
-- Declare hreflang using canonical URL only if canonical URL exists
+
+-   Declare hreflang using canonical URL only if canonical URL exists
 
 ## [2.9.0] - 2021-08-26
 
 ### Added
-- New automatic x-default declaration for English posts
+
+-   New automatic x-default declaration for English posts
 
 ### Changed
-- Use canonical URL instead of URL in automatic lang declaration
+
+-   Use canonical URL instead of URL in automatic lang declaration
 
 ### Fixed
-- Match the html lang attribute and hreflang declaration
+
+-   Match the html lang attribute and hreflang declaration
 
 ## [2.8.0] - 2021-08-22
 
@@ -387,7 +412,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...HEAD
+[2.11.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...v2.11.0
 [2.10.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.1...v2.10.0
 [2.9.1]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.8.0...v2.9.0

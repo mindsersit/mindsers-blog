@@ -1,7 +1,9 @@
-name: CD Theme
+name: CI Theme
 on:
-    release:
-        types: [published]
+    push:
+        branches:
+            - develop
+
 jobs:
     deploy:
         runs-on: ubuntu-18.04
@@ -18,9 +20,5 @@ jobs:
                   run_install: true
             - name: Build
               run: pnpm run build:prod
-            - name: Deploy Ghost Theme
-              uses: TryGhost/action-deploy-theme@v1.4.0
-              with:
-                  api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-                  api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-                  theme-name: 'mindsers-blog'
+            - name: Test
+              run: pnpm run test:ci

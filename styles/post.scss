@@ -81,6 +81,16 @@
             }
         }
 
+        &.no-image {
+            justify-content: center;
+
+            .summary {
+                max-width: 75%;
+                min-width: 53%;
+                left: 0;
+            }
+        }
+
         .featured {
             background-color: $neutral_color;
             right: 0;
