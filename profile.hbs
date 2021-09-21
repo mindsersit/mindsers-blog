@@ -22,7 +22,7 @@
             {{#if member.paid}}
                 <p>
                     Hello! You have an active {{@site.title}} account with full
-                    access to all aeras. Get in touch if have any problems or
+                    access to all aeras and features. Get in touch if have any problems or
                     need some help getting things updated (like email language),
                     and thanks for subscribing.
                 </p>
@@ -30,7 +30,7 @@
                 <p>
                     Hey!
                     You are subscribed to free updates from
-                    {{@site.title}}, but doesn't have a paid subscription to
+                    {{@site.title}}, but doesn't have a premium membership to
                     unlock full access. Get in touch if have any problems or
                     need some help getting things updated (like email language),
                     and thanks for being part of the community.
@@ -93,7 +93,7 @@
             <div class="fallback">
                 <p>No subscription can be found for your account.</p>
                 <p>
-                    Join our paid members and get full access to private posts,
+                    Join our premium members and get full access to private posts,
                     a monthly newsletter and an awesome community of coders and
                     entrepreneurs!
                 </p>
@@ -102,6 +102,33 @@
                 </a>
             </div>
         {{/foreach}}
+        </section>
+        <section class="subscriptions">
+            <h2>VIP answers to your questions</h2>
+            {{#if @member.paid}}
+            <p>
+                As part of your premium membership, you can send me a message
+                and be confident you'll receive an answer.
+            </p>
+            <p>
+                I can't wait to read your messages! Use the button below to send them.
+            </p>
+            <p>
+                <button data-tf-popup="hjRSYP0s" class="button">
+                    Send me a message
+                </button>
+                <script src="//embed.typeform.com/next/embed.js"></script>
+            </p>
+            {{ else }}
+            <div class="fallback">
+                <p>
+                    Join our premium members and get VIP answers to your questions!
+                </p>
+                <a class='button highlighted' href='/membership/'>
+                    Subscribe now!
+                </a>
+            </div>
+            {{/if}}
         </section>
     {{else}}
         {{! Not logged in: Redirect to signin }}
