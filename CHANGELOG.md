@@ -7,9 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   New section to let premium subscriber send messages from their profile page
+
 ### Changed
 
 -   Improve the wording of the plans
+-   Add information about the premium membership
 
 ## [2.11.0] - 2021-09-20
 
