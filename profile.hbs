@@ -22,7 +22,7 @@
             {{#if member.paid}}
                 <p>
                     Hello! You have an active {{@site.title}} account with full
-                    access to all aeras. Get in touch if have any problems or
+                    access to all aeras and features. Get in touch if have any problems or
                     need some help getting things updated (like email language),
                     and thanks for subscribing.
                 </p>
@@ -30,7 +30,7 @@
                 <p>
                     Hey!
                     You are subscribed to free updates from
-                    {{@site.title}}, but doesn't have a paid subscription to
+                    {{@site.title}}, but doesn't have a premium membership to
                     unlock full access. Get in touch if have any problems or
                     need some help getting things updated (like email language),
                     and thanks for being part of the community.
@@ -93,15 +93,83 @@
             <div class="fallback">
                 <p>No subscription can be found for your account.</p>
                 <p>
-                    Join our paid members and get full access to private posts,
+                    Join our premium members and get full access to private posts,
                     a monthly newsletter and an awesome community of coders and
                     entrepreneurs!
                 </p>
-                <a class='button highlighted' href='/membership/'>
+                <a  href='/membership/'>See plans</a>&nbsp; &nbsp;
+                <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
                     Subscribe now!
                 </a>
             </div>
         {{/foreach}}
+        </section>
+        <section class="profile-grid">
+            <div>
+                <h2>VIP answers to your questions</h2>
+                {{#if @member.paid}}
+                <p>
+                    As part of your premium membership, you can send me a message
+                    and be confident you'll receive an answer.
+                </p>
+                <p>
+                    I can't wait to read your messages! Use the button below to send them.
+                </p>
+                <p>
+                    <button data-tf-popup="hjRSYP0s" class="button">
+                        Send me a message
+                    </button>
+                    <script src="//embed.typeform.com/next/embed.js"></script>
+                </p>
+                {{ else }}
+                <p>
+                    Join our premium members and get VIP answers to your questions!
+                </p>
+                <p class="actions">
+                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                        Become a member!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
+            <div>
+                <h2>{{@site.title}}'s community</h2>
+                <p>
+                    Meet our community on our Discord server.
+                    Talk, share and learn with other awesome members!
+                </p>
+                {{#if @member.paid}}
+                <p class="actions">
+                    <a class='button discord' href='https://discord.gg/WrHUfSC'>
+                        Join the discord server!
+                    </a>
+                </p>
+                <p>
+                    As a premium member, you have access to special channels on the server,
+                    like the #lounge. If you don't see those channels, please send me an email at
+                    <a
+                        href='mailto:hello@mindsers.blog'
+                        title='Contact support team'
+                        rel='nofollow noreferrer'
+                    >hello@mindsers.blog</a> with your Discord username
+                    and I'll give you the correct rights.
+                </p>
+                {{ else }}
+                <p class="actions">
+                    <a class='discord' href='https://discord.gg/WrHUfSC'>
+                        Join the discord server!
+                    </a>
+                </p>
+                <p>
+                    Join our premium members and get full access to the Discord server! Including the VIP #lounge, etc.
+                </p>
+                <p class="actions">
+                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                        Get your reward!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
         </section>
     {{else}}
         {{! Not logged in: Redirect to signin }}

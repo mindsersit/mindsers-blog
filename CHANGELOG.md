@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.12.0] - 2021-09-21
+
+### Added
+
+-   New section to let premium subscriber send messages from their profile page
+-   New section to give member info about the discord server on their profile page
+
+### Changed
+
+-   Improve the wording of the plans
+-   Add information about the premium membership
+
 ## [2.11.0] - 2021-09-20
 
 ### Added
@@ -412,7 +424,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.12.0...HEAD
+[2.12.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.12.0
 [2.11.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...v2.11.0
 [2.10.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.1...v2.10.0
 [2.9.1]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.0...v2.9.1

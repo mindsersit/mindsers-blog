@@ -5,6 +5,19 @@
 .mds-profile {
     font-family: $sans;
 
+    a:not(.button) {
+        color: $accent_color;
+        text-decoration: none;
+
+        &.discord {
+            color: #5865f2;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     .mds-header {
         margin: 80px 0 40px;
         display: flex;
@@ -89,6 +102,20 @@
             .actions {
                 margin: 20px 0 0;
                 text-align: center;
+            }
+        }
+    }
+
+    .profile-grid {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            text-align: center;
+            width: 45%;
+
+            a.button.discord {
+                background-color: #5865f2;
             }
         }
     }
