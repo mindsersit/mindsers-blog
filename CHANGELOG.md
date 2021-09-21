@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   New section to let premium subscriber send messages from their profile page
+-   New section to give member info about the discord server on their profile page
 
 ### Changed
 

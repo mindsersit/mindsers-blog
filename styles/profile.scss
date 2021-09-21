@@ -92,4 +92,31 @@
             }
         }
     }
+
+    .profile-grid {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+            text-align: center;
+            width: 45%;
+
+            a.button.discord {
+                background-color: #5865f2;
+            }
+
+            a:not(.button) {
+                color: $accent_color;
+                text-decoration: none;
+
+                &.discord {
+                    color: #5865f2;
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
