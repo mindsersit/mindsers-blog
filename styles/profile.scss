@@ -109,6 +109,7 @@
     .profile-grid {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap-reverse;
 
         div {
             text-align: center;
@@ -116,6 +117,10 @@
 
             a.button.discord {
                 background-color: #5865f2;
+            }
+
+            @media (max-width: 600px) {
+                width: 100%;
             }
         }
     }
