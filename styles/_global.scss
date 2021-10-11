@@ -386,4 +386,16 @@ body {
             content: '\2713';
         }
     }
+
+    div.cookie-consent {
+        display: none;
+        width: calc(100vw - 10px);
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+
+        &.active {
+            display: block;
+        }
+    }
 }
