@@ -386,4 +386,27 @@ body {
             content: '\2713';
         }
     }
+
+    div.cookie-consent {
+        display: none;
+        width: calc(100% - 60px);
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        border-radius: 3px;
+        background-color: $background_color;
+        padding: 10px 20px;
+        font-family: $sans;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+        @media (max-width: 400px) {
+            flex-direction: column;
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
 }

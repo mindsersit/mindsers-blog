@@ -138,16 +138,9 @@
                                 </li>
                                 <li>
                                     <a
-                                        href='https://nathanaelcherrier.dev/fr/resume'
+                                        href='https://nathanaelcherrier.dev/en/resume'
                                     >
                                         CV
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://nathanaelcherrier.dev/fr/contact'
-                                    >
-                                        Me contacter
                                     </a>
                                 </li>
                                 <li>
@@ -158,6 +151,11 @@
                                         rel="noreferrer"
                                     >
                                         Feedly
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="cookie-consent">
+                                        Cookie consent
                                     </a>
                                 </li>
                             </ul>
@@ -259,10 +257,67 @@
                 </div>
             </footer>
         </div>
+        <div class="cookie-consent">
+            <p>By clicking "Allow all", you agree to the storing of cookies on you device to enhance site navigation,
+            analyse site usage, and assist in our marketing effort.</p>
+            <p>
+                <button class="button primary allow-all">Allow all</button>
+                <button class="button patreon deny-all">Deny all</button>
+            </p>
+        </div>
 
         {{! <foot> }}
         <script type="module" src="{{asset 'js/menu.js'}}" async></script>
+        <script type="module" type="text/plain" src="{{asset 'js/menu.js'}}" async></script>
         {{{block 'scripts'}}}
+
+        <script type="module">
+            function loadScripts() {
+                const scripts = document.querySelectorAll('script[cookie-consent]')
+
+                for (const script of scripts) {
+                    script.setAttribute("type", "text/javascript")
+                }
+            }
+
+            (() => {
+                const consent = sessionStorage.getItem('cookie-consent')
+                const cookieConsentLink = document.querySelector('a.cookie-consent')
+                const cookieConsentBox = document.querySelector('div.cookie-consent')
+
+                cookieConsentLink.addEventListener('click', () => cookieConsentBox.classList.add('active'))
+
+                if (consent == null) {
+                    cookieConsentBox.classList.add('active')
+
+                    cookieConsentBox
+                        .querySelector('.allow-all')
+                        .addEventListener('click', () => {
+                            loadScripts()
+
+                            sessionStorage.setItem('cookie-consent', 'allow-all')
+                            cookieConsentBox.classList.remove("active")
+                        })
+
+                    cookieConsentBox
+                        .querySelector('.deny-all')
+                        .addEventListener('click', () => {
+                            sessionStorage.setItem('cookie-consent', 'deny-all')
+                            cookieConsentBox.classList.remove("active")
+
+                            if (consent === 'allow-all') {
+                                location.reload()
+                            }
+
+                        })
+                }
+
+                if (consent === 'allow-all') {
+                    loadScripts()
+                    return
+                }
+            })()
+        </script>
 
         {{ghost_foot}}
     </body>
