@@ -389,13 +389,20 @@ body {
 
     div.cookie-consent {
         display: none;
-        width: calc(100vw - 10px);
+        width: calc(100% - 60px);
         position: fixed;
         bottom: 10px;
         left: 10px;
+        border-radius: 3px;
+        background-color: $background_color;
+        padding: 10px 20px;
+        border: 1px solid $accent_color;
+        font-family: $sans;
+        justify-content: space-between;
+        align-items: center;
 
         &.active {
-            display: block;
+            display: flex;
         }
     }
 }
