@@ -401,6 +401,10 @@ body {
         justify-content: space-between;
         align-items: center;
 
+        @media (max-width: 400px) {
+            flex-direction: column;
+        }
+
         &.active {
             display: flex;
         }
