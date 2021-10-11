@@ -258,7 +258,7 @@
             </footer>
         </div>
         <div class="cookie-consent">
-            <p>By clicking "Allow all", you agree to the storing of cookies on you device to enhance site navigation, 
+            <p>By clicking "Allow all", you agree to the storing of cookies on you device to enhance site navigation,
             analyse site usage, and assist in our marketing effort.</p>
             <p>
                 <button class="allow-all">Allow all</button>
@@ -271,7 +271,7 @@
         <script type="module" type="text/plain" src="{{asset 'js/menu.js'}}" async></script>
         {{{block 'scripts'}}}
 
-        <script>
+        <script type="module">
             function loadScripts() {
                 const scripts = document.querySelectorAll('script[cookie-consent]')
 
@@ -284,36 +284,36 @@
                 const consent = sessionStorage.getItem('cookie-consent')
                 const cookieConsentLink = document.querySelector('a.cookie-consent')
                 const cookieConsentBox = document.querySelector('div.cookie-consent')
-            
+
                 cookieConsentLink.addEventListener('click', () => cookieConsentBox.classList.add('active'))
 
-                if (consent === 'deny-all') {
-                    cookieConsentBox.classList.add('active')
-
-                    cookieConsentBox
-                        .querySelector('.allow-all')
-                        .addEventListener('click', () => {
-                            loadScripts()
-
-                            sessionStorage.setItem('cookie-consent', 'allow-all')
-                            cookieConsentBox.classList.remove("active")
-                        })
-
-                    cookieConsentBox
-                        .querySelector('.deny-all')
-                        .addEventListener('click', () => {
-                            location.reload()
-
-                            sessionStorage.setItem('cookie-consent', 'deny-all')
-                            cookieConsentBox.classList.remove("active")
-                        })
-
+                if (consent === 'allow-all') {
+                    loadScripts()
                     return
                 }
 
-                if (consent === 'allow-all') { 
-                    loadScripts()
-                }
+                cookieConsentBox.classList.add('active')
+
+                cookieConsentBox
+                    .querySelector('.allow-all')
+                    .addEventListener('click', () => {
+                        loadScripts()
+
+                        sessionStorage.setItem('cookie-consent', 'allow-all')
+                        cookieConsentBox.classList.remove("active")
+                    })
+
+                cookieConsentBox
+                    .querySelector('.deny-all')
+                    .addEventListener('click', () => {
+                        sessionStorage.setItem('cookie-consent', 'deny-all')
+                        cookieConsentBox.classList.remove("active")
+
+                        if (consent === 'allow-all') {
+                            location.reload()
+                        }
+
+                    })
             })()
         </script>
 
