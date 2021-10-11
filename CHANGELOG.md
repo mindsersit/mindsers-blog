@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   Display a box to ask user consent on usage of cookies
+
 ### Fixed
 
 -   Use only one column to display data on profile when the screen is small
