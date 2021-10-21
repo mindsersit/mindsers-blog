@@ -3,7 +3,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local('Fira Sans'),
+    src: local('Fira Sans Regular'),
         url('/assets/fonts/FiraSans-Regular.ttf') format('truetype');
     unicode-range: U+000-5FF; /* Latin glyphs */
 }
@@ -13,7 +13,7 @@
     font-style: normal;
     font-weight: 300;
     font-display: swap;
-    src: local('Fira Sans'),
+    src: local('Fira Sans Light'),
         url('/assets/fonts/FiraSans-Light.ttf') format('truetype');
     unicode-range: U+000-5FF; /* Latin glyphs */
 }
@@ -23,7 +23,7 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: local('Fira Sans'),
+    src: local('Fira Sans Bold'),
         url('/assets/fonts/FiraSans-Bold.ttf') format('truetype');
     unicode-range: U+000-5FF; /* Latin glyphs */
 }
@@ -33,7 +33,7 @@
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: local('Fira Sans'),
+    src: local('Fira Sans Black'),
         url('/assets/fonts/FiraSans-Black.ttf') format('truetype');
     unicode-range: U+000-5FF; /* Latin glyphs */
 }
