@@ -172,7 +172,7 @@
             </div>
             <div>
                 <h2>Mindsers' Newsletter</h2>
-                {{#if @member}}
+                {{#if @member.paid}}
                 <p>
                     Since you're a premium member, you have access to all the newsletter archive.
                 </p>
@@ -197,7 +197,7 @@
             </div>
             <div>
                 <h2>Exclusive content</h2>
-                {{#if @member}}
+                {{#if @member.paid}}
                 <p>
                     Here is a list of exclusive contents for you. Thanks for being a premium member!
                 </p>
