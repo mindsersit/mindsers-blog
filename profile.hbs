@@ -170,6 +170,53 @@
                 </p>
                 {{/if}}
             </div>
+            <div>
+                <h2>Mindsers' Newsletter</h2>
+                {{#if @member}}
+                <p>
+                    Since you're a premium member, you have access to all the newsletter archive.
+                </p>
+                <p>
+                    Check your inbox, you'll receive the next issues directly there!
+                </p>
+                <p class="actions">
+                    <a class='button' href='/issues/'>
+                        Read the newsletter issues
+                    </a>
+                </p>
+                {{else}}
+                <p>
+                    Join our premium members and get full access to the premium newsletter.
+                </p>
+                <p class="actions">
+                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                        Join the community!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
+            <div>
+                <h2>Exclusive content</h2>
+                {{#if @member}}
+                <p>
+                    Here is a list of exclusive contents for you. Thanks for being a premium member!
+                </p>
+                <p class="actions">
+                    <a class='button' href='#'>
+                        Access the content
+                    </a>
+                </p>
+                {{else}}
+                <p>
+                    Join our premium members and get full access to the premium and exclusive content of {{@site.title}}.
+                </p>
+                <p class="actions">
+                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                        Subscribe now!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
         </section>
     {{else}}
         {{! Not logged in: Redirect to signin }}
