@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   Display a box to ask user consent on usage of cookies
+-   Created a new page to list all the premium content available
+-   Add sections on profile page to better explain the premium rewards
+    to premium members
 
 ### Fixed
 
