@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Add sections on profile page to better explain the premium rewards
     to premium members
 
+### Changed
+
+-   Display a disclaimer message at the beggining of a sponsored post
+
 ### Fixed
 
 -   Use only one column to display data on profile when the screen is small
