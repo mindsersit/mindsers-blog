@@ -1,0 +1,13 @@
+@import 'pagination';
+
+section {
+    .section-title {
+        font-size: 1.2em;
+        font-weight: bolder;
+        margin: 40px;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+}

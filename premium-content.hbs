@@ -5,7 +5,7 @@
 {{#contentFor 'title'}}Exclusive premium content - {{meta_title}}{{/contentFor}}
 
 {{#contentFor 'styles'}}
-    <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/premium_content.css"}}" />
 {{/contentFor}}
 
 <div class="mds-page">
@@ -25,7 +25,7 @@
 
         {{#get "posts" filter="visibility:paid+tag:-[hash-newsletter-issue,hash-additional-content]" include="tags"}}
         <section>
-            <h2 id="premium-blog-posts">Exclusive posts for Premium members</h2>
+            <p id="premium-blog-posts" class="section-title">📚 <span>Exclusive posts for Premium members</span></p>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
@@ -38,7 +38,7 @@
 
         {{#get "posts" filter="tag:hash-newsletter-issue" include="tags"}}
         <section>
-            <h2 id="premium-newsletter-issue">Newsletter issues for Premium members</h2>
+            <p id="premium-newsletter-issue" class="section-title">📫 <span>Newsletter issues for Premium members</span></p>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
@@ -51,7 +51,7 @@
 
         {{#get "posts" filter="tag:hash-additional-content" include="tags"}}
         <section>
-            <h2 id="exclusive-additionnal-content">Free post + additional content for Premium members</h2>
+            <p id="exclusive-additionnal-content" class="section-title">🎭 <span>Free post + additional content for Premium members</span></p>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
