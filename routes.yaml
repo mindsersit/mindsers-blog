@@ -6,6 +6,7 @@ routes:
     /membership/: plans
     /membership/welcome/: welcome
     /membership/welcome-paid/: welcome-paid
+    /membership/exclusive-content/: premium-content
     /newsletter/: newsletter
     /login/: login
     /signup/: signup
