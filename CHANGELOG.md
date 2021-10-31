@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Created a new page to list all the premium content available
 -   Add sections on profile page to better explain the premium rewards
     to premium members
+-   Add a setting in ghost admin to activate or deactivate
+    the cookie consent box. Default to false (deactivated)
 
 ### Fixed
 

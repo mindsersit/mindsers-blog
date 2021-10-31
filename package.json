@@ -44,6 +44,12 @@
             "xl": {
                 "width": 2000
             }
+        },
+        "custom": {
+            "cookie_consent": {
+                "type": "boolean",
+                "default": false
+            }
         }
     },
     "devDependencies": {

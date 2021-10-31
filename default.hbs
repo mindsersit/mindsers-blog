@@ -271,6 +271,7 @@
         <script type="module" type="text/plain" src="{{asset 'js/menu.js'}}" async></script>
         {{{block 'scripts'}}}
 
+        {{#if @custom.cookie_consent}}
         <script type="module">
             function loadScripts() {
                 const scripts = document.querySelectorAll('script[cookie-consent]')
@@ -318,7 +319,7 @@
                 }
             })()
         </script>
-
+        {{/if}}
         {{ghost_foot}}
     </body>
 </html>
