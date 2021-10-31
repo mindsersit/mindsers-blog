@@ -16,6 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Add a setting in ghost admin to activate or deactivate
     the cookie consent box. Default to false (deactivated)
 
+### Changed
+
+-   Display a disclaimer message at the beggining of a sponsored post
+
 ### Fixed
 
 -   Use only one column to display data on profile when the screen is small
