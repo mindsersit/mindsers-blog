@@ -13,7 +13,8 @@
         <header class="mds-header">
             <h1 class="mds-title">Exclusive premium content list</h1>
             <p>
-                Premium members of {{@site.title}} get access a growing list of exclusive additional content they can use to learn more from this blog. Find them all on this page.
+                Premium members of {{@site.title}} get access a growing list of exclusive additional content they can use
+                to learn more from this blog. Find them all on this page without pagination.
             </p>
             <p>
                 {{#unless @member.paid}}
@@ -22,9 +23,9 @@
             </p>
         </header>
 
-        {{#get "posts" filter="visibility:paid+tag:-hash-newsletter-issue"}}
+        {{#get "posts" filter="visibility:paid+tag:-[hash-newsletter-issue,hash-additional-content]" include="tags"}}
         <section>
-            <h2>Exclusive posts for Premium members</h2>
+            <h2 id="premium-blog-posts">Exclusive posts for Premium members</h2>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
@@ -35,20 +36,20 @@
         </section>
         {{/get}}
 
-        {{#get "posts" filter="tag:hash-newsletter-issue"}}
+        {{#get "posts" filter="tag:hash-newsletter-issue" include="tags"}}
         <section>
             <h2 id="premium-newsletter-issue">Newsletter issues for Premium members</h2>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
             {{else}}
-                    <p class="no-post">No posts here</p>
+                    <p class="no-post">No issues here</p>
             {{/foreach}}
             </div>
         </section>
         {{/get}}
 
-        {{#get "posts" filter="tag:hash-additional-content"}}
+        {{#get "posts" filter="tag:hash-additional-content" include="tags"}}
         <section>
             <h2 id="exclusive-additionnal-content">Free post + additional content for Premium members</h2>
             <div class="mds-postfeed">
