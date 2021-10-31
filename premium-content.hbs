@@ -1,0 +1,34 @@
+{{!< default}}
+
+{{#contentFor 'htmlLang'}}{{@site.locale}}{{/contentFor}}
+
+{{#contentFor 'title'}}Exclusive premium content - {{meta_title}}{{/contentFor}}
+
+{{#contentFor 'styles'}}
+    <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
+{{/contentFor}}
+
+<div class="mds-page">
+    <div class="mds-container">
+        <header class="mds-header">
+            <h1 class="mds-title">Exclusive premium content list</h1>
+            <p>
+                Premium members of {{@site.title}} get access a growing list of exclusive additional content they can use to learn more from this blog. Find them all on this page.
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Subscribe !</a>
+                {{/unless}}
+            </p>
+        </header>
+
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{else}}
+                <p class="no-post">No posts here</p>
+        {{/foreach}}
+        </div>
+
+    </div>
+</div>
