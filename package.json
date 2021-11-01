@@ -1,6 +1,6 @@
 {
     "name": "mindsers-blog",
-    "version": "2.12.0",
+    "version": "2.13.0",
     "description": "Theme for MindsersIT Blog",
     "keywords": [
         "ghost-theme"
@@ -43,6 +43,12 @@
             },
             "xl": {
                 "width": 2000
+            }
+        },
+        "custom": {
+            "cookie_consent": {
+                "type": "boolean",
+                "default": false
             }
         }
     },

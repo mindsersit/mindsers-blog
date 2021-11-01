@@ -1,0 +1,35 @@
+name: CD - GH Release
+
+on:
+    push:
+        # Sequence of patterns matched against refs/tags
+        tags:
+            - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+    deploy:
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Get version from tag
+              id: tag_name
+              run: |
+                  echo ::set-output name=current_version::${GITHUB_REF#refs/tags/v}
+              shell: bash
+            - uses: actions/checkout@v2
+            - name: Get Changelog Entry
+              id: changelog_reader
+              uses: mindsers/changelog-reader-action@v2
+              with:
+                  version: ${{ steps.tag_name.outputs.current_version }}
+                  path: ./CHANGELOG.md
+            - name: Create Github Release
+              id: create_release
+              uses: actions/create-release@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: ${{ steps.changelog_reader.outputs.version }}
+                  release_name: Release ${{ steps.changelog_reader.outputs.version }}
+                  body: ${{ steps.changelog_reader.outputs.changes }}
+                  prerelease: ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
+                  draft: false

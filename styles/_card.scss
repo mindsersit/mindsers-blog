@@ -40,6 +40,16 @@
                     background-color: rgba($secondary_color, 0.9);
                 }
             }
+
+            .sponsored-label {
+                background-color: rgba(#e74c3c, 1);
+                border-radius: 2px;
+                padding: 2px;
+
+                @media (prefers-color-scheme: dark) {
+                    background-color: rgba(#e74c3c, 0.9);
+                }
+            }
         }
 
         .cta {

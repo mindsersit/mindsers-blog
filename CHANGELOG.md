@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.13.0] - 2021-11-01
+
+### Added
+
+-   Display a box to ask user consent on usage of cookies
+-   Created a new page to list all the premium content available
+-   Add sections on profile page to better explain the premium rewards
+    to premium members
+-   Add a setting in ghost admin to activate or deactivate
+    the cookie consent box. Default to false (deactivated)
+
+### Changed
+
+-   Display a disclaimer message at the beggining of a sponsored post
+
+### Fixed
+
+-   Use only one column to display data on profile when the screen is small
+
 ## [2.12.0] - 2021-09-21
 
 ### Added
@@ -424,7 +443,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.12.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.13.0...HEAD
+[2.13.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.13.0
 [2.12.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.12.0
 [2.11.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...v2.11.0
 [2.10.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.9.1...v2.10.0

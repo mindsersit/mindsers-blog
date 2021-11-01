@@ -11,6 +11,10 @@ Re-usable card for linking to posts
                 </time>
                 <span class='bull'>&bull;</span>
                 {{reading_time}}
+                {{#has tag='#sponsored-post'}}
+                    <span class='bull'>&bull;</span>
+                    <span class='sponsored-label'>Sponsored</span>
+                {{/has}}
                 {{#has visibility='paid'}}
                     <span class='bull'>&bull;</span>
                     {{#has tag="#additional-content"}}
