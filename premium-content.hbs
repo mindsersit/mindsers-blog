@@ -23,7 +23,7 @@
             </p>
         </header>
 
-        {{#get "posts" filter="visibility:paid+tag:-[hash-newsletter-issue,hash-additional-content]" include="tags"}}
+        {{#get "posts" filter="visibility:paid+tag:-[hash-newsletter-issue,hash-additional-content,hash-email]" include="tags"}}
         <section>
             <p id="premium-blog-posts" class="section-title">📚 <span>Exclusive posts for Premium members</span></p>
             <div class="mds-postfeed">
