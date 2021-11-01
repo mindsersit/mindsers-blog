@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Add a new to change profile picture. Link on the PP.
 
+### Fixed
+
+-   Hide the email archives from the exclusive content page
+
 ## [2.13.0] - 2021-11-01
 
 ### Added
