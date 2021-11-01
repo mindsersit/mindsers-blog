@@ -38,10 +38,16 @@
             {{/if}}
             </div>
             <div class="avatar">
-            {{> "icons/profile"}}
-            {{#if @member.avatar_image}}
-                <img src='{{@member.avatar_image}}' />
-            {{/if}}
+                <a
+                    href="https://gravatar.com/emails/"
+                    title='Update your profile picture on Gravatar'
+                    rel='nofollow noreferrer'
+                >
+                {{> "icons/profile"}}
+                {{#if @member.avatar_image}}
+                    <img src='{{@member.avatar_image}}' />
+                {{/if}}
+                </a>
             </div>
         </header>
         <section class="infos">
