@@ -21,10 +21,6 @@ collections:
         permalink: /issue/{slug}/
         template: index
         filter: 'tag:hash-en+tag:hash-newsletter-issue'
-    /emails/:
-        permalink: /email/{slug}/
-        template: index
-        filter: 'tag:hash-email'
     /fr/posts/:
         permalink: /fr/post/{slug}/
         template: index
