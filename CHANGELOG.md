@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
--   Add a new to change profile picture. Link on the PP.
+-   Add a new link to change profile picture. Link on the PP.
+-   New link to edit the billing information on the profile page
 
 ### Fixed
 
