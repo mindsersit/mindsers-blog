@@ -49,6 +49,9 @@
             "cookie_consent": {
                 "type": "boolean",
                 "default": false
+            },
+            "favourite_tier_id": {
+                "type": "text"
             }
         }
     },

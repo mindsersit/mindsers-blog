@@ -107,6 +107,16 @@
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
                 </div>
+                {{#match id @custom.favourite_tier_id}}
+                <div class='plan-favourite-notice'>
+                    <div class='arrow'>
+                        <div class='curve'></div>
+                    </div>
+                    <div class='notice'>
+                        My favourite readers’ option
+                    </div>
+                </div>
+                {{/match}}
             </div>
             {{/match}}
             {{/foreach}}
