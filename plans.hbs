@@ -35,104 +35,100 @@
     </div>
 
     <section class='mds-plan-grid'>
-        <div class='mds-container'>
+        <div class='mds-container'></div>
+        {{#get "tiers" include="monthly_price,yearly_price,benefits" limit="all" as |tiers|}}
+        <div class='mds-container' data-plan="yearly">
+            {{! Loop through our tiers collection }}
+            {{#foreach tiers}}
+            {{#match slug 'free'}}
             <div class='plan-container'>
                 <div class='plan-bg'>
                     <header>
-                        <h2>Free signup</h2>
+                        <h2>{{name}}</h2>
                     </header>
+
+                    {{#if benefits}}
                     <section class='plan-body'>
                         <ul>
-                            <li>📗 Get complete access to the public blog
-                                posts library</li>
-                            <li>📫 Receive an email notification for new public blog posts</li>
-                            <li>👥 Get access to our discord community</li>
-                            <li>🚫 No advertising</li>
+                        {{#foreach benefits}}
+                            <li>✓ {{name}}</li>
+                        {{/foreach}}
                         </ul>
                     </section>
+                    {{/if}}
+
                     <section class='plan-price'>
-                        <a href='/signup/' class='button highlighted'>$0</a>
+                        <a href="/signup/" class='button'>Subscribe now</a>
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
                 </div>
             </div>
-            <div class='plan-container'>
+
+            {{else}}
+
+            <div class='plan-container highlighted'>
                 <div class='plan-bg'>
                     <header>
-                        <h2>Yearly Subscription</h2>
+                        <h2>{{name}}</h2>
+                        {{#if monthly_price}}
+                            <span class='monthly-plan-data'>{{price monthly_price}} <span>/ month</span></span>
+                        {{/if}}
+                        {{#if yearly_price}}
+                            <span class='yearly-plan-data'>{{price yearly_price}} <span>/ year</span></span>
+                        {{/if}}
                     </header>
+
+                    {{#if benefits}}
                     <section class='plan-body'>
                         <ul>
-                            <li>📚 Get complete access to the entire blog
-                                posts library (including premium post)</li>
-                            <li>📫 Receive en email notification when a new
-                                blog post is published</li>
-                            <li>🎭 Get access to exclusive additional contents</li>
-                            <li>👥 Get access to our discord community</li>
-                            <li>💼 Get VIP answers to your questions</li>
-                            <li>🎙 Get access to the comments and discussion section on posts</li>
-                            <li>💌 Receive the monthly {{@site.title}}'s newsletter</li>
-                            <li>✊🏽 Support an independent publication</li>
-                            <li>🚫 No advertising</li>
-                            <li class='eco'><strong>♻️ We give back 1.5% of your subscription</strong>
-                                to help removing CO₂ from the
-                                atmosphere.</li>
-                            <li><strong>⚡️ Pay 1 quick payment instead of 12!</strong></li>
-                            <li><strong>💸 Get an extra 17% discount</strong></li>
+                        {{#foreach benefits}}
+                            <li>✓ {{name}}</li>
+                        {{/foreach}}
+
+                        {{#if monthly_price}}
+                            <li>✓ No advertising on the website</li>
+                            <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂ from the atmosphere.</strong></li>
+                        {{/if}}
+                        {{#if yearly_price}}
+                            <li class='yearly-plan-data'>✓ <strong>Pay 1 quick payment instead of 12!</strong></li>
+                            <li class='yearly-plan-data'>✓ <strong>Get an extra <span class="discount-calculation" data-cost-yearly="{{yearly_price.amount}}" data-cost-monthly="{{monthly_price.amount}}"></span>% discount</strong></li>
+                        {{/if}}
                         </ul>
                     </section>
+                    {{/if}}
+
                     <section class='plan-price'>
-                        <a
-                            href='javascript:'
-                            data-members-plan='Yearly'
-                            class='button highlighted'
-                        >{{price @price.yearly}} / year</a>
-                        <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
-                    </section>
-                </div>
-                <div class='plan-favourite-notice'>
-                    <div class='arrow'>
-                        <div class='curve'></div>
-                    </div>
-                    <div class='notice'>
-                        My favourite readers’ option
-                    </div>
-                </div>
-            </div>
-            <div class='plan-container'>
-                <div class='plan-bg'>
-                    <header>
-                        <h2>Monthly Subscription</h2>
-                    </header>
-                    <section class='plan-body'>
-                        <ul>
-                            <li>📚 Get complete access to the entire blog
-                                posts library (including premium post)</li>
-                            <li>📫 Receive en email notification when a new
-                                blog post is published</li>
-                            <li>🎭 Get access to exclusive additional contents</li>
-                            <li>👥 Get access to our discord community</li>
-                            <li>💼 Get VIP answers to your questions</li>
-                            <li>🎙 Get access to the comments and discussion section on posts</li>
-                            <li>💌 Receive the monthly {{@site.title}}'s newsletter</li>
-                            <li>✊🏽 Support an independent publication</li>
-                            <li>🚫 No advertising</li>
-                            <li class='eco'><strong>♻️ We give back 1.5% of your subscription</strong>
-                                to help removing CO₂ from the
-                                atmosphere.</li>
-                        </ul>
-                    </section>
-                    <section class='plan-price'>
-                        <a
-                            href='javascript:'
-                            data-members-plan='Monthly'
-                            class='button highlighted'
-                        >{{price @price.monthly}} / month</a>
+                    {{#if monthly_price}}
+                        <a href="javascript:" class='button highlighted monthly-plan-data' data-members-plan={{monthly_price.id}}>Subscribe now</a>
+                    {{/if}}
+                    {{#if yearly_price}}
+                        <a href="javascript:" class='button highlighted yearly-plan-data' data-members-plan={{yearly_price.id}}>Subscribe now ({{price yearly_price}})</a>
+                    {{/if}}
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
                 </div>
             </div>
+            {{/match}}
+            {{/foreach}}
         </div>
+        {{/get}}
+        <script>
+            const spans = document.querySelectorAll('.discount-calculation')
+
+            for(const span of spans) {
+                const discounted = span.dataset.costYearly / 100
+                const yearly = (span.dataset.costMonthly / 100) * 12
+
+                const discount = 100 * (yearly - discounted) / yearly
+
+                if (discount == 0) {
+                    span.parentElement.parentElement.remove()
+                    continue
+                }
+
+                span.textContent = discount.toFixed(0)
+            }
+        </script>
     </section>
 
     <section class='mds-patreon'>
