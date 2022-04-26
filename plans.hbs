@@ -35,7 +35,16 @@
     </div>
 
     <section class='mds-plan-grid'>
-        <div class='mds-container'></div>
+        <div class='mds-container'>
+            <label  class="mds-toggle-container">
+                Monthly
+                <input type="checkbox" checked>
+                <div class="mds-toggle">
+                    <div class="mds-toggle-handle"></div>
+                </div>
+                Yearly
+            </label>
+        </div>
         {{#get "tiers" include="monthly_price,yearly_price,benefits" limit="all" as |tiers|}}
         <div class='mds-container' data-plan="yearly">
             {{! Loop through our tiers collection }}
