@@ -11,12 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Add a new link to change profile picture. Link on the PP.
 -   New link to edit the billing information on the profile page
--   Support for tier feature of Ghost
+-   Support for the new tiers feature of Ghost
 -   It is now possible to use custom theme settings to indicate the favourite tier.
+-   New toggle switch to switch between monthly and yearly plans
 
 ### Fixed
 
 -   Hide the email archives from the exclusive content page
+-   When clicking back on Stripe forms, the user comes back to the correct page (membership, etc)
 
 ## [2.13.0] - 2021-11-01
 
