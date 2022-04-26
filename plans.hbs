@@ -38,7 +38,7 @@
         <div class='mds-container'>
             <label  class="mds-toggle-container">
                 Monthly
-                <input type="checkbox" checked>
+                <input id="yearly-switch" type="checkbox" checked>
                 <div class="mds-toggle">
                     <div class="mds-toggle-handle"></div>
                 </div>
@@ -147,6 +147,22 @@
 
                 span.textContent = discount.toFixed(0)
             }
+
+            const toggle = document.getElementById('yearly-switch')
+            const plans = document.querySelectorAll('.mds-plan-grid .mds-container')
+            toggle.addEventListener('change', event => {
+                if (event.target.checked) {
+                    for(const plan of plans) {
+                        plan.dataset.plan = 'yearly'
+                    }
+
+                    return
+                }
+
+                for(const plan of plans) {
+                    plan.dataset.plan = 'monthly'
+                }
+            })
         </script>
     </section>
 
