@@ -108,10 +108,26 @@
 
                     <section class='plan-price'>
                     {{#if monthly_price}}
-                        <a href="javascript:" class='button highlighted monthly-plan-data' data-members-plan={{monthly_price.id}}>Subscribe now</a>
+                        <a
+                            href="javascript:"
+                            class='button highlighted monthly-plan-data'
+                            data-members-plan={{monthly_price.id}}
+                            data-members-success="/membership/"
+                            data-members-cancel="/membership/"
+                        >
+                            Subscribe now
+                        </a>
                     {{/if}}
                     {{#if yearly_price}}
-                        <a href="javascript:" class='button highlighted yearly-plan-data' data-members-plan={{yearly_price.id}}>Subscribe now ({{price yearly_price}})</a>
+                        <a
+                            href="javascript:"
+                            class='button highlighted yearly-plan-data'
+                            data-members-plan={{yearly_price.id}}
+                            data-members-success="/membership/"
+                            data-members-cancel="/membership/"
+                        >
+                            Subscribe now
+                        </a>
                     {{/if}}
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
