@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   It is now possible to use custom theme settings to indicate the favourite tier.
 -   New toggle switch to switch between monthly and yearly plans
 
+### Changed
+
+-   The "legal notices" link in the footer now redirect to an internal page of Mindsers Blog
+
 ### Fixed
 
 -   Hide the email archives from the exclusive content page
