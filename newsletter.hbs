@@ -74,7 +74,7 @@
                     <section class="plan-price">
                         {{#if monthly_price}}
                         <a href="javascript:"
-                            data-members-plan={{monthly_price.id}}
+                            data-portal="signup/{{id}}/monthly"
                             data-members-success="/membership/"
                             data-members-cancel="/membership/"
                             class="button highlighted">
@@ -106,7 +106,7 @@
                         {{#if yearly_price}}
                         <a
                             href="javascript:"
-                            data-members-plan={{yearly_price.id}}
+                            data-portal="signup/{{id}}/yearly"
                             data-members-success="/membership/"
                             data-members-cancel="/membership/"
                             class="button highlighted">
