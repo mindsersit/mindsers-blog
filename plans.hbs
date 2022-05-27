@@ -59,8 +59,8 @@
                     {{#if benefits}}
                     <section class='plan-body'>
                         <ul>
-                        {{#foreach benefits}}
-                            <li>✓ {{name}}</li>
+                        {{#foreach benefits as |benefit|}}
+                            <li>✓ {{benefit}}</li>
                         {{/foreach}}
                         </ul>
                     </section>
@@ -80,31 +80,30 @@
                     <header>
                         <h2>{{name}}</h2>
                         {{#if monthly_price}}
-                            <span class='monthly-plan-data'>{{price monthly_price}} <span>/ month</span></span>
+                            <span class='monthly-plan-data'>{{price monthly_price currency=currency}} <span>/ month</span></span>
                         {{/if}}
                         {{#if yearly_price}}
-                            <span class='yearly-plan-data'>{{price yearly_price}} <span>/ year</span></span>
+                            <span class='yearly-plan-data'>{{price yearly_price currency=currency}} <span>/ year</span></span>
                         {{/if}}
                     </header>
 
-                    {{#if benefits}}
                     <section class='plan-body'>
                         <ul>
-                        {{#foreach benefits}}
-                            <li>✓ {{name}}</li>
-                        {{/foreach}}
-
+                        {{#if benefits}}
+                            {{#foreach benefits as |benefit|}}
+                                <li>✓ {{benefit}}</li>
+                            {{/foreach}}
+                        {{/if}}
                         {{#if monthly_price}}
                             <li>✓ No advertising on the website</li>
                             <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂ from the atmosphere.</strong></li>
                         {{/if}}
                         {{#if yearly_price}}
                             <li class='yearly-plan-data'>✓ <strong>Pay 1 quick payment instead of 12!</strong></li>
-                            <li class='yearly-plan-data'>✓ <strong>Get an extra <span class="discount-calculation" data-cost-yearly="{{yearly_price.amount}}" data-cost-monthly="{{monthly_price.amount}}"></span>% discount</strong></li>
+                            <li class='yearly-plan-data'>✓ <strong>Get an extra <span class="discount-calculation" data-cost-yearly="{{price yearly_price}}" data-cost-monthly="{{price monthly_price}}"></span>% discount</strong></li>
                         {{/if}}
                         </ul>
                     </section>
-                    {{/if}}
 
                     <section class='plan-price'>
                     {{#if monthly_price}}
