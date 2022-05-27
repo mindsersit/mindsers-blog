@@ -52,7 +52,11 @@
 
     <section class="mds-plan-grid">
         <div class="mds-container">
-            <div class="plan-container">
+            {{#get "tiers" include="monthly_price,yearly_price,benefits" limit="all" as |tier|}}
+            {{!-- {{#get "tiers" id=@custom.favourite_tier_id include="monthly_price,yearly_price,benefits" limit="all" as |tier|}} --}}
+            {{#foreach tiers}}
+            {{^match slug 'free'}}
+            <div class="plan-container highlighted">
                 <div class="plan-bg">
                     <header>
                         <h2>Monthly Subscription</h2>
@@ -68,12 +72,20 @@
                         </ul>
                     </section>
                     <section class="plan-price">
-                        <a href="javascript:" data-members-plan="Monthly" class="button highlighted">{{price @price.monthly}} / month</a>
+                        {{#if monthly_price}}
+                        <a href="javascript:"
+                            data-members-plan={{monthly_price.id}}
+                            data-members-success="/membership/"
+                            data-members-cancel="/membership/"
+                            class="button highlighted">
+                            {{price monthly_price currency=currency}} / month
+                        </a>
+                        {{/if}}
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
                 </div>
             </div>
-            <div class="plan-container">
+            <div class="plan-container highlighted">
                 <div class="plan-bg">
                     <header>
                         <h2>Yearly Subscription</h2>
@@ -91,7 +103,16 @@
                         </ul>
                     </section>
                     <section class="plan-price">
-                        <a href="javascript:" data-members-plan="Yearly" class="button highlighted">{{price @price.yearly}} / year</a>
+                        {{#if yearly_price}}
+                        <a
+                            href="javascript:"
+                            data-members-plan={{yearly_price.id}}
+                            data-members-success="/membership/"
+                            data-members-cancel="/membership/"
+                            class="button highlighted">
+                            {{price yearly_price currency=currency}} / year
+                        </a>
+                        {{/if}}
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
                 </div>
@@ -104,6 +125,9 @@
                     </div>
                 </div>
             </div>
+            {{/match}}
+            {{/foreach}}
+            {{/get}}
         </div>
     </section>
 
