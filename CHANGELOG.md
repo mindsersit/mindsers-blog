@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.1.0] - 2022-06-06
+
 ### Added
 
 -   Show a fallback message to redirect users to membership when no specific tier is selected for newsletter
@@ -488,7 +490,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.0.1...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.0.1...v3.1.0
 [3.0.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.13.0...v3.0.0
 [2.13.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.13.0
