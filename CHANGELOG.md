@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+-   Update the plans description wording
+
 ### Fixed
 
 -   Price button are not readable. Display them in white.
