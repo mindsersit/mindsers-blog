@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Improve the newsletter page wording (better English)
 -   Make the shop button optional
 
+### Removed
+
+-   The signup form does not handle language anymore.
+    Language will be handled with Email Preferences in the profile page
+
 ## [3.0.1] - 2022-06-06
 
 ### Fixed

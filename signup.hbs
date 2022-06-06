@@ -3,11 +3,11 @@
 {{#contentFor 'htmlLang'}}{{@site.locale}}{{/contentFor}}
 
 {{#contentFor 'meta'}}
-    <meta name="robots" content="noindex" />
+    <meta name='robots' content='noindex' />
 {{/contentFor}}
 
 {{#contentFor 'styles'}}
-    <link rel='stylesheet' type='text/css' href='{{asset 'css/login.css'}}' />
+    <link rel='stylesheet' type='text/css' href='{{asset "css/login.css"}}' />
 {{/contentFor}}
 
 {{#contentFor 'title'}}Sign up - {{meta_title}}{{/contentFor}}
@@ -40,30 +40,6 @@
                     placeholder='jamie@example.com'
                 />
             </label>
-            <label>Which content do you want to receive from
-                {{@site.title}}:</label>
-            <input
-                id='en-check'
-                type='checkbox'
-                name='language'
-                value='English'
-                checked
-            />
-            <label class='checkbox-label' for='en-check'>
-                English content
-            </label>
-            <input
-                id='fr-check'
-                type='checkbox'
-                name='language'
-                value='French'
-                checked
-            />
-            <label class='checkbox-label' for='fr-check'>
-                French content
-            </label>
-            <input data-members-label type='hidden' value='English' />
-            <input data-members-label type='hidden' value='French' />
 
             <button class='button primary' type='submit'>Continue</button>
             <p class='switch'>
@@ -73,7 +49,3 @@
         </form>
     </div>
 </div>
-
-{{#contentFor 'scripts'}}
-    <script type='module' src='{{asset 'js/signup.js'}}'></script>
-{{/contentFor}}
