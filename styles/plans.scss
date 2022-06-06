@@ -115,7 +115,7 @@
             margin: 0;
         }
 
-        a {
+        a:not(.button) {
             text-decoration: none;
             color: $accent_color;
 
@@ -239,7 +239,6 @@
                             width: 100%;
                             box-sizing: border-box;
                             text-align: center;
-                            color: white;
                         }
 
                         .notices {

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+-   Fix button text color in dark mode (plans)
+
 ## [3.1.1] - 2022-06-06
 
 ### Changed
