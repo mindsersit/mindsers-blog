@@ -14,10 +14,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Support for the new tiers feature of Ghost
 -   It is now possible to use custom theme settings to indicate the favourite tier.
 -   New toggle switch to switch between monthly and yearly plans
+-   New theme custom field to select the plan to show on the newsletter page
+-   On the profile page, add a link to change the email preferences of the user
 
 ### Changed
 
 -   The "legal notices" link in the footer now redirect to an internal page of Mindsers Blog
+-   The perk section on the profile page is now seperated by a strong line and a title to make it more identifiable
+-   [BREAKING] The theme doesn't support Ghost version lower than v5
 
 ### Fixed
 
