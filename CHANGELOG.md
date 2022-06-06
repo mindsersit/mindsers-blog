@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0] - 2022-06-06
+
 ### Added
 
 -   Add a new link to change profile picture. Link on the PP.
@@ -464,7 +466,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.13.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.13.0...v3.0.0
 [2.13.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.13.0
 [2.12.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.12.0
 [2.11.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...v2.11.0
