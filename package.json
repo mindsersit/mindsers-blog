@@ -52,6 +52,9 @@
             },
             "favourite_tier_id": {
                 "type": "text"
+            },
+            "newsletter_tier_id": {
+                "type": "text"
             }
         }
     },
