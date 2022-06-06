@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+-   Add or remove specific option for Ghost v5
+
 ## [3.0.0] - 2022-06-06
 
 ### Added
