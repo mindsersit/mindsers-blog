@@ -45,6 +45,9 @@
             }
         },
         "custom": {
+            "shop_url": {
+                "type": "text"
+            },
             "cookie_consent": {
                 "type": "boolean",
                 "default": false

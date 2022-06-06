@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 -   Improve the newsletter page wording (better English)
+-   Make the shop button optional
 
 ## [3.0.1] - 2022-06-06
 
