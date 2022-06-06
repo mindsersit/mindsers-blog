@@ -59,21 +59,21 @@
         "card_assets": true
     },
     "devDependencies": {
-        "autoprefixer": "10.3.4",
-        "cssnano": "5.0.8",
-        "gscan": "4.2.1",
+        "autoprefixer": "10.4.7",
+        "cssnano": "5.1.11",
+        "gscan": "4.31.2",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.1",
-        "gulp-sass": "^5.0.0",
+        "gulp-sass": "^5.1.0",
         "gulp-sourcemaps": "3.0.0",
         "gulp-uglify": "3.0.2",
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
-        "postcss": "8.3.6",
+        "postcss": "8.4.14",
         "postcss-color-mod-function": "3.0.3",
-        "postcss-easy-import": "3.0.0",
-        "sass": "^1.41.1",
-        "shiki": "^0.9.11"
+        "postcss-easy-import": "4.0.0",
+        "sass": "^1.52.2",
+        "shiki": "^0.10.1"
     }
 }
