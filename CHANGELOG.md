@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+-   Price button are not readable. Display them in white.
+
 ## [3.1.0] - 2022-06-06
 
 ### Added
