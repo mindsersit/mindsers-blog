@@ -113,6 +113,14 @@ body {
                 }
 
                 .login-button {
+                    &:not(.button) {
+                        color: $accent_color;
+                        text-decoration: none;
+                        font-weight: bold;
+                        margin: 10px;
+                        font-size: 0.9em;
+                    }
+
                     @media (max-width: 700px) {
                         display: none;
                     }

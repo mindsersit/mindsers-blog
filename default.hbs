@@ -64,9 +64,11 @@
                             </div>
                         {{else}}
                             {{#if @custom.shop_url}}
+                            <a class='login-button' href='/login/'>Log in</a>
                             <a class="button highlighted" href="{{@custom.shop_url}}">Shop</a>
-                            {{/if}}
+                            {{else}}
                             <a class='button primary login-button' href='/login/'>Log in</a>
+                            {{/if}}
                             <a class='more-button-small-screen' tabindex="0" title="Open main menu" aria-haspopup="true">{{> "icons/more"}}</a>
                         {{/if}}
 

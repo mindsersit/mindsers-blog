@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Improve the newsletter page wording (better English)
 -   Make the shop button optional
+-   Make the login button looks like a less important link when the shop button is displayed
 
 ### Removed
 
