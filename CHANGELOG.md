@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   Show a fallback message to redirect users to membership when no specific tier is selected for newsletter
+
 ### Changed
 
 -   Improve the newsletter page wording (better English)

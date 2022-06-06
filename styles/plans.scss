@@ -115,6 +115,15 @@
             margin: 0;
         }
 
+        a {
+            text-decoration: none;
+            color: $accent_color;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
         .mds-container {
             display: flex;
             justify-content: center;
@@ -216,15 +225,6 @@
                             li {
                                 list-style: none;
                                 margin: 15px 0;
-
-                                a {
-                                    text-decoration: none;
-                                    color: $accent_color;
-
-                                    &:hover {
-                                        text-decoration: underline;
-                                    }
-                                }
                             }
                         }
 
