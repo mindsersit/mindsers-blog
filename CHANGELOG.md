@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 -   Update the plans description wording
+-   The CTA now adapts the strings for post only visible for specific tiers
 
 ### Fixed
 
 -   Price button are not readable. Display them in white.
+-   Fix subscribe button of the CTA to lunch stripe again
 
 ## [3.1.0] - 2022-06-06
 
