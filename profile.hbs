@@ -59,10 +59,6 @@
             {{/has}}
             <a href="javascript:" data-members-edit-billing data-members-success="/profile/" data-members-cancel="/profile/">Edit billing info</a>
         </section>
-        <section>
-            <h2>Newsletter</h2>
-            <a href="#/portal/account">Change your email preferences</a> (email language, notifications, etc.)
-        </section>
         <section class="subscriptions">
             <h2>Subscriptions</h2>
         {{#foreach @member.subscriptions}}
@@ -114,6 +110,10 @@
                 </a>
             </div>
         {{/foreach}}
+        </section>
+        <section>
+            <h2>Email preferences</h2>
+            <a href="#/portal/account">Change your email preferences</a> (email language, notifications, etc.)
         </section>
         <hr class="section-separator"/>
         <section>
