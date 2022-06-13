@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   New question in the plans FAQ
 
+### Changed
+
+-   The newsletter load plans content from the API too
+
 ### Fixed
 
 -   Fix button text color in dark mode (plans)

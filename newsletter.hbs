@@ -65,18 +65,15 @@
                     <header>
                         <h2>Monthly Subscription</h2>
                     </header>
-                    <section class="plan-body">
+                    <section class='plan-body'>
                         <ul>
-                            <li>✓ Receive monthly business stats</li>
-                            <li>✓ Receive monthly news about the blog</li>
-                            <li>✓ Receive monthly trick & tips (coding, business, work-life balance)</li>
-                            <li>✓ Receive monthly links (the best posts from outside Mindsers Blog)</li>
-                            <li>✓ Get complete access to previous issues on the website</li>
-                            <li>✓ Support an independent publication</li>
-                            <li class='eco'>✓ <strong>We give back 1.5% of your subscription</strong>
-                                to help removing CO₂ from the
-                                atmosphere.</li>
-                            <li>... and a lot more from the blog (<a href="/membership/">see the complete plans</a>)</li>
+                        {{#if benefits}}
+                            {{#foreach benefits as |benefit|}}
+                                <li>✓ {{benefit}}</li>
+                            {{/foreach}}
+                        {{/if}}
+                            <li>✓ No advertising on the website</li>
+                            <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂ from the atmosphere.</strong></li>
                         </ul>
                     </section>
                     <section class="plan-price">
@@ -97,20 +94,17 @@
                     <header>
                         <h2>Yearly Subscription</h2>
                     </header>
-                    <section class="plan-body">
+                    <section class='plan-body'>
                         <ul>
-                            <li>✓ Receive monthly business stats</li>
-                            <li>✓ Receive monthly news about the blog</li>
-                            <li>✓ Receive monthly trick & tips (coding, business, work-life balance)</li>
-                            <li>✓ Receive monthly links (the best posts from outside Mindsers Blog)</li>
-                            <li>✓ Get complete access to previous issues on the website</li>
-                            <li>✓ Support an independent publication</li>
-                            <li class='eco'>✓ <strong>We give back 1.5% of your subscription</strong>
-                                to help removing CO₂ from the
-                                atmosphere.</li>
-                            <li>✓ <strong>Pay 1 quick payment instead of 12!</strong></li>
-                            <li>✓ <strong>Get an extra 17% discount</strong></li>
-                            <li>... and a lot more from the blog (<a href="/membership/">see the membership plans</a>)</li>
+                        {{#if benefits}}
+                            {{#foreach benefits as |benefit|}}
+                                <li>✓ {{benefit}}</li>
+                            {{/foreach}}
+                        {{/if}}
+                            <li>✓ No advertising on the website</li>
+                            <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂ from the atmosphere.</strong></li>
+                            <li class='yearly-plan-data'>✓ <strong>Pay 1 quick payment instead of 12!</strong></li>
+                            <li class='yearly-plan-data'>✓ <strong>Get an extra <span class="discount-calculation" data-cost-yearly="{{price yearly_price}}" data-cost-monthly="{{price monthly_price}}"></span>% discount</strong></li>
                         </ul>
                     </section>
                     <section class="plan-price">
