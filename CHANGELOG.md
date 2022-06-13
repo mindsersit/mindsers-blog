@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 -   Fix button text color in dark mode (plans)
+-   Show the selected tier on the newsletter page even if it is not visible in portal
 
 ## [3.1.1] - 2022-06-06
 
