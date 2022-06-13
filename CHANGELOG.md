@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   New question in the plans FAQ
 -   New disclaimer (newsletter plan do not five access to blog posts) in newsletter plans
+-   New welcome pages for new plans
 
 ### Changed
 

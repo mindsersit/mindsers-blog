@@ -6,8 +6,10 @@ routes:
     /membership/: plans
     /membership/welcome/: welcome
     /membership/welcome-paid/: welcome-paid
+    /membership/welcome-friends/: welcome-friends
     /membership/exclusive-content/: premium-content
     /newsletter/: newsletter
+    /newsletter/welcome/: welcome-newsletter
     /login/: login
     /signup/: signup
     /profile/: profile
