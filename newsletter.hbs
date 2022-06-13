@@ -58,8 +58,8 @@
 
     <section class="mds-plan-grid">
         <div class="mds-container">
-            {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="type:paid+id:{{@custom.newsletter_tier_id}}" visibility="all" limit="1"}}
-            {{#foreach tiers}}
+            {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="type:paid+id:{{@custom.newsletter_tier_id}}" limit="1"}}
+            {{#foreach tiers visibility="all"}}
             <div class="plan-container highlighted">
                 <div class="plan-bg">
                     <header>
