@@ -136,6 +136,23 @@
             <p>Specific newsletter plans have been deactivated. Please look at the complete <a href="/membership/">membership plans</a> for more informations.</p>
             {{/get}}
         </div>
+        <script>
+            const spans = document.querySelectorAll('.discount-calculation')
+
+            for(const span of spans) {
+                const discounted = span.dataset.costYearly / 100
+                const yearly = (span.dataset.costMonthly / 100) * 12
+
+                const discount = 100 * (yearly - discounted) / yearly
+
+                if (discount == 0) {
+                    span.parentElement.parentElement.remove()
+                    continue
+                }
+
+                span.textContent = discount.toFixed(0)
+            }
+        </script>
     </section>
 
     <section class="mds-issues">
