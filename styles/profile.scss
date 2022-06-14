@@ -60,6 +60,18 @@
                 top: 0;
                 left: 0;
             }
+
+            .image-label {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.3);
+                font-size: 0.8em;
+                display: inline-block;
+                height: 25%;
+                padding: 4px 25px;
+                color: white;
+            }
         }
     }
 

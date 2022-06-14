@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   The newsletter load plans content from the API too
 -   Premium content is more accessible from the profile page
+-   Improve the visibility of the link to update the profile picture
 
 ### Fixed
 
