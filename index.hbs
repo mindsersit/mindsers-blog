@@ -23,10 +23,11 @@
         <header class="mds-header">
         {{#is "issues"}}
             {{#contentFor 'title'}}English Newsletter Issues - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">Mindsers' newsletter issues</h1>
+            <h1 class="mds-title">Mindsers Blog Insider issues</h1>
             <p>
-                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
-                This newsletter is about my own journey as a developer and entrepreneur.
+                As additional content, Mindsers Blog Insiders will provide you with:
+                stats, news about Mindsers Blog and my other projects,
+                additional tech and business tips, and my favorite reads of the month.
             </p>
             <p>
                 {{#unless @member.paid}}
@@ -36,10 +37,11 @@
             </p>
         {{else is "frissues"}}
             {{#contentFor 'title'}}French Newsletter Issues - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">Mindsers' newsletter issues in French</h1>
+            <h1 class="mds-title">Mindsers Blog Insider issues in French</h1>
             <p>
-                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
-                This newsletter is about my own journey as a developer and entrepreneur.
+                As additional content, Mindsers Blog Insiders will provide you with:
+                stats, news about Mindsers Blog and my other projects,
+                additional tech and business tips, and my favorite reads of the month.
             </p>
             <p>
                 {{#unless @member.paid}}
