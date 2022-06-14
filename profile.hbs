@@ -132,6 +132,14 @@
                     Some of the free blog posts contain additional content as cheatsheet, codesource of the exemples, etc. only accessible by premium members.
                 </p>
                 {{#if @member.paid}}
+                <p class="actions">
+                    <a
+                        class='button'
+                        href='/membership/additional-contents/'
+                    >
+                        Browse posts with additional content!
+                    </a>
+                </p>
                 {{ else }}
                 <p class="actions">
                     <a
@@ -147,7 +155,7 @@
                 <h2>{{@site.title}}'s Private Club</h2>
                 {{#if @member.paid}}
                 <p>
-                    Meet our community on our Discord server.
+                    Meet the community on our Discord server.
                     Talk, share and learn with other awesome members!
                 </p>
                 <p class="actions">
@@ -156,7 +164,7 @@
                     </a>
                 </p>
                 <p>
-                    As a premium member, you have access to special channels on the server,
+                    "Friend of Mindsers Blog" members have access to special channels on the server,
                     like the #lounge. If you don't see those channels, please send me an email at
                     <a
                         href='mailto:hello@mindsers.blog'
@@ -183,11 +191,10 @@
                 <h2>{{@site.title}} Insider</h2>
                 {{#if @member.paid}}
                 <p>
-                    Since you're a premium member, you have access to all the newsletter archive.
-                </p>
-                <p>
                     Check your inbox, you'll receive the next issues directly there!
                 </p>
+                <p>We'll share with you news and stats about the blog,
+                    tips for coders, our favorite links of the month and more!</p>
                 <p class="actions">
                     <a class='button' href='/issues/'>
                         Read the previous newsletter issues
@@ -219,11 +226,11 @@
                 <h2>Premium blog posts</h2>
                 {{#if @member.paid}}
                 <p>
-                    Here is a list of exclusive contents for you. Thanks for being a premium member!
+                    Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
                 </p>
                 <p class="actions">
-                    <a class='button' href='/membership/exclusive-content/'>
-                        Access the content
+                    <a class='button' href='/membership/posts/'>
+                        Browse the premium blog posts
                     </a>
                 </p>
                 {{else}}

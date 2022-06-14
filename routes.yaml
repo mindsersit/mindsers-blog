@@ -7,7 +7,14 @@ routes:
     /membership/welcome/: welcome
     /membership/welcome-paid/: welcome-paid
     /membership/welcome-friends/: welcome-friends
-    /membership/exclusive-content/: premium-content
+    /membership/posts/:
+        controller: channel
+        template: premium-index
+        filter: visibility:[paid,tiers]+tag:-[hash-newsletter-issue,hash-additional-content,hash-email]
+    /membership/additional-contents/:
+        controller: channel
+        template: additional-content-index
+        filter: tag:hash-additional-content
     /newsletter/: newsletter
     /newsletter/welcome/: welcome-newsletter
     /login/: login
