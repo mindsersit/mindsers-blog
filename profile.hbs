@@ -96,6 +96,7 @@
                     {{cancel_link class="button patreon subscription-cancel"}}
                 </div>
             </div>
+            <a href="#/portal/account/plans">Change plan</a>
         {{else}}
             <div class="fallback">
                 <p>No subscription can be found for your account.</p>
@@ -122,43 +123,33 @@
         </section>
         <hr class="section-separator"/>
         <section>
-            <h2>All the perks from your subscription:</h2>
+            <h2>All the perks from {{#if @member.paid}}your{{else}}the{{/if}} subscription:</h2>
         </section>
         <section class="profile-grid">
             <div>
-                <h2>VIP answers to your questions</h2>
+                <h2>Premium additional content</h2>
+                <p>
+                    Some of the free blog posts contain additional content as cheatsheet, codesource of the exemples, etc. only accessible by premium members.
+                </p>
                 {{#if @member.paid}}
-                <p>
-                    As part of your premium membership, you can send me a message
-                    and be confident you'll receive an answer.
-                </p>
-                <p>
-                    I can't wait to read your messages! Use the button below to send them.
-                </p>
-                <p>
-                    <button data-tf-popup="hjRSYP0s" class="button">
-                        Ask a question
-                    </button>
-                    <script src="//embed.typeform.com/next/embed.js"></script>
-                </p>
                 {{ else }}
-                <p>
-                    Join our premium members and get VIP answers to your questions!
-                </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
-                        Become a member!
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Get more content!
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>{{@site.title}}'s community</h2>
+                <h2>{{@site.title}}'s Private Club</h2>
+                {{#if @member.paid}}
                 <p>
                     Meet our community on our Discord server.
                     Talk, share and learn with other awesome members!
                 </p>
-                {{#if @member.paid}}
                 <p class="actions">
                     <a class='button discord' href='https://community.mindsers.blog/'>
                         Join the discord server!
@@ -175,23 +166,21 @@
                     and I'll give you the correct rights.
                 </p>
                 {{ else }}
-                <p class="actions">
-                    <a class='discord' href='https://community.mindsers.blog/'>
-                        Join the discord server!
-                    </a>
-                </p>
                 <p>
-                    Join our premium members and get full access to the Discord server! Including the VIP #lounge, etc.
+                    The premium membership gives access to the Discord server. Talk, share and learn with other awesome members!
                 </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
-                        Get your reward!
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Join the club!
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>Mindsers' Newsletter</h2>
+                <h2>{{@site.title}} Insider</h2>
                 {{#if @member.paid}}
                 <p>
                     Since you're a premium member, you have access to all the newsletter archive.
@@ -206,17 +195,28 @@
                 </p>
                 {{else}}
                 <p>
-                    Join our premium members and get full access to the premium newsletter.
+                    Want to get more from {{@site.title}}? Subscribe to our insider newsletter! We share news and stats about the blog,
+                    tips for coders, our favorite links of the month and more!
                 </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
-                        Join the community!
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Fill your inbox and your reading list!
+                    </a>
+                    <br/>
+                    <a
+                        class='button'
+                        href='/newsletter/'
+                    >
+                        Save with a newsletter only plan
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>Exclusive content</h2>
+                <h2>Premium blog posts</h2>
                 {{#if @member.paid}}
                 <p>
                     Here is a list of exclusive contents for you. Thanks for being a premium member!
@@ -228,10 +228,13 @@
                 </p>
                 {{else}}
                 <p>
-                    Join our premium members and get full access to the premium and exclusive content of {{@site.title}}.
+                    Join our premium members today and get full access to the premium blog posts of {{@site.title}}.
                 </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
                         Subscribe now!
                     </a>
                 </p>

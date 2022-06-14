@@ -23,9 +23,9 @@
             </p>
         </header>
 
-        {{#get "posts" filter="visibility:paid+tag:-[hash-newsletter-issue,hash-additional-content,hash-email]" include="tags"}}
+        {{#get "posts" filter="visibility:[paid,tiers]+tag:-[hash-newsletter-issue,hash-additional-content,hash-email]" include="tags,tiers"}}
         <section>
-            <p id="premium-blog-posts" class="section-title">📚 <span>Exclusive posts for Premium members</span></p>
+            <p id="premium-blog-posts" class="section-title">📚 <span>Exclusive posts</span></p>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
@@ -38,7 +38,7 @@
 
         {{#get "posts" filter="tag:hash-newsletter-issue" include="tags"}}
         <section>
-            <p id="premium-newsletter-issue" class="section-title">📫 <span>Newsletter issues for Premium members</span></p>
+            <p id="premium-newsletter-issue" class="section-title">📫 <span>Premium newsletter issues</span></p>
             <div class="mds-postfeed">
             {{#foreach posts}}
                 {{> "card"}}
