@@ -66,6 +66,11 @@
     .infos,
     .subscriptions {
         margin: 40px 0;
+
+        .notices {
+            text-align: center;
+            font-size: 0.75em;
+        }
     }
 
     .infos label {
