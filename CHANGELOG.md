@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 -   Directly redirect to portal newsletter settings when clicking on "email preferences"
+-   Fix the display issue on the profile image on small screen
 
 ## [3.2.0] - 2022-06-06
 
