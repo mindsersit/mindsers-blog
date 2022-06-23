@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   New warning paragraph on welcome pages about email languages
+
+### Fixed
+
+-   Directly redirect to portal newsletter settings when clicking on "email preferences"
+
 ## [3.2.0] - 2022-06-06
 
 ### Added
