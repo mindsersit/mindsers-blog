@@ -70,32 +70,32 @@
                 </p>
                 {{/if}}
                 <div class="subscriber-details">
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Email address</label>
-                    <span class="subscriber-detail-content">{{@member.email}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Your plan</label>
-                    <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Status</label>
-                    <span class="subscriber-detail-content">{{status}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Card</label>
-                    <span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">
-                    {{#if cancel_at_period_end}}
-                        Expires
-                    {{else}}
-                        Next bill date
-                    {{/if}}
-                    </label>
-                    <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
-                </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Your plan</label>
+                        <span class="subscriber-detail-content">{{plan.nickname}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Price</label>
+                        <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Status</label>
+                        <span class="subscriber-detail-content">{{status}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Card</label>
+                        <span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">
+                        {{#if cancel_at_period_end}}
+                            Expires
+                        {{else}}
+                            Next bill date
+                        {{/if}}
+                        </label>
+                        <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+                    </div>
                 </div>
                 <div class="actions">
                     {{#match status "active"}}
