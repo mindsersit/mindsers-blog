@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   New warning paragraph on welcome pages about email languages
+-   New options on profile page to help subscribers to update their plans
 
 ### Fixed
 
