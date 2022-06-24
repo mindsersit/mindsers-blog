@@ -112,7 +112,8 @@ body {
                     }
                 }
 
-                .login-button {
+                .login-button,
+                .shop-button {
                     &:not(.button) {
                         color: $accent_color;
                         text-decoration: none;
@@ -182,6 +183,10 @@ body {
                                 color: $accent_color;
                                 text-decoration: none;
                                 font-weight: bold;
+
+                                &.button {
+                                    color: $foreground_color;
+                                }
 
                                 &[data-members-signout] {
                                     color: #ff424d;
