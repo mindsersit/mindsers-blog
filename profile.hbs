@@ -23,7 +23,7 @@
                 <p>
                     Hello! You have an active {{@site.title}} account with full
                     access to all aeras and features. Get in touch if have any problems or
-                    need some help getting things updated (like email language),
+                    need some help getting things updated,
                     and thanks for subscribing.
                 </p>
             {{else}}
@@ -32,16 +32,23 @@
                     You are subscribed to free updates from
                     {{@site.title}}, but doesn't have a premium membership to
                     unlock full access. Get in touch if have any problems or
-                    need some help getting things updated (like email language),
+                    need some help getting things updated,
                     and thanks for being part of the community.
                 </p>
             {{/if}}
             </div>
             <div class="avatar">
-            {{> "icons/profile"}}
-            {{#if @member.avatar_image}}
-                <img src='{{@member.avatar_image}}' />
-            {{/if}}
+                <a
+                    href="https://gravatar.com/emails/"
+                    title='Update your profile picture on Gravatar'
+                    rel='nofollow noreferrer'
+                >
+                {{> "icons/profile"}}
+                {{#if @member.avatar_image}}
+                    <img src='{{@member.avatar_image}}' />
+                {{/if}}
+                    <span class="image-label">Update profile picture</span>
+                </a>
             </div>
         </header>
         <section class="infos">
@@ -51,6 +58,7 @@
             {{#has label="french"}}
             french
             {{/has}}
+            <a href="javascript:" data-members-edit-billing data-members-success="/profile/" data-members-cancel="/profile/">Edit billing info</a>
         </section>
         <section class="subscriptions">
             <h2>Subscriptions</h2>
@@ -62,33 +70,55 @@
                 </p>
                 {{/if}}
                 <div class="subscriber-details">
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Email address</label>
-                    <span class="subscriber-detail-content">{{@member.email}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Your plan</label>
-                    <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">Card</label>
-                    <span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
-                </div>
-                <div class="subscriber-detail">
-                    <label class="subscriber-detail-label">
-                    {{#if cancel_at_period_end}}
-                        Expires
-                    {{else}}
-                        Next bill date
-                    {{/if}}
-                    </label>
-                    <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
-                </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Your plan</label>
+                        <span class="subscriber-detail-content">{{plan.nickname}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Price</label>
+                        <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Status</label>
+                        <span class="subscriber-detail-content">{{status}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">Card</label>
+                        <span class="subscriber-detail-content">**** **** **** {{default_payment_card_last4}}</span>
+                    </div>
+                    <div class="subscriber-detail">
+                        <label class="subscriber-detail-label">
+                        {{#if cancel_at_period_end}}
+                            Expires
+                        {{else}}
+                            Next bill date
+                        {{/if}}
+                        </label>
+                        <span class="subscriber-detail-content">{{date current_period_end format="DD MMM YYYY"}}</span>
+                    </div>
                 </div>
                 <div class="actions">
-                    {{cancel_link class="button patreon subscription-cancel"}}
+                    {{#match status "active"}}
+                        {{#match plan.amount "!=" 0}}
+                        <a class="button" href="#/portal/account/plans">Change plan</a>
+                        {{/match}}
+                        {{cancel_link class="button patreon subscription-cancel"}}
+                    {{else match status "canceled"}}
+                        <a class="button" href="/membership/">Why subscribe?</a>
+                        <a class="button highlighted" href="#/portal/account/plans">Change plan</a>
+                    {{else}}
+                        <a class="button highlighted" href="#/portal/account/plans">Update my subscription</a>
+                    {{/match}}
                 </div>
             </div>
+            <p class="notices">
+                To change plan from a complementary plan, you have to cancel first your current plan and then visit our <a href="/membership/">Membership page</a>.<br/>
+                If you have any issue with your subscription, please contact us via email at <a
+                        href='mailto:hello@mindsers.blog'
+                        title='Contact support team'
+                        rel='nofollow noreferrer'
+                    >hello@mindsers.blog</a>.
+            </p>
         {{else}}
             <div class="fallback">
                 <p>No subscription can be found for your account.</p>
@@ -98,54 +128,65 @@
                     entrepreneurs!
                 </p>
                 <a  href='/membership/'>See plans</a>&nbsp; &nbsp;
-                <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                <a
+                    class='button highlighted'
+                    href='javascript:'
+                    data-portal="signup/monthly"
+                    data-members-cancel="/profile/"
+                >
                     Subscribe now!
                 </a>
             </div>
         {{/foreach}}
         </section>
+        <section>
+            <h2>Email preferences</h2>
+            <a href="#/portal/account/newsletters">Change your email preferences</a> (email language, notifications, etc.)
+        </section>
+        <hr class="section-separator"/>
+        <section>
+            <h2>All the perks from {{#if @member.paid}}your{{else}}the{{/if}} subscription:</h2>
+        </section>
         <section class="profile-grid">
             <div>
-                <h2>VIP answers to your questions</h2>
+                <h2>Premium additional content</h2>
+                <p>
+                    Some of the free blog posts contain additional content as cheatsheet, codesource of the exemples, etc. only accessible by premium members.
+                </p>
                 {{#if @member.paid}}
-                <p>
-                    As part of your premium membership, you can send me a message
-                    and be confident you'll receive an answer.
-                </p>
-                <p>
-                    I can't wait to read your messages! Use the button below to send them.
-                </p>
-                <p>
-                    <button data-tf-popup="hjRSYP0s" class="button">
-                        Send me a message
-                    </button>
-                    <script src="//embed.typeform.com/next/embed.js"></script>
+                <p class="actions">
+                    <a
+                        class='button'
+                        href='/membership/additional-contents/'
+                    >
+                        Browse posts with additional content!
+                    </a>
                 </p>
                 {{ else }}
-                <p>
-                    Join our premium members and get VIP answers to your questions!
-                </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
-                        Become a member!
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Get more content!
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>{{@site.title}}'s community</h2>
+                <h2>{{@site.title}}'s Private Club</h2>
+                {{#if @member.paid}}
                 <p>
-                    Meet our community on our Discord server.
+                    Meet the community on our Discord server.
                     Talk, share and learn with other awesome members!
                 </p>
-                {{#if @member.paid}}
                 <p class="actions">
                     <a class='button discord' href='https://community.mindsers.blog/'>
                         Join the discord server!
                     </a>
                 </p>
-                <p>
-                    As a premium member, you have access to special channels on the server,
+                <p class="notices">
+                    "Friend of Mindsers Blog" members have access to special channels on the server,
                     like the #lounge. If you don't see those channels, please send me an email at
                     <a
                         href='mailto:hello@mindsers.blog'
@@ -155,63 +196,74 @@
                     and I'll give you the correct rights.
                 </p>
                 {{ else }}
-                <p class="actions">
-                    <a class='discord' href='https://community.mindsers.blog/'>
-                        Join the discord server!
-                    </a>
-                </p>
                 <p>
-                    Join our premium members and get full access to the Discord server! Including the VIP #lounge, etc.
+                    The premium membership gives access to the Discord server. Talk, share and learn with other awesome members!
                 </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
-                        Get your reward!
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Join the club!
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>Mindsers' Newsletter</h2>
+                <h2>{{@site.title}} Insider</h2>
                 {{#if @member.paid}}
-                <p>
-                    Since you're a premium member, you have access to all the newsletter archive.
-                </p>
                 <p>
                     Check your inbox, you'll receive the next issues directly there!
                 </p>
+                <p>We'll share with you news and stats about the blog,
+                    tips for coders, our favorite links of the month and more!</p>
                 <p class="actions">
                     <a class='button' href='/issues/'>
-                        Read the newsletter issues
+                        Read the previous newsletter issues
                     </a>
                 </p>
                 {{else}}
                 <p>
-                    Join our premium members and get full access to the premium newsletter.
+                    Want to get more from {{@site.title}}? Subscribe to our insider newsletter! We share news and stats about the blog,
+                    tips for coders, our favorite links of the month and more!
                 </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
-                        Join the community!
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Fill your inbox and your reading list!
+                    </a>
+                    <br/>
+                    <a
+                        class='button'
+                        href='/newsletter/'
+                    >
+                        Save with a newsletter only plan
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>Exclusive content</h2>
+                <h2>Premium blog posts</h2>
                 {{#if @member.paid}}
                 <p>
-                    Here is a list of exclusive contents for you. Thanks for being a premium member!
+                    Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
                 </p>
                 <p class="actions">
-                    <a class='button' href='/membership/exclusive-content/'>
-                        Access the content
+                    <a class='button' href='/membership/posts/'>
+                        Browse the premium blog posts
                     </a>
                 </p>
                 {{else}}
                 <p>
-                    Join our premium members and get full access to the premium and exclusive content of {{@site.title}}.
+                    Join our premium members today and get full access to the premium blog posts of {{@site.title}}.
                 </p>
                 <p class="actions">
-                    <a class='button highlighted' href='javascript:' data-members-plan='Monthly'>
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
                         Subscribe now!
                     </a>
                 </p>

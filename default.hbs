@@ -44,6 +44,9 @@
                     <div class='mds-head-placeholder'></div>
                     <div class='mds-head-actions'>
                         {{#if @member}}
+                            {{#if @custom.shop_url}}
+                            <a class="button highlighted shop-button" href="{{@custom.shop_url}}">Shop</a>
+                            {{/if}}
                             <a href="/profile/" class="profile-button" tabindex="0" title="Open profile menu" aria-haspopup="true">
                                 {{> "icons/profile"}}
                                 {{#if @member.avatar_image}}
@@ -60,7 +63,12 @@
                                 </ul>
                             </div>
                         {{else}}
+                            {{#if @custom.shop_url}}
+                            <a class='login-button' href='/login/'>Log in</a>
+                            <a class="button highlighted shop-button" href="{{@custom.shop_url}}">Shop</a>
+                            {{else}}
                             <a class='button primary login-button' href='/login/'>Log in</a>
+                            {{/if}}
                             <a class='more-button-small-screen' tabindex="0" title="Open main menu" aria-haspopup="true">{{> "icons/more"}}</a>
                         {{/if}}
 
@@ -88,6 +96,12 @@
                             <ul>
                                 <li class="reminder">Signed as<br>{{@member.email}}</li>
                                 <li><a href="/profile/">Account</a></li>
+                            </ul>
+                            {{/if}}
+
+                            {{#if @custom.shop_url}}
+                            <ul>
+                                <li><a class="button highlighted" href="{{@custom.shop_url}}">Shop</a></li>
                             </ul>
                             {{/if}}
 
@@ -230,7 +244,7 @@
                                 <li>Bitcoin:
                                     <span
                                         class='coin-address'
-                                    >3N7iAYWKz5rqdtbYJ4r1SRJHq9sEQbXHDk</span></li>
+                                    >bc1qak6nsd0jk45lfdh2hrtpzdgsq6557tvj6kj2nj</span></li>
                                 <li>Ethereum:
                                     <span
                                         class='coin-address'
@@ -242,7 +256,19 @@
                                 <li>Litecoin:
                                     <span
                                         class='coin-address'
-                                    >MU47RMv5KmdsiBU8Kw5PNPbn3cyFLjmQXPt</span></li>
+                                    >ltc1qh959rdkrq7mq0uk7fv9mgkw37rdf5krru4k9du</span></li>
+                                <li>Polkadot:
+                                    <span
+                                        class='coin-address'
+                                    >164giiCvnViHEhA7GZVPZSyHi75v2fjuBWMydyF5r3sK6Lo4</li>
+                                <li>Elrond:
+                                    <span
+                                        class='coin-address'
+                                    >erd19vgw4yfknr02hq22n7s900w8dxurnc76zykjap3lhlds29yscalq6g7zzk</li>
+                                <li>Dogecoin:
+                                    <span
+                                        class='coin-address'
+                                    >DHUoWR6HtZ28gXnyicTNDvBgKcjSWSUaV6</li>
                             </ul>
                         </div>
                     </nav>
@@ -250,9 +276,9 @@
                         &copy;2014-{{date format='YYYY'}}
                         <a href='https://nathanaelcherrier.dev/en/'>Nathanaël
                             Cherrier</a>. All rights reserved.<br />
-                        <a
-                            href='https://nathanaelcherrier.dev/en/legal'
-                        >Legal notices</a>
+                        <a href='/legal-notices/'>
+                            Legal notices
+                        </a>
                     </div>
                 </div>
             </footer>

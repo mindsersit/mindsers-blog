@@ -55,6 +55,55 @@
         }
     }
 
+    .mds-toggle {
+        height: min-content;
+        width: 60px;
+        background-color: $foreground_color;
+        border-radius: 18px;
+        padding: 3px;
+        display: inline-flex;
+        margin: 10px;
+
+        .mds-toggle-handle {
+            background-color: $background_color;
+            height: 30px;
+            width: 50%;
+            border-radius: 15px;
+        }
+    }
+
+    .mds-toggle-container {
+        display: inline-flex;
+        align-items: center;
+
+        input {
+            & + .mds-toggle {
+                height: min-content;
+                width: 60px;
+                background-color: $foreground_color;
+                border-radius: 18px;
+                padding: 3px;
+                display: inline-flex;
+                justify-content: flex-start;
+                margin: 10px;
+
+                .mds-toggle-handle {
+                    background-color: $background_color;
+                    height: 30px;
+                    width: 50%;
+                    border-radius: 15px;
+                    transition: all 2s;
+                    box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.5);
+                }
+            }
+
+            &:checked + .mds-toggle {
+                justify-content: flex-end;
+                background: $default_gradient;
+            }
+        }
+    }
+
     .mds-plan-grid {
         margin: 50px 0 120px;
 
@@ -64,6 +113,15 @@
 
         @media (max-width: 700px) {
             margin: 0;
+        }
+
+        a:not(.button) {
+            text-decoration: none;
+            color: $accent_color;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         .mds-container {
@@ -81,16 +139,36 @@
                 align-items: center;
             }
 
+            &[data-plan='yearly'] {
+                .monthly-plan-data {
+                    display: none;
+                }
+            }
+
+            &[data-plan='monthly'] {
+                .yearly-plan-data {
+                    display: none;
+                }
+            }
+
             .plan-container {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin: 20px;
                 padding: 3px;
-                background: $default_gradient;
+                background: $foreground_color;
                 border-radius: 3px;
                 width: 30%;
                 position: relative;
+
+                &.highlighted {
+                    background: $default_gradient;
+                }
+
+                &.large {
+                    width: 60%;
+                }
 
                 @media (max-width: 1024px) {
                     margin: 0 10px;
@@ -118,10 +196,23 @@
 
                     header {
                         margin: 30px 0;
+                        text-align: center;
+
                         h2 {
                             font-size: 1.25rem;
                             font-weight: 600;
-                            text-align: center;
+                        }
+
+                        .yearly-plan-data,
+                        .monthly-plan-data {
+                            font-size: 3.5em;
+                            font-weight: bolder;
+                            padding: 5px 0;
+
+                            & > span {
+                                font-size: 0.45em;
+                                font-weight: 600;
+                            }
                         }
                     }
 

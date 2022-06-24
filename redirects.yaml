@@ -7,6 +7,7 @@
     /issue/: /issues/
     /fr/issue/: /fr/issues/
     /email/: /emails/
+    /membership/exclusive-content/: /membership/posts/
     # blog.nathanaelcherrier.com content
     /2016/03/07/linting-good-practices/: /fr/post/linting-good-practices/
     /2016/08/03/gerer-plusieurs-versions-avec-gitflow/: /fr/post/gerer-plusieurs-versions-avec-gitflow/

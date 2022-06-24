@@ -21,10 +21,16 @@
 <div class='mds-plans'>
     <div class='mds-container'>
         <header class='mds-header'>
-            <h1 class='mds-title'>Mindsers’ Newsletter</h1>
+            <h1 class='mds-title'>Mindsers Blog Insider</h1>
             <p>
-                In addition to the blog posts, I try to send to my subscribers a more personal paid newsletter each month.
-                This newsletter is about my own journey as a developer and entrepreneur.
+                A monthly newsletter about what's happening inside the Mindsers blog.
+                This newsletter is intended to make the "Mindsers Blog experience" last longer
+                for the most engaged readers who want more from Mindsers Blog.
+            </p>
+            <p>
+                As additional content, Mindsers Blog Insiders will provide you with:
+                stats, news about Mindsers Blog and my other projects,
+                additional tech and business tips, and my favorite reads of the month.
             </p>
         </header>
     </div>
@@ -52,47 +58,68 @@
 
     <section class="mds-plan-grid">
         <div class="mds-container">
-            <div class="plan-container">
+            {{#get "tiers" include="monthly_price,yearly_price,benefits" filter="type:paid+id:{{@custom.newsletter_tier_id}}" limit="1"}}
+            {{#foreach tiers visibility="all"}}
+            <div class="plan-container highlighted">
                 <div class="plan-bg">
                     <header>
                         <h2>Monthly Subscription</h2>
                     </header>
-                    <section class="plan-body">
+                    <section class='plan-body'>
                         <ul>
-                            <li>💌 Receive the monthly newsletter by email</li>
-                            <li>📨 Get complete access to previous issues on the website</li>
-                            <li>✊🏽 Support an independent publication</li>
-                            <li class='eco'><strong>♻️ We give back 1.5% of your subscription</strong>
-                                to help removing CO₂ from the
-                                atmosphere.</li>
+                        {{#if benefits}}
+                            {{#foreach benefits as |benefit|}}
+                                <li>✓ {{benefit}}</li>
+                            {{/foreach}}
+                        {{/if}}
+                            <li>✓ No advertising on the website</li>
+                            <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂ from the atmosphere.</strong></li>
                         </ul>
                     </section>
                     <section class="plan-price">
-                        <a href="javascript:" data-members-plan="Monthly" class="button highlighted">{{price @price.monthly}} / month</a>
+                        {{#if monthly_price}}
+                        <a href="javascript:"
+                            data-portal="signup/{{id}}/monthly"
+                            data-members-cancel="/newsletter/"
+                            class="button highlighted">
+                            {{price monthly_price currency=currency}} / month
+                        </a>
+                        {{/if}}
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
+                        <p class="notices">This plan do not give access to premium blog posts. See the <a href="/membership/">Membership page</a> for more informations.</p>
                     </section>
                 </div>
             </div>
-            <div class="plan-container">
+            <div class="plan-container highlighted">
                 <div class="plan-bg">
                     <header>
                         <h2>Yearly Subscription</h2>
                     </header>
-                    <section class="plan-body">
+                    <section class='plan-body'>
                         <ul>
-                            <li>💌 Receive the monthly newsletter by email</li>
-                            <li>📨 Get complete access to previous issues on the website</li>
-                            <li>✊🏽 Support an independent publication</li>
-                            <li class='eco'><strong>♻️ We give back 1.5% of your subscription</strong>
-                                to help removing CO₂ from the
-                                atmosphere.</li>
-                            <li><strong>⚡️ Pay 1 quick payment instead of 12!</strong></li>
-                            <li><strong>💸 Get an extra 17% discount</strong></li>
+                        {{#if benefits}}
+                            {{#foreach benefits as |benefit|}}
+                                <li>✓ {{benefit}}</li>
+                            {{/foreach}}
+                        {{/if}}
+                            <li>✓ No advertising on the website</li>
+                            <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂ from the atmosphere.</strong></li>
+                            <li class='yearly-plan-data'>✓ <strong>Pay 1 quick payment instead of 12!</strong></li>
+                            <li class='yearly-plan-data'>✓ <strong>Get an extra <span class="discount-calculation" data-cost-yearly="{{price yearly_price}}" data-cost-monthly="{{price monthly_price}}"></span>% discount</strong></li>
                         </ul>
                     </section>
                     <section class="plan-price">
-                        <a href="javascript:" data-members-plan="Yearly" class="button highlighted">{{price @price.yearly}} / year</a>
+                        {{#if yearly_price}}
+                        <a
+                            href="javascript:"
+                            data-portal="signup/{{id}}/yearly"
+                            data-members-cancel="/newsletter/"
+                            class="button highlighted">
+                            {{price yearly_price currency=currency}} / year
+                        </a>
+                        {{/if}}
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
+                        <p class="notices">This plan do not give access to premium blog posts. See the <a href="/membership/">Membership page</a> for more informations.</p>
                     </section>
                 </div>
                 <div class="plan-favourite-notice">
@@ -100,11 +127,32 @@
                         <div class="curve"></div>
                     </div>
                     <div class="notice">
-                        My favourite readers’ option
+                        Favourite subscribers’ option
                     </div>
                 </div>
             </div>
+            {{/foreach}}
+            {{else}}
+            <p>Specific newsletter plans have been deactivated. Please look at the complete <a href="/membership/">membership plans</a> for more informations.</p>
+            {{/get}}
         </div>
+        <script>
+            const spans = document.querySelectorAll('.discount-calculation')
+
+            for(const span of spans) {
+                const discounted = span.dataset.costYearly / 100
+                const yearly = (span.dataset.costMonthly / 100) * 12
+
+                const discount = 100 * (yearly - discounted) / yearly
+
+                if (discount == 0) {
+                    span.parentElement.parentElement.remove()
+                    continue
+                }
+
+                span.textContent = discount.toFixed(0)
+            }
+        </script>
     </section>
 
     <section class="mds-issues">
@@ -161,9 +209,23 @@
                     <h3>Do I have to pay twice for the newsletter and the
                         private blog posts?</h3>
                     <p>
-                        No, the premium membership contains the newsletter issues and
-                        the full blog posts library. You do <strong>not</strong> have to pay
-                        twice.
+                        No, you don't have to. The higher level of <a href="/membership/">our premium membership</a> contains
+                        the newsletter issues and the full blog posts library. You do
+                        <strong>not</strong> have to pay twice.
+
+                    </p>
+                    <p>
+                        But it is up to you to decide if you want to subscribe only to the newsletter or only to the blog post.
+                    </p>
+                </div>
+                <div>
+                    <h3>I saw there are issues in English and in French. Will I receive both?</h3>
+                    <p>
+                        By default, yes. But we don't want to annoy you. If you want to change the languages you receive by email,
+                        you can do it on your profile page. It is possible to uncheck the emails you don't want to receive anymore from there.
+                    </p>
+                    <p>
+                        Whatever your choice is, you will still have access to the newsletter issues library on the blog in both languages.
                     </p>
                 </div>
                 <div>

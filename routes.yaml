@@ -6,8 +6,17 @@ routes:
     /membership/: plans
     /membership/welcome/: welcome
     /membership/welcome-paid/: welcome-paid
-    /membership/exclusive-content/: premium-content
+    /membership/welcome-friends/: welcome-friends
+    /membership/posts/:
+        controller: channel
+        template: premium-index
+        filter: visibility:[paid,tiers]+tag:-[hash-newsletter-issue,hash-additional-content,hash-email]
+    /membership/additional-contents/:
+        controller: channel
+        template: additional-content-index
+        filter: tag:hash-additional-content
     /newsletter/: newsletter
+    /newsletter/welcome/: welcome-newsletter
     /login/: login
     /signup/: signup
     /profile/: profile
@@ -21,10 +30,6 @@ collections:
         permalink: /issue/{slug}/
         template: index
         filter: 'tag:hash-en+tag:hash-newsletter-issue'
-    /emails/:
-        permalink: /email/{slug}/
-        template: index
-        filter: 'tag:hash-email'
     /fr/posts/:
         permalink: /fr/post/{slug}/
         template: index

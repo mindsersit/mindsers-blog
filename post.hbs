@@ -65,12 +65,12 @@
     </div>
 
     <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr"{{/has}}>
-        {{#has visibility='paid'}}
+        {{#has visibility='public'}}
+            {{> "thanks-cta"}}
+        {{else}}
             {{#has tag='#additional-content'}}
                 {{> "thanks-cta"}}
             {{/has}}
-        {{else}}
-            {{> "thanks-cta"}}
         {{/has}}
 
         {{content}}

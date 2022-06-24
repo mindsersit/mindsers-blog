@@ -7,6 +7,99 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.3.0] - 2022-06-06
+
+### Added
+
+-   New warning paragraph on welcome pages about email languages
+-   New options on profile page to help subscribers to update their plans
+-   Show additional information about the current subscription
+
+### Fixed
+
+-   Directly redirect to portal newsletter settings when clicking on "email preferences"
+-   Fix the display issue on the profile image on small screen
+-   Move the shop button into the more menu on small screen
+
+## [3.2.0] - 2022-06-06
+
+### Added
+
+-   New question in the plans FAQ
+-   New disclaimer (newsletter plan do not five access to blog posts) in newsletter plans
+-   New welcome pages for new plans
+-   New RSS feeds for premium content list
+
+### Changed
+
+-   The newsletter load plans content from the API too
+-   Premium content is more accessible from the profile page
+-   Improve the visibility of the link to update the profile picture
+
+### Fixed
+
+-   Fix button text color in dark mode (plans)
+-   Show the selected tier on the newsletter page even if it is not visible in portal
+
+## [3.1.1] - 2022-06-06
+
+### Changed
+
+-   Update the plans description wording
+-   The CTA now adapts the strings for post only visible for specific tiers
+
+### Fixed
+
+-   Price button are not readable. Display them in white.
+-   Fix subscribe button of the CTA to lunch stripe again
+
+## [3.1.0] - 2022-06-06
+
+### Added
+
+-   Show a fallback message to redirect users to membership when no specific tier is selected for newsletter
+
+### Changed
+
+-   Improve the newsletter page wording (better English)
+-   Make the shop button optional
+-   Make the login button looks like a less important link when the shop button is displayed
+
+### Removed
+
+-   The signup form does not handle language anymore.
+    Language will be handled with Email Preferences in the profile page
+
+## [3.0.1] - 2022-06-06
+
+### Fixed
+
+-   Add or remove specific option for Ghost v5
+-   Upgrade deps to make CI pass
+
+## [3.0.0] - 2022-06-06
+
+### Added
+
+-   Add a new link to change profile picture. Link on the PP.
+-   New link to edit the billing information on the profile page
+-   Support for the new tiers feature of Ghost
+-   It is now possible to use custom theme settings to indicate the favourite tier.
+-   New toggle switch to switch between monthly and yearly plans
+-   New theme custom field to select the plan to show on the newsletter page
+-   On the profile page, add a link to change the email preferences of the user
+
+### Changed
+
+-   The "legal notices" link in the footer now redirect to an internal page of Mindsers Blog
+-   The perk section on the profile page is now seperated by a strong line and a title to make it more identifiable
+-   [BREAKING] The theme doesn't support Ghost version lower than v5
+
+### Fixed
+
+-   Hide the email archives from the exclusive content page
+-   When clicking back on Stripe forms, the user comes back to the correct page (membership, etc)
+
 ## [2.13.0] - 2021-11-01
 
 ### Added
@@ -443,7 +536,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v2.13.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.3.0...HEAD
+[3.3.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.2.0...v3.3.0
+[3.2.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.1.1...v3.2.0
+[3.1.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.1.0...v3.1.1
+[3.1.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.0.1...v3.1.0
+[3.0.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.0.0...v3.0.1
+[3.0.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.13.0...v3.0.0
 [2.13.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.13.0
 [2.12.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.11.0...v2.12.0
 [2.11.0]: https://github.com/mindsers/mindsersit-blog/compare/v2.10.0...v2.11.0

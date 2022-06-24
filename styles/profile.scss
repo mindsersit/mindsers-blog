@@ -60,12 +60,30 @@
                 top: 0;
                 left: 0;
             }
+
+            .image-label {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.3);
+                font-size: 0.8em;
+                display: inline-block;
+                height: 25%;
+                padding: 4px 25px;
+                color: white;
+                left: 0;
+            }
         }
     }
 
     .infos,
     .subscriptions {
         margin: 40px 0;
+
+        .notices {
+            text-align: center;
+            font-size: 0.75em;
+        }
     }
 
     .infos label {
@@ -106,6 +124,11 @@
         }
     }
 
+    .section-separator {
+        border: 1px solid #aaa;
+        margin: 100px 100px 70px;
+    }
+
     .profile-grid {
         display: flex;
         justify-content: space-between;
@@ -122,6 +145,11 @@
 
             @media (max-width: 600px) {
                 width: 100%;
+            }
+
+            .notices {
+                text-align: center;
+                font-size: 0.75em;
             }
         }
     }
