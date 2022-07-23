@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   New button on the main menu for search feature
+-   Display a discount link on the plan page.
+
+### Removed
+
+-   No more link to patreon anymore.
 
 ## [3.3.0] - 2022-06-06
 
