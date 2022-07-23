@@ -112,6 +112,16 @@ body {
                     }
                 }
 
+                .search-button {
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                    color: gainsboro;
+                    cursor: pointer;
+                }
+
                 .login-button,
                 .shop-button {
                     &:not(.button) {

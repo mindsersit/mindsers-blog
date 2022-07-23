@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+-   New button on the main menu for search feature
+
 ## [3.3.0] - 2022-06-06
 
 ### Added
