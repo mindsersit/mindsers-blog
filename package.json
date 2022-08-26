@@ -1,6 +1,6 @@
 {
     "name": "mindsers-blog",
-    "version": "3.5.0",
+    "version": "3.5.1",
     "description": "Theme for MindsersIT Blog",
     "keywords": [
         "ghost-theme"
@@ -62,9 +62,9 @@
         "card_assets": true
     },
     "devDependencies": {
-        "autoprefixer": "10.4.7",
-        "cssnano": "5.1.11",
-        "gscan": "4.31.2",
+        "autoprefixer": "10.4.8",
+        "cssnano": "5.1.13",
+        "gscan": "4.34.0",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.1",
@@ -73,10 +73,10 @@
         "gulp-uglify": "3.0.2",
         "gulp-watch": "5.0.1",
         "gulp-zip": "5.1.0",
-        "postcss": "8.4.14",
+        "postcss": "8.4.16",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "4.0.0",
-        "sass": "^1.52.2",
-        "shiki": "^0.10.1"
+        "sass": "^1.54.5",
+        "shiki": "^0.11.1"
     }
 }
