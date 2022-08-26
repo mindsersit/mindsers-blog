@@ -300,25 +300,48 @@
             <div>
                 <h2>{{@site.title}}'s Private Club</h2>
                 {{#if @member.paid}}
-                <p>
-                    Meet the community on our Discord server.
-                    Talk, share and learn with other awesome members!
-                </p>
-                <p class="actions">
-                    <a class='button discord' href='https://community.mindsers.blog/'>
-                        Join the discord server!
-                    </a>
-                </p>
-                <p class="notices">
-                    "Friend of Mindsers Blog" members have access to special channels on the server,
-                    like the #lounge. If you don't see those channels, please send me an email at
-                    <a
-                        href='mailto:hello@mindsers.blog'
-                        title='Contact support team'
-                        rel='nofollow noreferrer'
-                    >hello@mindsers.blog</a> with your Discord username
-                    and I'll give you the correct rights.
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p>
+                                Meet the community on our Discord server.
+                                Talk, share and learn with other awesome members!
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Private Club access: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a class='button discord' href='https://community.mindsers.blog/'>
+                                    Join the discord server!
+                                </a>
+                            </p>
+                            {{^match tier.id @custom.blog_tier_id}}
+                                <p class="notices">
+                                    "Friend of Mindsers Blog" members have access to special channels on the server,
+                                    like the #lounge. If you don't see those channels, please send me an email at
+                                    <a
+                                        href='mailto:hello@mindsers.blog'
+                                        title='Contact support team'
+                                        rel='nofollow noreferrer'
+                                    >hello@mindsers.blog</a> with your Discord username
+                                    and I'll give you the correct rights.
+                                </p>
+                            {{/match}}
+                        {{else}}
+                            <p>Your current plan doesn't allow you to write and read comments on <strong>{{@site.title}}</strong>'s posts.</p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{ else }}
                 <p>
                     The premium membership gives access to the Discord server. Talk, share and learn with other awesome members!
@@ -339,11 +362,27 @@
                     Share your thoughts, discuss and debate with other member of the community right below the blog posts.
                 </p>
                 {{#if @member.paid}}
-                <p class="actions">
-                    <span class='unlocked-feature'>
-                        Comments section: Unlocked.
-                    </span>
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p class="actions">
+                                <span class='unlocked-feature'>
+                                    Comments section: Unlocked.
+                                </span>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to write and read comments on <strong>{{@site.title}}</strong>'s posts.</p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{ else }}
                 <p class="actions">
                     <a
