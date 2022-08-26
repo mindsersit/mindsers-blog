@@ -222,7 +222,7 @@
                                 </a>
                             </p>
                         {{else}}
-                            <p>Your current plan doesn't allow you to access newsletter issues.</p>
+                            <p>Your current plan doesn't allow you to access premium posts.</p>
                             <p>
                                 Change plan today and get full access to the premium blog posts of {{@site.title}}.
                             </p>
@@ -257,14 +257,35 @@
                     Some of the free blog posts contain additional content as cheatsheet, codesource of the exemples, etc. only accessible by premium members.
                 </p>
                 {{#if @member.paid}}
-                <p class="actions">
-                    <a
-                        class='button'
-                        href='/membership/additional-contents/'
-                    >
-                        Browse posts with additional content!
-                    </a>
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Additional contents: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='/membership/additional-contents/'
+                                >
+                                    Browse posts with additional content!
+                                </a>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access additional contents.</p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{ else }}
                 <p class="actions">
                     <a
