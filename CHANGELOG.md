@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.5.1] - 2022-08-26
+
+### Fixed
+
+-   Upgrade of all the deprecated deps
+
+## [3.5.0] - 2022-08-26
+
+### Added
+
+-   Add a direct link to the perks list in the menu
+
+### Changed
+
+-   Simpler user flow for comments. The comments feature isn't handle by Commento anymore but Ghost.
+    Users doesn't have to log twice (ghost + commento) to be able to comment.
+
+## [3.4.0] - 2022-07-27
+
+### Added
+
+-   New button on the main menu for search feature
+-   Display a discount link on the plan page.
+
+### Changed
+
+-   Open shop in a new tab
+
+### Removed
+
+-   No more link to patreon anymore.
+
 ## [3.3.0] - 2022-06-06
 
 ### Added
@@ -536,7 +568,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.3.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.1...HEAD
+[3.5.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.0...v3.5.1
+[3.5.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.4.0...v3.5.0
+[3.4.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.3.0...v3.4.0
 [3.3.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.1.1...v3.2.0
 [3.1.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.1.0...v3.1.1
