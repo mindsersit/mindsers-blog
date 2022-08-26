@@ -99,9 +99,7 @@
                 </div>
                 <div class="actions">
                     {{#match status "active"}}
-                        {{#match plan.amount "!=" 0}}
                         <a class="button" href="#/portal/account/plans">Change plan</a>
-                        {{/match}}
                         {{cancel_link class="button patreon subscription-cancel"}}
                     {{else match status "canceled"}}
                         <a class="button" href="/membership/">Why subscribe?</a>
@@ -111,14 +109,15 @@
                     {{/match}}
                 </div>
             </div>
+            {{#if @last}}
             <p class="notices">
-                To change plan from a complementary plan, you have to cancel first your current plan and then visit our <a href="/membership/">Membership page</a>.<br/>
                 If you have any issue with your subscription, please contact us via email at <a
                         href='mailto:hello@mindsers.blog'
                         title='Contact support team'
                         rel='nofollow noreferrer'
                     >hello@mindsers.blog</a>.
             </p>
+            {{/if}}
         {{else}}
             <div class="fallback">
                 <p>No subscription can be found for your account.</p>
@@ -277,7 +276,7 @@
                 {{#if @member.paid}}
                 <p class="actions">
                     <span class='unlocked-feature'>
-                        Comment section: Unlocked.
+                        Comments section: Unlocked.
                     </span>
                 </p>
                 {{ else }}

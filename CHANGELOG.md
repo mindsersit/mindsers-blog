@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   New section on profile page to explain the comments feature
 
+### Changed
+
+-   Allow plan changes from complementary plan
+
 ### Fixed
 
 -   Remove and correct typos
