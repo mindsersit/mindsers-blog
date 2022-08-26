@@ -205,14 +205,38 @@
             <div>
                 <h2>Premium blog posts</h2>
                 {{#if @member.paid}}
-                <p>
-                    Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
-                </p>
-                <p class="actions">
-                    <a class='button' href='/membership/posts/'>
-                        Browse the premium blog posts
-                    </a>
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p>
+                                Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Premium posts: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a class='button' href='/membership/posts/'>
+                                    Browse the premium blog posts library
+                                </a>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access newsletter issues.</p>
+                            <p>
+                                Change plan today and get full access to the premium blog posts of {{@site.title}}.
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{else}}
                 <p>
                     Join our premium members today and get full access to the premium blog posts of {{@site.title}}.
