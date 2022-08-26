@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
--   Profile is now able to show if user don't have access to newsletter
+-   Profile is now able to show which perks the user has access to
 
 ## [3.6.0] - 2022-08-26
 
