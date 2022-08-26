@@ -125,9 +125,22 @@
             font-family: $serif;
         }
 
-        .mds-comments-fallback {
-            text-align: center;
-            margin: 60px 0 0;
+        .mds-comments {
+            margin: 20px 0;
+
+            .mds-comments-fallback {
+                text-align: center;
+                margin: 60px 0 0;
+            }
+
+            .mds-comments-info {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .mds-comments-container {
+                margin: 20px 0;
+            }
         }
 
         a {

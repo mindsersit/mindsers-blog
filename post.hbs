@@ -104,12 +104,29 @@
             {{^has tag="#newsletter-issue"}}Published in {{tags separator=", "}}{{/has}}
         </div>
         <hr>
-        {{#if @member.paid}}
-        <div id='commento'></div>
-        {{else}}
-        <div class="mds-comments-fallback">
-            The comment section is only available for paying subscribers.
-        </div>
+        {{#if comments}}
+        <section class="mds-comments">
+            {{#if @member.paid}}
+            <header>
+                <h2>Community discussion</h2>
+                <div class="mds-comments-info">
+                    <div>
+                        Do not forget to read the <a href="/community-guidelines/">Community guidelines</a> before commenting
+                    </div>
+                    <div>
+                        {{comment_count}}
+                    </div>
+                </div>
+            </header>
+            <div class="mds-comments-container">
+                {{comments title="" count=false mode="light" saturation=80}}
+            </div>
+            {{else}}
+            <div class="mds-comments-fallback">
+                The comment section is only available for paid members of <strong>{{@site.title}}</strong>.
+            </div>
+            {{/if}}
+        </section>
         {{/if}}
     </footer>
 </article>
@@ -138,7 +155,4 @@
 {{#contentFor "scripts"}}
     <script src="https://unpkg.com/shiki" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="{{asset 'js/post.js'}}"></script>
-    {{#if @member.paid}}
-    <script defer src="https://commento.mindsers.blog/js/commento.js"></script>
-    {{/if}}
 {{/contentFor}}

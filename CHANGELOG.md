@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Add a direct link to the perks list in the menu
 
+### Changed
+
+-   Simpler user flow for comments. The comments feature isn't handle by Commento anymore but Ghost.
+    Users doesn't have to log twice (ghost + commento) to be able to comment.
+
 ## [3.4.0] - 2022-07-27
 
 ### Added
