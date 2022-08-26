@@ -71,12 +71,12 @@
                 {{/if}}
                 <div class="subscriber-details">
                     <div class="subscriber-detail">
-                        <label class="subscriber-detail-label">Your plan</label>
-                        <span class="subscriber-detail-content">{{plan.nickname}}</span>
+                        <label class="subscriber-detail-label">Tier name</label>
+                        <span class="subscriber-detail-content">{{tier.name}}</span>
                     </div>
                     <div class="subscriber-detail">
                         <label class="subscriber-detail-label">Price</label>
-                        <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
+                        <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}} <small>({{plan.nickname}})</small></span>
                     </div>
                     <div class="subscriber-detail">
                         <label class="subscriber-detail-label">Status</label>
@@ -150,16 +150,36 @@
             <div>
                 <h2>{{@site.title}} Insider</h2>
                 {{#if @member.paid}}
-                <p>
-                    Check your inbox, you'll receive the next issues directly there!
-                </p>
-                <p>We'll share with you news and stats about the blog,
-                    tips for coders, our favorite links of the month and more!</p>
-                <p class="actions">
-                    <a class='button' href='/issues/'>
-                        Read the previous newsletter issues
-                    </a>
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.blog_tier_id}}
+                            <p>
+                                Check your inbox, you'll receive the next issues directly there!
+                            </p>
+                            <p>We'll share with you news and stats about the blog,
+                                tips for coders, our favorite links of the month and more!</p>
+                            <p class="actions">
+                                <a class='button' href='/issues/'>
+                                    Read the previous newsletter issues
+                                </a>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access newsletter issues.</p>
+                            <p>
+                                Want to get more from {{@site.title}}? Change plan! We share news and stats about the blog,
+                                tips for coders, our favorite links of the month and more!
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='#/portal/account/plans'
+                                >
+                                    Change plan!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{else}}
                 <p>
                     Want to get more from {{@site.title}}? Subscribe to our insider newsletter! We share news and stats about the blog,
@@ -177,7 +197,7 @@
                         class='button'
                         href='/newsletter/'
                     >
-                        Save with a newsletter only plan
+                        Save money with a newsletter only plan
                     </a>
                 </p>
                 {{/if}}

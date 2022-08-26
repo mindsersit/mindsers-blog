@@ -57,6 +57,9 @@
             },
             "newsletter_tier_id": {
                 "type": "text"
+            },
+            "blog_tier_id": {
+                "type": "text"
             }
         },
         "card_assets": true
