@@ -148,38 +148,44 @@
         </section>
         <section class="profile-grid">
             <div>
-                <h2>{{@site.title}} Insider</h2>
+                <h2>Weekly Digest</h2>
+                <p>
+                    Check you inbox on Sundays, you'll receive a summary of the week by {{@site.title}}'s team.
+                </p>
+                <p>
+                    You'll find in it the last blog posts published plus other must-reads.
+                </p>
+                <p>
+                    <span class='unlocked-feature'>
+                        Weekly Digest emails: Unlocked.
+                    </span>
+                </p>
+            </div>
+            <div>
+                <h2>Full blog posts directly in your inbox</h2>
                 {{#if @member.paid}}
                     {{#foreach @member.subscriptions}}
                     {{#match status "active"}}
-                        {{^match tier.id @custom.blog_tier_id}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
                             <p>
-                                Check your inbox, you'll receive the next issues directly there!
+                                Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
                             </p>
-                            <p>We'll share with you news and stats about the blog,
-                                tips for coders, our favorite links of the month and more!</p>
                             <p>
                                 <span class='unlocked-feature'>
-                                    Newsletter issues: Unlocked.
+                                    Full posts by email: Unlocked.
                                 </span>
                             </p>
-                            <p class="actions">
-                                <a class='button' href='/issues/'>
-                                    Read the previous newsletter issues
-                                </a>
-                            </p>
                         {{else}}
-                            <p>Your current plan doesn't allow you to access newsletter issues.</p>
+                            <p>Your current plan doesn't allow you to receive the posts by emails.</p>
                             <p>
-                                Want to get more from {{@site.title}}? Change plan! We share news and stats about the blog,
-                                tips for coders, our favorite links of the month and more!
+                                Change plan today to enjoy this feature.
                             </p>
                             <p class="actions">
                                 <a
                                     class='button highlighted'
-                                    href='#/portal/account/plans'
+                                    href='/membership/'
                                 >
-                                    Change plan!
+                                    Change plan now!
                                 </a>
                             </p>
                         {{/match}}
@@ -187,22 +193,15 @@
                     {{/foreach}}
                 {{else}}
                 <p>
-                    Want to get more from {{@site.title}}? Subscribe to our insider newsletter! We share news and stats about the blog,
-                    tips for coders, our favorite links of the month and more!
+                    Join our premium members today and receive the full blog post directly into your inbox when it gets published.
                 </p>
+                <p>No need to wait on Sundays to know about new posts anymore.</p>
                 <p class="actions">
                     <a
                         class='button highlighted'
                         href='/membership/'
                     >
-                        Fill your inbox and your reading list!
-                    </a>
-                    <br/>
-                    <a
-                        class='button'
-                        href='/newsletter/'
-                    >
-                        Save money with a newsletter only plan
+                        Subscribe now!
                     </a>
                 </p>
                 {{/if}}
@@ -251,7 +250,7 @@
                         class='button highlighted'
                         href='/membership/'
                     >
-                        Subscribe now!
+                        Read more posts!
                     </a>
                 </p>
                 {{/if}}
@@ -298,65 +297,6 @@
                         href='/membership/'
                     >
                         Get more content!
-                    </a>
-                </p>
-                {{/if}}
-            </div>
-            <div>
-                <h2>{{@site.title}}'s Private Club</h2>
-                {{#if @member.paid}}
-                    {{#foreach @member.subscriptions}}
-                    {{#match status "active"}}
-                        {{^match tier.id @custom.newsletter_tier_id}}
-                            <p>
-                                Meet the community on our Discord server.
-                                Talk, share and learn with other awesome members!
-                            </p>
-                            <p>
-                                <span class='unlocked-feature'>
-                                    Private Club access: Unlocked.
-                                </span>
-                            </p>
-                            <p class="actions">
-                                <a class='button discord' href='https://community.mindsers.blog/'>
-                                    Join the discord server!
-                                </a>
-                            </p>
-                            {{^match tier.id @custom.blog_tier_id}}
-                                <p class="notices">
-                                    "Friend of Mindsers Blog" members have access to special channels on the server,
-                                    like the #lounge. If you don't see those channels, please send me an email at
-                                    <a
-                                        href='mailto:hello@mindsers.blog'
-                                        title='Contact support team'
-                                        rel='nofollow noreferrer'
-                                    >hello@mindsers.blog</a> with your Discord username
-                                    and I'll give you the correct rights.
-                                </p>
-                            {{/match}}
-                        {{else}}
-                            <p>Your current plan doesn't allow you to write and read comments on <strong>{{@site.title}}</strong>'s posts.</p>
-                            <p class="actions">
-                                <a
-                                    class='button highlighted'
-                                    href='/membership/'
-                                >
-                                    Change plan now!
-                                </a>
-                            </p>
-                        {{/match}}
-                    {{/match}}
-                    {{/foreach}}
-                {{ else }}
-                <p>
-                    The premium membership gives access to the Discord server. Talk, share and learn with other awesome members!
-                </p>
-                <p class="actions">
-                    <a
-                        class='button highlighted'
-                        href='/membership/'
-                    >
-                        Join the club!
                     </a>
                 </p>
                 {{/if}}
