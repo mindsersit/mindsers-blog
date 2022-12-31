@@ -87,14 +87,31 @@
         <div class="mds-container">
             {{#if @member.paid}}
                 <h2 class="section-title">
-                    You have complete access to my monthly paid newsletter about my coding journey and my business journey
+                    Thank for being part of this community of coders, entrepreneurs and investors.
                 </h2>
-                <a href="/issues/" class="button">Browse the newsletter issues!</a>
+                <a href="mailto:hello@mindsers.blog" class="button">Share your feedback</a>
+            {{else if @member}}
+                <h2 class="section-title">
+                    More awesome content is waiting for you. Upgrade to get access!
+                </h2>
+                <a href="/membership/" class="button">See premium subscriptions</a>
             {{else}}
                 <h2 class="section-title">
-                    I also have a monthly paid newsletter about my coding journey and my business journey
+                    Subscribe and receive a Weekly Digest of new posts by email
                 </h2>
-                <a href="/newsletter/" class="button">Learn about the newsletter</a>
+                <form data-members-form='subscribe'>
+                    <label>
+                        Email
+                        <input
+                            data-members-email
+                            type='email'
+                            required='true'
+                            placeholder='jamie@example.com'
+                        />
+                    </label>
+                    <button class='button' type='submit'>Let's go!</button>
+                </form>
+                <p>No spam ever. Unsubscribe in a single click at any time.</p>
             {{/if}}
         </div>
     </section>
