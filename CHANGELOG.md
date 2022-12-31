@@ -11,6 +11,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Profile is now able to show which perks the user has access to
 
+### Changed
+
+-   Translate the post CTA.
+
+### Fixed
+
+-   Featured images were too zoomed.
+
 ## [3.6.0] - 2022-08-26
 
 ### Added

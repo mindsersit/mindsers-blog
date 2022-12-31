@@ -1,41 +1,5 @@
-<div class='member-cta' lang='en'>
-    {{#has tag='#fr'}}
-        <h2>
-            Rejoignez plus de 100 développeurs et entrepreneurs et soyez informé
-            chaque semaine des nouveaux contenus.
-        </h2>
-        <form data-members-form='subscribe'>
-            <label>
-                Email
-                <input
-                    data-members-email
-                    type='email'
-                    required='true'
-                    placeholder='jean@exemple.fr'
-                />
-            </label>
-            <input data-members-label type='hidden' value='French' />
-            <button class='button' type='submit'>C'est parti !</button>
-        </form>
-        <p>Aucun spam. Désabonnez-vous en un seul clic à tout moment.</p>
-    {{else}}
-        <h2>
-            Join 100+ developers and entrepreneurs and get notified every week
-            about new content.
-        </h2>
-        <form data-members-form='subscribe'>
-            <label>
-                Email
-                <input
-                    data-members-email
-                    type='email'
-                    required='true'
-                    placeholder='jamie@example.com'
-                />
-            </label>
-            <input data-members-label type='hidden' value='English' />
-            <button class='button' type='submit'>Let's go!</button>
-        </form>
-        <p>No spam ever. Unsubscribe in a single click at any time.</p>
-    {{/has}}
-</div>
+{{#has tag='#fr'}}
+    {{> "notification-cta-fr"}}
+{{else}}
+    {{> "notification-cta-en"}}
+{{/has}}
