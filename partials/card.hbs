@@ -9,8 +9,10 @@ Re-usable card for linking to posts
                 <time datetime='{{date format='YYYY-MM-DD'}}'>
                     {{date format='D MMM YYYY'}}
                 </time>
-                <span class='bull'>&bull;</span>
-                {{reading_time}}
+                {{#has visibility='public'}}
+                    <span class='bull'>&bull;</span>
+                    {{reading_time}}
+                {{/has}}
                 {{#has tag='#sponsored-post'}}
                     <span class='bull'>&bull;</span>
                     <span class='sponsored-label'>Sponsored</span>
@@ -19,7 +21,7 @@ Re-usable card for linking to posts
                     <span class='bull'>&bull;</span>
                     {{#has tag="#additional-content"}}
                         <span class='premium-label'>Additional Content</span>
-                    {{else has tag="#additional-content"}}
+                    {{else has visibility="members"}}
                         <span class='member-label'>Member Only</span>
                     {{else}}
                         <span class='premium-label'>Premium</span>
