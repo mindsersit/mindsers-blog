@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 -   Featured images were too zoomed.
+-   Premium badges were not displayed correctly due to tiers.
 
 ## [3.6.0] - 2022-08-26
 
