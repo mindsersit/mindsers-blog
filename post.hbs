@@ -106,7 +106,6 @@
         <hr>
         {{#if comments}}
         <section class="mds-comments">
-            {{#if @member.paid}}
             <header>
                 <h2>Community discussion</h2>
                 <div class="mds-comments-info">
@@ -121,11 +120,6 @@
             <div class="mds-comments-container">
                 {{comments title="" count=false mode="light" saturation=80}}
             </div>
-            {{else}}
-            <div class="mds-comments-fallback">
-                The comment section is only available for <strong>paid members</strong> of {{@site.title}}.
-            </div>
-            {{/if}}
         </section>
         {{/if}}
     </footer>
