@@ -5,8 +5,10 @@ routes:
         filter: tag:-[hash-email,hash-newsletter-issue]
     /membership/: plans
     /membership/welcome/: welcome
-    /membership/welcome-paid/: welcome-paid
-    /membership/welcome-friends/: welcome-friends
+    /membership/welcome-paid/: welcome-premium
+    /membership/welcome-friends/: welcome-pro
+    /membership/welcome-premium/: welcome-premium
+    /membership/welcome-pro/: welcome-pro
     /membership/posts/:
         controller: channel
         template: premium-index
