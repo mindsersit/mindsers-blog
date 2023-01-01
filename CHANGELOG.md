@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.7.1] - 2023-01-01
+
 ### Changed
 
 -   Update welcome pages' text.
@@ -608,7 +610,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.7.0...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.7.1...HEAD
+[3.7.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.7.0...v3.7.1
 [3.7.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.6.0...v3.7.0
 [3.6.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.1...v3.6.0
 [3.5.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.0...v3.5.1
