@@ -160,6 +160,14 @@
                         Weekly Digest emails: Unlocked.
                     </span>
                 </p>
+                <p class="actions">
+                    <a
+                        class='button'
+                        href='#/portal/account/newsletters'
+                    >
+                        Change email preferences
+                    </a>
+                </p>
             </div>
             <div>
                 <h2>Full blog posts directly in your inbox</h2>
@@ -174,6 +182,14 @@
                                 <span class='unlocked-feature'>
                                     Full posts by email: Unlocked.
                                 </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='#/portal/account/newsletters'
+                                >
+                                    Change email preferences
+                                </a>
                             </p>
                         {{else}}
                             <p>Your current plan doesn't allow you to receive the posts by emails.</p>
@@ -335,6 +351,95 @@
                         href='/membership/'
                     >
                         Get access to comments!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
+            <div>
+                <h2>Discounts on the shop</h2>
+                <p>
+                    Mindsers Shop offers learning resources like books and cheatsheets, and merch products.
+                </p>
+                {{#if @member.paid}}
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            {{#match tier.id @custom.blog_tier_id}}
+                            <p>
+                                As a {{@tier.title}} member, you have 5% dicount off every merch product.
+                                Use the <code>MBPREMIUM</code> at checkout or hit the apply button below.
+                                Next level is 10% discount off all the products of the shop.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Discounts on merch: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Upgrade to get more!
+                                </a>
+                                <a
+                                    class='button'
+                                    href='https://mindsers.shop/discount/MBPREMIUM?redirect=%2Fcollections%2Fmerchandising'
+                                >
+                                    Apply the 5% discount
+                                </a>
+                            </p>
+                            {{else}}
+                            <p>
+                                As a {{@tier.title}} member, you have 10% dicount off everything on the shop.
+                                Use the <code>MBPRO</code> at checkout or hit the apply button below.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Discounts off everything: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='https://mindsers.shop/discount/MBPRO'
+                                >
+                                    Apply the 10% discount
+                                </a>
+                            </p>
+                            {{/match}}
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access members' discounts.</p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='https://mindsers.shop/'
+                                >
+                                    Browse the products
+                                </a>
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
+                {{ else }}
+                <p class="actions">
+                    <a
+                        class='button'
+                        href='https://mindsers.shop/'
+                    >
+                        Browse the products
+                    </a>
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Get discounts!
                     </a>
                 </p>
                 {{/if}}
