@@ -10,11 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   Profile is now able to show which perks the user has access to
--   Describe new basic perks and remove obsolete ones.
+-   Add new perks to the list. Update the old ones.
+-   Add a subscribe form on the homepage.
 
 ### Changed
 
 -   Translate the post CTA.
+-   Update the text on the plans page to match last communications.
 
 ### Fixed
 
