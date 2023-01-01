@@ -1,0 +1,33 @@
+<div class='thanks-cta' lang='fr'>
+    {{#has tag='#sponsored-post'}}
+        <p>
+            Cet article est libre d'accès gratuitement pour tous grâce à la
+            générosité de notre sponsor. Découvrez en plus sur ce sponsor en fin
+            d'article. Vous souhaitez sponsoriser un article sur
+            {{@site.title}}
+            ? Contactez-nous à
+            <a
+                href='mailto:hello@mindsers.blog'
+                title='Partenariat de sponsoring sur {{@site.title}}'
+                rel='nofollow noreferrer'
+            >hello@mindsers.blog</a>
+            !
+        </p>
+    {{else}}
+        <p>
+            Cet article est libre d'accès pour tous grâce à la générosité des
+            abonnés de
+            {{@site.title}}
+            qui soutiennent notre blog indépendant.
+            {{#if @member.paid}}
+                Merci beaucoup de faire partie de cette magnifique aventure en
+                tant que membre premium. Pensez à en parler à vos amis pour que
+                notre communauté puisse continuer à grandir !
+            {{else}}
+                Si vous appréciez le contenu que je propose, je vous invite à
+                <a href='/membership/' title='Abonnez-vous !'>vous abonner</a>
+                dès aujourd'hui.
+            {{/if}}
+        </p>
+    {{/has}}
+</div>

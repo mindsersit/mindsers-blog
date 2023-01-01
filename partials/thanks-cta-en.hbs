@@ -1,0 +1,32 @@
+<div class='thanks-cta' lang='en'>
+    {{#has tag='#sponsored-post'}}
+        <p>
+            This post is free for all to read thanks to the investment our
+            sponsor have made in our independent publication. Do you want to
+            sponsor a post on
+            {{@site.title}}? Please email me at
+            <a
+                href='mailto:hello@mindsers.blog'
+                title='Sponsoring partnership on {{@site.title}}'
+                rel='nofollow noreferrer'
+            >hello@mindsers.blog</a>!
+        </p>
+    {{else}}
+        <p>
+            This post is free for all to read thanks to the investment
+            {{@site.title}}'s subscribers have made in our independent
+            publication.
+            {{#if @member.paid}}
+                Thank you so much for being part of this adventure as a premium
+                member. Please consider sharing the word to your friends, so
+                this community can continue to grow!
+            {{else}}
+                If this work is meaningful to you, I invite you to
+                <a href='/membership/' title='Subscribe!'>
+                    become a subscriber
+                </a>
+                today.
+            {{/if}}
+        </p>
+    {{/has}}
+</div>

@@ -71,12 +71,12 @@
                 {{/if}}
                 <div class="subscriber-details">
                     <div class="subscriber-detail">
-                        <label class="subscriber-detail-label">Your plan</label>
-                        <span class="subscriber-detail-content">{{plan.nickname}}</span>
+                        <label class="subscriber-detail-label">Tier name</label>
+                        <span class="subscriber-detail-content">{{tier.name}}</span>
                     </div>
                     <div class="subscriber-detail">
                         <label class="subscriber-detail-label">Price</label>
-                        <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}}</span>
+                        <span class="subscriber-detail-content">{{price plan}}/{{plan.interval}} <small>({{plan.nickname}})</small></span>
                     </div>
                     <div class="subscriber-detail">
                         <label class="subscriber-detail-label">Status</label>
@@ -99,9 +99,7 @@
                 </div>
                 <div class="actions">
                     {{#match status "active"}}
-                        {{#match plan.amount "!=" 0}}
                         <a class="button" href="#/portal/account/plans">Change plan</a>
-                        {{/match}}
                         {{cancel_link class="button patreon subscription-cancel"}}
                     {{else match status "canceled"}}
                         <a class="button" href="/membership/">Why subscribe?</a>
@@ -111,14 +109,15 @@
                     {{/match}}
                 </div>
             </div>
+            {{#if @last}}
             <p class="notices">
-                To change plan from a complementary plan, you have to cancel first your current plan and then visit our <a href="/membership/">Membership page</a>.<br/>
                 If you have any issue with your subscription, please contact us via email at <a
                         href='mailto:hello@mindsers.blog'
                         title='Contact support team'
                         rel='nofollow noreferrer'
                     >hello@mindsers.blog</a>.
             </p>
+            {{/if}}
         {{else}}
             <div class="fallback">
                 <p>No subscription can be found for your account.</p>
@@ -149,19 +148,164 @@
         </section>
         <section class="profile-grid">
             <div>
-                <h2>Premium additional content</h2>
+                <h2>Weekly Digest</h2>
+                <p>
+                    Check you inbox on Sundays, you'll receive a summary of the week by {{@site.title}}'s team.
+                </p>
+                <p>
+                    You'll find in it the last blog posts published plus other must-reads.
+                </p>
+                <p>
+                    <span class='unlocked-feature'>
+                        Weekly Digest emails: Unlocked.
+                    </span>
+                </p>
+                <p class="actions">
+                    <a
+                        class='button'
+                        href='#/portal/account/newsletters'
+                    >
+                        Change email preferences
+                    </a>
+                </p>
+            </div>
+            <div>
+                <h2>Full blog posts directly in your inbox</h2>
+                {{#if @member.paid}}
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p>
+                                Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Full posts by email: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='#/portal/account/newsletters'
+                                >
+                                    Change email preferences
+                                </a>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to receive the posts by emails.</p>
+                            <p>
+                                Change plan today to enjoy this feature.
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
+                {{else}}
+                <p>
+                    Join our premium members today and receive the full blog post directly into your inbox when it gets published.
+                </p>
+                <p>No need to wait on Sundays to know about new posts anymore.</p>
+                <p class="actions">
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Subscribe now!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
+            <div>
+                <h2>Premium blog posts</h2>
+                {{#if @member.paid}}
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p>
+                                Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Premium posts: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a class='button' href='/membership/posts/'>
+                                    Browse the premium blog posts library
+                                </a>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access premium posts.</p>
+                            <p>
+                                Change plan today and get full access to the premium blog posts of {{@site.title}}.
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
+                {{else}}
+                <p>
+                    Join our premium members today and get full access to the premium blog posts of {{@site.title}}.
+                </p>
+                <p class="actions">
+                    <a
+                        class='button highlighted'
+                        href='/membership/'
+                    >
+                        Read more posts!
+                    </a>
+                </p>
+                {{/if}}
+            </div>
+            <div>
+                <h2>Premium additional contents</h2>
                 <p>
                     Some of the free blog posts contain additional content as cheatsheet, codesource of the exemples, etc. only accessible by premium members.
                 </p>
                 {{#if @member.paid}}
-                <p class="actions">
-                    <a
-                        class='button'
-                        href='/membership/additional-contents/'
-                    >
-                        Browse posts with additional content!
-                    </a>
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Additional contents: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='/membership/additional-contents/'
+                                >
+                                    Browse posts with additional content!
+                                </a>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access additional contents.</p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{ else }}
                 <p class="actions">
                     <a
@@ -174,97 +318,128 @@
                 {{/if}}
             </div>
             <div>
-                <h2>{{@site.title}}'s Private Club</h2>
+                <h2>Comments section</h2>
+                <p>
+                    Share your thoughts, discuss and debate with other member of the community right below the blog posts.
+                </p>
                 {{#if @member.paid}}
-                <p>
-                    Meet the community on our Discord server.
-                    Talk, share and learn with other awesome members!
-                </p>
-                <p class="actions">
-                    <a class='button discord' href='https://community.mindsers.blog/'>
-                        Join the discord server!
-                    </a>
-                </p>
-                <p class="notices">
-                    "Friend of Mindsers Blog" members have access to special channels on the server,
-                    like the #lounge. If you don't see those channels, please send me an email at
-                    <a
-                        href='mailto:hello@mindsers.blog'
-                        title='Contact support team'
-                        rel='nofollow noreferrer'
-                    >hello@mindsers.blog</a> with your Discord username
-                    and I'll give you the correct rights.
-                </p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            <p class="actions">
+                                <span class='unlocked-feature'>
+                                    Comments section: Unlocked.
+                                </span>
+                            </p>
+                        {{else}}
+                            <p>Your current plan doesn't allow you to write and read comments on <strong>{{@site.title}}</strong>'s posts.</p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
                 {{ else }}
-                <p>
-                    The premium membership gives access to the Discord server. Talk, share and learn with other awesome members!
-                </p>
                 <p class="actions">
                     <a
                         class='button highlighted'
                         href='/membership/'
                     >
-                        Join the club!
+                        Get access to comments!
                     </a>
                 </p>
                 {{/if}}
             </div>
             <div>
-                <h2>{{@site.title}} Insider</h2>
+                <h2>Discounts on the shop</h2>
+                <p>
+                    Mindsers Shop offers learning resources like books and cheatsheets, and merch products.
+                </p>
                 {{#if @member.paid}}
-                <p>
-                    Check your inbox, you'll receive the next issues directly there!
-                </p>
-                <p>We'll share with you news and stats about the blog,
-                    tips for coders, our favorite links of the month and more!</p>
+                    {{#foreach @member.subscriptions}}
+                    {{#match status "active"}}
+                        {{^match tier.id @custom.newsletter_tier_id}}
+                            {{#match tier.id @custom.blog_tier_id}}
+                            <p>
+                                As a {{@tier.title}} member, you have 5% dicount off every merch product.
+                                Use the <code>MBPREMIUM</code> at checkout or hit the apply button below.
+                                Next level is 10% discount off all the products of the shop.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Discounts on merch: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Upgrade to get more!
+                                </a>
+                                <a
+                                    class='button'
+                                    href='https://mindsers.shop/discount/MBPREMIUM?redirect=%2Fcollections%2Fmerchandising'
+                                >
+                                    Apply the 5% discount
+                                </a>
+                            </p>
+                            {{else}}
+                            <p>
+                                As a {{@tier.title}} member, you have 10% dicount off everything on the shop.
+                                Use the <code>MBPRO</code> at checkout or hit the apply button below.
+                            </p>
+                            <p>
+                                <span class='unlocked-feature'>
+                                    Discounts off everything: Unlocked.
+                                </span>
+                            </p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='https://mindsers.shop/discount/MBPRO'
+                                >
+                                    Apply the 10% discount
+                                </a>
+                            </p>
+                            {{/match}}
+                        {{else}}
+                            <p>Your current plan doesn't allow you to access members' discounts.</p>
+                            <p class="actions">
+                                <a
+                                    class='button'
+                                    href='https://mindsers.shop/'
+                                >
+                                    Browse the products
+                                </a>
+                                <a
+                                    class='button highlighted'
+                                    href='/membership/'
+                                >
+                                    Change plan now!
+                                </a>
+                            </p>
+                        {{/match}}
+                    {{/match}}
+                    {{/foreach}}
+                {{ else }}
                 <p class="actions">
-                    <a class='button' href='/issues/'>
-                        Read the previous newsletter issues
-                    </a>
-                </p>
-                {{else}}
-                <p>
-                    Want to get more from {{@site.title}}? Subscribe to our insider newsletter! We share news and stats about the blog,
-                    tips for coders, our favorite links of the month and more!
-                </p>
-                <p class="actions">
-                    <a
-                        class='button highlighted'
-                        href='/membership/'
-                    >
-                        Fill your inbox and your reading list!
-                    </a>
-                    <br/>
                     <a
                         class='button'
-                        href='/newsletter/'
+                        href='https://mindsers.shop/'
                     >
-                        Save with a newsletter only plan
+                        Browse the products
                     </a>
-                </p>
-                {{/if}}
-            </div>
-            <div>
-                <h2>Premium blog posts</h2>
-                {{#if @member.paid}}
-                <p>
-                    Some of our blog posts are only accessible by premium members. It is high quality content for modern developers.
-                </p>
-                <p class="actions">
-                    <a class='button' href='/membership/posts/'>
-                        Browse the premium blog posts
-                    </a>
-                </p>
-                {{else}}
-                <p>
-                    Join our premium members today and get full access to the premium blog posts of {{@site.title}}.
-                </p>
-                <p class="actions">
                     <a
                         class='button highlighted'
                         href='/membership/'
                     >
-                        Subscribe now!
+                        Get discounts!
                     </a>
                 </p>
                 {{/if}}

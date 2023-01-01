@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.7.0] - 2023-01-01
+
+### Added
+
+-   Profile is now able to show which perks the user has access to
+-   Add new perks to the list. Update the old ones.
+-   Add a subscribe form on the homepage.
+
+### Changed
+
+-   Translate the post CTA.
+-   Update the text on the plans page to match last communications.
+
+### Fixed
+
+-   Featured images were too zoomed.
+-   Premium badges were not displayed correctly due to tiers.
+
+## [3.6.0] - 2022-08-26
+
+### Added
+
+-   New section on profile page to explain the comments feature
+
+### Changed
+
+-   Allow plan changes from complementary plan
+
+### Fixed
+
+-   Remove and correct typos
+
 ## [3.5.1] - 2022-08-26
 
 ### Fixed
@@ -568,7 +600,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   First version of the website
 
-[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.1...HEAD
+[unreleased]: https://github.com/mindsers/mindsersit-blog/compare/v3.7.0...HEAD
+[3.7.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.6.0...v3.7.0
+[3.6.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.1...v3.6.0
 [3.5.1]: https://github.com/mindsers/mindsersit-blog/compare/v3.5.0...v3.5.1
 [3.5.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.4.0...v3.5.0
 [3.4.0]: https://github.com/mindsers/mindsersit-blog/compare/v3.3.0...v3.4.0

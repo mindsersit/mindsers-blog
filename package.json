@@ -1,6 +1,6 @@
 {
     "name": "mindsers-blog",
-    "version": "3.5.1",
+    "version": "3.7.0",
     "description": "Theme for MindsersIT Blog",
     "keywords": [
         "ghost-theme"
@@ -56,6 +56,9 @@
                 "type": "text"
             },
             "newsletter_tier_id": {
+                "type": "text"
+            },
+            "blog_tier_id": {
                 "type": "text"
             }
         },

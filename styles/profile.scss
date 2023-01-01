@@ -132,7 +132,7 @@
     .profile-grid {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
 
         div {
             text-align: center;
@@ -141,6 +141,27 @@
 
             a.button.discord {
                 background-color: #5865f2;
+            }
+
+            span.unlocked-feature {
+                color: $secondary_color;
+                font-weight: 600;
+                font-size: 0.8em;
+
+                &::before {
+                    content: '✓';
+                    color: white;
+                    background-color: $secondary_color;
+                    font-size: 1.3em;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 25px;
+                    height: 25px;
+                    margin: 5px;
+                    vertical-align: middle;
+                }
             }
 
             @media (max-width: 600px) {
