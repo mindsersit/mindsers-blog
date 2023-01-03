@@ -330,37 +330,37 @@
 
             (() => {
                 const consent = sessionStorage.getItem('cookie-consent')
-                const cookieConsentLink = document.querySelector('a.cookie-consent')
+                const cookieConsentLink = document.querySelector('a[href="#cookie-consent"]')
                 const cookieConsentBox = document.querySelector('div.cookie-consent')
 
-                cookieConsentLink.addEventListener('click', () => cookieConsentBox.classList.add('active'))
+                cookieConsentLink.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    cookieConsentBox.classList.add('active')
+                })
+
+                cookieConsentBox
+                    .querySelector('.allow-all')
+                    .addEventListener('click', () => {
+                        loadScripts()
+
+                        sessionStorage.setItem('cookie-consent', 'allow-all')
+                        cookieConsentBox.classList.remove("active")
+                    })
+
+                cookieConsentBox
+                    .querySelector('.deny-all')
+                    .addEventListener('click', () => {
+                        sessionStorage.setItem('cookie-consent', 'deny-all')
+                        cookieConsentBox.classList.remove("active")
+
+                        location.reload()
+                    })
 
                 if (consent == null) {
                     cookieConsentBox.classList.add('active')
-
-                    cookieConsentBox
-                        .querySelector('.allow-all')
-                        .addEventListener('click', () => {
-                            loadScripts()
-
-                            sessionStorage.setItem('cookie-consent', 'allow-all')
-                            cookieConsentBox.classList.remove("active")
-                        })
-
-                    cookieConsentBox
-                        .querySelector('.deny-all')
-                        .addEventListener('click', () => {
-                            sessionStorage.setItem('cookie-consent', 'deny-all')
-                            cookieConsentBox.classList.remove("active")
-
-                            if (consent === 'allow-all') {
-                                location.reload()
-                            }
-
-                        })
                 }
 
-                if (consent === 'allow-all') {
+                if (consent !== 'deny-all') {
                     loadScripts()
                     return
                 }

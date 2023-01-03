@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 -   Update footer link with up-to-date data
+-   Fix events when someone click on Cookie Consent after he already gave a consent
 
 ## [3.7.2] - 2023-01-02
 
