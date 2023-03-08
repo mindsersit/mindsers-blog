@@ -1,0 +1,8 @@
+User-agent: *
+Sitemap: https://mindsers.blog/sitemap.xml
+Disallow: /ghost/
+Disallow: /p/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /profile/
+Disallow: /membership/welcome/
