@@ -19,6 +19,8 @@
         <link rel="preconnect" href="https://m.stripe.network" crossorigin="anonymous">
         <link rel="preconnect" href="https://s.stripe.com" crossorigin="anonymous">
 
+        <link rel="preload" href="https://cdn.jsdelivr.net/ghost/portal@~2.25/umd/portal.min.js">
+
         {{ghost_head}}
     </head>
 
@@ -323,7 +325,6 @@
         </div>
 
         {{! <foot> }}
-        <script type="module" type="text/plain" src="{{asset 'js/lazysizes.js'}}" async></script>
         <script type="module" src="{{asset 'js/menu.js'}}" async></script>
         <script type="module" type="text/plain" src="{{asset 'js/menu.js'}}" async></script>
         {{{block 'scripts'}}}

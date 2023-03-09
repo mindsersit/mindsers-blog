@@ -24,22 +24,22 @@ routes:
     /profile/: profile
 
 collections:
-    /posts/:
-        permalink: /post/{slug}/
-        template: index
-        filter: 'tag:hash-en+tag:-[hash-email,hash-newsletter-issue]'
-    /issues/:
-        permalink: /issue/{slug}/
-        template: index
-        filter: 'tag:hash-en+tag:hash-newsletter-issue'
     /fr/posts/:
         permalink: /fr/post/{slug}/
         template: index
-        filter: 'tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]'
+        filter: 'tag:hash-fr+tag:-[hash-email,hash-newsletter-issue,hash-en]'
+    /posts/:
+        permalink: /post/{slug}/
+        template: index
+        filter: 'tag:hash-en+tag:-[hash-email,hash-newsletter-issue,hash-fr]'
     /fr/issues/:
         permalink: /fr/issue/{slug}/
         template: index
         filter: 'tag:hash-fr+tag:hash-newsletter-issue'
+    /issues/:
+        permalink: /issue/{slug}/
+        template: index
+        filter: 'tag:hash-en+tag:hash-newsletter-issue'
 
 taxonomies:
     tag: /topic/{slug}/
