@@ -45,8 +45,12 @@
             }
         },
         "custom": {
-            "shop_url": {
+            "global_cta_url": {
                 "type": "text"
+            },
+            "global_cta_text": {
+                "type": "text",
+                "default": "Subcribe!"
             },
             "cookie_consent": {
                 "type": "boolean",
