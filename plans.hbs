@@ -21,17 +21,17 @@
 <div class='mds-plans'>
     <div class='mds-container'>
         <header class='mds-header'>
-            <h1 class='mds-title'>Premium Membership for Mindsers Blog readers</h1>
+            <h1 class='mds-title'>Mindsers Club</h1>
             <p>
                 {{@site.title}} is an independent publication about coding and coders. This includes topics like tech world,
-                entrepreneurship, remote work, specialty coffee and developer lifestyle.
+                entrepreneurship, remote work, specialty coffee and developer lifestyle. Most of the blog posts are public and free for all.
             </p>
             <p>
-                Most of the blog posts are public and free for all. But for two years now, I have published more and more
-                high quality premium blog posts to bring even more value to my readers.
+                But we know that tutorials and articls are not enough to quickly grow your skillset as a developer.
+                So, we created Mindsers Club to bring courses, community and personal coaching to accelerate your growth.
             </p>
             <p>
-                Thank you for considering subscribing. Anyone is welcome in the Mindsers Blog's community!
+                Thank you for considering subscribing. Anyone is welcome in the Mindsers Club!
             </p>
         </header>
     </div>
@@ -55,7 +55,9 @@
             <div class='plan-container'>
                 <div class='plan-bg'>
                     <header>
-                        <h2>{{name}}</h2>
+                        <h2>Newsletter</h2>
+                        <span class='monthly-plan-data'>€0 <span>/ month</span></span>
+                        <span class='yearly-plan-data'>€0 <span>/ year</span></span>
                     </header>
 
                     {{#if benefits}}
@@ -69,7 +71,7 @@
                     {{/if}}
 
                     <section class='plan-price'>
-                        <a href="/signup/" class='button'>Subscribe now</a>
+                        <a href="#/portal/signup/free" class='button'>Subscribe now</a>
                         <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
                     </section>
                 </div>
@@ -160,7 +162,7 @@
                     continue
                 }
 
-                span.textContent = discount.toFixed(0)
+                span.textContent = Math.ceil(discount)
             }
 
             const toggle = document.getElementById('yearly-switch')
@@ -181,7 +183,7 @@
         </script>
     </section>
 
-    <section class='mds-patreon'>
+    {{!-- <section class='mds-patreon'>
         <div class='mds-container'>
             <h2>Early Birds Discount</h2>
             <p>
@@ -199,7 +201,7 @@
                 >Get my 40% discount now!</a>
             </p>
         </div>
-    </section>
+    </section> --}}
 
     <section class="mds-testimonials">
         <div class="mds-container">

@@ -127,7 +127,7 @@
         .mds-container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
 
             @media (max-width: 850px) {
                 align-items: flex-start;
