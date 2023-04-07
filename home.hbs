@@ -22,8 +22,15 @@
                     Hundreds of ressources created to share with you everything
                     I learned from coding to starting a business
                 </p>
-                {{#unless @member.paid}}
-                    <p><a href="/membership/" class="button primary">Subscribe!</a></p>
+                {{#unless @member}}
+                    <p>
+                        {{#if @custom.global_cta_url}}
+                        <a href="/membership/" class="button highlighted">{{@custom.global_cta_text}}</a>
+                        <a href="/membership/#/portal/signup/free" class="button">Get the newsletter</a>
+                        {{else}}
+                        <a href="/membership/#/portal/signup/free" class="button primary">Get the newsletter</a>
+                        {{/if}}
+                    </p>
                 {{/unless}}
             </div>
             <div class="illustration">
@@ -92,12 +99,12 @@
                 <a href="mailto:hello@mindsers.blog" class="button">Share your feedback</a>
             {{else if @member}}
                 <h2 class="section-title">
-                    More awesome content is waiting for you. Upgrade to get access!
+                    More awesome features are waiting for you. Join the Club to get access!
                 </h2>
-                <a href="/membership/" class="button">See premium subscriptions</a>
+                <a href="/membership/" class="button">See Mindsers Club's plans</a>
             {{else}}
                 <h2 class="section-title">
-                    Subscribe and receive a Weekly Digest of new posts by email
+                    Join the {{total_members}} members and get my free monthly newsletter
                 </h2>
                 <form data-members-form='subscribe'>
                     <label>
