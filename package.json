@@ -46,23 +46,32 @@
         },
         "custom": {
             "global_cta_url": {
-                "type": "text"
+                "type": "text",
+                "group": "homepage"
             },
             "global_cta_text": {
                 "type": "text",
-                "default": "Subcribe!"
+                "default": "Subcribe!",
+                "group": "homepage"
             },
             "cookie_consent": {
                 "type": "boolean",
                 "default": false
             },
-            "favourite_tier_id": {
-                "type": "text"
-            },
             "newsletter_tier_id": {
                 "type": "text"
             },
             "blog_tier_id": {
+                "type": "text"
+            },
+            "perks_loaded_from_ghost": {
+                "type": "boolean",
+                "default": true
+            },
+            "starter_tier_id": {
+                "type": "text"
+            },
+            "pro_tier_id": {
                 "type": "text"
             }
         },

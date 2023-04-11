@@ -129,24 +129,54 @@
             justify-content: center;
             align-items: flex-start;
 
-            @media (max-width: 850px) {
-                align-items: flex-start;
-                justify-content: space-between;
-            }
+            &.grid {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+                column-gap: 20px;
+                row-gap: 25px;
+                margin-bottom: 20px;
 
-            @media (max-width: 700px) {
-                flex-direction: column;
-                align-items: center;
-            }
+                &.grid-1 {
+                    grid-template-columns: 45%;
+                }
 
-            &[data-plan='yearly'] {
-                .monthly-plan-data {
-                    display: none;
+                &.grid-2 {
+                    grid-template-columns: 45% 45%;
+                }
+
+                &[data-plan='yearly'] {
+                    .monthly-plan-data {
+                        display: none;
+                    }
+                }
+
+                &[data-plan='monthly'] {
+                    .yearly-plan-data {
+                        display: none;
+
+                        & ~ .discount {
+                            display: none;
+                        }
+                    }
+                }
+
+                @media (max-width: 850px) {
+                    grid-template-columns: 45% 45%;
+                }
+
+                @media (max-width: 750px) {
+                    grid-template-columns: 90%;
+
+                    &.grid-2 {
+                        grid-template-columns: 90%;
+                    }
                 }
             }
 
-            &[data-plan='monthly'] {
-                .yearly-plan-data {
+            .plus-section {
+                text-align: center;
+
+                @media (max-width: 850px) {
                     display: none;
                 }
             }
@@ -155,12 +185,43 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 20px;
                 padding: 3px;
                 background: $foreground_color;
                 border-radius: 3px;
-                width: 30%;
                 position: relative;
+
+                &:not(.bg-height-variable) {
+                    height: 100%;
+
+                    .plan-bg {
+                        height: 100%;
+                    }
+                }
+
+                &.plan-head {
+                    position: sticky;
+                    top: 0px;
+                    z-index: 2;
+
+                    .plan-body {
+                        display: none;
+
+                        @media (max-width: 850px) {
+                            display: block;
+                        }
+                    }
+
+                    @media (max-width: 850px) {
+                        position: unset;
+                    }
+                }
+
+                &.plan-perks {
+                    display: block;
+                    @media (max-width: 850px) {
+                        display: none;
+                    }
+                }
 
                 &.highlighted {
                     background: $default_gradient;
@@ -176,11 +237,6 @@
 
                 @media (max-width: 850px) {
                     margin: 0 5px;
-                }
-
-                @media (max-width: 700px) {
-                    width: 60%;
-                    margin: 10px 0;
                 }
 
                 @media (max-width: 550px) {
@@ -200,6 +256,11 @@
 
                         h2 {
                             font-size: 1.25rem;
+                            font-weight: 600;
+                        }
+
+                        h3 {
+                            font-size: 1rem;
                             font-weight: 600;
                         }
 
@@ -230,6 +291,22 @@
 
                         .eco {
                             color: $secondary_color;
+                        }
+
+                        .icon {
+                            color: $secondary_color;
+                        }
+
+                        .no-perk {
+                            color: #ccc;
+
+                            .icon {
+                                color: #b4224d;
+                            }
+
+                            @media (prefers-color-scheme: dark) {
+                                color: #2c3841;
+                            }
                         }
                     }
 

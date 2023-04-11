@@ -1,0 +1,59 @@
+<div class='plan-container highlighted plan-head'>
+    <div class='plan-bg'>
+        <header>
+            <h2>{{name}}</h2>
+            {{#if monthly_price}}
+            <span class='monthly-plan-data'>{{price monthly_price currency=currency}} <span>/
+                    month</span></span>
+            {{/if}}
+            {{#if yearly_price}}
+            <span class='yearly-plan-data'>{{price yearly_price currency=currency}} <span>/
+                    year</span></span>
+            <p class="discount">
+                <span class="discount-calculation" data-cost-yearly="{{price yearly_price}}"
+                    data-cost-monthly="{{price monthly_price}}">
+                </span> off the monthly plan
+            </p>
+            {{/if}}
+        </header>
+
+        <section class='plan-body'>
+            <ul>
+                {{#if benefits}}
+                {{#foreach benefits as |benefit|}}
+                <li>✓ {{benefit}}</li>
+                {{/foreach}}
+                {{/if}}
+                {{#if monthly_price}}
+                <li>✓ No advertising on the website</li>
+                <li class="eco">✓ <strong>We give back 1.5% of your subscription to help removing CO₂
+                        from the
+                        atmosphere.</strong></li>
+                {{/if}}
+                {{#if yearly_price}}
+                <li class='yearly-plan-data'>✓ <strong>Pay 1 quick payment instead of 12!</strong></li>
+                <li class='yearly-plan-data'>✓ <strong>Get an extra <span class="discount-calculation"
+                            data-cost-yearly="{{price yearly_price}}"
+                            data-cost-monthly="{{price monthly_price}}"></span>
+                        discount</strong></li>
+                {{/if}}
+            </ul>
+        </section>
+
+        <section class='plan-price'>
+            {{#if monthly_price}}
+            <a href="javascript:" class='button highlighted monthly-plan-data' data-portal="signup/{{id}}/monthly"
+                data-members-cancel="/membership/">
+                Join the club now!
+            </a>
+            {{/if}}
+            {{#if yearly_price}}
+            <a href="javascript:" class='button highlighted yearly-plan-data' data-portal="signup/{{id}}/yearly"
+                data-members-cancel="/membership/">
+                Join the club now!
+            </a>
+            {{/if}}
+            <p class="notices">No spam ever. Unsubscribe in a single click at any time.</p>
+        </section>
+    </div>
+</div>

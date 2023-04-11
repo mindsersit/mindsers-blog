@@ -1,381 +1,322 @@
 <!DOCTYPE html>
 <html lang='{{{block 'htmlLang'}}}'>
-    <head>
-        <meta charset='utf-8' />
-        <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-        <meta name='monetization' content='$ilp.uphold.com/Apm7DzrByBYN' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-        {{{block 'meta'}}}
-        <title>{{{block 'title'}}}</title>
-        {{{block 'styles'}}}
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='monetization' content='$ilp.uphold.com/Apm7DzrByBYN' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-        <link rel="preconnect" href="https://snippet.affilimate.io" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://www.facebook.com" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://connect.facebook.net" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://m.stripe.network" crossorigin="anonymous"/>
-        <link rel="preconnect" href="https://s.stripe.com" crossorigin="anonymous"/>
+    {{{block 'meta'}}}
+    <title>{{{block 'title'}}}</title>
+    {{{block 'styles'}}}
 
-        <link rel="preload" as="script" href="https://cdn.jsdelivr.net/ghost/portal@~2.25/umd/portal.min.js" crossorigin/>
+    <link rel="preconnect" href="https://snippet.affilimate.io" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://m.stripe.network" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://s.stripe.com" crossorigin="anonymous" />
 
-        {{ghost_head}}
-    </head>
+    <link rel="preload" as="script" href="https://cdn.jsdelivr.net/ghost/portal@~2.25/umd/portal.min.js" crossorigin />
 
-    <body class='{{body_class}}'>
-        <div class='mds-viewport'>
-            <header id='mds-head' class='mds-head'>
-                <nav
-                    class='mds-head-inner mds-container'
-                    role='navigation'
-                    aria-label='Main Navigation'
-                >
+    {{ghost_head}}
+</head>
 
-                    <div class='mds-head-brand'>
-                        <a class='mds-head-logo' href='{{@site.url}}'>
-                            {{#if @site.logo}}
-                                <img
-                                    src='{{@site.logo}}'
-                                    alt='{{@site.title}} - Back to home page'
-                                />
-                            {{else}}
-                                {{@site.title}}
-                            {{/if}}
-                        </a>
-                    </div>
-                    <div class='mds-head-menu'>
-                        {{#if @member.paid}}
-                            {{navigation type='secondary'}}
+<body class='{{body_class}}'>
+    <div class='mds-viewport'>
+        <header id='mds-head' class='mds-head'>
+            <nav class='mds-head-inner mds-container' role='navigation' aria-label='Main Navigation'>
+
+                <div class='mds-head-brand'>
+                    <a class='mds-head-logo' href='{{@site.url}}'>
+                        {{#if @site.logo}}
+                        <img src='{{@site.logo}}' alt='{{@site.title}} - Back to home page' />
                         {{else}}
-                            {{navigation}}
+                        {{@site.title}}
                         {{/if}}
+                    </a>
+                </div>
+                <div class='mds-head-menu'>
+                    {{#if @member.paid}}
+                    {{navigation type='secondary'}}
+                    {{else}}
+                    {{navigation}}
+                    {{/if}}
+                </div>
+                <div class='mds-head-placeholder'></div>
+                <div class='mds-head-actions'>
+                    <a class="search-button" data-ghost-search>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
+                        </svg>
+                    </a>
+                    {{#if @member}}
+                    <a class="button highlighted shop-button" target='_blank' href="/membership/">Join the Club !</a>
+                    <a href="/profile/" class="profile-button" tabindex="0" title="Open profile menu"
+                        aria-haspopup="true">
+                        {{> "icons/profile"}}
+                        {{#if @member.avatar_image}}
+                        <img src='{{@member.avatar_image}}' alt="Your avatar" />
+                        {{/if}}
+                    </a>
+                    <div class="profile-menu">
+                        <ul>
+                            <li class="reminder">Signed as<br>{{@member.email}}</li>
+                            <li><a href="/profile/">Account</a></li>
+                            <li><a href="/profile/#perks">Perks</a></li>
+                            <li>
+                                <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class='mds-head-placeholder'></div>
-                    <div class='mds-head-actions'>
-                        <a class="search-button" data-ghost-search>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg>
-                        </a>
-                        {{#if @member}}
-                            <a class="button highlighted shop-button" target='_blank' href="/membership/">Join the Club !</a>
-                            <a href="/profile/" class="profile-button" tabindex="0" title="Open profile menu" aria-haspopup="true">
-                                {{> "icons/profile"}}
-                                {{#if @member.avatar_image}}
-                                    <img src='{{@member.avatar_image}}' alt="Your avatar" />
-                                {{/if}}
-                            </a>
-                            <div class="profile-menu">
-                                <ul>
-                                    <li class="reminder">Signed as<br>{{@member.email}}</li>
-                                    <li><a href="/profile/">Account</a></li>
-                                    <li><a href="/profile/#perks">Perks</a></li>
-                                    <li>
-                                        <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        {{else}}
-                            {{#if @custom.global_cta_url}}
-                            <a class='login-button' href='/login/'>Log in</a>
-                            <a class="button highlighted shop-button" target='_blank' href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a>
-                            {{else}}
-                            <a class='button primary login-button' href='/login/'>Log in</a>
-                            {{/if}}
-                            <a class='more-button-small-screen' tabindex="0" title="Open main menu" aria-haspopup="true">{{> "icons/more"}}</a>
-                        {{/if}}
+                    {{else}}
+                    {{#if @custom.global_cta_url}}
+                    <a class='login-button' href='#/portal/signin'>Log in</a>
+                    <a class="button highlighted shop-button" target='_blank'
+                        href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a>
+                    {{else}}
+                    <a class='button primary login-button' href='#/portal/signin'>Log in</a>
+                    {{/if}}
+                    <a class='more-button-small-screen' tabindex="0" title="Open main menu"
+                        aria-haspopup="true">{{> "icons/more"}}</a>
+                    {{/if}}
 
-                        <div class="more-menu">
-                            <header class="mds-head">
-                                <div class="mds-container">
-                                    <div class='mds-head-brand'>
-                                        <a class='mds-head-logo' href='{{@site.url}}'>
-                                            {{#if @site.logo}}
-                                                <img
-                                                    src='{{@site.logo}}'
-                                                    alt='{{@site.title}} - Back to home page'
-                                                />
-                                            {{else}}
-                                                {{@site.title}}
-                                            {{/if}}
-                                        </a>
-                                    </div>
-                                    <div class='mds-head-placeholder'></div>
-                                    <div class="close-button"  tabindex="0" >{{> "icons/times"}}</div>
+                    <div class="more-menu">
+                        <header class="mds-head">
+                            <div class="mds-container">
+                                <div class='mds-head-brand'>
+                                    <a class='mds-head-logo' href='{{@site.url}}'>
+                                        {{#if @site.logo}}
+                                        <img src='{{@site.logo}}' alt='{{@site.title}} - Back to home page' />
+                                        {{else}}
+                                        {{@site.title}}
+                                        {{/if}}
+                                    </a>
                                 </div>
-                            </header>
+                                <div class='mds-head-placeholder'></div>
+                                <div class="close-button" tabindex="0">{{> "icons/times"}}</div>
+                            </div>
+                        </header>
 
-                            {{#if @member}}
-                            <ul>
-                                <li class="reminder">Signed as<br>{{@member.email}}</li>
-                                <li><a href="/profile/">Account</a></li>
-                                <li><a href="/profile/#perks">Perks</a></li>
-                            </ul>
-                            {{/if}}
+                        {{#if @member}}
+                        <ul>
+                            <li class="reminder">Signed as<br>{{@member.email}}</li>
+                            <li><a href="/profile/">Account</a></li>
+                            <li><a href="/profile/#perks">Perks</a></li>
+                        </ul>
+                        {{/if}}
 
-                            {{#if @custom.global_cta_url}}
-                            <ul>
-                                <li><a class="button highlighted" target='_blank' href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a></li>
-                                <li><a class="" href="#/search">Search</a></li>
-                            </ul>
-                            {{/if}}
+                        {{#if @custom.global_cta_url}}
+                        <ul>
+                            <li><a class="button highlighted" target='_blank'
+                                    href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a></li>
+                            <li><a class="" href="#/search">Search</a></li>
+                        </ul>
+                        {{/if}}
 
-                            {{#if @member.paid}}
-                                {{navigation type='secondary'}}
-                            {{else}}
-                                {{navigation}}
-                            {{/if}}
+                        {{#if @member.paid}}
+                        {{navigation type='secondary'}}
+                        {{else}}
+                        {{navigation}}
+                        {{/if}}
 
-                            <ul>
-                                <li>
+                        <ul>
+                            <li>
                                 {{#if @member}}
-                                    <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
+                                <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
                                 {{else}}
-                                    <a class='login-button-small-screen' href='/login/'>Log in</a>
+                                <a class='login-button-small-screen' href='#/portal/signin'>Log in</a>
                                 {{/if}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-
-            <main class='mds-main'>
-
-                {{{body}}}
-                {{! All content gets inserted here, index.hbs, post.hbs, etc }}
-
-            </main>
-
-            <footer class='mds-foot'>
-                <div class='mds-container'>
-                    <nav
-                        class='mds-foot-menu'
-                        role='navigation'
-                        aria-label='More Links'
-                    >
-                        <div class='menu-list'>
-                            <h2>More links</h2>
-                            <ul>
-                                <li>
-                                    <a
-                                        href='https://nathanaelcherrier.dev/developer/'
-                                    >
-                                        Want a beautiful website too?
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href='https://mindsers.blog/about/'
-                                    >
-                                        About this blog
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href='/community-guidelines/'
-                                    >
-                                        Community Guidelines
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='/legal-notices/'>
-                                        Legal notices
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#cookie-consent">
-                                        Cookie consent
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class='menu-list'>
-                            <h2>Open Sources</h2>
-                            <ul>
-                                <li><a
-                                        href='https://github.com/mindsers/changelog-reader-action'
-                                        rel='nofollow noreferrer'
-                                    >Changelog Reader Action</a></li>
-                                <li><a
-                                        href='https://github.com/mindsers/configfile'
-                                        rel='nofollow noreferrer'
-                                    >Configfile</a></li>
-                                <li><a
-                                        href='https://github.com/mindsers/yabf'
-                                        rel='nofollow noreferrer'
-                                    >Yabf</a></li>
-                                <li><a
-                                        href='https://github.com/mindsers/nativetable'
-                                        rel='nofollow noreferrer'
-                                    >Nativetable</a></li>
-                            </ul>
-                        </div>
-                        <div class='menu-list'>
-                            <h2>Socials</h2>
-                            <ul>
-                                <li><a
-                                        href='https://www.instagram.com/mindsers.codes/'
-                                        title='Instagram'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >Instagram</a></li>
-                                <li><a
-                                        href='https://twitter.com/MindsersCodes'
-                                        title='Twitter'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >Twitter</a></li>
-                                <li><a
-                                        href='https://github.com/Mindsers'
-                                        title='GitHub'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >GitHub</a></li>
-                                <li><a
-                                        href='https://dev.to/mindsers'
-                                        title='Dev'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >Dev</a></li>
-                                <li><a
-                                        href='https://www.twitch.tv/mindsers'
-                                        title='Twitch'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >Twitch</a></li>
-                                <li><a
-                                        href='https://www.facebook.com/MindsersCodes'
-                                        title='Facebook'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >Facebook</a></li>
-                                <li><a
-                                        href='https://www.malt.fr/profile/nathanaelcherrier'
-                                        title='Malt'
-                                        target='_blank'
-                                        rel='nofollow noreferrer'
-                                    >Malt</a></li>
-                                <li>
-                                    <a
-                                        href='https://feedly.com/i/subscription/feed/{{@site.url}}/posts/rss/'
-                                        title='Feedly'
-                                        target='_blank'
-                                        rel="nofollow noreferrer"
-                                    >
-                                        Feedly
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class='menu-list'>
-                            <h2>Support</h2>
-                            <ul>
-                                <li>Bitcoin:
-                                    <span
-                                        class='coin-address'
-                                    >bc1qak6nsd0jk45lfdh2hrtpzdgsq6557tvj6kj2nj</span></li>
-                                <li>Ethereum:
-                                    <span
-                                        class='coin-address'
-                                    >0x30B42B1487262fE55aD8CDF046342AB6bF4d4e73</span></li>
-                                <li>Ripple:
-                                    <span
-                                        class='coin-address'
-                                    >rUwDYme9YMzNo8ufvgKE7VET1QgbKgJuGT</span></li>
-                                <li>Litecoin:
-                                    <span
-                                        class='coin-address'
-                                    >ltc1qh959rdkrq7mq0uk7fv9mgkw37rdf5krru4k9du</span></li>
-                                <li>Polkadot:
-                                    <span
-                                        class='coin-address'
-                                    >164giiCvnViHEhA7GZVPZSyHi75v2fjuBWMydyF5r3sK6Lo4</li>
-                                <li>Elrond:
-                                    <span
-                                        class='coin-address'
-                                    >erd19vgw4yfknr02hq22n7s900w8dxurnc76zykjap3lhlds29yscalq6g7zzk</li>
-                                <li>Dogecoin:
-                                    <span
-                                        class='coin-address'
-                                    >DHUoWR6HtZ28gXnyicTNDvBgKcjSWSUaV6</li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class='mds-foot-meta'>
-                        &copy;2014-{{date format='YYYY'}}
-                        <a href='https://nathanaelcherrier.dev/en/'>Nathanaël
-                            Cherrier</a>. All rights reserved.<br />
-                        <a href='/legal-notices/'>
-                            Legal notices
-                        </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </footer>
-        </div>
-        <div class="cookie-consent">
-            <p>By clicking "Allow all", you agree to the storing of cookies on you device to enhance site navigation,
+            </nav>
+        </header>
+
+        <main class='mds-main'>
+
+            {{{body}}}
+            {{! All content gets inserted here, index.hbs, post.hbs, etc }}
+
+        </main>
+
+        <footer class='mds-foot'>
+            <div class='mds-container'>
+                <nav class='mds-foot-menu' role='navigation' aria-label='More Links'>
+                    <div class='menu-list'>
+                        <h2>More links</h2>
+                        <ul>
+                            <li>
+                                <a href='https://nathanaelcherrier.dev/developer/'>
+                                    Want a beautiful website too?
+                                </a>
+                            </li>
+                            <li>
+                                <a href='https://mindsers.blog/about/'>
+                                    About this blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/community-guidelines/'>
+                                    Community Guidelines
+                                </a>
+                            </li>
+                            <li>
+                                <a href='/legal-notices/'>
+                                    Legal notices
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#cookie-consent">
+                                    Cookie consent
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='menu-list'>
+                        <h2>Open Sources</h2>
+                        <ul>
+                            <li><a href='https://github.com/mindsers/changelog-reader-action'
+                                    rel='nofollow noreferrer'>Changelog Reader Action</a></li>
+                            <li><a href='https://github.com/mindsers/configfile'
+                                    rel='nofollow noreferrer'>Configfile</a></li>
+                            <li><a href='https://github.com/mindsers/yabf' rel='nofollow noreferrer'>Yabf</a></li>
+                            <li><a href='https://github.com/mindsers/nativetable'
+                                    rel='nofollow noreferrer'>Nativetable</a></li>
+                        </ul>
+                    </div>
+                    <div class='menu-list'>
+                        <h2>Socials</h2>
+                        <ul>
+                            <li><a href='https://www.instagram.com/mindsers.codes/' title='Instagram' target='_blank'
+                                    rel='nofollow noreferrer'>Instagram</a></li>
+                            <li><a href='https://twitter.com/MindsersCodes' title='Twitter' target='_blank'
+                                    rel='nofollow noreferrer'>Twitter</a></li>
+                            <li><a href='https://github.com/Mindsers' title='GitHub' target='_blank'
+                                    rel='nofollow noreferrer'>GitHub</a></li>
+                            <li><a href='https://dev.to/mindsers' title='Dev' target='_blank'
+                                    rel='nofollow noreferrer'>Dev</a></li>
+                            <li><a href='https://www.twitch.tv/mindsers' title='Twitch' target='_blank'
+                                    rel='nofollow noreferrer'>Twitch</a></li>
+                            <li><a href='https://www.facebook.com/MindsersCodes' title='Facebook' target='_blank'
+                                    rel='nofollow noreferrer'>Facebook</a></li>
+                            <li><a href='https://www.malt.fr/profile/nathanaelcherrier' title='Malt' target='_blank'
+                                    rel='nofollow noreferrer'>Malt</a></li>
+                            <li>
+                                <a href='https://feedly.com/i/subscription/feed/{{@site.url}}/posts/rss/' title='Feedly'
+                                    target='_blank' rel="nofollow noreferrer">
+                                    Feedly
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='menu-list'>
+                        <h2>Support</h2>
+                        <ul>
+                            <li>Bitcoin:
+                                <span class='coin-address'>bc1qak6nsd0jk45lfdh2hrtpzdgsq6557tvj6kj2nj</span>
+                            </li>
+                            <li>Ethereum:
+                                <span class='coin-address'>0x30B42B1487262fE55aD8CDF046342AB6bF4d4e73</span>
+                            </li>
+                            <li>Ripple:
+                                <span class='coin-address'>rUwDYme9YMzNo8ufvgKE7VET1QgbKgJuGT</span>
+                            </li>
+                            <li>Litecoin:
+                                <span class='coin-address'>ltc1qh959rdkrq7mq0uk7fv9mgkw37rdf5krru4k9du</span>
+                            </li>
+                            <li>Polkadot:
+                                <span class='coin-address'>164giiCvnViHEhA7GZVPZSyHi75v2fjuBWMydyF5r3sK6Lo4
+                            </li>
+                            <li>Elrond:
+                                <span
+                                    class='coin-address'>erd19vgw4yfknr02hq22n7s900w8dxurnc76zykjap3lhlds29yscalq6g7zzk
+                            </li>
+                            <li>Dogecoin:
+                                <span class='coin-address'>DHUoWR6HtZ28gXnyicTNDvBgKcjSWSUaV6
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class='mds-foot-meta'>
+                    &copy;2014-{{date format='YYYY'}}
+                    <a href='https://nathanaelcherrier.dev/en/'>Nathanaël
+                        Cherrier</a>. All rights reserved.<br />
+                    <a href='/legal-notices/'>
+                        Legal notices
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="cookie-consent">
+        <p>By clicking "Allow all", you agree to the storing of cookies on you device to enhance site navigation,
             analyse site usage, and assist in our marketing effort.</p>
-            <p>
-                <button class="button primary allow-all">Allow all</button>
-                <button class="button patreon deny-all">Deny all</button>
-            </p>
-        </div>
+        <p>
+            <button class="button primary allow-all">Allow all</button>
+            <button class="button patreon deny-all">Deny all</button>
+        </p>
+    </div>
 
-        {{! <foot> }}
-        <script type="module" src="{{asset 'js/menu.js'}}" async></script>
-        <script type="module" type="text/plain" src="{{asset 'js/menu.js'}}" async></script>
-        {{{block 'scripts'}}}
+    {{! <foot> }}
+    <script type="module" src="{{asset 'js/menu.js'}}" async></script>
+    {{{block 'scripts'}}}
 
-        {{#if @custom.cookie_consent}}
-        <script type="module">
-            function loadScripts() {
-                const scripts = document.querySelectorAll('script[cookie-consent]')
+    {{#if @custom.cookie_consent}}
+    <script type="module">
+        function loadScripts() {
+            const scripts = document.querySelectorAll('script[cookie-consent]')
 
-                for (const script of scripts) {
-                    script.setAttribute("type", "text/javascript")
-                }
+            for (const script of scripts) {
+                script.setAttribute("type", "text/javascript")
             }
+        }
 
-            (() => {
-                const consent = sessionStorage.getItem('cookie-consent')
-                const cookieConsentLink = document.querySelector('a[href="#cookie-consent"]')
-                const cookieConsentBox = document.querySelector('div.cookie-consent')
+        (() => {
+            const consent = sessionStorage.getItem('cookie-consent')
+            const cookieConsentLink = document.querySelector('a[href="#cookie-consent"]')
+            const cookieConsentBox = document.querySelector('div.cookie-consent')
 
-                cookieConsentLink.addEventListener('click', (event) => {
-                    event.preventDefault()
-                    cookieConsentBox.classList.add('active')
+            cookieConsentLink.addEventListener('click', (event) => {
+                event.preventDefault()
+                cookieConsentBox.classList.add('active')
+            })
+
+            cookieConsentBox
+                .querySelector('.allow-all')
+                .addEventListener('click', () => {
+                    loadScripts()
+
+                    sessionStorage.setItem('cookie-consent', 'allow-all')
+                    cookieConsentBox.classList.remove("active")
                 })
 
-                cookieConsentBox
-                    .querySelector('.allow-all')
-                    .addEventListener('click', () => {
-                        loadScripts()
+            cookieConsentBox
+                .querySelector('.deny-all')
+                .addEventListener('click', () => {
+                    sessionStorage.setItem('cookie-consent', 'deny-all')
+                    cookieConsentBox.classList.remove("active")
 
-                        sessionStorage.setItem('cookie-consent', 'allow-all')
-                        cookieConsentBox.classList.remove("active")
-                    })
+                    location.reload()
+                })
 
-                cookieConsentBox
-                    .querySelector('.deny-all')
-                    .addEventListener('click', () => {
-                        sessionStorage.setItem('cookie-consent', 'deny-all')
-                        cookieConsentBox.classList.remove("active")
+            if (consent == null) {
+                cookieConsentBox.classList.add('active')
+            }
 
-                        location.reload()
-                    })
+            if (consent !== 'deny-all') {
+                loadScripts()
+                return
+            }
+        })()
+    </script>
+    {{/if}}
+    {{ghost_foot}}
+</body>
 
-                if (consent == null) {
-                    cookieConsentBox.classList.add('active')
-                }
-
-                if (consent !== 'deny-all') {
-                    loadScripts()
-                    return
-                }
-            })()
-        </script>
-        {{/if}}
-        {{ghost_foot}}
-    </body>
 </html>

@@ -183,11 +183,15 @@
             .more {
                 width: 30%;
 
+                @media (max-width: 1250px) {
+                    width: 29%;
+                }
+
                 @media (max-width: 900px) {
                     width: 45%;
                 }
 
-                @media (max-width: 600px) {
+                @media (max-width: 650px) {
                     width: 100%;
                 }
             }

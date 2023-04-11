@@ -3,12 +3,14 @@
 {{#contentFor 'htmlLang'}}{{@site.locale}}{{/contentFor}}
 
 {{#contentFor 'meta'}}
-    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All English posts" href="{{@site.url}}/posts/rss/">
-    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All French posts" href="{{@site.url}}/fr/posts/rss/">
+<link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All English posts"
+    href="{{@site.url}}/posts/rss/">
+<link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All French posts"
+    href="{{@site.url}}/fr/posts/rss/">
 {{/contentFor}}
 
 {{#contentFor 'styles'}}
-    <link rel="stylesheet" type="text/css"  href="{{asset "css/home.css"}}" />
+<link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" />
 {{/contentFor}}
 
 {{#contentFor 'title'}}{{meta_title}} - Coding and entrepreneurship{{/contentFor}}
@@ -23,14 +25,14 @@
                     I learned from coding to starting a business
                 </p>
                 {{#unless @member}}
-                    <p>
-                        {{#if @custom.global_cta_url}}
-                        <a href="/membership/" class="button highlighted">{{@custom.global_cta_text}}</a>
-                        <a href="/membership/#/portal/signup/free" class="button">Get the newsletter</a>
-                        {{else}}
-                        <a href="/membership/#/portal/signup/free" class="button primary">Get the newsletter</a>
-                        {{/if}}
-                    </p>
+                <p>
+                    {{#if @custom.global_cta_url}}
+                    <a href="/membership/" class="button highlighted">{{@custom.global_cta_text}}</a>
+                    <a href="/membership/#/portal/signup/free" class="button">Get the newsletter</a>
+                    {{else}}
+                    <a href="/membership/#/portal/signup/free" class="button primary">Get the newsletter</a>
+                    {{/if}}
+                </p>
                 {{/unless}}
             </div>
             <div class="illustration">
@@ -41,11 +43,11 @@
 
     <section class="mds-featured">
         <div class="mds-container">
-        {{#get "posts" filter="featured:true" limit="2"}}
+            {{#get "posts" filter="featured:true" include="tags" limit="2"}}
             {{#foreach posts}}
-                {{> "card"}}
+            {{> "card"}}
             {{/foreach}}
-        {{/get}}
+            {{/get}}
         </div>
     </section>
 
@@ -74,14 +76,15 @@
         <div class="mds-container">
             <h2 class="section-title">
                 My last blog posts
-                <a class="icon" href="{{@site.url}}/posts/rss/" title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
+                <a class="icon" href="{{@site.url}}/posts/rss/"
+                    title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
             </h2>
             <div class="mds-postfeed">
-            {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
                 {{#foreach posts}}
-                    {{> "thumbnail-card"}}
+                {{> "thumbnail-card"}}
                 {{/foreach}}
-            {{/get}}
+                {{/get}}
                 <div class="more">
                     <p>Want to read more?</p>
                     <p><a href="/posts/" class="button primary">Browse all</a></p>
@@ -93,32 +96,27 @@
     <section class="highlighted-band">
         <div class="mds-container">
             {{#if @member.paid}}
-                <h2 class="section-title">
-                    Thank for being part of this community of coders, entrepreneurs and investors.
-                </h2>
-                <a href="mailto:hello@mindsers.blog" class="button">Share your feedback</a>
+            <h2 class="section-title">
+                Thank for being part of this community of coders, entrepreneurs and investors.
+            </h2>
+            <a href="mailto:hello@mindsers.blog" class="button">Share your feedback</a>
             {{else if @member}}
-                <h2 class="section-title">
-                    More awesome features are waiting for you. Join the Club to get access!
-                </h2>
-                <a href="/membership/" class="button">See Mindsers Club's plans</a>
+            <h2 class="section-title">
+                More awesome features are waiting for you. Join the Club to get access!
+            </h2>
+            <a href="/membership/" class="button">See Mindsers Club's plans</a>
             {{else}}
-                <h2 class="section-title">
-                    Join the {{total_members}} members and get my free monthly newsletter
-                </h2>
-                <form data-members-form='subscribe'>
-                    <label>
-                        Email
-                        <input
-                            data-members-email
-                            type='email'
-                            required='true'
-                            placeholder='jamie@example.com'
-                        />
-                    </label>
-                    <button class='button' type='submit'>Let's go!</button>
-                </form>
-                <p>No spam ever. Unsubscribe in a single click at any time.</p>
+            <h2 class="section-title">
+                Join the {{total_members}} members and get my free monthly newsletter
+            </h2>
+            <form data-members-form='subscribe'>
+                <label>
+                    Email
+                    <input data-members-email type='email' required='true' placeholder='jamie@example.com' />
+                </label>
+                <button class='button' type='submit'>Let's go!</button>
+            </form>
+            <p>No spam ever. Unsubscribe in a single click at any time.</p>
             {{/if}}
         </div>
     </section>
@@ -127,14 +125,15 @@
         <div class="mds-container">
             <h2 class="section-title">
                 My last French blog posts
-                <a class="icon" href="{{@site.url}}/fr/posts/rss/" title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
+                <a class="icon" href="{{@site.url}}/fr/posts/rss/"
+                    title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
             </h2>
             <div class="mds-postfeed" lang="fr">
-            {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
+                {{#get "posts" filter="tag:hash-fr+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
                 {{#foreach posts}}
-                    {{> "thumbnail-card"}}
+                {{> "thumbnail-card"}}
                 {{/foreach}}
-            {{/get}}
+                {{/get}}
                 <div class="more" lang="en">
                     <p>Want to read more?</p>
                     <p><a href="/fr/posts/" class="button primary">Browse all</a></p>
@@ -142,5 +141,5 @@
             </div>
         </div>
     </section>
-    </div>
+</div>
 </div>
