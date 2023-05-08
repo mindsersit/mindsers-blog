@@ -1,10 +1,10 @@
 {{!< default}}
 
 {{#contentFor 'styles'}}
-    <link rel="prefetch" href="https://mindsers.blog/">
-    <link rel="prerender" href="https://mindsers.blog/">
+<link rel="prefetch" href="https://mindsers.blog/">
+<link rel="prerender" href="https://mindsers.blog/">
 
-    <link rel='stylesheet' type='text/css' href='{{asset 'css/post.css'}}' />
+<link rel='stylesheet' type='text/css' href='{{asset 'css/post.css'}}' />
 {{/contentFor}}
 
 {{#contentFor 'title'}}{{meta_title}} - {{@site.title}}{{/contentFor}}
@@ -12,16 +12,19 @@
 {{#post}}
 
 {{#has tag="#fr"}}
-    {{#contentFor 'htmlLang'}}fr{{/contentFor}}
-    {{#contentFor 'meta'}}
-        <link rel="alternate" hreflang="fr" href="{{#if canonical_url}}{{canonical_url}}{{else}}{{url absolute="true"}}{{/if}}" />
-    {{/contentFor}}
+{{#contentFor 'htmlLang'}}fr{{/contentFor}}
+{{#contentFor 'meta'}}
+<link rel="alternate" hreflang="fr"
+    href="{{#if canonical_url}}{{canonical_url}}{{else}}{{url absolute="true"}}{{/if}}" />
+{{/contentFor}}
 {{else}}
-    {{#contentFor 'htmlLang'}}en{{/contentFor}}
-    {{#contentFor 'meta'}}
-        <link rel="alternate" hreflang="x-default" href="{{#if canonical_url}}{{canonical_url}}{{else}}{{url absolute="true"}}{{/if}}" />
-        <link rel="alternate" hreflang="en" href="{{#if canonical_url}}{{canonical_url}}{{else}}{{url absolute="true"}}{{/if}}" />
-    {{/contentFor}}
+{{#contentFor 'htmlLang'}}en{{/contentFor}}
+{{#contentFor 'meta'}}
+<link rel="alternate" hreflang="x-default"
+    href="{{#if canonical_url}}{{canonical_url}}{{else}}{{url absolute="true"}}{{/if}}" />
+<link rel="alternate" hreflang="en"
+    href="{{#if canonical_url}}{{canonical_url}}{{else}}{{url absolute="true"}}{{/if}}" />
+{{/contentFor}}
 {{/has}}
 
 <article class="mds-article {{post_class}}">
@@ -29,23 +32,18 @@
     <header class="mds-header mds-canvas {{^if feature_image}}no-image{{/if}}">
         {{#if feature_image}}
         <div class="featured">
-            <img class="mds-feature-image"
-                srcset="{{img_url feature_image size="s"}} 300w,
+            <img class="mds-feature-image" srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 1000px) 1000px, 2000px"
-                loading="lazy"
-                src="{{img_url feature_image size="xl"}}"
-                alt="{{title}}"
-            />
+                        {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 1000px, 2000px"
+                loading="lazy" src="{{img_url feature_image size="xl"}}" alt="{{title}}" />
         </div>
         {{/if}}
         <div class="summary">
-            <h1 class="mds-title" {{#has tag="#fr"}}lang="fr"{{/has}}>{{title}}</h1>
+            <h1 class="mds-title" {{#has tag="#fr"}}lang="fr" {{/has}}>{{title}}</h1>
 
             {{#if custom_excerpt}}
-            <p class="mds-excerpt" {{#has tag="#fr"}}lang="fr"{{/has}}>{{custom_excerpt}}</p>
+            <p class="mds-excerpt" {{#has tag="#fr"}}lang="fr" {{/has}}>{{custom_excerpt}}</p>
             {{/if}}
 
             <p class="mds-post-meta">
@@ -56,54 +54,59 @@
     </header>
 
     <div class="mds-share">
-        <a class="button rounded primary" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" target="_blank" rel="nofollow noreferrer">
+        <a class="button rounded primary" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+            target="_blank" rel="nofollow noreferrer">
             {{> "icons/facebook"}}
         </a>
-        <a class="button rounded primary" href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{title}}" target="_blank" rel="nofollow noreferrer">
+        <a class="button rounded primary"
+            href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{title}}" target="_blank"
+            rel="nofollow noreferrer">
             {{> "icons/twitter"}}
         </a>
-        <a class="button rounded primary" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}" target="_blank" rel="nofollow noreferrer">
+        <a class="button rounded primary"
+            href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}" target="_blank"
+            rel="nofollow noreferrer">
             {{> "icons/linkedin"}}
         </a>
     </div>
 
-    <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr"{{/has}}>
+    <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr" {{/has}}>
         {{#has visibility='public'}}
-            {{> "thanks-cta"}}
+        {{> "thanks-cta"}}
         {{else}}
-            {{#has tag='#additional-content'}}
-                {{> "thanks-cta"}}
-            {{/has}}
+        {{#has tag='#additional-content'}}
+        {{> "thanks-cta"}}
+        {{/has}}
         {{/has}}
 
         {{content}}
 
         {{#if access}}
-            {{#unless @member}}
-                {{> "notification-cta"}}
-            {{/unless}}
+        {{#unless @member}}
+        {{> "notification-cta"}}
+        {{/unless}}
 
-            {{#has tag="#fr"}}
-            <p class="mds-auto-content">
-                Si vous avez des questions ou des remarques/conseils,
-                n'hésitez pas à laisser un commentaire plus bas ! Je serais ravis de vous lire.
-                Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis.
-            </p>
-            {{else}}
-            <p class="mds-auto-content">
-                If you have any questions or advices, please create a comment below!
-                I'll be really glad to read you.
-                Also if you like this post, don't forget to share it with your friends.
-                It helps a lot!
-            </p>
-            {{/has}}
+        {{#has tag="#fr"}}
+        <p class="mds-auto-content">
+            Si vous avez des questions ou des remarques/conseils,
+            n'hésitez pas à laisser un commentaire plus bas ! Je serais ravis de vous lire.
+            Et si vous aimez l'article, n'oubliez pas de le partager avec vos amis.
+        </p>
+        {{else}}
+        <p class="mds-auto-content">
+            If you have any questions or advices, please create a comment below!
+            I'll be really glad to read you.
+            Also if you like this post, don't forget to share it with your friends.
+            It helps a lot!
+        </p>
+        {{/has}}
         {{/if}}
     </div>
 
     <footer class="mds-footer mds-canvas">
         <hr />
         <div class="mds-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}<br/>
+            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}<br />
             {{^has tag="#newsletter-issue"}}Published in {{tags separator=", "}}{{/has}}
         </div>
         <hr>
@@ -113,7 +116,8 @@
                 <h2>Community discussion</h2>
                 <div class="mds-comments-info">
                     <div>
-                        Do not forget to read the <a href="/community-guidelines/">Community Guidelines</a> before commenting.
+                        Do not forget to read the <a href="/community-guidelines/">Community Guidelines</a> before
+                        commenting.
                     </div>
                     <div>
                         {{comment_count}}
@@ -121,7 +125,7 @@
                 </div>
             </header>
             <div class="mds-comments-container">
-                {{comments title="" count=false mode="light" saturation=80}}
+                {{comments title="" count=false mode="auto" saturation=80}}
             </div>
         </section>
         {{/if}}
@@ -150,6 +154,6 @@
 {{/post}}
 
 {{#contentFor "scripts"}}
-    <script src="https://unpkg.com/shiki" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="module" src="{{asset 'js/post.js'}}"></script>
+<script src="https://unpkg.com/shiki" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module" src="{{asset 'js/post.js'}}"></script>
 {{/contentFor}}
