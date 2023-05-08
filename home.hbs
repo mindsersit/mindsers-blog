@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" />
 {{/contentFor}}
 
-{{#contentFor 'title'}}{{meta_title}} - Coding and entrepreneurship{{/contentFor}}
+{{#contentFor 'title'}}{{meta_title}} - Coding and entrepreneurship stories{{/contentFor}}
 
 <div class="mds-home">
     <header class="mds-header">
@@ -21,19 +21,27 @@
             <div class="presentation">
                 <h1 class="mds-title">{{@site.description}}</h1>
                 <p>
-                    Hundreds of ressources created to share with you everything
-                    I learned from coding to starting a business
+                    I'm Nathanaël (Mindsers) and I wrote hundreds of ressources to share with you everything
+                    I learned from coding to starting a business.
                 </p>
-                {{#unless @member}}
+                <p>
+                    Mindsers Blog started as a developer's personal blog but became an independant publication for
+                    developers. Read about coding, freelance life, remote work, side businesses and finance.
+                </p>
+                {{#if @member}}
+                    {{#unless @member.paid}}
+                    <a href="/membership/" class="button primary">Join the club!</a>
+                    {{else}}
+                    <a href="/posts/" class="button">Browse posts</a>
+                    {{/unless}}
+                {{else}}
                 <p>
                     {{#if @custom.global_cta_url}}
-                    <a href="/membership/" class="button highlighted">{{@custom.global_cta_text}}</a>
-                    <a href="/membership/#/portal/signup/free" class="button">Get the newsletter</a>
-                    {{else}}
-                    <a href="/membership/#/portal/signup/free" class="button primary">Get the newsletter</a>
+                    <a href="{{@custom.global_cta_url}}" class="button highlighted">{{@custom.global_cta_text}}</a>
                     {{/if}}
+                    <a href="/signup/" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Get the newsletter</a>
                 </p>
-                {{/unless}}
+                {{/if}}
             </div>
             <div class="illustration">
                 {{> "images/developer"}}
@@ -81,9 +89,9 @@
             </h2>
             <div class="mds-postfeed">
                 {{#get "posts" filter="tag:hash-en+tag:-[hash-email,hash-newsletter-issue]" limit="5"}}
-                {{#foreach posts}}
-                {{> "thumbnail-card"}}
-                {{/foreach}}
+                    {{#foreach posts}}
+                    {{> "thumbnail-card"}}
+                    {{/foreach}}
                 {{/get}}
                 <div class="more">
                     <p>Want to read more?</p>
