@@ -1,0 +1,67 @@
+<div class='upgrade-cta' lang='en'>
+    {{#has visibility='public'}}
+        <h2>
+            This post is for newsletter subscribers only
+        </h2>
+        <p>
+            Join the
+            {{total_members}}
+            developers of our community and get access to this post.
+        </p>
+
+        <a href='/signup/' class='button'>Subscribe to our newsletter</a>
+    {{else}}
+        {{#has tag='#additional-content'}}
+            <h2>
+                This free post contains additional content for
+                {{#has visibility='tiers'}}
+                    Mindsers Club
+                {{else}}
+                    premuim
+                {{/has}}
+                members only
+            </h2>
+        {{else}}
+            <h2>
+                This
+                {{#has tag='#newsletter-issue'}}
+                    newsletter issue
+                {{else}}
+                    outstanding post
+                {{/has}}
+                is for
+                {{#has visibility='tiers'}}
+                    Mindsers Club
+                {{else}}
+                    premuim
+                {{/has}}
+                members only
+            </h2>
+        {{/has}}
+        <p>
+            Join the
+            {{total_members}}
+            developers of our community and get full access to our library of
+            posts and any additional content available.
+        </p>
+
+        {{#has visibility='tiers'}}
+            <a href='/membership/' class='button'>Join the club!</a>
+        {{else}}
+            {{#has tag='#newsletter-issue'}}
+                <a href='/newsletter/' class='plan-link'>See newsletter plans</a>
+            {{else}}
+                <a href='/membership/' class='plan-link'>See other plans</a>
+            {{/has}}
+
+            <a href='javascript:' data-portal='signup/monthly' class='button'>
+                Subscribe now!
+            </a>
+        {{/has}}
+    {{/has}}
+
+    <p class='switch'>
+        Already a member?
+        <a href='/login/'>Log in</a>
+    </p>
+</div>
