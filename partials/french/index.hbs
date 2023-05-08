@@ -1,0 +1,44 @@
+{{#contentFor 'title'}}Les derniers articles pour développeurs - {{meta_title}}{{/contentFor}}
+
+{{#contentFor 'meta'}}
+    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All French posts" href="{{@site.url}}/fr/posts/rss/">
+{{/contentFor}}
+
+<div class="mds-page" lang='fr'>
+    <div class="mds-container">
+        <header class="mds-header">
+            <h1 class="mds-title">
+                Articles pour développeurs
+                <a class="icon" href="{{@site.url}}/fr/posts/rss/" title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
+            </h1>
+            <p>
+                Au fil des années, nous avons publié énormément d'articles pour partager nos connaissances et nos expériences avec les autres développeurs.
+                Cette page répertorie tous les articles écrit en français.
+            </p>
+            <p>
+                Ces publications sont gratuites pour tous grâce à
+                {{#unless @member.paid}}
+                tous les membres du Mindsers Club. Rejois-les pour lire les articles avant tout le monde !
+                {{else}}
+                toi en tant que membre du Mindsers Club.
+                {{/unless}}
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Deviens membre du club !</a>
+                {{/unless}}
+                <a class="button" href="/posts/">Voir les articles en anglais</a>
+            </p>
+            </header>
+
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{else}}
+            <p class="no-post">Aucun article disponible</p>
+        {{/foreach}}
+        </div>
+
+        {{pagination}}
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{{#contentFor 'title'}}Last posts for coders - {{meta_title}}{{/contentFor}}
+
+{{#contentFor 'meta'}}
+    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All English posts" href="{{@site.url}}/posts/rss/">
+{{/contentFor}}
+
+<div class="mds-page">
+    <div class="mds-container">
+        <header class="mds-header">
+            <h1 class="mds-title">
+                Posts for coders
+                <a class="icon" href="{{@site.url}}/posts/rss/" title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
+            </h1>
+            <p>
+                We published several blog posts through years to share our knowledge and our experiences with other coders. This page lists all the English ones.
+            </p>
+            <p>
+                Those posts are free for all thanks to
+                {{#unless @member.paid}}
+                the Mindsers Club members. Join them to get prime acces to new posts.
+                {{else}}
+                you as a Mindsers Club member.
+                {{/unless}}
+            </p>
+            <p>
+                {{#unless @member.paid}}
+                    <a class="button highlighted" href="/membership/">Join the club !</a>
+                {{/unless}}
+                <a class="button" href="/fr/posts/">See French posts</a>
+            </p>
+        </header>
+
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{else}}
+                <p class="no-post">No posts here</p>
+        {{/foreach}}
+        </div>
+
+        {{pagination}}
+    </div>
+</div>

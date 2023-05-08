@@ -2,108 +2,72 @@
 
 {{#contentFor 'htmlLang'}}{{@site.locale}}{{/contentFor}}
 
-{{#contentFor 'meta'}}
-    {{#is "issues"}}
-        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog Newsletter - All English issues" href="{{@site.url}}/issues/rss/">
-    {{else is "frissues"}}
-        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog Newsletter - All French issues" href="{{@site.url}}/fr/issues/rss/">
-    {{else is "posts"}}
-        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All English posts" href="{{@site.url}}/posts/rss/">
-    {{else is "frposts"}}
-        <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All French posts" href="{{@site.url}}/fr/posts/rss/">
-    {{/is}}
-{{/contentFor}}
-
 {{#contentFor 'styles'}}
     <link rel="stylesheet" type="text/css"  href="{{asset "css/pagination.css"}}" />
 {{/contentFor}}
 
-<div class="mds-page">
-    <div class="mds-container">
-        <header class="mds-header">
+{{#is "posts"}}
+    {{> "english/index"}}
+{{else is "frposts"}}
+    {{> "french/index"}}
+{{else}}
+    {{#contentFor 'meta'}}
         {{#is "issues"}}
-            {{#contentFor 'title'}}English Newsletter Issues - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">Mindsers Blog Insider issues</h1>
-            <p>
-                As additional content, Mindsers Blog Insiders will provide you with:
-                stats, news about Mindsers Blog and my other projects,
-                additional tech and business tips, and my favorite reads of the month.
-            </p>
-            <p>
-                {{#unless @member.paid}}
-                    <a class="button highlighted" href="/newsletter/">Subscribe !</a>
-                {{/unless}}
-                <a class="button" href="/fr/issues/">See French issues</a>
-            </p>
+            <link rel="alternate" type="application/rss+xml" title="Mindsers Blog Newsletter - All English issues" href="{{@site.url}}/issues/rss/">
         {{else is "frissues"}}
-            {{#contentFor 'title'}}French Newsletter Issues - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">Mindsers Blog Insider issues in French</h1>
-            <p>
-                As additional content, Mindsers Blog Insiders will provide you with:
-                stats, news about Mindsers Blog and my other projects,
-                additional tech and business tips, and my favorite reads of the month.
-            </p>
-            <p>
-                {{#unless @member.paid}}
-                    <a class="button highlighted" href="/newsletter/">Subscribe !</a>
-                {{/unless}}
-                <a class="button" href="/issues/">See English issues</a>
-            </p>
-        {{else is "emails"}}
-            {{#contentFor 'title'}}Emails archives - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">Emails archives</h1>
-        {{else is "posts"}}
-            {{#contentFor 'title'}}English Posts - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">
-                English posts
-                <a class="icon" href="{{@site.url}}/posts/rss/" title="Follow our English posts using a RSS reader">{{> "icons/rss"}}</a>
-            </h1>
-            <p>
-                I wrote several blog posts through years to share my knowledge and my journey.
-                Most of them are free thanks to my awesome paid members.
-                {{#unless @member.paid}}
-                Join them to get complete access.
-                {{/unless}}
-            </p>
-            <p>
-                {{#unless @member.paid}}
-                    <a class="button highlighted" href="/membership/">Subscribe !</a>
-                {{/unless}}
-                <a class="button" href="/fr/posts/">See French posts</a>
-            </p>
-        {{else is "frposts"}}
-            {{#contentFor 'title'}}French Posts - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">
-                French posts
-                <a class="icon" href="{{@site.url}}/fr/posts/rss/" title="Follow our French posts using a RSS reader">{{> "icons/rss"}}</a>
-            </h1>
-            <p>
-                I wrote several blog posts through years to share my knowledge and my journey.
-                Most of them are free thanks to my awesome paid members.
-                {{#unless @member.paid}}
-                Join them to get complete access.
-                {{/unless}}
-            </p>
-            <p>
-                {{#unless @member.paid}}
-                    <a class="button highlighted" href="/membership/">Subscribe !</a>
-                {{/unless}}
-                <a class="button" href="/posts/">See English posts</a>
-            </p>
-        {{else}}
-            {{#contentFor 'title'}}Posts - {{meta_title}}{{/contentFor}}
-            <h1 class="mds-title">Posts</h1>
+            <link rel="alternate" type="application/rss+xml" title="Mindsers Blog Newsletter - All French issues" href="{{@site.url}}/fr/issues/rss/">
         {{/is}}
-        </header>
+    {{/contentFor}}
 
-        <div class="mds-postfeed">
-        {{#foreach posts}}
-            {{> "card"}}
-        {{else}}
-                <p class="no-post">No posts here</p>
-        {{/foreach}}
+    <div class="mds-page">
+        <div class="mds-container">
+            <header class="mds-header">
+            {{#is "issues"}}
+                {{#contentFor 'title'}}English Newsletter Issues - {{meta_title}}{{/contentFor}}
+                <h1 class="mds-title">Mindsers Blog Insider issues</h1>
+                <p>
+                    As additional content, Mindsers Blog Insiders will provide you with:
+                    stats, news about Mindsers Blog and my other projects,
+                    additional tech and business tips, and my favorite reads of the month.
+                </p>
+                <p>
+                    {{#unless @member.paid}}
+                        <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                    {{/unless}}
+                    <a class="button" href="/fr/issues/">See French issues</a>
+                </p>
+            {{else is "frissues"}}
+                {{#contentFor 'title'}}French Newsletter Issues - {{meta_title}}{{/contentFor}}
+                <h1 class="mds-title">Mindsers Blog Insider issues in French</h1>
+                <p>
+                    As additional content, Mindsers Blog Insiders will provide you with:
+                    stats, news about Mindsers Blog and my other projects,
+                    additional tech and business tips, and my favorite reads of the month.
+                </p>
+                <p>
+                    {{#unless @member.paid}}
+                        <a class="button highlighted" href="/newsletter/">Subscribe !</a>
+                    {{/unless}}
+                    <a class="button" href="/issues/">See English issues</a>
+                </p>
+            {{else is "emails"}}
+                {{#contentFor 'title'}}Emails archives - {{meta_title}}{{/contentFor}}
+                <h1 class="mds-title">Emails archives</h1>
+            {{else}}
+                {{#contentFor 'title'}}Posts - {{meta_title}}{{/contentFor}}
+                <h1 class="mds-title">Posts</h1>
+            {{/is}}
+            </header>
+
+            <div class="mds-postfeed">
+            {{#foreach posts}}
+                {{> "card"}}
+            {{else}}
+                    <p class="no-post">No posts here</p>
+            {{/foreach}}
+            </div>
+
+            {{pagination}}
         </div>
-
-        {{pagination}}
     </div>
-</div>
+{{/is}}
