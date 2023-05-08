@@ -55,7 +55,9 @@
                         </svg>
                     </a>
                     {{#if @member}}
+                    {{#unless @member.paid}}
                     <a class="button highlighted shop-button" target='_blank' href="/membership/">Join the Club !</a>
+                    {{/unless}}
                     <a href="/profile/" class="profile-button" tabindex="0" title="Open profile menu"
                         aria-haspopup="true">
                         {{> "icons/profile"}}
@@ -74,15 +76,15 @@
                         </ul>
                     </div>
                     {{else}}
-                    {{#if @custom.global_cta_url}}
-                    <a class='login-button' href='#/portal/signin'>Log in</a>
-                    <a class="button highlighted shop-button" target='_blank'
-                        href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a>
-                    {{else}}
-                    <a class='button primary login-button' href='#/portal/signin'>Log in</a>
-                    {{/if}}
-                    <a class='more-button-small-screen' tabindex="0" title="Open main menu"
-                        aria-haspopup="true">{{> "icons/more"}}</a>
+                        {{#if @custom.global_cta_url}}
+                        <a class='login-button' href='/login'>Log in</a>
+                        <a class="button highlighted shop-button" target='_blank'
+                            href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a>
+                        {{else}}
+                        <a class='button primary login-button' href='/login'>Log in</a>
+                        {{/if}}
+                        <a class='more-button-small-screen' tabindex="0" title="Open main menu"
+                            aria-haspopup="true">{{> "icons/more"}}</a>
                     {{/if}}
 
                     <div class="more-menu">
@@ -129,7 +131,7 @@
                                 {{#if @member}}
                                 <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
                                 {{else}}
-                                <a class='login-button-small-screen' href='#/portal/signin'>Log in</a>
+                                <a class='login-button-small-screen' href='/login'>Log in</a>
                                 {{/if}}
                             </li>
                         </ul>
