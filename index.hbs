@@ -10,6 +10,10 @@
     {{> "english/index"}}
 {{else is "frposts"}}
     {{> "french/index"}}
+{{else is "reviews"}}
+    {{> "english/review-index"}}
+{{else is "frreviews"}}
+    {{> "french/review-index"}}
 {{else}}
     {{#contentFor 'meta'}}
         {{#is "issues"}}

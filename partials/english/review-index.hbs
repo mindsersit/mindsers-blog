@@ -1,0 +1,32 @@
+{{#contentFor 'title'}}Coffee shop review for remote coders - {{meta_title}}{{/contentFor}}
+
+{{#contentFor 'meta'}}
+    <link rel="alternate" type="application/rss+xml" title="Mindsers Blog - All coffeshop reviews in English" href="{{@site.url}}/reviews/rss/">
+{{/contentFor}}
+
+<div class="mds-page">
+    <div class="mds-container">
+        <header class="mds-header">
+            <h1 class="mds-title">
+                Coffee shop reviews
+                <a class="icon" href="{{@site.url}}/reviews/rss/" title="Follow our coffeshop reviews in using a RSS reader">{{> "icons/rss"}}</a>
+            </h1>
+            <p>
+                As remote developers, I sometimes work at coffee shops. I love that but noticed that environment quality is very variant from one coffee shop to another. So I decided to write reviews of coffee shop I already worked at.
+            </p>
+            <p>
+                <a class="button" href="/fr/reviews/">Read review in French</a>
+            </p>
+        </header>
+
+        <div class="mds-postfeed">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{else}}
+                <p class="no-post">No reviews here</p>
+        {{/foreach}}
+        </div>
+
+        {{pagination}}
+    </div>
+</div>
