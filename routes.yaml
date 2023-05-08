@@ -24,22 +24,30 @@ routes:
     /profile/: profile
 
 collections:
-    /fr/posts/:
-        permalink: /fr/post/{slug}/
-        template: index
-        filter: 'tag:hash-fr+tag:-[hash-email,hash-newsletter-issue,hash-en]'
-    /posts/:
-        permalink: /post/{slug}/
-        template: index
-        filter: 'tag:hash-en+tag:-[hash-email,hash-newsletter-issue,hash-fr]'
     /fr/issues/:
         permalink: /fr/issue/{slug}/
         template: index
-        filter: 'tag:hash-fr+tag:hash-newsletter-issue'
+        filter: tag:hash-newsletter-issue+tag:hash-fr
     /issues/:
         permalink: /issue/{slug}/
         template: index
-        filter: 'tag:hash-en+tag:hash-newsletter-issue'
+        filter: tag:hash-newsletter-issue+tag:hash-en
+    /fr/reviews/:
+        permalink: /fr/reviews/{slug}/
+        template: index
+        filter: tag:hash-coffeeshop-review+tag:hash-fr
+    /reviews/:
+        permalink: /reviews/{slug}/
+        template: index
+        filter: tag:hash-coffeeshop-review+tag:hash-en
+    /fr/posts/:
+        permalink: /fr/post/{slug}/
+        template: index
+        filter: tag:hash-fr+tag:-[hash-email,hash-newsletter-issue,hash-coffeeshop-review,hash-en]
+    /posts/:
+        permalink: /post/{slug}/
+        template: index
+        filter: tag:hash-en+tag:-[hash-email,hash-newsletter-issue,hash-coffeeshop-review,hash-fr]
 
 taxonomies:
     tag: /topic/{slug}/

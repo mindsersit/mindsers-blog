@@ -71,6 +71,112 @@ body {
                         }
                     }
                 }
+
+                .mds-main-menu {
+                    li {
+                        position: relative;
+                        padding: 5px;
+
+                        .mds-main-submenu {
+                            position: absolute;
+                            display: flex;
+                            background-color: $background_color;
+                            border-radius: 5px;
+                            width: max-content;
+                            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+                            margin: 5px 0;
+                            display: none;
+                            z-index: 1;
+
+                            .mds-submenu-column {
+                                padding: 5px 20px;
+                                margin: 15px 0px;
+
+                                &.mds-submenu-links {
+                                    min-width: 150px;
+
+                                    ul + ul {
+                                        margin-top: 20px;
+                                    }
+
+                                    li {
+                                        padding: 0;
+                                    }
+
+                                    .asap-label {
+                                        font-size: 0.7em;
+                                        background-color: $neutral_color;
+                                        border-radius: 5px;
+                                        padding: 1px 3px;
+                                    }
+
+                                    .more-links {
+                                        font-size: 0.9em;
+                                        text-decoration: underline;
+
+                                        a {
+                                            color: $foreground_color;
+                                            text-decoration: underline;
+                                            font-weight: 400;
+                                        }
+                                    }
+                                }
+
+                                &.mds-submenu-plans {
+                                    border-left: 1px solid $neutral_color;
+
+                                    .more {
+                                        color: $foreground_color;
+                                        text-decoration: underline;
+                                        font-weight: 400;
+                                        font-size: 0.9em;
+                                    }
+
+                                    .title {
+                                        font-weight: bolder;
+                                        font-size: 0.9em;
+                                    }
+
+                                    li {
+                                        margin: 5px;
+                                        padding: 0;
+
+                                        a {
+                                            background: $default_gradient;
+                                            color: white;
+                                            padding: 10px;
+                                            border-radius: 5px;
+                                            display: inline-block;
+                                            box-sizing: border-box;
+                                            width: 200px;
+                                            height: 60px;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+
+                                            .price {
+                                                background-color: white;
+                                                color: $accent_color;
+                                                font-weight: 400;
+                                                border-radius: 15px;
+                                                padding: 5px 10px;
+                                                font-size: 0.8em;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            ul {
+                                flex-direction: column;
+                            }
+                        }
+
+                        &:hover .mds-main-submenu {
+                            display: flex;
+                        }
+                    }
+                }
             }
 
             .mds-head-placeholder {
@@ -423,6 +529,7 @@ body {
         justify-content: space-between;
         align-items: center;
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+        z-index: 2;
 
         @media (max-width: 400px) {
             flex-direction: column;
