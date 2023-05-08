@@ -1,5 +1,4 @@
 <nav class='pagination' role='navigation' aria-label='Pagination'>
-{{#is "frposts"}}
     <div>
         <a class='pagination-link {{#unless prev}}disabled{{/unless}}' href='{{page_url 1}}' title="Première page">&laquo; Prem.</a>
         <a class='pagination-link {{#unless prev}}disabled{{/unless}}' href='{{page_url prev}}' title="Page précédente">&lsaquo; Préc.</a>
@@ -9,15 +8,4 @@
         <a class='pagination-link {{#unless next}}disabled{{/unless}}' href='{{page_url next}}' title="Page suivante">Suiv. &rsaquo;</a>
         <a class='pagination-link {{#unless next}}disabled{{/unless}}' href='{{page_url pages}}' title="Dérnière page">Dern. &raquo;</a>
     </div>
-{{else}}
-    <div>
-        <a class='pagination-link {{#unless prev}}disabled{{/unless}}' href='{{page_url 1}}' title="First page">&laquo; First</a>
-        <a class='pagination-link {{#unless prev}}disabled{{/unless}}' href='{{page_url prev}}' title="Previous page">&lsaquo; Prev</a>
-    </div>
-    <span class='page-number'>{{page}} / {{pages}}</span>
-    <div>
-        <a class='pagination-link {{#unless next}}disabled{{/unless}}' href='{{page_url next}}' title="Next page">Next &rsaquo;</a>
-        <a class='pagination-link {{#unless next}}disabled{{/unless}}' href='{{page_url pages}}' title="Last page">Last &raquo;</a>
-    </div>
-{{/is}}
 </nav>
