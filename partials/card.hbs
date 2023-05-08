@@ -24,14 +24,14 @@ Re-usable card for linking to posts
                 {{/has}}
 
                 {{^has visibility='public'}}
-                <span class='bull'>&bull;</span>
-                {{#has tag="#additional-content"}}
-                <span class='premium-label'>Additional Content</span>
-                {{else has visibility="members"}}
-                <span class='member-label'>Member Only</span>
-                {{else}}
-                <span class='premium-label'>Mindsers Club Only</span>
-                {{/has}}
+                    <span class='bull'>&bull;</span>
+                    {{#has tag="#additional-content"}}
+                    <span class='premium-label'>Additional Content</span>
+                    {{else has visibility="members"}}
+                    <span class='member-label'>Member Only</span>
+                    {{else}}
+                    <span class='premium-label'>Mindsers Club Only</span>
+                    {{/has}}
                 {{/has}}
             </span>
             <h2 class='mds-card-title' {{#has tag="#fr"}}lang="fr" {{/has}}>{{title}}</h2>
