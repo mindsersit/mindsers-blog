@@ -33,11 +33,11 @@ collections:
         template: index
         filter: tag:hash-newsletter-issue+tag:hash-en
     /fr/reviews/:
-        permalink: /fr/reviews/{slug}/
+        permalink: /fr/review/{slug}/
         template: index
         filter: tag:hash-coffeeshop-review+tag:hash-fr
     /reviews/:
-        permalink: /reviews/{slug}/
+        permalink: /review/{slug}/
         template: index
         filter: tag:hash-coffeeshop-review+tag:hash-en
     /fr/posts/:
