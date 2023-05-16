@@ -11,7 +11,7 @@
 
 {{#post}}
 
-{{#has tag="#fr"}}
+{{#has tag="#lang-fr"}}
 {{#contentFor 'htmlLang'}}fr{{/contentFor}}
 {{#contentFor 'meta'}}
 <link rel="alternate" hreflang="fr"
@@ -40,10 +40,10 @@
         </div>
         {{/if}}
         <div class="summary">
-            <h1 class="mds-title" {{#has tag="#fr"}}lang="fr" {{/has}}>{{title}}</h1>
+            <h1 class="mds-title" {{#has tag="#lang-fr"}}lang="fr" {{/has}}>{{title}}</h1>
 
             {{#if custom_excerpt}}
-            <p class="mds-excerpt" {{#has tag="#fr"}}lang="fr" {{/has}}>{{custom_excerpt}}</p>
+            <p class="mds-excerpt" {{#has tag="#lang-fr"}}lang="fr" {{/has}}>{{custom_excerpt}}</p>
             {{/if}}
 
             <p class="mds-post-meta">
@@ -70,7 +70,7 @@
         </a>
     </div>
 
-    <div class="mds-content mds-canvas" {{#has tag="#fr"}}lang="fr" {{/has}}>
+    <div class="mds-content mds-canvas" {{#has tag="#lang-fr"}}lang="fr" {{/has}}>
         {{#has visibility='public'}}
         {{> "thanks-cta"}}
         {{else}}
@@ -86,7 +86,7 @@
         {{> "notification-cta"}}
         {{/unless}}
 
-        {{#has tag="#fr"}}
+        {{#has tag="#lang-fr"}}
         <p class="mds-auto-content">
             Si vous avez des questions ou des remarques/conseils,
             n'hésitez pas à laisser un commentaire plus bas ! Je serais ravis de vous lire.
@@ -107,7 +107,7 @@
         <hr />
         <div class="mds-post-authors">
             Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}<br />
-            {{^has tag="#newsletter-issue"}}Published in {{tags separator=", "}}{{/has}}
+            {{^has tag="#issue"}}Published in {{tags separator=", "}}{{/has}}
         </div>
         <hr>
         {{#if comments}}

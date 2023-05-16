@@ -24,7 +24,7 @@
             </h2>
         {{else}}
             <h2>
-                {{#has tag='#newsletter-issue'}}
+                {{#has tag='#issue'}}
                     Ce numéro de newsletter
                 {{else}}
                     Cet article génial
@@ -48,7 +48,7 @@
         {{#has visibility='tiers'}}
             <a href='/membership/' class='button'>Je rejoins le Mindsers Club !</a>
         {{else}}
-            {{#has tag='#newsletter-issue'}}
+            {{#has tag='#issue'}}
                 <a href='/newsletter/' class='plan-link'>Voir les abonnements à
                     la newsletter</a>
             {{else}}
