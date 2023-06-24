@@ -136,11 +136,11 @@
                     <header>
                         <h2>{{name}}</h2>
                         {{#if monthly_price}}
-                        <span class='monthly-plan-data'>{{price monthly_price currency=currency}} <span>/
+                        <span class='monthly-plan-data'>{{price monthly_price currency=currency}} <span class="period">/
                                 month</span></span>
                         {{/if}}
                         {{#if yearly_price}}
-                        <span class='yearly-plan-data'>{{price yearly_price currency=currency}} <span>/
+                        <span class='yearly-plan-data'>{{price yearly_price currency=currency}} <span class="period">/
                                 year</span></span>
                         {{/if}}
                     </header>

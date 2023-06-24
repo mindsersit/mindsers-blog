@@ -7,7 +7,16 @@
     /issue/: /issues/
     /fr/issue/: /fr/issues/
     /email/: /emails/
+    # pages
     /membership/exclusive-content/: /membership/posts/
+    /topic/c/: /topic/c-language/
+    /topic/encvid/: /topic/portfolio/
+    /reviews/test-le-kitchen-cafe-lyon/: /review/test-le-kitchen-cafe-lyon/
+    /topic/youtube/: /topic/google/
+    /topic/tech/: /topic/coding-tech/
+    /topic/interface-builder/: /topic/ios/
+    /topic/devlife/: /topic/remotelife/
+    /topic/devtravel/: /topic/travel/
     # blog.nathanaelcherrier.com content
     /2016/03/07/linting-good-practices/: /fr/post/linting-good-practices/
     /2016/08/03/gerer-plusieurs-versions-avec-gitflow/: /fr/post/gerer-plusieurs-versions-avec-gitflow/
