@@ -14,9 +14,11 @@
 {{#post}}
 <article class="mds-page {{post_class}}">
 
+    {{#match @page.show_title_and_feature_image}}
     <header class="mds-header mds-canvas">
         <h1 class="mds-title">{{title}}</h1>
     </header>
+    {{/match}}
 
     <div class="mds-content mds-canvas" {{#has tag="#lang-fr"}}lang="fr"{{/has}}>
         {{content}}
