@@ -10,36 +10,31 @@
     <link rel='stylesheet' type='text/css' href='{{asset 'css/welcome.css'}}' />
 {{/contentFor}}
 
-{{#contentFor 'title'}}Thank you!! - {{meta_title}}{{/contentFor}}
+{{#contentFor 'title'}}Welcome!! - {{meta_title}}{{/contentFor}}
 
 <div class='mds-welcome'>
     <div class='mds-container'>
-        {{#if @member.paid}}
-            {{! Logged in }}
+        {{#if @member}}
             <header class='mds-header'>
                 <div>
-                    <h1>Thank you for subscribing!</h1>
+                    <h1>Welcome in the community!</h1>
                 </div>
             </header>
 
             <section class='mds-welcome-content'>
-                {{> "images/welcome"}}
+                {{> "images/community"}}
                 <p class='mds-welcome-description'>
-                    Hey! Thank you so much for subscribing to my blog.
-                    As it is <strong>a completely independent publication</strong>, each subscription means the world to me.
-                    I hope you'll find it worth the money you spent.
-                </p>
-                <p class='mds-welcome-description'>
-                    You now have full access to the library of premium blog posts and you will receive each new blog post straight into your inbox.
-                    <a href="/profile">See all your perks</a> on your profile page.
+                    I'm really happy to see you join our little community of developers
+                    and entrepreneurs learning together. You will now receive a
+                    notification email each week with the new content as promised.
                 </p>
                 <p class='mds-welcome-description'>
                     Please note that, by default, you will receive all the emails in English.
                     If you prefer to switch to French, check your profile page or <a href="#/portal/account/newsletters">click here</a> direclty.
                 </p>
                 <p class='mds-welcome-description'>
-                    Also, if you like what I try to create here or have any ideas on how to improve it,
-                    <strong>can you please send me your feedbacks?</strong> (Use <a
+                    Also, if you like the content here or have any idea to improve the blog
+                    <strong>can you please send me your feedbacks?</strong>(Use <a
                             href='mailto:hello@mindsers.blog'
                             title='Contact support team'
                             rel='nofollow noreferrer'
@@ -47,10 +42,10 @@
                 </p>
                 <p class='mds-welcome-link'>
                     <a class='button' href='/posts/'>
-                        Read the blog posts
+                        Read blog posts
                     </a>
-                    <a class='button' href='/profile/'>
-                        Visit your profile
+                    <a class='button highlighted' href='https://club.mindsers.blog/'>
+                        Join the club for more!
                     </a>
                 </p>
 

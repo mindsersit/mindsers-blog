@@ -30,7 +30,7 @@
                 </p>
                 {{#if @member}}
                     {{#unless @member.paid}}
-                    <a href="https://club.mindsers.blog/" class="button primary">Join the club!</a>
+                    <a href="{{@custom.global_cta_url}}" class="button highlighted">{{@custom.global_cta_text}}</a>
                     {{else}}
                     <a href="/posts/" class="button">Browse posts</a>
                     {{/unless}}
@@ -39,7 +39,7 @@
                     {{#if @custom.global_cta_url}}
                     <a href="{{@custom.global_cta_url}}" class="button highlighted">{{@custom.global_cta_text}}</a>
                     {{/if}}
-                    <a href="/signup/" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Get the newsletter</a>
+                    <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Get the newsletter</a>
                 </p>
                 {{/if}}
             </div>
@@ -103,27 +103,18 @@
 
     <section class="highlighted-band">
         <div class="mds-container">
-            {{#if @member.paid}}
+            {{#if @member}}
             <h2 class="section-title">
-                Thank for being part of this community of coders, entrepreneurs and investors.
+                You can get more of Mindsers Blog with our private club!
             </h2>
-            <a href="mailto:hello@mindsers.blog" class="button">Share your feedback</a>
-            {{else if @member}}
-            <h2 class="section-title">
-                More awesome features are waiting for you. Join the Club to get access!
-            </h2>
-            <a href="https://club.mindsers.blog/" class="button">See Mindsers Club's plans</a>
+            <a href="https://club.mindsers.blog/" class="button">Learn more about the club</a>
             {{else}}
-            <h2 class="section-title">
-                Join the {{total_members}} members and get my free monthly newsletter
+            <h2 id="newsletter-signup" class="section-title">
+                Join the {{total_members}} members and receive the blog posts straight into your inbox
             </h2>
-            <form data-members-form='subscribe'>
-                <label>
-                    Email
-                    <input data-members-email type='email' required='true' placeholder='jamie@example.com' />
-                </label>
-                <button class='button' type='submit'>Let's go!</button>
-            </form>
+            <p>
+                <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Subscribe for free</a>
+            </p>
             <p>No spam ever. Unsubscribe in a single click at any time.</p>
             {{/if}}
         </div>

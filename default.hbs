@@ -65,13 +65,13 @@
                                 <div class="mds-main-submenu">
                                     <div class="mds-submenu-column mds-submenu-links">
                                         <ul>
-                                            <li><a href="https://club.mindsers.blog/courses">Courses</a> <span class="asap-label">Available Soon</span></li>
-                                            <li><a href="https://club.mindsers.blog/">Community</a> <span class="asap-label">Available Soon</span></li>
+                                            <li><a href="https://club.mindsers.blog/courses">Courses</a></li>
+                                            <li><a href="https://club.mindsers.blog/">Community</a></li>
                                             <li><a href="https://mindsers.shop/products/session-de-mentoring-pour-developpeurs">Mentoring</a></li>
                                         </ul>
                                         <ul class="more-links">
-                                            <li><a href="/membership/posts/">Posts for Mindsers Club only</a></li>
-                                            <li><a href="/membership/additional-contents/">Posts with additional content</a></li>
+                                            {{!-- <li><a href="/membership/posts/">Posts for Mindsers Club only</a></li>
+                                            <li><a href="/membership/additional-contents/">Posts with additional content</a></li> --}}
                                         </ul>
                                     </div>
                                     {{> "quick-plan-menu"}}
@@ -100,37 +100,10 @@
                                 d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z" />
                         </svg>
                     </a>
-                    {{#if @member}}
-                    {{#unless @member.paid}}
-                    <a class="button highlighted shop-button" target='_blank' href="/membership/">Join the Club !</a>
-                    {{/unless}}
-                    <a href="/profile/" class="profile-button" tabindex="0" title="Open profile menu"
-                        aria-haspopup="true">
-                        {{> "icons/profile"}}
-                        {{#if @member.avatar_image}}
-                        <img src='{{@member.avatar_image}}' alt="Your avatar" />
-                        {{/if}}
-                    </a>
-                    <div class="profile-menu">
-                        <ul>
-                            <li class="reminder">Signed as<br>{{@member.email}}</li>
-                            <li><a href="/profile/">Account</a></li>
-                            <li><a href="/profile/#perks">Perks</a></li>
-                            <li>
-                                <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
-                            </li>
-                        </ul>
-                    </div>
-                    {{else}}
-                        {{#if @custom.global_cta_url}}
-                        <a class='login-button' href='/login/'>Log in</a>
-                        <a class="button highlighted shop-button" target='_blank'
-                            href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a>
-                        {{else}}
-                        <a class='button primary login-button' href='/login/'>Log in</a>
-                        {{/if}}
-                        <a class='more-button-small-screen' tabindex="0" title="Open main menu"
-                            aria-haspopup="true">{{> "icons/more"}}</a>
+
+                    {{#if @custom.global_cta_url}}
+                    <a class="button highlighted shop-button" target='_blank'
+                        href="{{@custom.global_cta_url}}">{{@custom.global_cta_text}}</a>
                     {{/if}}
 
                     <div class="more-menu">
@@ -150,14 +123,6 @@
                             </div>
                         </header>
 
-                        {{#if @member}}
-                        <ul>
-                            <li class="reminder">Signed as<br>{{@member.email}}</li>
-                            <li><a href="/profile/">Account</a></li>
-                            <li><a href="/profile/#perks">Perks</a></li>
-                        </ul>
-                        {{/if}}
-
                         {{#if @custom.global_cta_url}}
                         <ul>
                             <li><a class="button highlighted"
@@ -171,16 +136,6 @@
                         {{else}}
                         {{navigation}}
                         {{/if}}
-
-                        <ul>
-                            <li>
-                                {{#if @member}}
-                                <a href='javascript:' tabindex="0" data-members-signout>Sign out</a>
-                                {{else}}
-                                <a class='login-button-small-screen' href='/login/'>Log in</a>
-                                {{/if}}
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </nav>
