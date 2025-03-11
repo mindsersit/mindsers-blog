@@ -33,8 +33,10 @@
                 <p>
                     {{#if @custom.global_cta_url}}
                     <a href="{{@custom.global_cta_url}}" class="button highlighted">{{@custom.global_cta_text}}</a>
+                    {{else}}
+                    <a href="#/portal/signup" class="button primary">Reçois les articles par mail</a>
                     {{/if}}
-                    <a href="#/portal/signup" class="button {{#unless @custom.global_cta_url}}primary{{/unless}}">Reçois les articles par mail</a>
+                    <a href="/about/" class="button">En savoir plus</a>
                 </p>
                 {{/if}}
             </div>
